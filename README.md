@@ -69,8 +69,8 @@ As a user:
   | user_id | integer |
   | description | string |
   | korero | string |
-  | date_placed | integer |
-  | date_lifted | integer |
+  | date_placed | string |
+  | date_lifted | string |
   | location | array |
 
 ### Tautoko
