@@ -1,7 +1,7 @@
 {
-  "name": "show-me-the-money",
+  "name": "Rāhui",
   "version": "0.2.0",
-  "description": "$how Me The Money",
+  "description": "Rāhui",
   "repository": "https://github.com/dev-academy-challenges/show-me-the-money.git",
   "main": "server/index.js",
   "scripts": {
@@ -18,7 +18,16 @@
   },
   "author": "EDA",
   "license": "ISC",
-  
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-object-rest-spread"
+    ]
+  },
   "devDependencies": {
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
