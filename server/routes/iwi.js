@@ -1,14 +1,9 @@
 const express = require('express')
 const router = express.Router()
-
-import TeKāhuiMāngai from '../../data/tekahuimangai'
-
+const iwi = require('../../data/tekahuimangai')
 
 router.get('/', (req, res) => {
-  db.getBeers()
-  .then(beers => {
-    res.json(beers)
-  })
+res.json(iwi)
 })
 
 

@@ -1,5 +1,4 @@
 module.exports = {
-    TeKāhuiMāngai: {
     "Te Tai Tokerau": {
         "Ngāi Takoto": [],
         "Ngāti Kurī": [],
@@ -1573,5 +1572,4 @@ module.exports = {
         "Moriori": [],
 
     },
-}
 }
