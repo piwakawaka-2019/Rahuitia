@@ -1,6 +1,6 @@
-# $how Me The Money
+# Rāhui
 
-# Week 7 Group Project
+# Final Group Project
 
 Meetings are expensive, but sometimes we forget how expensive they are and feel the need to talk for too long about topics that are unimportant for the meeting purpose.
 
@@ -17,20 +17,22 @@ The intended effect of this App is to make meeting attendees aware of how much t
 ### MVP
 
 As a user:
-  * I want to register for the App under my name, and state my hourly wage
-  * I want to start a new meeting, and add all the meeting members. (MVP: Add member names and wages manually)
-  * I want to start my created meeting, and see a ($) cost tracker display the current meeting cost every second
-  * I want to be able to save a meeting's cost, attendess, duration and date/time when it is finished for later viewing
-  * I want to be able to view previous meetings in date/time order, and see more information about a past meeting.
-  * I want to see a graph of meeting costs over time
+  * I want to find out more information about the custom of rāhui.
+  * I want to find out what locations or areas have rāhui placed on them.
+  * I want to see a map of the location of a particular rāhui.
+  * I want to find out about the above rāhui, including information on who placed it, their name, iwi, hapū affiliations, and a description of the rāhui (why was it placed etc?)
+  * I want to acknowledge or offer my tautoko for a particular rāhui and post to the page how myself or a group I represent will respect this rāhui.
+  * I want to create an account and register on behalf of my iwi and authorised person, in order to add a rāhui to the app.
+  * I want to select an area on a map when I add a rāhui.
+  * I want to post my contact details so if anyone would like to find out further information they can contact me.
+  * I want to be able to read the sites content in Te Reo Māori.
 
 ### Stretch
-  * I want to be able to select existing users of the App as meeting attendees, so that our wages don't have to be shown / inputted manually. If a meeting attendee doesn't have an account, I want to be able to manually add them to the App.
-  * I want to set a Maximum Cost an Maximum Duration for my Meeting, and see colourised progress bar displaying both a these
-  * I want to be able to state my yearly salary rather than hourly rate as an option on register
-  * I want to be able to view all meetings that I am an attenee for, and I want information about my meetings to not be visible to all users of the app.
-  * I want to create a group of regular attendees for my meeting group to make setting up my meeting easier.
-  * I want to be able to write notes or summaries for meetings upon saving them.
+  * I want to see a progress bar when I register an account.
+  * I want to view news articles or other related resources to a particular rāhui.
+  * I want to draw an outline of the rāhui on a map.
+  * I want to select language preference.
+  * I want to search a location using a search bar.
 
   ---
 
@@ -39,10 +41,12 @@ As a user:
   | --- | --- |
   | Login | View for user to enter their login credentials |
   | Register | View for user to sign up for the App |
-  | CreateMeeting | View for user to arrange meeting attendees and information before starting the timer |
-  | Meeting | View to display current meeting time, cost and other information while the meeting is in progress |
-  | History | Display a list of past meetings the user has attended with select preview information |
-  | PastMeeting | Display a single meeting from the history list, displaying more information and a list of attendees for the past meeting |
+  | CreateRāhui | View for user to geo-locate and describe Rāhui - this will be a 'stepped' form |
+  | Rāhui Map | View to display current Rāhui in map form |
+  | Rāhui Map | View to display current Rāhui in map form | 
+  | Landing | A landing page that describes what a Rāhui is |
+  | About | A detailed about page that describes what the app is, who can and how to use it |
+  
 
 
 ## Reducers (Client Side)
@@ -50,17 +54,17 @@ As a user:
   | name | purpose |
   | --- | --- |
   | auth | Store information regarding user logins, auth status and auth errors |
-  | currentMeeting | Track meeting progress such as current cost and current duration |
-  | meetings | store the list of meetings the user has attended in the past |
-  | users | store the list of users who can attend meetings |
+  | rāhui | store the list of Rāhui |
+  | users | store list of users |
+  | iwi | Store list of iwi and hapu |
 
 ## Store (made up of the Reducers)
 ```js
 const state ={
     auth,
-    currentMeeting,
+    rahui,
     users,
-    meetingHistory
+    iwi
 }
 
 const auth = {
@@ -270,7 +274,7 @@ mv .env.example .env
 }
 ```
 
-## Route GET /api/meetings/:id/users
+## Route GET /api/rahui/:id
 
 #### Data in
 ```sh
@@ -296,7 +300,7 @@ mv .env.example .env
 ]
 ```
 
-## Route GET /api/users
+## Route GET /api/rahui
 
 #### Data in
 ```sh
@@ -324,37 +328,61 @@ mv .env.example .env
 
 
 ## DB (Server Side)
-  There should be three tables for MVP
+  There should be five tables for the MVP
 
 ### Users
   | Column Name | Data Type |
   | --- | --- |
-  | id | Integer |
-  | first_name | String |
-  | last_name | String |
+  | id | Integer | Primary |
   | user_name | String (unique)|
-  | hourly_wage | decimal |
+  | first_name | String |
+  | middle_name | String |
+  | last_name | String |
+  | email | String |
   | password_hash | string |
 
-### Meetings
+### Rāhui
   | Column Name | Data Type |
   | --- | --- |
-  | id | integer |
-  | meeting_name | string |
-  | time | string |
-  | duration | integer |
-  | attendees | integer |
-  | cost | Decimal |
+  | id | Integer | Primary |
+  | user_id | integer |
+  | description | string |
+  | korero | string |
+  | date_placed | integer |
+  | date_lifted | integer |
+  | location | array |
 
-### Attendees (Join Table M2M)
+### Tautoko
 
-  Many Users attend Many Meetings
+  Many Users can tautoko many rahui
 
  | Column Name | Data Type |
  | --- | --- |
  | id | integer |
- | meeting_id | Integer |
  | user_id | Integer |
+ | rahui_id | Integer |
+ 
+ ### Iwi
+
+  Many Users can tautoko many rahui
+
+ | Column Name | Data Type |
+ | --- | --- |
+ | id | integer |
+ | user_id | integer |
+ | rahui | string |
+ 
+ ---
+ 
+  ### Hapu
+
+  Many Users can tautoko many rahui
+
+ | Column Name | Data Type |
+ | --- | --- |
+ | id | integer |
+ | user_id | integer |
+ | hapu | string |
  
  ---
 
@@ -390,7 +418,7 @@ You can check that this was successful by running `heroku apps` to view a list o
 
 
 ### Adding postgres
-$how Me The Money
+Rāhui
 Login
 
 Add postgresql (hobby dev) to your app at `https://dashboard.heroku.com/apps/[APP NAME HERE]/resources`
@@ -400,7 +428,7 @@ Check that pg has been added by running `heroku addons` to ensure the postgresql
 
 ### Deploying!
 
-I have created several npm scripts that will be useful for deploying your app to heroku easily.
+There are several npm scripts created that will be useful for deploying your app to heroku easily.
 
 To push your local master branch to your heroku app:
 ```sh
