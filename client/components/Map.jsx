@@ -12,7 +12,8 @@ export class MapContainer extends Component {
         this.state = { 
             showingIndoWindow: false,
             activeMarker: {},
-            selectedPlace: {}
+            selectedPlace: {},
+            zoom: 6
          }
     }
    
@@ -21,7 +22,8 @@ export class MapContainer extends Component {
             {
                 selectedPlace: props,
                 activeMarker: marker,
-                showingIndoWindow: true
+                showingIndoWindow: true,
+                zoom: 14
             }
         )
     };
@@ -39,24 +41,24 @@ export class MapContainer extends Component {
     render() { 
         return (
             <Map google={this.props.google} 
-            zoom={14}
+            zoom={this.state.zoom}
             style={mayStyles}
             initialCenter={{
-                lat: -1.2884,
-                lng: 36.8233
+                lat: -41.2865,
+                lng: 174.7762
             }} >
 
-            <Marker 
-            onClick={this.onMarkerClick}
-            name={'Kenyata'}/>
+                <Marker 
+                onClick={this.onMarkerClick}
+                name={'Hi Team Rahui'}/>
 
-            <InfoWindow 
-            marker={this.state.activeMarker}
-            visible={this.state.showingIndoWindow}
-            onClose={this.onClose}>
-                 <div><h4>{this.state.selectedPlace.name}</h4></div>
+                <InfoWindow 
+                marker={this.state.activeMarker}
+                visible={this.state.showingIndoWindow}
+                onClose={this.onClose}>
+                    <div><h4>{this.state.selectedPlace.name}</h4></div>
 
-            </InfoWindow>
+                </InfoWindow>
 
             </Map>
 
