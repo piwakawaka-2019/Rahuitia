@@ -79,7 +79,6 @@ function getRahuiTautoko(rahui_id, testDb) {
     .select();
 }
 
-
 //************* */ get meetings
 // function getMeetings(testDb) {
 //   const db = testDb || connection
@@ -88,7 +87,7 @@ function getRahuiTautoko(rahui_id, testDb) {
 //     .select()
 // }
 
-//************   save meetings ()  
+//************   save meetings ()
 
 // function saveMeeting({meetingName, time, duration, attendees, cost}, testDb) {
 //   const db = testDb || connection
@@ -204,7 +203,7 @@ function getRahuiTautoko(rahui_id, testDb) {
 //userIDs.filter(async user => await writeAttendees(meeting_id, user.id))
 
 module.exports = {
-  // createUser,
+  createUser,
   getUsers,
   getRahui,
   getUserIwi,
