@@ -1,41 +1,14 @@
 import request from "superagent";
-import { get } from "../utils/localstorage";
-import { isAuthenticated } from "../utils/auth";
 
-export function getAttendees() {
-  const token = get("token");
-  const headers = {
-    Accept: "application/json"
-  };
-
-  if (isAuthenticated()) {
-    headers["Authorization"] = `Bearer ${token}`;
-  }
-
+export function getIwi() {
   return request
-    .get("/api/meetings/:id/users")
-    .set(headers)
-    .then(res => res.body)
-    .catch(err => {
-      throw err;
+    .get("/v1/iwi")
+    .then(res => {
+      const iwi = res.body;
+      return iwi;
+    })
+    .catch(() => {
+      throw Error("You need to implement an API route for /v1/iwi");
     });
 }
 
-export function getUsers() {
-  const token = get("token");
-  const headers = {
-    Accept: "application/json"
-  };
-
-  if (isAuthenticated()) {
-    headers["Authorization"] = `Bearer ${token}`;
-  }
-
-  return request
-    .get("/api/users")
-    .set(headers)
-    .then(res => res.body)
-    .catch(err => {
-      throw err;
-    });
-}

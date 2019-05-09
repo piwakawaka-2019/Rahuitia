@@ -4,8 +4,9 @@ const cors = require('cors')
 const passport = require('passport')
 
 const authRoutes = require('./routes/auth')
-const meetingsRoutes = require('./routes/meetings')
 const usersRoutes = require('./routes/users')
+const rahuiRoutes = require('./routes/rahui')
+const iwiRoutes = require('./routes/iwi')
 
 const server = express()
 
@@ -16,7 +17,8 @@ server.use(express.json())
 server.use(express.static(path.join(__dirname, '../public')))
 
 server.use('/api/auth', authRoutes)
-server.use('/api/meetings', meetingsRoutes)
 server.use('/api/users', usersRoutes)
+server.use('/api/iwi', iwiRoutes)
+server.use('/api/rahui', rahuiRoutes)
 
 module.exports = server
