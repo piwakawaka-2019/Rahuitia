@@ -1,5 +1,5 @@
 module.exports = {
-        rahui: [
+        rāhui: [
             {
         id: 21,
         user_id: 1,
