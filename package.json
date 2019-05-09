@@ -1,7 +1,7 @@
 {
   "name": "rahui",
   "version": "0.2.0",
-  "description": "Rāhui",
+  "description": "rahui",
   "repository": "https://github.com/dev-academy-challenges/show-me-the-money.git",
   "main": "server/index.js",
   "scripts": {
