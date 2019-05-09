@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
-import {Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import {Map, GoogleApiWrapper, InfoWindow, Marker, Polygon } from 'google-maps-react';
 
 const mayStyles = {
     width: "50%",
-    height: "100%"
+    height: "100%",
+
 }
+
+const triangleCoords = [
+    {lat: -41.267622, lng: 174.745222}, 
+    {lat: -41.261520, lng: 174.753413},
+    {lat: -41.267003, lng: 174.761482},
+    {lat: -41.270654, lng: 174.749472},
+  ];
+
 
 export class MapContainer extends Component {
     constructor(props) {
@@ -43,10 +52,18 @@ export class MapContainer extends Component {
             <Map google={this.props.google} 
             zoom={this.state.zoom}
             style={mayStyles}
-            initialCenter={{
-                lat: -41.2865,
-                lng: 174.7762
-            }} >
+            initialCenter={{lat: -41.267622, lng: 174.745222}} >
+
+                <Polygon
+                paths={triangleCoords}
+                strokeColor="#B53737"
+                strokeOpacity={0.8}
+                strokeWeight={2}
+                fillColor="#B53737"
+                fillOpacity={0.5} 
+                onClick={this.onMarkerClick}
+                name={'Hello there'}
+                    />
 
                 <Marker 
                 onClick={this.onMarkerClick}
