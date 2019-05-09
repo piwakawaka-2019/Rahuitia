@@ -1470,8 +1470,8 @@ const data = {
             "Ngāti Tamarangi",
             "Ngāti Whanokirangi",
             "Punahau",
-        ]
-            "Ngāti Raukawa ki te Tonga": [
+        ],
+        "Ngāti Raukawa ki te Tonga": [
             "Ngāti Hikitanga",
             "Ngāti Huia",
             "Ngāti Kapumanawawhiti",
