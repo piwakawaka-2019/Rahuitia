@@ -1,7 +1,7 @@
 {
-  "name": "Rāhui",
+  "name": "rahui",
   "version": "0.2.0",
-  "description": "Rāhui",
+  "description": "rahui",
   "repository": "https://github.com/dev-academy-challenges/show-me-the-money.git",
   "main": "server/index.js",
   "scripts": {
@@ -50,6 +50,7 @@
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
+    "google-maps-react": "^2.0.2",
     "jest": "^24.7.1",
     "jsdom": "^15.0.0",
     "jsonwebtoken": "^8.5.1",
