@@ -83,7 +83,7 @@ test("getRahui return rahui", () => {
 test("getUserHapu return hapu", () => {
   let expected = true;
 
-  return users.getUserHapu(testDb).then(hapu => {
+  return users.getUserHapu(2,testDb).then(hapu => {
     let actual = hapu.length > 0;
 
     expect(actual).toEqual(expected);
