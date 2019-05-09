@@ -2,6 +2,7 @@ import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import Map from './Map'
+import AddRahuiMap from './AddRahuiMap'
 
 export function App({auth}) {
   return (
@@ -10,6 +11,7 @@ export function App({auth}) {
       <div className="wrapper">
       Rāhui 
       </div>
+      <Route path='/addrahui' render={AddRahuiMap}   />
     </Router>
     <Map/>
     </div>  
