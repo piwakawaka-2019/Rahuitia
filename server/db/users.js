@@ -35,8 +35,18 @@ function getUsers(testDb) {
 //**************/get rahui function ()
 function getRahui(testDb) {
   const db = testDb || connection;
+  return db("rahui")
+  
+  .select();
+}
 
-  return db("rahui").select();
+function getRahuiInformation(testDb) {
+  const db = testDb || connection;
+  return db("rahui")
+  .join("users", "rahui.user_id", "=", "users.id")
+  .join("iwi", "rahui.user_id", "=", "iwi.user_id")
+  .join("hapu", "rahui.user_id", "=", "hapu.user_id")
+  .select();
 }
 
 //**************/get user iwi function ()
@@ -209,5 +219,6 @@ module.exports = {
   getUserIwi,
   getUserHapu,
   getRahuiAuthor,
-  getRahuiTautoko
+  getRahuiTautoko,
+  getRahuiInformation
 };
