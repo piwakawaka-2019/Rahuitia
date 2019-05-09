@@ -68,7 +68,7 @@ test('getUsers return users', () => {
 //saveMeetings(meetings_name, timestamp, duration, attendees, cost, testDb)
 
 test('saveMeetings saves meetings', () => {
-  let expected = 
+  let expected = true
 
   return users.saveMeetings(meetings_name, timestamp, duration, attendees, cost, testDb)
     .then(meetings => {
