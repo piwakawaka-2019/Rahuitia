@@ -8,7 +8,7 @@ export function App({auth}) {
     <div>  
     <Router>    
       <div className="wrapper">
-      'hello'
+      Rāhui 
       </div>
     </Router>
     <Map/>
