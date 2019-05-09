@@ -1,4 +1,5 @@
-const data = {
+module.exports = {
+    Rūnanga: {
     "Te Tai Tokerau": {
         "Ngāi Takoto": [],
         "Ngāti Kurī": [],
@@ -354,15 +355,15 @@ const data = {
         "Ngāi Tai ki Tāmaki": [
             "Umupuia",
             "Whātāpaka",
-        ]
+        ],
             "Ngāti Tamaterā": [
             "Taharua",
             "Te Paea o Hauraki",
             "Te Pai o Hauraki",
-        ]
+        ],
             "Ngāti Whanaunga": [
             "Wharekawa",
-        ]
+        ],
             "Ngāti Te Ata": [
             "Ngāti Hana",
             "Ngāti Huiau",
@@ -384,7 +385,7 @@ const data = {
             "Te Uri O Te Oro",
             "Te Uri Raro",
             "Te Whānau Pani",
-        ]
+        ],
             "Waikato": [
             "Ngāi Tai",
             "Ngāti Āmaru",
@@ -1572,4 +1573,5 @@ const data = {
         "Moriori": [],
 
     },
+}
 }
