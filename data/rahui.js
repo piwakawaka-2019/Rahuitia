@@ -18,7 +18,7 @@ module.exports = {
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         korero:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-        geo_ref: {lat: -38.736258, lng: 175.853502},
+        geo_ref: {lat: -38.460178, lng: 175.795788},
         date_placed: '12-11-2018',
         date_lifted: '15-11-2018'
     },

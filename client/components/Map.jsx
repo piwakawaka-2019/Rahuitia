@@ -15,7 +15,7 @@ export class MapContainer extends Component {
             showingInfoWindow: false,
             activeMarker: {},
             selectedPlace: {},
-            zoom: 6
+            zoom: 7
          }
     }
    
@@ -40,23 +40,22 @@ export class MapContainer extends Component {
     };
 
 
-
     render() { 
-        console.log(AllRahuiData)
+       
         return (
+            //main map
             <Map google={this.props.google} 
             zoom={this.state.zoom}
             style={myStyles}
             initialCenter={{lat: -41.267622, lng: 174.745222}} >
-
+                
+            
                 {AllRahuiData.rahui.map(rahuipoint => {
-                console.log(rahuipoint)
                 return <Marker 
                     onClick={this.onMarkerClick}
                     name={'nanz'}
                     position={rahuipoint.geo_ref}/>}
                 )}
-
 
                 <InfoWindow 
                 marker={this.state.activeMarker}
