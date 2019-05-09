@@ -1,5 +1,5 @@
 module.exports = {
-    Rūnanga: {
+    TeKāhuiMāngai: {
     "Te Tai Tokerau": {
         "Ngāi Takoto": [],
         "Ngāti Kurī": [],
