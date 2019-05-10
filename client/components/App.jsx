@@ -4,7 +4,11 @@ import {connect} from 'react-redux'
 import Map from './Map'
 import Explore from './Explore'
 import AddRahuiMap from './AddRahuiMap'
+<<<<<<< HEAD
 import MapWithADrawingManager from './ReactMap'
+=======
+import RahuiDetail from './RahuiDetail';
+>>>>>>> d6264c75b1f9f9d193433f04d47706ffefd0a3b5
 
 export function App({auth}) {
   return (
@@ -13,7 +17,9 @@ export function App({auth}) {
       <div className="wrapper">
       Rāhui 
       </div>
-      <Route path='/addrahui' render={AddRahuiMap}   />
+      <Route exact='true' path='/addrahui' component={AddRahuiMap}   />
+      <Route exact='true' path='/' component={Explore} />
+      <Route path='/rahui/:id' component={RahuiDetail} />
     </Router>
     {/* <Map/> */}
     <MapWithADrawingManager/>
