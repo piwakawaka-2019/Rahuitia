@@ -5,7 +5,8 @@ const router = express.Router()
 router.get('/', (req, res) => {
   db.getRahuiInformation()
   .then(rahui => { 
-    
+    let obj = {howdy: 896234896, doody: 229862303};
+    let strobj = ""
     let arr = []
 
     while(rahui.length){
@@ -13,7 +14,7 @@ router.get('/', (req, res) => {
 
       firstEntry.iwi_name = [firstEntry.iwi_name]
       firstEntry.hapu_name = [firstEntry.hapu_name]
-      
+
       let duplicates = rahui.filter(item => {
         return firstEntry.id === item.id
       }) 
