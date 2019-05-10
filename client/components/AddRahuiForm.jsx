@@ -1,27 +1,55 @@
 import React from 'react'
+import * as api from '../apis/iwi'
+
+
 
 class AddRahuiForm extends React.Component {
-    constructor() {
-        super()
-        this.setState = {}
+    constructor(props) {
+        super(props)
+        this.State = {
+            iwi: [],
+            // hapu: [],
+            // authoriser: "",
+            // datePlaced: 
+            // dateLifted:
+            // description: "",
+            // korero: "",
+            // contactEmail: "",
+        }
+        this.fetchIwi = this.fetchIwi.bind(this)
     }
+    componentDidMount() {
+        this.fetchIwi()
+    }
+
+    fetchIwi() {
+        return api.getIwi()
+            .then(iwi => {
+                console.log(iwi)
+                this.setState({ iwi: iwi })
+            })
+            .catch(err => {
+                this.setState({ errorMessage: err.message })
+            })
+    }
+
     render() {
         return (
             <div>
-                <h1>Add a Rahui</h1>
-                <h2>Tell us about the rahui</h2>
+                <h1>Add a Rāhui</h1>
+                <h2>Tell us about the rāhui</h2>
                 <div>
                     <form>
                         <select>
-                            <option>iwi 1</option>
-                            <option>iwi 2</option>
-                            <option>iwi 3</option>
+
+                            <option></option>
+
                         </select>
 
+                        <br></br>
+
                         <select>
-                            <option>hapu 1</option>
-                            <option>hapu 2</option>
-                            <option>hapu 3</option>
+                            <option></option>
                         </select>
 
                         <br></br>
@@ -38,7 +66,7 @@ class AddRahuiForm extends React.Component {
 
                         <br></br>
 
-                        <textarea name="message" placeholder="description" rows="10" cols="30" />
+                        <textarea name="message" placeholder="description" rows="10" cols="60" />
 
                         <br></br>
 
@@ -46,7 +74,7 @@ class AddRahuiForm extends React.Component {
 
                         <br></br>
 
-                        <input type="text" placeholder="Contact" />
+                        <input type="text" placeholder="Contact Email" />
 
                         <br></br>
 
