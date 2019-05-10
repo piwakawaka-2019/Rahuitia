@@ -4,8 +4,8 @@ import {Map, GoogleApiWrapper, InfoWindow, Marker, Polygon } from 'google-maps-r
 import AllRahuiData from '../../data/rahui'
 
 const myStyles = {
-    width: "50%",
-    height: "100%",
+    width: "100%",
+    height: "95%",
 
 }
 
