@@ -16,13 +16,13 @@ const MapWithADrawingManager = compose(
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCDY6eWTVLvpOoTI2JrH8Q0ycDSV3F2J5o&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
-    mapElement: <div style={{ height: `100%` }} />,
+    mapElement: <div style={{ height: `100%`, width: `50%` }} />,
   }),
   withScriptjs,
   withGoogleMap
   )(props =>
     <GoogleMap
-      defaultZoom={6}
+      defaultZoom={5}
       defaultCenter={new google.maps.LatLng(-41.267622, 174.745222)}
     >
 
@@ -51,7 +51,7 @@ const MapWithADrawingManager = compose(
         }}
         onPolygonComplete={(polygon) => {
           console.log(polygon)
-          console.log(polygon.getPath().getArray()[0].lat())
+          console.log(polygon.getPath().getArray()[1].lat())
           console.log(polygon.getPath().getLength())
         }}
       />
