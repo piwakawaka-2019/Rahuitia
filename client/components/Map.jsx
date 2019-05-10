@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Map, GoogleApiWrapper, InfoWindow, Marker, Polygon } from 'google-maps-react';
+
 import AllRahuiData from '../../data/rahui'
 
 const myStyles = {

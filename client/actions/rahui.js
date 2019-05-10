@@ -1,24 +1,25 @@
+import { getRahui } from '../apis/rahui'
 
 
 
-// export function fetchAllRahui () {
-//     console.log
-//     return dispatch => { 
-//         gettAllRahui().then(allrahui => {
-//             dispatch(saveAllRahui(allrahui))
-//         })
-        
-//     }
-// }
+
+export function saveAllRahui (rahuiArr) {
+    return {
+        type: 'SAVE_ALLRAHUI',
+        rahui: rahuiArr
+    }
+}
 
 
-
-// export function saveAllRahui (allrahui) {
-//     return {
-//         type: 'SAVE_ALLRAHUI',
-//         rahui: allrahui
-//     }
-// }
-
+export function fetchAllRahui () {
+   
+    return dispatch => { 
+   
+        getRahui().then(allrahui => {
+            console.log("fetch rahui arr", allrahui)
+            dispatch(saveAllRahui(allrahui))
+        })     
+    }
+}
 
   
