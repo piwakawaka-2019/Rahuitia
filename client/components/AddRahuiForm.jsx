@@ -1,5 +1,9 @@
 import React from 'react'
 import * as api from '../apis/iwi'
+import { connect } from "react-redux";
+import { fetchAllIwi } from "../actions/iwi";
+
+
 
 
 
@@ -16,24 +20,40 @@ class AddRahuiForm extends React.Component {
             // korero: "",
             // contactEmail: "",
         }
-        this.fetchIwi = this.fetchIwi.bind(this)
-    }
-    componentDidMount() {
-        this.fetchIwi()
+        // this.fetchIwi = this.fetchIwi.bind(this)
     }
 
-    fetchIwi() {
-        return api.getIwi()
-            .then(iwi => {
-                console.log(iwi)
-                this.setState({ iwi: iwi })
-            })
-            .catch(err => {
-                this.setState({ errorMessage: err.message })
-            })
+
+    // fetchIwi() {
+    //     return api.getIwi()
+    //         .then(iwi => {
+    //             console.log(iwi)
+    //             this.setState({ iwi: iwi })
+    //         })
+    //         .catch(err => {
+    //             this.setState({ errorMessage: err.message })
+    //         })
+    // }
+
+    componentDidMount() {
+        this.props.dispatch(fetchAllIwi())
     }
 
     render() {
+        const results = []
+        // this gets all of the iwi's
+        {
+            this.props.alliwi.map(iwi => {
+                results.push(Object.keys(iwi))
+            })
+        }
+        // this merges all of the iwis into one array
+        var merged = [].concat.apply([], results);
+        console.log(results)
+        const example_hapu = []
+        this.props.alliwi[0] ? example_hapu.push(this.props.alliwi[0]['Te Roroa']) : null
+        console.log(example_hapu[0]);
+
         return (
             <div>
                 <h1>Add a Rāhui</h1>
@@ -41,15 +61,23 @@ class AddRahuiForm extends React.Component {
                 <div>
                     <form>
                         <select>
-
-                            <option></option>
-
+                            {/* this maps over iwis and prints them as options */}
+                            {merged.map(iwi => {
+                                return <option key={iwi}>{iwi}</option>
+                            })}
                         </select>
 
                         <br></br>
 
                         <select>
-                            <option></option>
+                            {/* this maps over iwis and prints them as options */}
+
+                            {example_hapu.map(hapu => {
+                                console.log(hapu);
+                                return hapu.map(item => {
+                                    return <option>{item}</option>
+                                })
+                            })}
                         </select>
 
                         <br></br>
@@ -91,4 +119,10 @@ class AddRahuiForm extends React.Component {
     }
 }
 
-export default AddRahuiForm
+const mapStateToProps = state => {
+    return {
+        alliwi: state.iwi
+    }
+}
+
+export default connect(mapStateToProps)(AddRahuiForm);

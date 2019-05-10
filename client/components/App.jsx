@@ -9,13 +9,13 @@ import AddRahuiForm from './AddRahuiForm';
 export function App({ auth }) {
   return (
     <div>
-      <Router>
+      {/* <Router>
         <div className="wrapper">
           Rāhui
       </div>
         <Route path='/addrahui' render={AddRahuiMap} />
       </Router>
-      <Explore />
+      <Explore /> */}
       <AddRahuiForm />
     </div>
   )

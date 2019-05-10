@@ -355,15 +355,15 @@ module.exports = {
             "Umupuia",
             "Whātāpaka",
         ],
-            "Ngāti Tamaterā": [
+        "Ngāti Tamaterā": [
             "Taharua",
             "Te Paea o Hauraki",
             "Te Pai o Hauraki",
         ],
-            "Ngāti Whanaunga": [
+        "Ngāti Whanaunga": [
             "Wharekawa",
         ],
-            "Ngāti Te Ata": [
+        "Ngāti Te Ata": [
             "Ngāti Hana",
             "Ngāti Huiau",
             "Ngāti Kahukoka",
@@ -385,7 +385,7 @@ module.exports = {
             "Te Uri Raro",
             "Te Whānau Pani",
         ],
-            "Waikato": [
+        "Waikato": [
             "Ngāi Tai",
             "Ngāti Āmaru",
             "Ngāti Apakura",
