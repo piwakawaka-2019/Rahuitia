@@ -39,84 +39,87 @@ class AddRahuiForm extends React.Component {
         this.props.dispatch(fetchAllIwi())
     }
 
-    render() {
-        const results = []
-        // this gets all of the iwi's
-        {
-            this.props.alliwi.map(iwi => {
-                results.push(Object.keys(iwi))
-            })
-        }
-        // this merges all of the iwis into one array
-        var merged = [].concat.apply([], results);
-        console.log(results)
-        const example_hapu = []
-        this.props.alliwi[0] ? example_hapu.push(this.props.alliwi[0]['Te Roroa']) : null
-        console.log(example_hapu[0]);
 
-        return (
-            <div>
-                <h1>Add a Rāhui</h1>
-                <h2>Tell us about the rāhui</h2>
-                <div>
-                    <form>
-                        <select>
-                            {/* this maps over iwis and prints them as options */}
-                            {merged.map(iwi => {
-                                return <option key={iwi}>{iwi}</option>
-                            })}
-                        </select>
+}
 
-                        <br></br>
-
-                        <select>
-                            {/* this maps over iwis and prints them as options */}
-
-                            {example_hapu.map(hapu => {
-                                console.log(hapu);
-                                return hapu.map(item => {
-                                    return <option>{item}</option>
-                                })
-                            })}
-                        </select>
-
-                        <br></br>
-
-                        <input type="text" placeholder="Authoriser's Name" />
-
-                        <br></br>
-
-                        date placed <input type="date" />
-
-                        <br></br>
-
-                        date lifted <input type="date" />
-
-                        <br></br>
-
-                        <textarea name="message" placeholder="description" rows="10" cols="60" />
-
-                        <br></br>
-
-                        <textarea name="message" placeholder="korero" rows="20" cols="60" />
-
-                        <br></br>
-
-                        <input type="text" placeholder="Contact Email" />
-
-                        <br></br>
-
-                        <input type="submit" value="Add Rahui" />
-
-
-
-                    </form>
-                </div>
-
-
-            </div >
-        )
+render() {
+    const results = []
+    // this gets all of the iwi's
+    {
+        this.props.alliwi.map(iwi => {
+            results.push(Object.keys(iwi))
+        })
     }
+    // this merges all of the iwis into one array
+    var merged = [].concat.apply([], results);
+    console.log(results)
+    const example_hapu = []
+    this.props.alliwi[0] ? example_hapu.push(this.props.alliwi[0]['Te Roroa']) : null
+    console.log(example_hapu[0]);
+
+    return (
+        <div>
+            <h1>Add a Rāhui</h1>
+            <h2>Tell us about the rāhui</h2>
+            <div>
+                <form>
+                    <select>
+                        {/* this maps over iwis and prints them as options */}
+                        {merged.map(iwi => {
+                            return <option key={iwi}>{iwi}</option>
+                        })}
+                    </select>
+
+                    <br></br>
+
+                    <select>
+                        {/* this maps over iwis and prints them as options */}
+
+                        {example_hapu.map(hapu => {
+                            console.log(hapu);
+                            return hapu.map(item => {
+                                return <option>{item}</option>
+                            })
+                        })}
+                    </select>
+
+                    <br></br>
+
+                    <input type="text" placeholder="Authoriser's Name" />
+
+                    <br></br>
+
+                    date placed <input type="date" />
+
+                    <br></br>
+
+                    date lifted <input type="date" />
+
+                    <br></br>
+
+                    <textarea name="message" placeholder="description" rows="10" cols="60" />
+
+                    <br></br>
+
+                    <textarea name="message" placeholder="korero" rows="20" cols="60" />
+
+                    <br></br>
+
+                    <input type="text" placeholder="Contact Email" />
+
+                    <br></br>
+
+                    <input type="submit" value="Add Rahui" />
+
+
+
+                </form>
+            </div>
+
+
+        </div >
+    )
+}
 }
 
 const mapStateToProps = state => {
