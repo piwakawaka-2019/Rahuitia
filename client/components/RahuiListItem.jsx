@@ -7,7 +7,8 @@ const RahuiListItem= props => {
  const rahui = props.rahui
  
  let handleclick=()=>{
-    console.log("hello")
+    console.log("hello nanz")
+    window.location = `#/rahui/${rahui.id}`; 
     }
 
     return ( 
