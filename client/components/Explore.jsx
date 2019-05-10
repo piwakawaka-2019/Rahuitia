@@ -7,6 +7,7 @@ import { fetchAllRahui} from "../actions/rahui";
 
 import RahuiListItem from "./RahuiListItem"
 import Map from './Map'
+import NewMap from "./NewMap";
 
 
 class Explore extends React.Component {
@@ -25,7 +26,7 @@ class Explore extends React.Component {
             <div >
                 <SplitterLayout >
                 <div >
-                 <Map />
+                 <NewMap />
                 </div> 
                 
                 <div className="detailwrapper">
