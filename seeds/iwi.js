@@ -16,6 +16,11 @@ exports.seed = function(knex, Promise) {
           iwi_name: "Ngati Kahungunu"
         },
         {
+          id: 71,
+          user_id: 2,
+          iwi_name: "Tuhoe"
+        },
+        {
           id: 63,
           user_id: 3,
           iwi_name: "Tuhoe"
