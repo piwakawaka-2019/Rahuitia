@@ -3,6 +3,7 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Map from "./Map";
 import About from "./About";
+import Landing from "./Landing"
 
 export function App({ auth }) {
   return (
@@ -11,7 +12,8 @@ export function App({ auth }) {
         <div className="wrapper">Rāhui</div>
       </Router>
       {/* <Map/> */}
-      <About />
+      {/* <About /> */}
+      < Landing />
     </div>
   );
 }
