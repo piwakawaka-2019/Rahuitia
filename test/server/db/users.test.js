@@ -21,13 +21,20 @@ test("createUser - Inserts a single user", () => {
       "address",
       "email",
       "s3cr3t",
+      [''],
+      [''],
       testDb
     )
     .then(ids => {
       let actual = ids.length;
 
       expect(actual).toEqual(expected);
-    });
+    })
+    // .then(() => {
+    //   return Promise.all([testDb('iwi').select(), testDb('hapu').select()]).then(data => {
+    //     console.log(data)
+    //   })
+    // });
 });
 
 test("getUsers - return users", () => {
@@ -109,3 +116,33 @@ test("getRahuiTautoko - return rahui tautoko", () => {
 //     expect(actual).toEqual(expected);
 //   });
 // });
+
+test("getUsers return users", () => {
+  let expected = true;
+
+  return users.getUsers(testDb).then(users => {
+    let actual = users.length > 0;
+
+    expect(actual).toEqual(expected);
+  });
+});
+
+test("getRahui return rahui", () => {
+  let expected = true;
+
+  return users.getRahui(testDb).then(rahui => {
+    let actual = rahui.length > 0;
+
+    expect(actual).toEqual(expected);
+  });
+});
+
+test("getUserHapu return hapu", () => {
+  let expected = true;
+
+  return users.getUserHapu(4, testDb).then(hapu => {
+    let actual = hapu.length > 0;
+
+    expect(actual).toEqual(expected);
+  });
+});
