@@ -35,18 +35,16 @@ function getUsers(testDb) {
 //**************/get rahui function ()
 function getRahui(testDb) {
   const db = testDb || connection;
-  return db("rahui")
-  
-  .select();
+  return db("rahui").select();
 }
 
 function getRahuiInformation(testDb) {
   const db = testDb || connection;
   return db("rahui")
-  .join("users", "rahui.user_id", "=", "users.id")
-  .join("iwi", "rahui.user_id", "=", "iwi.user_id")
-  .join("hapu", "rahui.user_id", "=", "hapu.user_id")
-  .select();
+    .join("users", "rahui.user_id", "=", "users.id")
+    .join("iwi", "rahui.user_id", "=", "iwi.user_id")
+    .join("hapu", "rahui.user_id", "=", "hapu.user_id")
+    .select();
 }
 
 //**************/get user iwi function ()
@@ -74,7 +72,7 @@ function getRahuiAuthor(rahui_id, testDb) {
   const db = testDb || connection;
 
   return db("users")
-    .join("rahui", "users_id", "=", "rahui.users_id")
+    .join("rahui", "users.id", "=", "rahui.user_id")
     .where("rahui.id", "=", rahui_id)
     .select();
 }
@@ -84,7 +82,8 @@ function getRahuiTautoko(rahui_id, testDb) {
   const db = testDb || connection;
 
   return db("users")
-    .join("tautoko", "users_id", "=", "tautoko.users_id")
+    .join("tautoko", "users.id", "=", "tautoko.user_id")
+    .join("rahui", "rahui.id", "=", "tautoko.rahui_id")
     .where("tautoko.rahui_id", "=", rahui_id)
     .select();
 }
