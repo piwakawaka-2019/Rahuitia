@@ -11,12 +11,18 @@ class RahuiDetail extends Component {
         this.props.dispatch(fetchAllRahui())
     }
 
+    handleclick=()=>{
+        window.location = `/`; 
+        }
+    
+
     render() { 
         let rahuiId = this.props.match.params.id;
         console.log(rahuiId, this.props)
     
         let {iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, email} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
-       
+        
+        
         return ( 
         <div>
         <SplitterLayout >
@@ -25,7 +31,8 @@ class RahuiDetail extends Component {
             </div> 
 
             <div className="detailwrapper">
-                <b>IWI: {iwi_name} </b> <br/>
+                <button onClick={this.handleclick.bind(this)}> Back to List </button>
+                <br/><p>{iwi_name}</p> <br/>
                 <h1> {description}</h1>
                 <br/><b>Issued by:</b> <p> {first_name} {last_name} ({iwi_name} | {hapu_name})</p>
                 <br/><b>Date placed:</b> <p> {date_placed}</p>
