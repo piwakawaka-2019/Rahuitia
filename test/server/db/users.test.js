@@ -21,13 +21,20 @@ test("createUser inserts a single user", () => {
       "address",
       "email",
       "s3cr3t",
+      [''],
+      [''],
       testDb
     )
     .then(ids => {
       let actual = ids.length;
 
       expect(actual).toEqual(expected);
-    });
+    })
+    // .then(() => {
+    //   return Promise.all([testDb('iwi').select(), testDb('hapu').select()]).then(data => {
+    //     console.log(data)
+    //   })
+    // });
 });
 
 // test("userExists finds existing user", () => {
@@ -83,7 +90,7 @@ test("getRahui return rahui", () => {
 test("getUserHapu return hapu", () => {
   let expected = true;
 
-  return users.getUserHapu(testDb).then(hapu => {
+  return users.getUserHapu(4, testDb).then(hapu => {
     let actual = hapu.length > 0;
 
     expect(actual).toEqual(expected);

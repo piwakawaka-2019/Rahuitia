@@ -9,6 +9,8 @@ function createUser(
   address,
   email,
   password,
+  iwi,
+  hapu,
   testDb
 ) {
   const db = testDb || connection;
@@ -21,10 +23,36 @@ function createUser(
       address: address,
       email: email,
       password_hash: hash
+    })
+    .then(userIds => {
+      const userId = userIds[0];
+      return Promise.all(
+        iwi.map(iwiName => {
+          return writeIwi(iwiName, userId, db)
+        })
+      )
+      .then(() => {
+        return Promise.all(
+          hapu.map(hapuName => {
+            return writeHapu(hapuName, userId, db)
+          })
+        )}
+      )
     });
   });
 }
 
+function writeIwi(iwiName, userId, testDb){
+  const db = testDb || connection
+  return db('iwi')
+  .insert({ iwi_name: iwiName, user_id: userId })
+}
+
+function writeHapu(hapuName, userId, testDb){
+  const db = testDb || connection
+  return db('hapu')
+  .insert({ hapu_name: hapuName, user_id: userId })
+}
 //**************/get user function ()
 function getUsers(testDb) {
   const db = testDb || connection;
@@ -89,29 +117,6 @@ function getRahuiTautoko(rahui_id, testDb) {
     .select();
 }
 
-//************* */ get meetings
-// function getMeetings(testDb) {
-//   const db = testDb || connection
-
-//   return db('meetings')
-//     .select()
-// }
-
-//************   save meetings ()
-
-// function saveMeeting({meetingName, time, duration, attendees, cost}, testDb) {
-//   const db = testDb || connection
-
-//   return db('meetings')
-//     .insert({
-//       meeting_name: meetingName,
-//       time: time,
-//       duration: duration,
-//       attendees: attendees,
-//       cost: cost
-//     })
-// }
-
 // function userExists(user_name, testDb) {
 //   const db = testDb || connection
 
@@ -120,97 +125,17 @@ function getRahuiTautoko(rahui_id, testDb) {
 //     .then(users => users.length > 0)
 // }
 
-// function getUserMeetings(user_id, testDb) {
-//   const db = testDb || connection;
+function writeRahui(obj, testDb){
+  const db = testDb || connection
+  return db('rahui')
+  .insert(obj)
+}
 
-//   return db("attendees")
-//     .join("meetings", "attendees.meeting_id", "=", "meetings.id")
-//     .where("attendees.user_id", "=", user_id)
-//     .select();
-// }
-
-// function writeAttendees(meeting_id, user_id, testDb) {
-
-//   const db = testDb || connection
-//   console.log('meeting_id, user_id: ', meeting_id, user_id);
-//   return db('attendees')
-//     .insert({
-//       meeting_id: meeting_id,
-//       user_id: user_id
-//     })
-
-// }
-
-// function getUserByUsername(user_name, testDb) {
-
-//   const db = testDb || connection
-//   return db('users')
-//     .select()
-
-// }
-
-//************* */ get meetings
-// function getMeetings(testDb) {
-//   const db = testDb || connection
-
-//   return db('meetings')
-//     .select()
-// }
-
-//************   save meetings ()      */
-
-// function saveMeeting({meetingName, time, duration, attendees, cost}, testDb) {
-//   const db = testDb || connection
-
-//   return db('meetings')
-//     .insert({
-//       meeting_name: meetingName,
-//       time: time,
-//       duration: duration,
-//       attendees: attendees,
-//       cost: cost
-//     })
-// }
-
-// function getUserMeetings(user_id, testDb) {
-//   const db = testDb || connection
-
-//   return db('attendees')
-//     .join('meetings', 'attendees.meeting_id', '=', 'meetings.id')
-//     .where('attendees.user_id', '=', user_id)
-//     .select()
-// }
-
-// function writeAttendees(meeting_id, user_id, testDb) {
-
-//   const db = testDb || connection
-//   console.log('meeting_id, user_id: ', meeting_id, user_id);
-//   return db('attendees')
-//     .insert({
-//       meeting_id: meeting_id[0],
-//       user_id: user_id
-//     })
-//     .then(()=>{})
-// }
-
-// function getUserByUsername(user_name, testDb) {
-
-//   const db = testDb || connection
-//   return db('users')
-//     .where('user_name', user_name)
-//     .first()
-// }
-
-// function saveAttendees(meetingID, attendees) {
-//   attendees.map(attendeeUserName => {
-//     getUserByUsername(attendeeUserName).
-//     then(async attendee => {
-//       await writeAttendees(meetingID[0], attendee.id)
-//     })
-//   })
-// }
-
-//userIDs.filter(async user => await writeAttendees(meeting_id, user.id))
+function writeTautoko(obj, testDb){
+  const db = testDb || connection
+  return db('tautoko')
+  .insert(obj)
+}
 
 module.exports = {
   createUser,
