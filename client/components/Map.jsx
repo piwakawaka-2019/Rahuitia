@@ -31,14 +31,7 @@ export class MapContainer extends Component {
         )
     };
 
-    onClose = props => {
-        if (this.state.showingInfoWindow) {
-            this.setState({
-                showingIndoWindow: false,
-                activeMarker: null
-            })
-        }
-    };
+   
 
 
     render() { 
@@ -51,21 +44,13 @@ export class MapContainer extends Component {
             initialCenter={{lat: -41.267622, lng: 174.745222}} >
                 
             
-                {AllRahuiData.rahui.map(rahuipoint => {
+                {AllRahuiData.rāhui.map(rahuipoint => {
                 return <Marker 
                     onClick={this.onMarkerClick}
                     name={'nanz'}
                     position={rahuipoint.geo_ref}/>}
                 )}
 
-                <InfoWindow 
-                marker={this.state.activeMarker}
-                visible={this.state.showingInfoWindow}
-                onClose={this.onClose}>
-
-                    <div><h4>{this.state.selectedPlace.name}</h4></div>
-
-                </InfoWindow>
 
             </Map>
 

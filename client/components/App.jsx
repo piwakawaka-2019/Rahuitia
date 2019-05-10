@@ -15,6 +15,7 @@ export function App({auth}) {
       <Route path='/addrahui' render={AddRahuiMap}   />
     </Router>
     <Explore/>
+ 
     </div>  
   )
 }

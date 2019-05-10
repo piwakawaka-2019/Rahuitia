@@ -1,4 +1,8 @@
 import React from "react";
+import SplitterLayout from 'react-splitter-layout';
+
+ 
+
 import { connect } from "react-redux";
 import { fetchAllRahui} from "../actions/rahui";
 
@@ -18,10 +22,20 @@ class Explore extends React.Component {
 
     render() { 
         return (  
-            <div>
-                {this.props.allrahui.map(rahui => 
-                <RahuiDetail key={rahui.id} rahui={rahui} />
-                )}
+            <div >
+                <SplitterLayout >
+                <div customClassName="splitter-layout">
+                 <Map />
+                </div> 
+                
+                <div>
+                 {this.props.allrahui.map(rahui => <RahuiDetail key={rahui.id} rahui={rahui} /> )}   
+                </div>
+                
+                
+                
+               
+                </SplitterLayout>
                 
             </div>
         );
