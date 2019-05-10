@@ -1,8 +1,8 @@
 import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
-import Map from './Map'
-// import MapWithDrawingManager from './ReactMap'
+// import Map from './Map'
+import MapWithADrawingManager from './ReactMap'
 
 
 export function App({auth}) {
@@ -13,8 +13,8 @@ export function App({auth}) {
       Rāhui 
       </div>
     </Router>
-    <Map/>
-    <MapWithDrawingManager/>
+    {/* <Map/> */}
+    <MapWithADrawingManager/>
     </div>  
   )
 }
