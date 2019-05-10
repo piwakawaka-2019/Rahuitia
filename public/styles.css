@@ -2,11 +2,6 @@ html{
   height:100% ;
 }
 
-/* =========================== */
-
-        /* HEADER */
-
-/* =========================== */
 header {
   padding:10px 0px;
   transition: all 300ms ease-in;
@@ -21,4 +16,20 @@ header .header_logo_venue {
 
 header .header_logo_title {
   text-transform: uppercase;
+}
+
+.mapwrapper {
+  display: inline-block;
+  width: 50%;
+  
+}
+
+.detailwrapper {
+  padding: 30px 70px 0px 70px
+   
+}
+
+h1 {
+  font-size: 40px;
+  padding-bottom: 60px;
 }
