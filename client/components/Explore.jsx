@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchAllRahui} from "../actions/rahui";
 
+import RahuiDetail from "./ExploreRahuiDetail"
 import Map from './Map'
 
 
@@ -19,10 +20,7 @@ class Explore extends React.Component {
         return (  
             <div>
                 {this.props.allrahui.map(rahui => 
-                <div>
-                  <h1>{rahui.description}</h1>
-                  <b>{rahui.first_name}</b>
-                 </div>
+                <RahuiDetail key={rahui.id} rahui={rahui} />
                 )}
                 
             </div>
