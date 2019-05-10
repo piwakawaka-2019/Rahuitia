@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+import React from "react";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { connect } from "react-redux";
+import Map from "./Map";
+import About from "./About";
+import Landing from "./Landing"
+=======
 import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
@@ -6,9 +14,21 @@ import Explore from './Explore'
 import AddRahuiMap from './NewMap'
 // import MapWithADrawingManager from './ReactMap'
 import RahuiDetail from './RahuiDetail';
+>>>>>>> dbc4b55ba6c15a108b25eac083f09d744c79a6ce
 
 export function App({auth}) {
   return (
+<<<<<<< HEAD
+    <div>
+      <Router>
+        <div className="wrapper">Rāhui</div>
+      </Router>
+      {/* <Map/> */}
+      {/* <About /> */}
+      < Landing />
+    </div>
+  );
+=======
     <div>  
     <Router>    
       <div className="wrapper">
@@ -24,6 +44,7 @@ export function App({auth}) {
  
     </div>  
   )
+>>>>>>> dbc4b55ba6c15a108b25eac083f09d744c79a6ce
 }
 
 const mapStateToProps = ({auth}) => {
