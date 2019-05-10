@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
       let duplicates = rahui.filter(item => {
         return firstEntry.id === item.id
       }) 
-      console.log(duplicates)
+
       rahui = rahui.filter(item => {
         return firstEntry.id !== item.id
       })
