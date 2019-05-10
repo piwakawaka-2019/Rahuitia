@@ -1,8 +1,9 @@
 import request from "superagent";
 
 export function getRahui() {
+  console.log(' API client is working')
   return request
-    .get("/v1/rahui")
+    .get("/api/rahui")
     .then(res => {
       const rahui = res.body;
       return rahui;
