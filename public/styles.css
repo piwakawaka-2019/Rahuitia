@@ -1,14 +1,14 @@
-html{
-  height:100% ;
+html {
+  height: 100%;
 }
 
 /* =========================== */
 
-        /* HEADER */
+/* HEADER */
 
 /* =========================== */
 header {
-  padding:10px 0px;
+  padding: 10px 0px;
   transition: all 300ms ease-in;
 }
 
@@ -22,3 +22,8 @@ header .header_logo_venue {
 header .header_logo_title {
   text-transform: uppercase;
 }
+
+* {
+  box-sizing: border-box;
+}
+
