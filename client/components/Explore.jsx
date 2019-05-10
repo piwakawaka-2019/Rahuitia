@@ -24,7 +24,7 @@ class Explore extends React.Component {
             <div >
                 <SplitterLayout >
                 <div >
-                 <Map />
+                 <MapWithADrawingManager />
                 </div> 
                 
                 <div className="detailwrapper">
