@@ -10,7 +10,7 @@ beforeEach(() => {
 
 afterEach(() => testEnv.cleanup(testDb));
 
-test("createUser inserts a single user", () => {
+test("createUser - Inserts a single user", () => {
   let expected = 1;
 
   return users
@@ -28,6 +28,56 @@ test("createUser inserts a single user", () => {
 
       expect(actual).toEqual(expected);
     });
+});
+
+test("getUsers - return users", () => {
+  let expected = true;
+
+  return users.getUsers(testDb).then(users => {
+    let actual = users.length > 0;
+
+    expect(actual).toEqual(expected);
+  });
+});
+
+test("getRahui - return rahui", () => {
+  let expected = true;
+
+  return users.getRahui(testDb).then(rahui => {
+    let actual = rahui.length > 0;
+
+    expect(actual).toEqual(expected);
+  });
+});
+
+test("getUserHapu - return hapu", () => {
+  let expected = true;
+
+  return users.getUserHapu(2, testDb).then(hapu => {
+    let actual = hapu.length > 0;
+
+    expect(actual).toEqual(expected);
+  });
+});
+
+test("getRahuiAuthor - return rahui author", () => {
+  let expected = true;
+
+  return users.getRahuiAuthor(21, testDb).then(rahui => {
+    let actual = rahui.length > 0;
+
+    expect(actual).toEqual(expected);
+  });
+});
+
+test("getRahuiTautoko - return rahui tautoko", () => {
+  let expected = true;
+
+  return users.getRahuiTautoko(30, testDb).then(rahui => {
+    let actual = rahui.length > 0;
+
+    expect(actual).toEqual(expected);
+  });
 });
 
 // test("userExists finds existing user", () => {
@@ -59,33 +109,3 @@ test("createUser inserts a single user", () => {
 //     expect(actual).toEqual(expected);
 //   });
 // });
-
-test("getUsers return users", () => {
-  let expected = true;
-
-  return users.getUsers(testDb).then(users => {
-    let actual = users.length > 0;
-
-    expect(actual).toEqual(expected);
-  });
-});
-
-test("getRahui return rahui", () => {
-  let expected = true;
-
-  return users.getRahui(testDb).then(rahui => {
-    let actual = rahui.length > 0;
-
-    expect(actual).toEqual(expected);
-  });
-});
-
-test("getUserHapu return hapu", () => {
-  let expected = true;
-
-  return users.getUserHapu(testDb).then(hapu => {
-    let actual = hapu.length > 0;
-
-    expect(actual).toEqual(expected);
-  });
-});
