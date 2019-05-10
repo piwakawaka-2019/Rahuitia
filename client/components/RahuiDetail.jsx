@@ -3,6 +3,7 @@ import Map from './Map'
 import SplitterLayout from 'react-splitter-layout';
 import { connect } from "react-redux";
 import { fetchAllRahui} from "../actions/rahui";
+import NewMap from "./NewMap"
 
 
 class RahuiDetail extends Component {
@@ -27,7 +28,7 @@ class RahuiDetail extends Component {
         <div>
         <SplitterLayout >
             <div >
-                <Map  />
+                <NewMap  />
             </div> 
 
             <div className="detailwrapper">

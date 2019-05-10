@@ -18,9 +18,7 @@ export function App({auth}) {
       <Route exact='true' path='/' component={Explore} />
       <Route path='/rahui/:id' component={RahuiDetail} />
     </Router>
-    {/* <Map/> */}
-    {/* <MapWithADrawingManager/> */}
-    <Explore/>
+]
  
     </div>  
   )
