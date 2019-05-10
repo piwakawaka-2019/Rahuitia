@@ -25,7 +25,11 @@ header .header_logo_title {
 }
 
 .detailwrapper {
-  padding: 50px
+  padding: 30px 70px 0px 70px
    
 }
 
+h1 {
+  font-size: 40px;
+  padding-bottom: 60px;
+}
