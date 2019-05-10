@@ -1,22 +1,24 @@
 import React from 'react'
-import {HashRouter as Router, Route, Link} from 'react-router-dom'
-import {connect} from 'react-redux'
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import Map from './Map'
+import Navbar from './Navbar'
 
-export function App({auth}) {
+export function App({ auth }) {
   return (
-    <div>  
-    <Router>    
-      <div className="wrapper">
-      Rāhui 
+    <div>
+      <Navbar />
+      <Router>
+        <div className="wrapper">
+          Rāhui
       </div>
-    </Router>
-    <Map/>
-    </div>  
+      </Router>
+      <Map />
+    </div>
   )
 }
 
-const mapStateToProps = ({auth}) => {
+const mapStateToProps = ({ auth }) => {
   return {
     auth
   }
