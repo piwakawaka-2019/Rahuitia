@@ -5,11 +5,15 @@ const router = express.Router()
 router.get('/', (req, res) => {
   db.getRahuiInformation()
   .then(rahui => { 
+    
     let arr = []
+
     while(rahui.length){
       let firstEntry = rahui.shift()
+
       firstEntry.iwi_name = [firstEntry.iwi_name]
       firstEntry.hapu_name = [firstEntry.hapu_name]
+      
       let duplicates = rahui.filter(item => {
         return firstEntry.id === item.id
       }) 
