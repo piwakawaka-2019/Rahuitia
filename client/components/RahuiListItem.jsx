@@ -1,40 +1,25 @@
 import React, { Component } from 'react';
+import RahuiDetail from './RahuiDetail';
 
 
-class RahuiListItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
+
+const RahuiListItem= props => {
+ const rahui = props.rahui
+ 
+ let handleclick=()=>{
+    console.log("hello")
     }
 
-   
-
-    render() { 
-        return (
-        <div>
-            <b>IWI: {this.props.rahui.iwi_name}</b>
-            <h2>{this.props.rahui.description}</h2>
+    return ( 
+        <div className="rahuilist" onClick={handleclick}>
+            <b>IWI: {rahui.iwi_name}</b>
+            <p> {rahui.description}</p>
             
             <hr></hr>
-    </div>  
+    </div>
     );
-    }
+    
 }
  
 export default RahuiListItem;
 
-// const RahuiListItem= props => {
-//  const rahui = props.rahui
-
-//     return ( 
-//         <div>
-//             <b>IWI: {rahui.iwi_name}</b>
-//             <h2>{rahui.description}</h2>
-            
-//             <hr></hr>
-//     </div>
-//     );
-    
-// }
- 
-// export default RahuiListItem;
