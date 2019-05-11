@@ -12,7 +12,7 @@ exports.seed = function(knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: "",
+          geo_ref: JSON.stringify([{lat: -36.836032, lng: 174.469357},{lat: -36.846032, lng: 174.70357},{lat: -36.816032, lng: 174.468357},{lat: -36.826032, lng: 174.469957}]),
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018'
         },
@@ -23,7 +23,7 @@ exports.seed = function(knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: "",
+          geo_ref: JSON.stringify([{lat: -36.836032, lng: 174.469357},{lat: -36.846032, lng: 174.70357},{lat: -36.816032, lng: 174.468357},{lat: -36.826032, lng: 174.469957}]),
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018'
         },
@@ -34,7 +34,7 @@ exports.seed = function(knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: "",
+          geo_ref: JSON.stringify([{lat: -36.836032, lng: 174.469357},{lat: -36.846032, lng: 174.70357},{lat: -36.816032, lng: 174.468357},{lat: -36.826032, lng: 174.469957}]),
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018'
         },
@@ -45,7 +45,7 @@ exports.seed = function(knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: "",
+          geo_ref: JSON.stringify([{lat: -36.836032, lng: 174.469357},{lat: -36.846032, lng: 174.70357},{lat: -36.816032, lng: 174.468357},{lat: -36.826032, lng: 174.469957}]),
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018'
         },
@@ -56,7 +56,7 @@ exports.seed = function(knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: "",
+          geo_ref: JSON.stringify([{lat: -36.836032, lng: 174.469357},{lat: -36.846032, lng: 174.70357},{lat: -36.816032, lng: 174.468357},{lat: -36.826032, lng: 174.469957}]),
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018'
         },
@@ -67,7 +67,7 @@ exports.seed = function(knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: "",
+          geo_ref: JSON.stringify([{lat: -36.836032, lng: 174.469357},{lat: -36.846032, lng: 174.70357},{lat: -36.816032, lng: 174.468357},{lat: -36.826032, lng: 174.469957}]),
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018'
         },
@@ -78,7 +78,7 @@ exports.seed = function(knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: "",
+          geo_ref: JSON.stringify([{lat: -36.836032, lng: 174.469357},{lat: -36.846032, lng: 174.70357},{lat: -36.816032, lng: 174.468357},{lat: -36.826032, lng: 174.469957}]),
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018'
         },
@@ -89,7 +89,7 @@ exports.seed = function(knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: "",
+          geo_ref: JSON.stringify([{lat: -36.836032, lng: 174.469357},{lat: -36.846032, lng: 174.70357},{lat: -36.816032, lng: 174.468357},{lat: -36.826032, lng: 174.469957}]),
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018'
         },
@@ -100,7 +100,7 @@ exports.seed = function(knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: "",
+          geo_ref: JSON.stringify([{lat: -36.836032, lng: 174.469357},{lat: -36.846032, lng: 174.70357},{lat: -36.816032, lng: 174.468357},{lat: -36.826032, lng: 174.469957}]),
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018'
         },
@@ -111,7 +111,7 @@ exports.seed = function(knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: "",
+          geo_ref: JSON.stringify([{lat: -36.836032, lng: 174.469357},{lat: -36.846032, lng: 174.70357},{lat: -36.816032, lng: 174.468357},{lat: -36.826032, lng: 174.469957}]),
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018'
         }
