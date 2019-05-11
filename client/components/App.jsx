@@ -6,19 +6,23 @@ import Explore from './Explore'
 import AddRahuiMap from './AddRahuiMap'
 import AddRahuiForm from './AddRahuiForm';
 // import Register from './Register'
+import AddRahuiMap from './NewMap'
+// import MapWithADrawingManager from './ReactMap'
+import RahuiDetail from './RahuiDetail';
 
 export function App({ auth }) {
   return (
     <div>
-      {/* <Router>
-        <div className="wrapper">
-          Rāhui
-      </div>
-        <Route path='/addrahui' render={AddRahuiMap} />
+      <Router>
+        <Nav />
+        <Route exact='true' path='/addrahui' component={AddRahuiMap} />
+        <Route exact='true' path='/' component={Explore} />
+        <Route path='/rahui/:id' component={RahuiDetail} />
       </Router>
-      <Explore /> */}
-      <AddRahuiForm />
-      {/* <Register /> */}
+      {/* <Map/> */}
+      {/* <MapWithADrawingManager/> */}
+      <Explore />
+
     </div>
   )
 }

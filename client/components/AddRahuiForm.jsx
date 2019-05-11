@@ -41,7 +41,7 @@ class AddRahuiForm extends React.Component {
 
     render() {
         // console.log(11, this.props)
-        fetchAllIwi()
+        // fetchAllIwi()
 
         // .then(iwi => {
         //     console.log(44, iwi)
@@ -128,16 +128,11 @@ class AddRahuiForm extends React.Component {
 
                     <input type="submit" value="Add Rahui" />
 
-
-
                 </form>
             </div>
         )
     }
 }
-
-
-
 
 const mapStateToProps = state => {
     return {
@@ -146,5 +141,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(AddRahuiForm);
-// export default AddRahuiForm
-
