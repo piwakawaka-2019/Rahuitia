@@ -7,16 +7,11 @@ import NewMap from "./NewMap"
 
 
 class RahuiDetail extends Component {
-  
-    // componentWillMount(){
-    //     this.props.dispatch(fetchAllRahui())
-    // }
 
     handleclick=()=>{
         window.location = `/`; 
         }
     
-
     render() { 
         let rahuiId = this.props.match.params.id;
         console.log(rahuiId, this.props)
@@ -28,7 +23,7 @@ class RahuiDetail extends Component {
         <div>
         <SplitterLayout >
             <div >
-                <NewMap zoom={14} coords={{lat: -41.267622, lng: 174.745222}} />
+                <NewMap color={"#2E86C1"} zoom={15} coords={geo_ref[0]} />
             </div> 
 
             <div className="detailwrapper">
