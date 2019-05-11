@@ -1,12 +1,9 @@
 import React from "react";
 import SplitterLayout from 'react-splitter-layout';
-
-
 import { connect } from "react-redux";
 import { fetchAllRahui} from "../actions/rahui";
-
-import RahuiListItem from "./RahuiListItem"
-import Map from './Map'
+import NewMap from "./NewMap";
+import RahuiList from "./RahuiList";
 
 
 class Explore extends React.Component {
@@ -20,20 +17,17 @@ class Explore extends React.Component {
     }
 
     render() { 
+        console.log( "explore", this.props)
         return (  
             <div >
                 <SplitterLayout >
                 <div >
-                 <Map />
+                 <NewMap color={"#FF4C4C"} zoom={6} coords={{lat: -41.267622, lng: 174.745222}}/>
                 </div> 
                 
                 <div className="detailwrapper">
-                <h1>Select to learn more about a Rāhui </h1>
-                 {this.props.allrahui.map(rahui => <RahuiListItem key={rahui.id} rahui={rahui} /> )}   
+                <RahuiList allrahui={this.props.allrahui} /> 
                 </div>
-                
-                
-                
                
                 </SplitterLayout>
                 

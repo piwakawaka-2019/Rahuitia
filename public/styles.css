@@ -25,11 +25,54 @@ header .header_logo_title {
 }
 
 .detailwrapper {
-  padding: 30px 70px 0px 70px
+  padding: 10px 70px 0px 70px
    
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 42px;
   padding-bottom: 60px;
+}
+
+.rahuilist {
+  cursor: pointer;
+  padding: 0px 10px 0px 10px
+}
+
+.rahuilist:hover{
+  background-color: rgb(216, 210, 255);
+  border-radius: 5px
+}
+
+b {
+  font-size: 14px
+}
+
+p {
+  font-size: 20px
+}
+
+button {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin: 0px 0px 20px 0px
+}
+
+.navbar {
+  width: 100%;
+  height: 10%;
+  display: grid;
+  grid-template-columns: 11fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-rows: none;
+}
+
+.navButton {
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Rasa', serif;
+  font-size: 1.8em;
 }

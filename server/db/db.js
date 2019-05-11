@@ -1,41 +1,20 @@
 const config = require('../../knexfile').development
-const db = require('knex')(config)
+const connection = require("./connection");
 const utils = require('./utils')
 
-function getBeers() {
-  return db('beers')
-  .then(beers => beers.map(utils.convertKeysSnakeCaseToCamelCase))
+
+function userExists(user_name, testDb) {
+  const db = testDb || connection
+
+  return db('users')
+    .where('user_name', user_name)
+    .then(users => users.length > 0)
 }
 
-function getOneBeer(id) {
-  return db('beers')
-  .where('id', id)
-  .first()
-  .then(utils.convertKeysSnakeCaseToCamelCase)
-}
-
-function addToCart() {
-  return db('beers')
-}
-
-
-// function removeFromCart() {
-
-// }
-
-
-// function updateQuantities() {
-
-// }
 
 
 
 
 module.exports = {
-  getBeers,
-  getOneBeer,
-  addToCart,
-  // removeFromCart,
-  // updateQuantities,
-
+  userExists,
 }
