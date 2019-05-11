@@ -24,34 +24,35 @@ function createUser(
       email: email,
       password_hash: hash
     })
-    .then(userIds => {
-      const userId = userIds[0];
-      return Promise.all(
-        iwi.map(iwiName => {
-          return writeIwi(iwiName, userId, db)
-        })
-      )
-      .then(() => {
+      .then(userIds => {
+        const userId = userIds[0];
         return Promise.all(
-          hapu.map(hapuName => {
-            return writeHapu(hapuName, userId, db)
+          iwi.map(iwiName => {
+            return writeIwi(iwiName, userId, db)
           })
-        )}
-      )
-    });
+        )
+          .then(() => {
+            return Promise.all(
+              hapu.map(hapuName => {
+                return writeHapu(hapuName, userId, db)
+              })
+            )
+          }
+          )
+      });
   });
 }
 
-function writeIwi(iwiName, userId, testDb){
+function writeIwi(iwiName, userId, testDb) {
   const db = testDb || connection
   return db('iwi')
-  .insert({ iwi_name: iwiName, user_id: userId })
+    .insert({ iwi_name: iwiName, user_id: userId })
 }
 
-function writeHapu(hapuName, userId, testDb){
+function writeHapu(hapuName, userId, testDb) {
   const db = testDb || connection
   return db('hapu')
-  .insert({ hapu_name: hapuName, user_id: userId })
+    .insert({ hapu_name: hapuName, user_id: userId })
 }
 
 
@@ -59,7 +60,7 @@ function writeHapu(hapuName, userId, testDb){
 function writeRahui(
   user_id,
   iwi,
-  hapu, 
+  hapu,
   description,
   korero,
   geo_ref,
@@ -91,7 +92,7 @@ function editRahui(
   date_placed,
   date_lifted,
   testDb
-){
+) {
   const db = testDb || connection
   return db('rahui')
   .where({ id: id })
@@ -169,10 +170,10 @@ function getRahuiTautoko(rahui_id, testDb) {
     .select();
 }
 
-function writeTautoko(obj, testDb){
+function writeTautoko(obj, testDb) {
   const db = testDb || connection
   return db('tautoko')
-  .insert(obj)
+    .insert(obj)
 }
 
 module.exports = {
