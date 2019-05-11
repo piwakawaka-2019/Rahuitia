@@ -2,6 +2,10 @@ const express = require('express')
 const db = require('../db/users')
 const router = express.Router()
 
+// get relevant functions.
+
+
+
 router.get('/', (req, res) => {
   db.getRahuiInformation()
   .then(rahui => { 
@@ -10,12 +14,12 @@ router.get('/', (req, res) => {
     while(rahui.length){
       let firstEntry = rahui.shift()
 
+      firstEntry.iwi = JSON.parse(firstEntry.iwi)
+      firstEntry.hapu = JSON.parse(firstEntry.hapu)
       firstEntry.iwi_name = [firstEntry.iwi_name]
       firstEntry.hapu_name = [firstEntry.hapu_name]
 
       firstEntry.geo_ref = JSON.parse(firstEntry.geo_ref)
-
-
 
       let duplicates = rahui.filter(item => {
         return firstEntry.id === item.id
@@ -44,4 +48,50 @@ router.get('/', (req, res) => {
   })
 
 
+  router.post('/', async (req, res) => {
+    //Save a rāhui //
+    try{
+        console.log(req.body)
+        const rahuiData = req.body;
+        const userId = rahuiData.userId
+        const iwi = rahuiData.iwi
+        const hapu = rahuiData.hapu
+        const description = rahuiData.description
+        const korero = rahuiData.korero
+        const geoRef = rahuiData.geoRef
+        const datePlaced = rahuiData.datePlaced
+        const dateLifted = rahuiData.dateLifted
+        await db.writeRahui(userId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted);
+    
+        res.status(200)
+    }
+    catch(err){
+        err => res.status(500).send({message: "Server Error"})
+    }
+})
+
+
+router.put('/:id', function(req, res, next){
+    try{
+      console.log(req.body)
+      const rahuiId = req.params.id;
+      const rahuiData = req.body;
+      const iwi = rahuiData.iwi
+      const hapu = rahuiData.hapu
+      const description = rahuiData.description
+      const korero = rahuiData.korero
+      const geoRef = rahuiData.geoRef
+      const datePlaced = rahuiData.datePlaced
+      const dateLifted = rahuiData.dateLifted
+      //await does not work here
+      db.editRahui(rahuiId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted);
+
+      res.status(200)
+  }
+  catch(err){
+      err => res.status(500).send({message: "Server Error"})
+  }
+})
+
 module.exports = router
+

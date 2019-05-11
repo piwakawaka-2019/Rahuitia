@@ -13,6 +13,8 @@ import About from "../components/about/About";
 import Team from "../components/about/Team";
 import Resourses from "../components/about/Resourses";
 
+import Login from "../components/Login";
+
 export function App({ auth }) {
   return (
     <div>
@@ -25,6 +27,9 @@ export function App({ auth }) {
         <Route path="/about/" component={About} />
         <Route path="/about/team" component={Team} />
         <Route path="/about/resourses" component={Resourses} />
+
+        <Route path="/Login/" component={Login} />
+
       </Router>
       {/* <Map/> */}
       {/* <MapWithADrawingManager/> */}

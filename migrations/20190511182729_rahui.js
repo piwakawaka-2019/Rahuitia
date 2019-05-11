@@ -2,6 +2,8 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable("rahui", table => {
     table.increments("id").primary();
     table.string("user_id");
+    table.string("iwi");
+    table.string("hapu")
     table.string("description");
     table.string("korero");
     table.string("geo_ref");
