@@ -65,6 +65,7 @@ function writeRahui(
   geo_ref,
   date_placed,
   date_lifted,
+  testDb
 ){
   const db = testDb || connection
   return db('rahui')
@@ -74,7 +75,7 @@ function writeRahui(
     hapu: hapu, 
     description: description,
     korero: korero,
-    geo_ref: geo_ref,
+    geo_ref: JSON.stringify(geo_ref),
     date_placed: date_placed,
     date_lifted: date_lifted,
   })
@@ -82,6 +83,8 @@ function writeRahui(
 
 function editRahui(
   id,
+  iwi,
+  hapu,
   description,
   korero,
   geo_ref,
@@ -93,6 +96,8 @@ function editRahui(
   return db('rahui')
   .where({ id: id })
   .update({
+    iwi: iwi,
+    hapu: hapu, 
     description:description,
     korero: korero,
     geo_ref: geo_ref,

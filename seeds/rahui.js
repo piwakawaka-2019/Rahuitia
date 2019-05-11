@@ -8,6 +8,8 @@ exports.seed = function(knex, Promise) {
         {
           id: 21,
           user_id: 1,
+          iwi: JSON.stringify(["Ngati Whatua"]),
+          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
           description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
@@ -19,6 +21,8 @@ exports.seed = function(knex, Promise) {
         {
           id: 22,
           user_id: 2,
+          iwi: JSON.stringify(["Ngati Whatua"]),
+          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
           description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
@@ -30,6 +34,8 @@ exports.seed = function(knex, Promise) {
         {
           id: 23,
           user_id: 3,
+          iwi: JSON.stringify(["Ngati Whatua"]),
+          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
           description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
@@ -41,6 +47,8 @@ exports.seed = function(knex, Promise) {
         {
           id: 24,
           user_id: 4,
+          iwi: JSON.stringify(["Ngati Whatua"]),
+          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
           description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
@@ -52,6 +60,8 @@ exports.seed = function(knex, Promise) {
         {
           id: 25,
           user_id: 5,
+          iwi: JSON.stringify(["Ngati Whatua"]),
+          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
           description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
@@ -63,6 +73,8 @@ exports.seed = function(knex, Promise) {
         {
           id: 26,
           user_id: 6,
+          iwi: JSON.stringify(["Ngati Whatua"]),
+          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
           description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
@@ -74,6 +86,8 @@ exports.seed = function(knex, Promise) {
         {
           id: 27,
           user_id: 7,
+          iwi: JSON.stringify(["Ngati Whatua"]),
+          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
           description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
@@ -85,6 +99,8 @@ exports.seed = function(knex, Promise) {
         {
           id: 28,
           user_id: 8,
+          iwi: JSON.stringify(["Ngati Whatua"]),
+          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
           description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
@@ -96,6 +112,8 @@ exports.seed = function(knex, Promise) {
         {
           id: 29,
           user_id: 9,
+          iwi: JSON.stringify(["Ngati Whatua"]),
+          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
           description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
@@ -107,6 +125,8 @@ exports.seed = function(knex, Promise) {
         {
           id: 30,
           user_id: 10,
+          iwi: JSON.stringify(["Ngati Whatua"]),
+          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
           description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           korero:
