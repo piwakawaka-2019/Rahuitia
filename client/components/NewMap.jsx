@@ -37,6 +37,7 @@ const NewMap = compose(
             strokeOpacity: 1,
             strokeWeight: 1
         }}/>
+
            
     </GoogleMap>
 );
