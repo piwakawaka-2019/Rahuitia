@@ -1,6 +1,6 @@
 import React from "react";
 
-import React from "react";
+
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -11,7 +11,7 @@ import AddRahuiMap from './NewMap'
 import RahuiDetail from './RahuiDetail';
 
 
-// import About from "../components/about/About";
+import About from "../components/about/About";
 import Team from "../components/about/Team";
 import Resourses from "../components/about/Resourses";
 
@@ -24,7 +24,7 @@ export function App({ auth }) {
       <Route exact='true' path='/' component={Explore} />
       <Route path='/rahui/:id' component={RahuiDetail} />
 
-      {/* <Route exact='true' path='/about/' component={About} /> */}
+      <Route  path='/about/' component={About} />
       <Route path='/about/team' component={Team} />
       <Route path='/about/resourses' component={Resourses} />
 

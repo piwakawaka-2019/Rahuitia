@@ -1,23 +1,54 @@
 import React, { Component } from "react";
 import Project from "./Project";
-import Resourses from "./Resourses";
-import Team from "./Team";
+
 
 class About extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visibility: "project"
+      name: "",
+      projectIsVisible: true
     };
   }
+
+  handleTeamClick = () => {
+    this.setState({
+      projectIsVisible: false
+
+    })
+    window.location = `#/about/team`;
+  }
+
+  handleResourcesClick = () => {
+    this.setState({
+      projectIsVisible: false
+      
+    })
+    window.location = `#/about/resourses`;
+  }
+
+  handleProjectClick = () => {
+    this.setState({
+      projectIsVisible: true
+      
+    })
+    
+    window.location = `#/about`;
+  }
+
+
   render() {
     return (
       <div>
         <h1>About</h1>
-        <button>Team</button>
-        <button>Resourses</button>
-        <button>Project</button>
-        <Project />
+        <button onClick={this.handleTeamClick}>Team</button>
+        <button  onClick={this.handleResourcesClick}>Resourses</button>
+        <button onClick={this.handleProjectClick}>Project</button>
+      
+        
+
+        {this.state.projectIsVisible ? <Project />:null }
+        
        
       </div>
     );
