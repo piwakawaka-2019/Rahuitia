@@ -3,7 +3,7 @@ import Project from "./Project";
 import Resourses from "./Resourses";
 import Team from "./Team";
 
-class about extends React.Component {
+class About extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,12 +13,15 @@ class about extends React.Component {
   render() {
     return (
       <div>
-        <Resourses />
+        <h1>About</h1>
+        <button>Team</button>
+        <button>Resourses</button>
+        <button>Project</button>
         <Project />
-        <Team />
+       
       </div>
     );
   }
 }
 
-export default about;
+export default About;
