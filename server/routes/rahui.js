@@ -12,11 +12,8 @@ router.get('/', (req, res) => {
 
       firstEntry.iwi_name = [firstEntry.iwi_name]
       firstEntry.hapu_name = [firstEntry.hapu_name]
-      
-      let deString = JSON.parse(firstEntry.geo_ref)
 
-
-      console.log(deString)
+      firstEntry.geo_ref = JSON.parse(firstEntry.geo_ref)
 
 
 
