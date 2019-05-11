@@ -24,15 +24,15 @@ class AddRahuiForm extends React.Component {
         this.props.dispatch(fetchAllIwi())
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
-        const data = new FormData(event.target);
+    // handleSubmit(event) {
+    //     event.preventDefault();
+    //     const data = new FormData(event.target);
 
-        fetch('/api/form-submit-url', {
-            method: 'POST',
-            body: data,
-        });
-    }
+    //     fetch('/api/', {
+    //         method: 'POST',
+    //         body: data,
+    //     });
+    // }
 
     handleSelect(event) {
         console.log(event.target.value);
@@ -61,7 +61,9 @@ class AddRahuiForm extends React.Component {
         console.log(this.props.area, "area")
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form
+                // onSubmit={this.handleSubmit}
+                >
                     <div>
                         <h1>Add a Rāhui</h1>
                         <h2>Tell us about the rāhui</h2>
@@ -116,7 +118,7 @@ class AddRahuiForm extends React.Component {
                                         }
                                     })}
                                 </select>
-                                {this.state.hapuSelected && <p>Congrats you picked everything</p>}
+                                {this.state.hapuSelected && <p>next step</p>}
                             </div>
                         )}
                     </div>

@@ -12,11 +12,14 @@ import RahuiDetail from "./RahuiDetail";
 import About from "../components/about/About";
 import Team from "../components/about/Team";
 import Resourses from "../components/about/Resourses";
+import AddRahuiForm from "./AddRahuiForm";
+// import ReactMap from "./ReactMap"
+import MapWithADrawingManager from "./ReactMap"
 
 export function App({ auth }) {
   return (
     <div>
-      <Router>
+      {/* <Router>
         <Nav />
         <Route exact="true" path="/addrahui" component={AddRahuiMap} />
         <Route exact="true" path="/" component={Explore} />
@@ -25,12 +28,15 @@ export function App({ auth }) {
         <Route path="/about/" component={About} />
         <Route path="/about/team" component={Team} />
         <Route path="/about/resourses" component={Resourses} />
-      </Router>
+      </Router> */}
       {/* <Map/> */}
       {/* <MapWithADrawingManager/> */}
       {/* <Explore/> */}
 
       {/* <About /> */}
+      {/* <AddRahuiForm /> */}
+      {/* <ReactMap /> */}
+      <MapWithADrawingManager />
     </div>
   );
 }
