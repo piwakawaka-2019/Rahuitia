@@ -3,12 +3,13 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Map from './Map'
 import Explore from './Explore'
-import AddRahuiMap from './AddRahuiMap'
+// import AddRahuiMap from './AddRahuiMap'
 import AddRahuiForm from './AddRahuiForm';
 // import Register from './Register'
 import AddRahuiMap from './NewMap'
 // import MapWithADrawingManager from './ReactMap'
 import RahuiDetail from './RahuiDetail';
+import Nav from './Nav'
 
 export function App({ auth }) {
   return (
