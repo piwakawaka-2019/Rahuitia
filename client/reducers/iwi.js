@@ -3,7 +3,7 @@ const initialState = [];
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SAVE_IWI':
-            return (action.iwi);
+            return action.iwi;
         default:
             return state;
     }

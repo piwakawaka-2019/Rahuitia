@@ -4,10 +4,10 @@ import { getIwi } from '../apis/iwi'
 
 
 export function saveAllIwi(iwiArr) {
-    console.log(iwiArr)
+
     return {
         type: 'SAVE_IWI',
-        iwi: iwiArr,
+        iwi: iwiArr
     }
 }
 

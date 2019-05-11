@@ -80,6 +80,7 @@ function writeRahui(
     date_placed: date_placed,
     date_lifted: date_lifted,
   })
+
 }
 
 function editRahui(
