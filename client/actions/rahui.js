@@ -1,6 +1,12 @@
 import { getRahui } from '../apis/rahui'
 
 
+export function selectedRahui () {
+    return {
+      type: 'SELECTED_RAHUI',
+      zoom: 14
+    }
+}
 
 
 export function saveAllRahui (rahuiArr) {

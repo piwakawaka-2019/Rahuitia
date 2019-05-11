@@ -8,6 +8,7 @@ import { fetchAllRahui} from "../actions/rahui";
 import RahuiListItem from "./RahuiListItem"
 import Map from './Map'
 import NewMap from "./NewMap";
+import RahuiList from "./RahuiList";
 
 
 class Explore extends React.Component {
@@ -26,16 +27,12 @@ class Explore extends React.Component {
             <div >
                 <SplitterLayout >
                 <div >
-                 <NewMap data={this.props.allrahui} zoom={7}/>
+                 <NewMap data={this.props.allrahui} />
                 </div> 
                 
                 <div className="detailwrapper">
-                <h1>Select to learn more about a Rāhui </h1>
-                 {this.props.allrahui.map(rahui => <RahuiListItem key={rahui.id} rahui={rahui} /> )}   
+                <RahuiList allrahui={this.props.allrahui} /> 
                 </div>
-                
-                
-                
                
                 </SplitterLayout>
                 
