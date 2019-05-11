@@ -41,7 +41,6 @@ class NewMap extends Component {
             strokeWeight: 1
       }}/>
 
-
      </GoogleMap>
   ));
 

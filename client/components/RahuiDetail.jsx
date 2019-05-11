@@ -21,7 +21,7 @@ class RahuiDetail extends Component {
         let rahuiId = this.props.match.params.id;
         console.log(rahuiId, this.props)
     
-        let {iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, email} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
+        let {id, iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, email} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
         
         
         return ( 
