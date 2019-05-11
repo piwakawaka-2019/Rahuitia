@@ -54,13 +54,6 @@ function writeHapu(hapuName, userId, testDb){
   .insert({ hapu_name: hapuName, user_id: userId })
 }
 
-// function userExists(user_name, testDb) {
-//   const db = testDb || connection
-
-//   return db('users')
-//     .where('user_name', user_name)
-//     .then(users => users.length > 0)
-// }
 
 //**************/write rahui function ()
 function writeRahui(
