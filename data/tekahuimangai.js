@@ -1,10 +1,10 @@
 module.exports = [
     {
         "Te Tai Tokerau": [
+            { "Ngāi Takoto": [] },
+            { "Ngāti Kurī": [] },
+            { "Te Aupōuri": [] },
             {
-                "Ngāi Takoto": [],
-                "Ngāti Kurī": [],
-                "Te Aupōuri": [],
                 "Ngāti Kahu": [
                     "Matakairiri / Pikaahu",
                     "Matarahurahu",
@@ -21,7 +21,9 @@ module.exports = [
                     "Te Tahawai",
                     "Te Whānau Moana",
                     "Te Whānau Moana / Te Rorohuri",
-                ],
+                ]
+            },
+            {
                 "Ngāti Kahu ki Whangaroa": [
                     "Hāhi Katorika",
                     "Hāpeta",
@@ -33,7 +35,9 @@ module.exports = [
                     "Riwhi",
                     "Te Hōia",
                     "Te Pania",
-                ],
+                ]
+            },
+            {
                 "Ngāpuhi / Ngāti Kahu ki Whaingaroa": [
                     "Hāhi Katorika",
                     "Hāpeta",
@@ -45,7 +49,10 @@ module.exports = [
                     "Riwhi",
                     "Te Hōia",
                     "Te Pania",
-                ],
+                ]
+            },
+
+            {
                 "Te Rarawa": [
                     "Kōhatutaka",
                     "Ngāi Tūpoto",
@@ -77,7 +84,9 @@ module.exports = [
                     "Te Uri o Tai",
                     "Te Waiariki",
                     "Te Whānau Pani",
-                ],
+                ]
+            },
+            {
                 "Te Roroa": [
                     "Matatina",
                     "Pananawe",
@@ -85,7 +94,9 @@ module.exports = [
                     "Te Whakamaharatanga (Waimamaku)",
                     "Waikarā",
                     "Waikaraka",
-                ],
+                ]
+            },
+            {
                 "Ngāpuhi": [
                     "Ngā Uri o Puhatahi",
                     "Ngāti Hao",
@@ -183,7 +194,9 @@ module.exports = [
                     "Ngāti Te Tāwera",
                     "Te Kau i Mua",
                     "Te Orewai",
-                ],
+                ]
+            },
+            {
                 "Ngātiwai": [
                     "Ngāti Kororā",
                     "Ngāti Manuhiri",
@@ -195,7 +208,9 @@ module.exports = [
                     "Te Uri o Hikihiki",
                     "Te Whānau a Rangiwhaakahu",
                     "Te Whānau Whero"
-                ],
+                ]
+            },
+            {
                 "Ngāti Whātua": [
                     "Ngāti Hinga",
                     "Ngāti Torehina",
@@ -219,7 +234,9 @@ module.exports = [
                     "Ngā Oho",
                     "Te Taoū",
                     "Te Uri Ngutu",
-                ],
+                ]
+            },
+            {
                 "Te Uri o Hau": [
                     "Ngāi Tāhuhu",
                     "Ngāti Kaiwhare",
@@ -230,8 +247,10 @@ module.exports = [
                     "Ngāti Tāhinga",
                     "Te Uri o Hau",
                 ]
-            },
-        ],
+            }
+        ]
+    },
+    {
         "Tāmaki": [
             {
                 "Ngāti Whātua": [
@@ -257,38 +276,55 @@ module.exports = [
                     "Ngā Oho",
                     "Te Taoū",
                     "Te Uri Ngutu",
-                ],
+                ]
+            },
+
+            {
                 "Ngāti Whātua o Kaipara": [
                     "Ngāti Hine",
                     "Ngāti Rāngo (Rongo)",
                     "Ngāti Whātua Tūturu",
                     "Te Taoū",
-                ],
+                ]
+            },
+            {
                 "Ngāti Whātua o Ōrākei": [
                     "Ngā Oho",
                     "Te Taoū",
                     "Te Uri Ngutu",
-                ],
+                ]
+            },
+            {
                 "Ngāti Rehua": [
                     "Kawa",
                     "Matapōuri",
                     "Motairehe",
                     "Whananāki",
-                ],
+                ]
+            },
+            {
                 "Ngāti Manuhiri": [
                     "Ōmaha",
-                ],
+                ]
+            },
+            {
                 "Te Kawerau a Maki": [
                     "Te Henga",
-                ],
+                ]
+            },
+            {
                 "Ngāti Tamaoho": [
                     "Mangatangi",
                     "Ngā Hau e Whā",
                     "Whātāpaka",
-                ],
+                ]
+            },
+            {
                 "Te Ākitai Waiohua": [
                     "Ngāti Pare Waiohua",
-                ],
+                ]
+            },
+            {
                 "Ngāti Maru (Hauraki)": [
                     "Ngāti Hape",
                     "Ngāti Hauauru",
@@ -308,12 +344,16 @@ module.exports = [
                     "Ngāti Wawenga",
                     "Ngāti Whanga",
                     "Te Uringahau",
-                ],
+                ]
+            },
+            {
                 "Te Patukirikiri": [
                     "Ngāti Rai",
                     "Ngāti Taukaka",
                     "Ngāti Taurua",
-                ],
+                ]
+            },
+            {
                 "Ngāti Paoa": [
                     "Matekiwaho",
                     "Ngamuri",
@@ -351,19 +391,27 @@ module.exports = [
                     "Te Uri Karaka",
                     "Te Uri o Haupa",
                     "Waihina",
-                ],
+                ]
+            },
+            {
                 "Ngāi Tai ki Tāmaki": [
                     "Umupuia",
                     "Whātāpaka",
-                ],
+                ]
+            },
+            {
                 "Ngāti Tamaterā": [
                     "Taharua",
                     "Te Paea o Hauraki",
                     "Te Pai o Hauraki",
-                ],
+                ]
+            },
+            {
                 "Ngāti Whanaunga": [
                     "Wharekawa",
-                ],
+                ]
+            },
+            {
                 "Ngāti Te Ata": [
                     "Ngāti Hana",
                     "Ngāti Huiau",
@@ -385,7 +433,9 @@ module.exports = [
                     "Te Uri O Te Oro",
                     "Te Uri Raro",
                     "Te Whānau Pani",
-                ],
+                ]
+            },
+            {
                 "Waikato": [
                     "Ngāi Tai",
                     "Ngāti Āmaru",
@@ -420,17 +470,20 @@ module.exports = [
                     "Ngāti Whāwhākia",
                     "Tainui",
                     "Te Ākitai",
-                ],
-
+                ]
             },
         ],
+    },
+    {
         "Hauraki": [
             {
                 "Ngāti Hako": [
                     "Kerepehi",
                     "Paeahi",
                     "Tirohia (Te Kotahitanga)",
-                ],
+                ]
+            },
+            {
                 "Ngāti Hei": [
                     "Ngāti Koheru",
                     "Ngāti Manukarere",
@@ -442,7 +495,9 @@ module.exports = [
                     "Ngāti Tuhukea",
                     "Ngāti Whakaruru",
                     "Te Rapu Pō",
-                ],
+                ]
+            },
+            {
                 "Ngāti Maru (Hauraki)": [
                     "Ngāti Hape",
                     "Ngāti Hauauru",
@@ -462,7 +517,9 @@ module.exports = [
                     "Ngāti Wawenga",
                     "Ngāti Whanga",
                     "Te Uringahau",
-                ],
+                ]
+            },
+            {
                 "Ngāti Paoa": [
                     "Matekiwaho",
                     "Ngamuri",
@@ -500,47 +557,66 @@ module.exports = [
                     "Te Uri Karaka",
                     "Te Uri o Haupa",
                     "Waihina",
-                ],
+                ]
+            },
+            {
                 "Te Patukirikiri": [
                     "Ngāti Rai",
                     "Ngāti Taukaka",
                     "Ngāti Taurua",
-                ],
+                ]
+            },
+            {
                 "Te Patukirikiri": [
                     "Ngāti Rai",
                     "Ngāti Taukaka",
                     "Ngāti Taurua",
-                ],
+                ]
+            },
+            {
                 "Ngāti Porou ki Harataunga ki Mataora": [
                     "Harataunga",
                     "Mataora",
-                ],
+                ]
+            },
+            {
                 "Ngāti Pūkenga ki Waiau": [
                     "Ngāti Kiorekino",
                     "Ngāti Te Rākau",
                     "Te Tāwera",
-                ],
+                ]
+            },
+            {
                 "Ngāti Tamaterā": [
                     "Taharua",
                     "Te Paea o Hauraki",
                     "Te Pai o Hauraki",
-                ],
+                ]
+            },
+            {
                 "Ngāi Tai ki Tāmaki": [
                     "Umupuia",
                     "Whātāpaka",
-                ],
+                ]
+            },
+            {
                 "Ngāti Rāhiri Tumutumu": [
                     "Tumutumu (Tui Pā)",
-                ],
+                ]
+            },
+            {
                 "Ngāti Tara Tokanui": [
                     "Ngahutoitoi",
-                ],
+                ]
+            },
+            {
                 "Ngāti Whanaunga": [
                     "Wharekawa",
-                ],
-
-            },
-        ],
+                ]
+            }
+        ]
+    },
+    {
         "Tainui": [
             {
                 "Waikato": [
@@ -577,19 +653,25 @@ module.exports = [
                     "Ngāti Whāwhākia",
                     "Tainui",
                     "Te Ākitai",
-                ],
+                ]
+            },
+            {
                 "Ngāti Korokī Kahukura": [
                     "Ngāti Hourua",
                     "Ngāti Ueroa",
                     "Ngāti Waihoro",
-                ],
+                ]
+            },
+            {
                 "Ngāti Hauā": [
                     "Ngāti Rangi Tawhaki",
                     "Ngāti Te Oro",
                     "Ngāti Te Rangitaupi",
                     "Ngāti Waenganui",
                     "Ngāti Werewere",
-                ],
+                ]
+            },
+            {
                 "Raukawa": [
                     "Ngāti Korokī",
                     "Ngāti Mahuta",
@@ -619,7 +701,9 @@ module.exports = [
                     "Rereahu",
                     "Waenganui",
                     "Werokoko",
-                ],
+                ]
+            },
+            {
                 "Ngāti Hinerangi": [
                     "Ngāti Kura",
                     "Ngāti Rangi",
@@ -629,7 +713,9 @@ module.exports = [
                     "Ngāti Tokotoko",
                     "Ngāti Whakamaungarangi",
                     "Uri o Tangata",
-                ],
+                ]
+            },
+            {
                 "Maniapoto": [
                     "Huiao",
                     "Kinohaku",
@@ -704,14 +790,21 @@ module.exports = [
                     "Rōrā",
                     "Te Kanawa",
                     "Tupu",
-                ],
+                ]
+            },
+            {
                 "Pouākani": [
                     "Mōkai",
-                ],
-                "Maraeroa A & B": [],
-
+                ]
             },
-        ],
+            {
+                "Maraeroa A & B": [
+
+                ],
+            }
+        ]
+    },
+    {
         "Tauranga Moana": [
             {
                 "Ngāti Pūkenga": [
@@ -724,6 +817,8 @@ module.exports = [
                     "Ngāti Whakina",
                     "Te Tāwera",
                 ],
+            },
+            {
                 "Ngāi Te Rangi": [
                     "Ngā Pōtiki",
                     "Ngāi Tamawhariua",
@@ -735,7 +830,9 @@ module.exports = [
                     "Ngāti Tapu",
                     "Ngāti Tauaiti",
                     "Te Ngare",
-                ],
+                ]
+            },
+            {
                 "Ngāti Ranginui": [
                     "Ngāi Tamarawaho",
                     "Ngāi Te Ahi",
@@ -750,6 +847,8 @@ module.exports = [
                 ],
             },
         ],
+    },
+    {
         "Te Arawa Waka": [
             {
                 "Ngāti Tūwharetoa": [
@@ -781,10 +880,14 @@ module.exports = [
                     "Ngāti Wairangi",
                     "Ngāti Wheoro",
                     "Te Kapa o Te Rangiita",
-                ],
+                ]
+            },
+            {
                 "Ngāti Tūrangitukua": [
                     "Hīrangi",
-                ],
+                ]
+            },
+            {
                 "Ngāti Tūwharetoa (Bay of Plenty)": [
                     "Ngāi Tamarangi",
                     "Ngāti Iramoko",
@@ -795,11 +898,15 @@ module.exports = [
                     "Ngāti Umutahi",
                     "Te Aotahi",
                     "Te Tāwera",
-                ],
+                ]
+            },
+            {
                 "Ngāti Mākino": [
                     "Ngāti Mākino",
                     "Ngāti Te Awhe",
-                ],
+                ]
+            },
+            {
                 "Ngāti Pikiao": [
                     "Ngāti Hinekura",
                     "Ngāti Hinerangi",
@@ -810,21 +917,29 @@ module.exports = [
                     "Ngāti Tamateatutahi",
                     "Ngāti Te Rangiunuora",
                     "Ngāti Te Takinga",
-                ],
+                ]
+            },
+            {
                 "Ngāti Rangiteaorere": [
                     "Ngāti Rangiteaorere",
                     "Ngāti Tuteniu",
-                ],
+                ]
+            },
+            {
                 "Tapuika": [
                     "Ngāti Kurī",
                     "Ngāti Marukukere",
                     "Ngāti Moko",
                     "Ngāti Tuheke",
-                ],
+                ]
+            },
+            {
                 "Ngāti Tarāwhai": [
                     "Ngāti Hinemihi	",
                     "Ngāti Rangitakaroro",
-                ],
+                ]
+            },
+            {
                 "Tūhourangi": [
                     "Hurunga Te Rangi",
                     "Ngāti Hinemihi",
@@ -838,7 +953,9 @@ module.exports = [
                     "Ngāti Uruhina",
                     "Ngāti Wahiao",
                     "Tūhourangi",
-                ],
+                ]
+            },
+            {
                 "Te Ure o Uenukukōpako / Ngāti Whakaue": [
                     "Ngāti Hurunga Te Rangi",
                     "Ngāti Karenga",
@@ -863,38 +980,50 @@ module.exports = [
                     "Ngati Te Kanawa",
                     "Ngāti Te Ngākau",
                     "Ngāti Tura",
-                ],
+                ]
+            },
+            {
                 "Waitaha": [
                     "Haraki",
                     "Manoeka",
-                ],
+                ]
+            },
+            {
                 "Ngāti Tahu / Ngāti Whaoa": [
                     "Ngāti Mataarae",
                     "Ngāti Rahurahu",
                     "Ngāti Tahu",
                     "Ngāti Te Rama",
                     "Ngāti Whaoa",
-                ],
+                ]
+            },
+            {
                 "Ngāti Kea / Ngāti Tuarā": [
                     "Ngāti Kearoa",
                     "Ngāti Tuarā",
-                ],
+                ]
+            },
+            {
                 "Ngāti Rongomai": [
                     "Ngāti Rongomai",
-                ],
+                ]
+            },
+            {
                 "Ngāti Rangiwewehi": [
                     "Ngāti Rangiwewehi ki Ta",
                     "Ngāti Rangiwewehi ki Uta",
-                ],
+                ]
+            },
+            {
                 "Ngāti Rangitihi": [
                     "Ngāti Mahi",
                     "Ngāti Rangitihi",
                     "Ngāti Tionga",
-                ],
-
-
-            },
-        ],
+                ]
+            }
+        ]
+    },
+    {
         "Mātaatua": [
             {
                 "Ngāti Awa": [
@@ -921,13 +1050,17 @@ module.exports = [
                     "Te Whānau o Tariao Tapuke",
                     "Tuariki",
                     "Warahoe",
-                ],
+                ]
+            },
+            {
                 "Ngāti Manawa": [
                     "Moewhare",
                     "Ngāi Tokowaru",
                     "Ngāti Hui",
                     "Ngāti Koro",
-                ],
+                ]
+            },
+            {
                 "Ngāti Whare": [
                     "Ngāti Hāmua ki Te Whaitii",
                     "Ngāti Kohiwii",
@@ -937,10 +1070,14 @@ module.exports = [
                     "Ngāti Tuahiwii",
                     "Ngāti Whare ki Ngā Pōtiki",
                     "Warahoe ki Te Whaitii",
-                ],
+                ]
+            },
+            {
                 "Ngāitai (Bay Of Plenty)": [
                     "Torere",
-                ],
+                ]
+            },
+            {
                 "Whakatōhea": [
                     "Ngāi Tamahaua (Ngāi Tama)",
                     "Ngāti Irapuaia (Ngāti Ira)",
@@ -948,7 +1085,9 @@ module.exports = [
                     "Ngāti Patumoana (Ngāti Patu)",
                     "Ngāti Ruatākena (Ngāti Rua)",
                     "Te Ūpokorehe",
-                ],
+                ]
+            },
+            {
                 "Te Whānau a Apanui": [
                     "Te Whānau a Haraawaka",
                     "Te Whānau a Hikarukutai",
@@ -963,7 +1102,9 @@ module.exports = [
                     "Te Whānau a Te Ēhutu",
                     "Te Whānau a Toihau / Hinetekahu",
                     "Te Whānau a Tutawake",
-                ],
+                ]
+            },
+            {
                 "Tūhoe": [
                     "Tamakaimoana",
                     "Kākahu Tāpiki",
@@ -1002,15 +1143,19 @@ module.exports = [
                     "Upokorehe",
                     "Ngāti Haka",
                     "Patuheuheu",
-                ],
+                ]
+            },
+            {
                 "Ngāti Ruapani mai Waikaremoana": [
                     "Ngati Hinekura",
                     "Ngāti Taraparaoa",
                     "Te Whānau Pani",
-                ],
-
+                ]
             },
-        ],
+        ]
+    },
+
+    {
         "Te Tai Rāwhiti": [
             {
 
@@ -1065,7 +1210,9 @@ module.exports = [
                     "Te Whānau a Te Rangipureora",
                     "Ngāti Konohi",
                     "Ngāti Oneone",
-                ],
+                ]
+            },
+            {
                 "Te Aitanga ā Māhaki": [
                     "Ngā Pōtiki",
                     "Ngāi Tamatea",
@@ -1076,24 +1223,29 @@ module.exports = [
                     "Te Whānau a Iwi",
                     "Te Whānau a Kai",
                     "Te Whānau a Taupara",
-                ],
+                ]
+            },
+            {
                 "Rongowhakaata": [
                     "Ngāi Tāwhiri",
                     "Ngāti Kaipoho",
                     "Ngāti Maru",
                     "Ruapani",
                     "Te Whānau a Iwi",
-                ],
+                ]
+            },
+            {
                 "Ngāi Tāmanuhiri": [
                     "Ngāi Tawehi",
                     "Ngāti Kahutia",
                     "Ngāti Rangitauwhiwhia",
                     "Ngāti Rangiwaho",
                     "Ngāti Rangiwahomatua",
-                ],
-
-            },
-        ],
+                ]
+            }
+        ]
+    },
+    {
         "Tākitimu": [
             {
                 "Ngāti Kahungunu": [
@@ -1216,7 +1368,9 @@ module.exports = [
                     "Tamahau",
                     "Te Hika a Pāpāuma ki Wairarapa",
                     "Whiunga",
-                ],
+                ]
+            },
+            {
                 "Te Wairoa iwi and hapu": [
                     "Ngāti Mākoro",
                     "Ngāti Tamaterangi",
@@ -1246,7 +1400,9 @@ module.exports = [
                     "Ngāi Te Ipu",
                     "Ngāti Hine",
                     "Ngāti Hinepua",
-                ],
+                ]
+            },
+            {
                 "Ngāti Pāhauwera": [
                     "Ngā Uri-o-Māmangu",
                     "Ngāi Tahu",
@@ -1332,10 +1488,14 @@ module.exports = [
                     "Ngāti Te Rangitakuao",
                     "Ngāti Tuhemata",
                     "Ngāti Wera",
-                ],
+                ]
+            },
+            {
                 "Ngāti Hineuru": [
                     "Te Hāroto",
-                ],
+                ]
+            },
+            {
                 "Maungaharuru Tangitū Hapū": [
                     "Marangatuhetaua (Ngāti Tū)",
                     "Ngāi Tahu",
@@ -1343,7 +1503,9 @@ module.exports = [
                     "Ngāi Te Ruruku ki Tangoio",
                     "Ngāti Kurumōkihi (Ngāi Tātara)",
                     "Ngāti Whakaari",
-                ],
+                ]
+            },
+            {
                 "Ahuriri Hapū": [
                     "Ngāi Tāwhao",
                     "Ngāi Te Ruruku ki Tangoio",
@@ -1352,7 +1514,9 @@ module.exports = [
                     "Ngāti Matepu",
                     "Ngāti Pārau",
                     "Ngāti Tū",
-                ],
+                ]
+            },
+            {
                 "Ngāti Kahungunu ki Heretaunga Tamatea": [
                     "Ngai Tahu ki Takapau",
                     "Ngai Te Ao",
@@ -1396,8 +1560,10 @@ module.exports = [
                     "Ngati Whakaiti",
                     "Ngāti Whatuiāpiti",
                     "Rangitotohu",
-                ],
-                "Ngāti Kahungunu ki Wairarapa - Tāmaki Nui ā Rua": [],
+                ]
+            },
+            { "Ngāti Kahungunu ki Wairarapa - Tāmaki Nui ā Rua": [] },
+            {
                 "Rangitāne": [
                     "Ngāti Hineaute",
                     "Ngāti Kapuārangi",
@@ -1435,13 +1601,17 @@ module.exports = [
                     "Ngāti Te Whakamana",
                     "Ngāti Te Whātui",
                     "Ngāti Tūkoko",
-                ],
-            },
-        ],
+                ]
+            }
+        ]
+    },
+    {
         "Hauāuru": [
             {
-                "Ngāti Tama": [],
-                "Ngāti Mutunga": [],
+                "Ngāti Tama": []
+            },
+            { "Ngāti Mutunga": [] },
+            {
                 "Te Atiawa (Taranaki)": [
                     "Manukorihi",
                     "Ngāti Rāhiri",
@@ -1449,7 +1619,9 @@ module.exports = [
                     "Otaraua",
                     "Pukerangiora",
                     "Puketapu",
-                ],
+                ]
+            },
+            {
                 "Taranaki": [
                     "Manukorihi",
                     "Ngāti Rāhiri",
@@ -1457,7 +1629,9 @@ module.exports = [
                     "Otaraua",
                     "Pukerangiora",
                     "Puketapu",
-                ],
+                ]
+            },
+            {
                 "Ngāti Maru (Taranaki)": [
                     "Ngāriki",
                     "Ngāti Hinemōkai",
@@ -1467,7 +1641,9 @@ module.exports = [
                     "Ngāti Tamakehu",
                     "Ngāti Tamatāpui",
                     "Ngāti Te Ika",
-                ],
+                ]
+            },
+            {
                 "Ngāruahine": [
                     "Kanihi - Umutahi",
                     "Ngāti Haua",
@@ -1475,7 +1651,9 @@ module.exports = [
                     "Ngāti Tamaahuroa me Tītahi",
                     "Ngāti Tū",
                     "Ōkahu - Inuāwai",
-                ],
+                ]
+            },
+            {
                 "Ngāti Ruanui": [
                     "Ahitahi",
                     "Araukūku",
@@ -1493,7 +1671,9 @@ module.exports = [
                     "Rangitāwhi",
                     "Tuatahi",
                     "Tūwhakaehu",
-                ],
+                ]
+            },
+            {
                 "Ngā Rauru Kītahi": [
                     "Kairākau",
                     "Manaia",
@@ -1511,7 +1691,9 @@ module.exports = [
                     "Pukorokoro",
                     "Rangitāwhi",
                     "Tamareheroto",
-                ],
+                ]
+            },
+            {
                 "Whanganui Iwi / Te Atihaunui a Pāpārangi": [
                     "Ngāti Haua",
                     "Ngāti Hauaroa",
@@ -1542,7 +1724,9 @@ module.exports = [
                     "Ngāti Tuera",
                     "Ngāti Tupoho",
                     "Te Awa Iti",
-                ],
+                ]
+            },
+            {
                 "Ngāti Hāua (Upper Whanganui)": [
                     "Ngāti Hāua",
                     "Ngāti Hāuaroa",
@@ -1555,7 +1739,9 @@ module.exports = [
                     "Ngāti Ruru",
                     "Ngāti Tū",
                     "Ngāti Wera/Tuwera",
-                ],
+                ]
+            },
+            {
                 "Te Korowai o Wainuiārua (Central Whanganui)": [
                     "Ngāti Atamira",
                     "Ngāti Hinekura",
@@ -1568,7 +1754,9 @@ module.exports = [
                     "Ngāti Tukaiora",
                     "Ngāti Uenuku",
                     "Patutokotoko",
-                ],
+                ]
+            },
+            {
                 "Whanganui Land Settlement (Lower Whanganui)": [
                     "Ngā Paerangi",
                     "Ngā Poutama",
@@ -1589,8 +1777,10 @@ module.exports = [
                     "Ngāti Tupoho",
                     "Tamareheroto",
                     "Te Awa Iti",
-                ],
-                "Ngāti Rangi": [
+                ]
+            },
+            {
+                "}Ngāti Rangi": [
                     "Ngāi Tuhi Ariki",
                     "Ngāti Hīoi",
                     "Ngāti Parenga",
@@ -1603,7 +1793,9 @@ module.exports = [
                     "Ngāti Tongaiti",
                     "Ngāti Tui-o-Nuku",
                     "Uenukumanawawiri",
-                ],
+                ]
+            },
+            {
                 "Ngāti Apa": [
                     "Ngā Pōtiki",
                     "Ngāti Huri",
@@ -1640,7 +1832,9 @@ module.exports = [
                     "Ngāti Huru Te Rā",
                     "Ngāti Paenga",
                     "Ngāti Tukoreo",
-                ],
+                ]
+            },
+            {
                 "Ngāti Hauiti": [
                     "Ngāti Haukaha",
                     "Ngāti Hinemanu",
@@ -1653,11 +1847,11 @@ module.exports = [
                     "Ngāti Tumōkai",
                     "Ngāti Upokoiri",
                     "Ngāti Whiti-Hauiti",
-                ],
-
-
-            },
-        ],
+                ]
+            }
+        ]
+    },
+    {
         "Te Moana O Raukawa": [
             {
                 "Rangitāne": [
@@ -1697,7 +1891,9 @@ module.exports = [
                     "Ngāti Te Whakamana",
                     "Ngāti Te Whātui",
                     "Ngāti Tūkoko",
-                ],
+                ]
+            },
+            {
                 "Muaūpoko": [
                     "Ngāi Te Ao",
                     "Ngārue",
@@ -1706,7 +1902,9 @@ module.exports = [
                     "Ngāti Tamarangi",
                     "Ngāti Whanokirangi",
                     "Punahau",
-                ],
+                ]
+            },
+            {
                 "Ngāti Raukawa ki te Tonga": [
                     "Ngāti Hikitanga",
                     "Ngāti Huia",
@@ -1730,21 +1928,29 @@ module.exports = [
                     "Ngāti Tūranga",
                     "Ngāti Wehi Wehi",
                     "Ngāti Whakatere",
-                ],
+                ]
+            },
+            {
                 "Ngāti Toa Rangatira": [
                     "Hongoeka",
                     "Takapuwahia",
                     "Wairau",
                     "Whakatū",
-                ],
+                ]
+            },
+            {
                 "Te Atiawa ki Whakarongotai": [
                     "Whakarongotai",
-                ],
-                "Te Atiawa (Wellington)": [],
-                "Taranaki Whānui ki te Upoko o te Ika": [],
-
+                ]
             },
-        ],
+            { "Te Atiawa (Wellington)": [] },
+            {
+                "Taranaki Whānui ki te Upoko o te Ika": [
+                ]
+            },
+        ]
+    },
+    {
         "Te Tau Ihu": [
             {
                 "Ngāti Toa Rangatira": [
@@ -1752,40 +1958,56 @@ module.exports = [
                     "Takapuwahia",
                     "Wairau",
                     "Whakatū",
-                ],
+                ]
+            },
+            {
                 "Te Atiawa o Te Waka-a-Māui": [
                     "Onetahua Kōkiri",
                     "Te Āwhina",
                     "Waikawa",
                     "Whakatū",
-                ],
+                ]
+            },
+            {
                 "Ngāti Apa ki te Rā Tō": [
                     "Pūaha Te Rangi",
                     "Tarakaipa",
-                ],
+                ]
+            },
+            {
                 "Rangitāne o Wairau": [
                     "Tua Mātene",
-                ],
+                ]
+            },
+            {
                 "Ngāti Kuia": [
                     "Te Hora",
-                ],
+                ]
+            },
+            {
                 "Ngāti Rārua": [
                     "Ngāti Kairārunga",
                     "Ngāti Pare-Te-Ata",
                     "Ngāti Paretona",
                     "Ngāti Tūrangāpeke",
                     "Te Arawāere",
-                ],
+                ]
+            },
+            {
                 "Ngāti Kōata": [
                     "Whakatū",
-                ],
+                ]
+            },
+            {
                 "Ngāti Tama ki Te Tau Ihu": [
                     "Onetahua Kōkiri",
                     "Te Āwhina",
                     "Whakatū",
-                ],
-            },
-        ],
+                ]
+            }
+        ]
+    },
+    {
         "Waipounamu And Rekohu/Wharekauri": [
             {
                 "Ngāi Tahu": [
@@ -1807,8 +2029,14 @@ module.exports = [
                     "Te Taumutu Rūnanga",
                     "Waihōpai Rūnaka",
                     "Wairewa Rūnanga",
-                ],
-                "Ngāti Mutunga o Wharekauri (Chatham Islands)": [],
+                ]
+            },
+            {
+                "Ngāti Mutunga o Wharekauri (Chatham Islands)": [
+
+                ]
+            },
+            {
                 "Moriori": [],
             },
         ]

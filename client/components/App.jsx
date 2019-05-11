@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import Map from './Map'
 import Explore from './Explore'
 import AddRahuiMap from './AddRahuiMap'
-// import AddRahuiForm from './AddRahuiForm';
-import Register from './Register'
+import AddRahuiForm from './AddRahuiForm';
+// import Register from './Register'
 
 export function App({ auth }) {
   return (
@@ -17,8 +17,8 @@ export function App({ auth }) {
         <Route path='/addrahui' render={AddRahuiMap} />
       </Router>
       <Explore /> */}
-      {/* <AddRahuiForm /> */}
-      <Register />
+      <AddRahuiForm />
+      {/* <Register /> */}
     </div>
   )
 }
