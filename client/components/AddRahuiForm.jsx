@@ -24,7 +24,15 @@ class AddRahuiForm extends React.Component {
         this.props.dispatch(fetchAllIwi())
     }
 
+    handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
 
+        fetch('/api/form-submit-url', {
+            method: 'POST',
+            body: data,
+        });
+    }
 
     handleSelect(event) {
         console.log(event.target.value);
@@ -49,106 +57,70 @@ class AddRahuiForm extends React.Component {
 
     render() {
 
-
         console.log(this.props && this.props.alliwi, "here")
         console.log(this.props.area, "area")
         return (
             <div>
-                (
-      <div>
-                    <h1>Welcome</h1>
-                    <p>pick an area</p>
-                    <select onChange={this.handleSelect}>
-                        {this.props.area.map(area => {
-                            return <option>{area}</option>;
-                        })}
-                    </select>
-                    {this.state.regionSelected && <p>select an iwi</p>}
-                    {/* get all the iwi based on region */}
-                    {this.state.regionSelected && (
-                        <div>
-                            <select onChange={this.handleSelect2}>
-                                {this.props.alliwi.map(area => {
-                                    // console.log(area, "this one here")
-
-                                    if (area[this.state.regionSelected] != undefined) {
-                                        return area[this.state.regionSelected].map(region => {
-                                            for (var iwi in region) {
-                                                return <option>{iwi}</option>;
-                                            }
-                                        });
-                                    }
-                                })}
-                            </select>
-                        </div>
-                    )}
-                    {/* confirm iwi selection in state */}
-                    {this.state.iwiSelected && <p>select hapu</p>}
-                    {this.state.iwiSelected && (
-                        <div>
-                            <select onChange={this.handleSelect3}>
-                                {this.props.alliwi.map(area => {
-                                    if (area[this.state.regionSelected] != undefined) {
-                                        return area[this.state.regionSelected].map(region => {
-                                            if (
-                                                region[this.state.iwiSelected] != undefined &&
-                                                region[this.state.iwiSelected].length > 0
-                                            ) {
-                                                console.log(region[this.state.iwiSelected]);
-                                                return region[this.state.iwiSelected].map(hapu => {
-                                                    return <option>{hapu}</option>;
-                                                });
-                                            } else if (
-                                                region[this.state.iwiSelected] != undefined &&
-                                                region[this.state.iwiSelected].length <= 0
-                                            ) {
-                                                return <option>No hapu found</option>;
-                                            }
-                                        });
-                                    }
-                                })}
-                            </select>
-                            {this.state.hapuSelected && <p>Congrats you picked everything</p>}
-                        </div>
-                    )}
-                </div>
-                );
-
-
-
-                {/* <h1>Add a Rāhui</h1>
-                <h2>Tell us about the rāhui</h2>
-                <form>
-                        <select onChange={this.handleSelect3}>
-                            {this.props.alliwi.map(area => {
-                                if (area[this.state.regionSelected] != undefined) {
-                                    return area[this.state.regionSelected].map(region => {
-                                        if (
-                                            region[this.state.iwiSelected] != undefined &&
-                                            region[this.state.iwiSelected].length > 0
-                                        ) {
-                                            console.log(region[this.state.iwiSelected]);
-                                            return region[this.state.iwiSelected].map(hapu => {
-                                                return <option>{hapu}</option>;
-                                            });
-                                        } else if (
-                                            region[this.state.iwiSelected] != undefined &&
-                                            region[this.state.iwiSelected].length <= 0
-                                        ) {
-                                            return <option>No hapu found</option>;
-                                        }
-                                    });
-                                }
+                <form onSubmit={this.handleSubmit}>
+                    <div>
+                        <h1>Add a Rāhui</h1>
+                        <h2>Tell us about the rāhui</h2>
+                        <p>select region</p>
+                        <select onChange={this.handleSelect}>
+                            {this.props.area.map(area => {
+                                return <option>{area}</option>;
                             })}
-                    </select>
+                        </select>
+                        {this.state.regionSelected && <p>select iwi</p>}
+                        {/* get all the iwi based on region */}
+                        {this.state.regionSelected && (
+                            <div>
+                                <select onChange={this.handleSelect2}>
+                                    {this.props.alliwi.map(area => {
+                                        // console.log(area, "this one here")
 
-                    <br></br>
+                                        if (area[this.state.regionSelected] != undefined) {
+                                            return area[this.state.regionSelected].map(region => {
+                                                for (var iwi in region) {
+                                                    return <option>{iwi}</option>;
+                                                }
+                                            });
+                                        }
+                                    })}
+                                </select>
+                            </div>
+                        )}
+                        {/* confirm iwi selection in state */}
+                        {this.state.iwiSelected && <p>select hapu</p>}
+                        {this.state.iwiSelected && (
+                            <div>
+                                <select onChange={this.handleSelect3}>
+                                    {this.props.alliwi.map(area => {
+                                        if (area[this.state.regionSelected] != undefined) {
+                                            return area[this.state.regionSelected].map(region => {
+                                                if (
+                                                    region[this.state.iwiSelected] != undefined &&
+                                                    region[this.state.iwiSelected].length > 0
+                                                ) {
+                                                    console.log(region[this.state.iwiSelected]);
+                                                    return region[this.state.iwiSelected].map(hapu => {
+                                                        return <option>{hapu}</option>;
+                                                    });
+                                                } else if (
+                                                    region[this.state.iwiSelected] != undefined &&
+                                                    region[this.state.iwiSelected].length <= 0
+                                                ) {
+                                                    return <option>No hapu found</option>;
+                                                }
+                                            });
+                                        }
+                                    })}
+                                </select>
+                                {this.state.hapuSelected && <p>Congrats you picked everything</p>}
+                            </div>
+                        )}
+                    </div>
 
-                    <select>
-                        <option></option>
-                    </select>
-
-                    <br></br>
 
                     <input type="text" placeholder="Authoriser's Name" />
 
@@ -176,7 +148,7 @@ class AddRahuiForm extends React.Component {
 
                     <input type="submit" value="Add Rahui" />
 
-                </form> */}
+                </form>
             </div>
         )
     }
