@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
-import { compose, withProps } from 'recompose'
+
+import { connect } from "react-redux";
+import { fetchAllRahui} from "../actions/rahui";
 import {  withScriptjs, withGoogleMap, GoogleMap, Polygon, Marker } from 'react-google-maps'
 
 
 class NewMap extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {  }
+}
 
 
   handleclick = () => {
@@ -11,8 +17,10 @@ class NewMap extends Component {
     }
 
   render() {
-    console.log('props of map', this.props)
 
+    let firstobj = this.props.allrahui[0]
+    console.log('props of map', typeof firstobj, firstobj && firstobj.id)
+    
     const coords = [
       {lat: -41.267622, lng: 174.745222}, 
       {lat: -41.261520, lng: 174.753413},
@@ -27,7 +35,11 @@ class NewMap extends Component {
        defaultZoom = {this.props.zoom}
      >
 
-      <Marker position={(coords[0])} onClick={this.handleclick}/> 
+      {this.props && this.props.allrahui && this.props.allrahui.map(rahuicoords => {
+       return <Marker position={rahuicoords.geo_ref[0]} onClick={this.handleclick}/> 
+     })}
+
+      {/* <Marker position={this.props.coords} onClick={this.handleclick}/> 
 
       <Polygon
         path={coords}
@@ -39,7 +51,7 @@ class NewMap extends Component {
             strokeColor: "#2E86C1",
             strokeOpacity: 1,
             strokeWeight: 1
-      }}/>
+      }}/> */}
 
      </GoogleMap>
   ));
@@ -56,7 +68,12 @@ class NewMap extends Component {
   }
 };
 
+const mapStateToProps = state =>{
+  return {
+      allrahui: state.rahui
+  }
+}
 
-export default NewMap;
+export default connect(mapStateToProps)(NewMap);
 
 

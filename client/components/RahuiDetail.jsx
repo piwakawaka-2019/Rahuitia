@@ -8,9 +8,9 @@ import NewMap from "./NewMap"
 
 class RahuiDetail extends Component {
   
-    componentDidMount(){
-        this.props.dispatch(fetchAllRahui())
-    }
+    // componentWillMount(){
+    //     this.props.dispatch(fetchAllRahui())
+    // }
 
     handleclick=()=>{
         window.location = `/`; 
@@ -21,14 +21,14 @@ class RahuiDetail extends Component {
         let rahuiId = this.props.match.params.id;
         console.log(rahuiId, this.props)
     
-        let {id, iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, email} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
+        let {id, geo_ref, iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, email} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
         
         
         return ( 
         <div>
         <SplitterLayout >
             <div >
-                <NewMap zoom={14}  />
+                <NewMap zoom={14} coords={{lat: -41.267622, lng: 174.745222}} />
             </div> 
 
             <div className="detailwrapper">
