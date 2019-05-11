@@ -6,9 +6,10 @@ import { connect } from "react-redux";
 import Nav from "./Nav";
 import Explore from "./Explore";
 import AddRahuiMap from "./NewMap";
+import MapWithADrawingManager from './ReactMap'
+
 
 import RahuiDetail from "./RahuiDetail";
-
 import About from "../components/about/About";
 import Team from "../components/about/Team";
 import Resourses from "../components/about/Resourses";
@@ -19,7 +20,7 @@ export function App({ auth }) {
       <Router>
         <Nav />
         <Route exact="true" path="/addrahui" component={AddRahuiMap} />
-        <Route exact="true" path="/" component={Explore} />
+        <Route exact="true" path="/" component={MapWithADrawingManager} />
         <Route path="/rahui/:id" component={RahuiDetail} />
 
         <Route path="/about/" component={About} />
