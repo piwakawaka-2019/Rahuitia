@@ -28,7 +28,7 @@ class RahuiDetail extends Component {
         <div>
         <SplitterLayout >
             <div >
-                <NewMap  />
+                <NewMap zoom={14}  />
             </div> 
 
             <div className="detailwrapper">

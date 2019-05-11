@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 import Map from './Map'
 import Explore from './Explore'
 import AddRahuiMap from './NewMap'
-// import MapWithADrawingManager from './ReactMap'
 import RahuiDetail from './RahuiDetail';
 
 export function App({auth}) {

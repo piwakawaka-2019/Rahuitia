@@ -4,14 +4,9 @@ import {  withScriptjs, withGoogleMap, GoogleMap, Polygon, Marker } from 'react-
 
 
 class NewMap extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { zoom: 7 }
-  }
 
 
   handleclick = () => {
-    this.setState({ zoom: 14})
     window.location = `#/rahui/82`;  
     }
 
@@ -29,7 +24,7 @@ class NewMap extends Component {
   const GoogleMapExample = withGoogleMap(props => (
      <GoogleMap
        defaultCenter = { { lat: -41.267622, lng: 174.745222} }
-       defaultZoom = {this.state.zoom}
+       defaultZoom = {this.props.zoom}
      >
 
       <Marker position={(coords[0])} onClick={this.handleclick}/> 

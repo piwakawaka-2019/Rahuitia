@@ -27,7 +27,7 @@ class Explore extends React.Component {
             <div >
                 <SplitterLayout >
                 <div >
-                 <NewMap data={this.props.allrahui} />
+                 <NewMap data={this.props.allrahui} zoom={7} />
                 </div> 
                 
                 <div className="detailwrapper">
