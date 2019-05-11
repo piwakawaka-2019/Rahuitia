@@ -4,9 +4,6 @@ import { connect } from "react-redux";
 import { fetchAllIwi } from "../actions/iwi";
 
 
-
-
-
 class AddRahuiForm extends React.Component {
     constructor(props) {
         super(props);
@@ -23,6 +20,7 @@ class AddRahuiForm extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchAllIwi())
     }
+
 
     // handleSubmit(event) {
     //     event.preventDefault();

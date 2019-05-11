@@ -1,7 +1,6 @@
 import React from "react";
-
-import { HashRouter as Router, Route } from "react-router-dom";
 import { connect } from "react-redux";
+import { HashRouter as Router, Route } from "react-router-dom";
 
 import Nav from "./Nav";
 import Explore from "./Explore";
@@ -16,10 +15,12 @@ import AddRahuiForm from "./AddRahuiForm";
 // import ReactMap from "./ReactMap"
 import MapWithADrawingManager from "./ReactMap"
 
+import Login from "../components/Login";
+
 export function App({ auth }) {
   return (
-    <div>
-      {/* <Router>
+       <div>
+      <Router>
         <Nav />
         <Route exact="true" path="/addrahui" component={AddRahuiMap} />
         <Route exact="true" path="/" component={Explore} />
@@ -28,17 +29,12 @@ export function App({ auth }) {
         <Route path="/about/" component={About} />
         <Route path="/about/team" component={Team} />
         <Route path="/about/resourses" component={Resourses} />
-      </Router> */}
-      {/* <Map/> */}
-      {/* <MapWithADrawingManager/> */}
-      {/* <Explore/> */}
 
-      {/* <About /> */}
-      {/* <AddRahuiForm /> */}
-      {/* <ReactMap /> */}
-      <MapWithADrawingManager />
+        <Route path="/Login/" component={Login} />
+
+      </Router>
     </div>
-  );
+  )
 }
 const mapStateToProps = ({ auth }) => {
   return {
