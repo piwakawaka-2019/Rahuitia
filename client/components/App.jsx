@@ -1,14 +1,16 @@
 import React from 'react'
-import {HashRouter as Router, Route, Link} from 'react-router-dom'
-import {connect} from 'react-redux'
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import Map from './Map'
-import Nav from './Nav'
 import Explore from './Explore'
+import AddRahuiMap from './AddRahuiMap'
+import AddRahuiForm from './AddRahuiForm';
+// import Register from './Register'
 import AddRahuiMap from './NewMap'
 // import MapWithADrawingManager from './ReactMap'
 import RahuiDetail from './RahuiDetail';
 
-export function App({auth}) {
+export function App({ auth }) {
   return (
     <div>  
     <Router>    
@@ -25,7 +27,7 @@ export function App({auth}) {
   )
 }
 
-const mapStateToProps = ({auth}) => {
+const mapStateToProps = ({ auth }) => {
   return {
     auth
   }
