@@ -11,6 +11,7 @@ import RahuiDetail from "./RahuiDetail";
 import About from "../components/about/About";
 import Team from "../components/about/Team";
 import Resourses from "../components/about/Resourses";
+import VideoBackground from "./VideoBackground";
 
 export function App({ auth }) {
   return (
@@ -24,6 +25,7 @@ export function App({ auth }) {
         <Route path="/about/" component={About} />
         <Route path="/about/team" component={Team} />
         <Route path="/about/resourses" component={Resourses} />
+        <Route path="/video" component={VideoBackground} />
       </Router>
     </div>
   )
