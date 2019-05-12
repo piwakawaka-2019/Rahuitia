@@ -17,10 +17,10 @@ export class Nav extends Component {
           <Link to="/login/">LOGIN</Link>
         </div>
         <div className="explore navButton">
-          <Link to="">EXPLORE</Link>
+          <Link to="/explore/">EXPLORE</Link>
         </div>
         <div className="add navButton">
-          <Link to="">ADD A RĀHUI</Link>
+          <Link to="/AddRahuiForm/">ADD A RĀHUI</Link>
         </div>
       </div>
     );
