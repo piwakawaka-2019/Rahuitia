@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 import { fetchAllIwi } from "../actions/iwi";
 import { writeRahui } from "../apis/rahui"
 
-import request from "superagent";
-
 class AddRahuiForm extends React.Component {
     constructor(props) {
         super(props);
@@ -16,9 +14,10 @@ class AddRahuiForm extends React.Component {
             region: null,
             iwi: null,
             hapu: null,
+            geoRef: null,
             authoriser: null,
             datePlaced: null,
-            dateLifted: "Still active",
+            dateLifted: "This Rāhui is still active",
             description: null,
             korero: null,
             contact: null,
@@ -44,13 +43,11 @@ class AddRahuiForm extends React.Component {
             iwi: this.state.iwiSelected,
             hapu: this.state.hapuSelected,
             description: this.state.description,
-            geoRef: this.state.geoRef,
+            geoRef: this.props.coordinates,
             korero: this.state.korero,
             datePlaced: this.state.datePlaced,
-            dateLifted: this.state.date,
+            dateLifted: this.state.dateLifted,
         }
-
-        console.log(rahui)
 
         writeRahui(
             rahui
@@ -60,7 +57,6 @@ class AddRahuiForm extends React.Component {
     handleChange(e) {
         e.preventDefault()
         const { name, value } = e.target
-        // console.log({ [name]: value })
         this.setState({ [name]: value }, () => console.log(this.state));
     }
 
@@ -132,7 +128,7 @@ class AddRahuiForm extends React.Component {
                                                     region[this.state.iwiSelected] != undefined &&
                                                     region[this.state.iwiSelected].length > 0
                                                 ) {
-                                                    // console.log(region[this.state.iwiSelected]);
+
                                                     return region[this.state.iwiSelected].map(hapu => {
                                                         return <option htmlFor="hapu">{hapu}</option>;
                                                     });
@@ -187,6 +183,7 @@ const mapStateToProps = state => {
     return {
         alliwi: state.iwi,
         area: state.area,
+        coordinates: state.coords
     }
 }
 
