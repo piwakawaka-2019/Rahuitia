@@ -26,6 +26,17 @@ const MapWithADrawingManager = compose(
     <GoogleMap
       defaultZoom={5}
       defaultCenter={new google.maps.LatLng(-41.267622, 174.745222)}
+      defaultOptions={{
+        disableDefaultUI: true,
+        mapTypeId: 'satellite',//google.maps.MapTypeId.SATELLITE,
+        streetViewControl: false,
+        scaleControl: false,
+        mapTypeControl: false,
+        panControl: false,
+        zoomControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      }}
     >
 
     <DrawingManager
@@ -33,7 +44,7 @@ const MapWithADrawingManager = compose(
         defaultOptions={{
           drawingControl: true,
           drawingControlOptions: {
-            position: google.maps.ControlPosition.TOP_CENTER,
+            position: google.maps.ControlPosition.TOP_LEFT,
             drawingModes: [
               // google.maps.drawing.OverlayType.CIRCLE,
               google.maps.drawing.OverlayType.POLYGON,
@@ -70,7 +81,7 @@ const MapWithADrawingManager = compose(
       />     
     </GoogleMap>
 
-    
+  
 );
 
 export default MapWithADrawingManager
