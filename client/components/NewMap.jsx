@@ -18,6 +18,17 @@ class NewMap extends Component {
      <GoogleMap
        defaultCenter = { this.props.coords }
        defaultZoom = {this.props.zoom}
+         defaultOptions={{
+        disableDefaultUI: true,
+        mapTypeId: 'satellite',//google.maps.MapTypeId.SATELLITE,
+        // streetViewControl: true,
+      //   scaleControl: false,
+      //   mapTypeControl: false,
+      //   panControl: false,
+      //   zoomControl: false,
+      //   rotateControl: false,
+      //   fullscreenControl: false,
+      }}
      >
 
       {this.props && this.props.allrahui && this.props.allrahui.map(rahuicoords => {
@@ -29,10 +40,10 @@ class NewMap extends Component {
         key={rahuicoords.id}
         onClick={() => { window.location = `#/rahui/${rahuicoords.id}`}} 
         options={{
-            fillColor: "#2E86C1",
+            fillColor: "#DC5757",
             fillOpacity: 0.7,
-            strokeColor: "#2E86C1",
-            strokeOpacity: 1,
+            strokeColor: "#CE3838",
+            strokeOpacity: 6,
             strokeWeight: 1
       }}/> 
       </div>)
