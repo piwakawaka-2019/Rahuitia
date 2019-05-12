@@ -20,6 +20,10 @@ class Explore extends React.Component {
         console.log( "explore", this.props)
         return (  
             <div >
+
+                <h1>hi ya!!!</h1>
+
+
                 <SplitterLayout >
                 <div >
                  <NewMap color={"#FF4C4C"} zoom={6} coords={{lat: -41.267622, lng: 174.745222}}/>
