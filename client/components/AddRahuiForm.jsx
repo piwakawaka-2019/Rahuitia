@@ -48,10 +48,16 @@ class AddRahuiForm extends React.Component {
             datePlaced: this.state.datePlaced,
             dateLifted: this.state.dateLifted,
         }
-
+        //should be a dispatching an action
         writeRahui(
             rahui
+        ).then(
+            () => {this.props.dispatch(fetchAllRahui())
+            console.log("fetchAll")
+            }
         )
+
+        window.location = `/#/explore`
     }
 
     handleChange(e) {

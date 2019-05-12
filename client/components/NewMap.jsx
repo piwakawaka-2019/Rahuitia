@@ -59,6 +59,7 @@ class NewMap extends Component {
        <GoogleMapExample
          containerElement={ <div style={{ height: window.innerHeight, width: window.innerWidth}} /> }
          mapElement={ <div style={{ height: `100%`, width: `49%` }} /> }
+         scrollwheel={false}
        />
      </div>
   );
