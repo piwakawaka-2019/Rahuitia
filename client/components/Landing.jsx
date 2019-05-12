@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 
-class landing extends Component {
+class Landing extends Component {
   render() {
     return (
-    <div>
+    <div> 
+      <header className="w-header container">
+        <div className="fullscreen-video-wrap">
+        <video loop autoPlay>
+              <source src={require('dronevideo.mp4')} type="video/mp4" />
+        </video>
+        </div>
         <div>
           <h1>Respect the Rahui</h1> 
           <br></br>
@@ -45,9 +51,10 @@ class landing extends Component {
           <p><a>Github</a> </p>
           </footer>
         </div>
+        </header>
       </div>
     );
   }
 }
 
-export default landing;
+export default Landing;

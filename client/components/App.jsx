@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { HashRouter as Router, Route } from "react-router-dom";
 
+import Landing from "./Landing"
 import Nav from "./Nav";
 import Explore from "./Explore";
 
@@ -25,7 +26,7 @@ export function App({ auth }) {
         <Route exact="true" path="/addrahui" component={AddRahuiMap} />
         <Route exact="true" path="/" component={MapWithADrawingManager} />
         <Route path="/rahui/:id" component={RahuiDetail} />
-
+        <Route path="/landing" component={Landing} />
 
         <Route path="/about/" component={About} />
         <Route path="/about/team" component={Team} />
