@@ -16,9 +16,10 @@ class AddRahuiForm extends React.Component {
             region: null,
             iwi: null,
             hapu: null,
+            geoRef: null,
             authoriser: null,
             datePlaced: null,
-            dateLifted: "Still active",
+            dateLifted: "This Rāhui is still active",
             description: null,
             korero: null,
             contact: null,
@@ -44,23 +45,22 @@ class AddRahuiForm extends React.Component {
             iwi: this.state.iwiSelected,
             hapu: this.state.hapuSelected,
             description: this.state.description,
-            geoRef: this.state.geoRef,
+            geoRef: this.props.coordinates,
             korero: this.state.korero,
             datePlaced: this.state.datePlaced,
-            dateLifted: this.state.date,
+            dateLifted: this.state.dateLifted,
         }
 
         console.log(rahui)
 
-        writeRahui(
-            rahui
-        )
+        // writeRahui(
+        //     rahui
+        // )
     }
 
     handleChange(e) {
         e.preventDefault()
         const { name, value } = e.target
-        // console.log({ [name]: value })
         this.setState({ [name]: value }, () => console.log(this.state));
     }
 
@@ -187,6 +187,7 @@ const mapStateToProps = state => {
     return {
         alliwi: state.iwi,
         area: state.area,
+        coordinates: state.coords
     }
 }
 

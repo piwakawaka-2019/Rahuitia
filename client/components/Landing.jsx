@@ -7,7 +7,7 @@ class Landing extends Component {
       <header className="w-header container">
         <div className="fullscreen-video-wrap">
         <video loop autoPlay>
-              <source src={require('dronevideo.mp4')} type="video/mp4" />
+              {/* <source src={require('dronevideo.mp4')} type="video/mp4" /> */}
         </video>
         </div>
         <div>

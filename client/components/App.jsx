@@ -22,7 +22,7 @@ import Login from "../components/Login";
 export function App({ auth }) {
   return (
     <div>
-      {/* <Router>
+      <Router>
         <Nav />
         <Route exact="true" path="/addrahui" component={AddRahuiMap} />
         <Route exact="true" path="/" component={MapWithADrawingManager} />
@@ -39,8 +39,8 @@ export function App({ auth }) {
         <Route exact="true" path="/explore" component={Explore} />
         <Route path="/rahui/:id" component={RahuiDetail} />
 
-      </Router> */}
-      <AddRahuiForm />
+      </Router>
+      {/* <AddRahuiForm /> */}
     </div>
   );
 }
