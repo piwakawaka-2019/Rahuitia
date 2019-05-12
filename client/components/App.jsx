@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { HashRouter as Router, Route } from "react-router-dom";
 
+import Landing from "./Landing"
 import Nav from "./Nav";
 import Explore from "./Explore";
 
@@ -21,12 +22,12 @@ import Login from "../components/Login";
 export function App({ auth }) {
   return (
     <div>
-      {/* <Router>
+      <Router>
         <Nav />
         <Route exact="true" path="/addrahui" component={AddRahuiMap} />
         <Route exact="true" path="/" component={MapWithADrawingManager} />
         <Route path="/rahui/:id" component={RahuiDetail} />
-
+        <Route path="/landing" component={Landing} />
 
         <Route path="/about/" component={About} />
         <Route path="/about/team" component={Team} />
@@ -37,9 +38,8 @@ export function App({ auth }) {
         <Route exact="true" path="/AddRahuiForm" component={AddRahuiForm} />
         <Route exact="true" path="/explore" component={Explore} />
         <Route path="/rahui/:id" component={RahuiDetail} />
-
-      </Router> */}
-      <AddRahuiForm />
+        <Route path="/landing" component={Landing} />
+      </Router>
     </div>
   );
 }
