@@ -53,9 +53,9 @@ class AddRahuiForm extends React.Component {
 
         console.log(rahui)
 
-        // writeRahui(
-        //     rahui
-        // )
+        writeRahui(
+            rahui
+        )
     }
 
     handleChange(e) {

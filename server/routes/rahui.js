@@ -49,9 +49,8 @@ router.get('/', (req, res) => {
 
 
   router.post('/', async (req, res) => {
-    //Save a rāhui //
     try{
-        console.log(req.body)
+        console.log("req.body:", req.body)
         const rahuiData = req.body;
         const userId = rahuiData.userId
         const iwi = rahuiData.iwi
