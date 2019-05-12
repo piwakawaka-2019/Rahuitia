@@ -91,6 +91,11 @@ class AddRahuiForm extends React.Component {
                     <div>
                         <h1>Add a Rāhui</h1>
                         <h2>Tell us about the rāhui</h2>
+
+                        <br></br>
+                        <br></br>
+
+                        <p>Please select the iwi and/or hapū that has placed the rāhui:</p>
                         <p>select region</p>
                         <select onChange={this.handleSelect}>
                             {this.props.area.map(area => {
@@ -147,28 +152,56 @@ class AddRahuiForm extends React.Component {
                         )}
                     </div>
 
-                    <input name="authoriser" type="text" placeholder="Authoriser's Name" noValidate onChange={this.handleChange} />
-
+                    <br></br>
                     <br></br>
 
-                    date placed <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
+                    <p>Please enter the name of the person who has authorised the rahūi:</p>
+
+                    <input name="authoriser" type="text" placeholder="Authorised by" noValidate onChange={this.handleChange} />
 
                     <br></br>
+                    <br></br>
 
-                    date lifted <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
+                    <p>Please enter your name:</p>
+
+                    <input name="submittersName" type="text" placeholder="Submitted by" />
 
                     <br></br>
+                    <br></br>
+
+
+                    <p>Date rahūi placed:</p>
+                    <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
+
+                    <br></br>
+                    <br></br>
+
+
+                    <p>Date rahūi lifted:</p>
+                    <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
+
+                    <br></br>
+                    <br></br>
+
+                    <p>Please add a brief description of the rahūi here:</p>
 
                     <textarea name="description" type="text" placeholder="description" rows="10" cols="60" noValidate onChange={this.handleChange} />
 
                     <br></br>
+                    <br></br>
+
+                    <p>Please add further details of the rahūi here:</p>
 
                     <textarea name="korero" type="text" placeholder="korero" rows="20" cols="60" noValidate onChange={this.handleChange} />
 
                     <br></br>
+                    <br></br>
 
-                    <input name="contact" type="text" placeholder="Contact Email" noValidate onChange={this.handleChange} />
+                    <p>Please add contact details here:</p>
 
+                    <input name="contact" type="text" placeholder="Email Address" noValidate onChange={this.handleChange} />
+
+                    <br></br>
                     <br></br>
 
                     <button name="submit">Add Rāhui</button>

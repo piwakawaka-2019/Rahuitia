@@ -8,27 +8,23 @@ class Register extends React.Component {
     render() {
         return (
             <div>
-                <h1>Add a Rāhui</h1>
+                <h1>Register</h1>
                 <br></br>
                 <h3>Ekore e tika kia noho he Maori rawakore ki tenei whenua; ehara tenei i te mea e ora ai tatou e tika ai ranei ratou. </h3>
                 <br></br>
                 <h3>Who can add a rāhui?</h3>
                 <br></br>
-                <p>You must register to add a rahui. There is a verficiation process to identify you. This may take 1–3 days.</p>
+                <p>You must register to add a rahui. There is a verficiation process to identify you. This may take up to three days.</p>
                 <br></br>
                 <form>
-                    <input type="text" placeholder="first name" />
+                    <input name="firstName" type="text" placeholder="first name" />
                     <br></br>
-                    <input type="text" placeholder="middle name/s" />
+                    <input name="middleNamme" type="text" placeholder="middle name/s" />
                     <br></br>
-                    <input type="text" placeholder="last name" />
-                    <br></br>
-                    select iwi/s<select><option></option></select>
-                    <input type="button" value="add another iwi" />
-                    <br></br>
-                    select hapu/s<select><option></option></select>
-                    <input type="button" value="add another hapu" />
-                    <br></br>
+                    <input name="lastName" type="text" placeholder="last name" />
+                    
+                    {/* add rāhui and hapū drop downs here*/}
+                    
                     <input type="text" placeholder="email address" />
                     <br></br>
                     <input type="text" placeholder="password" />

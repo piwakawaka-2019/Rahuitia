@@ -19,6 +19,8 @@ import Resourses from "../components/about/Resourses";
 
 import Login from "../components/Login";
 
+// import Register from "./Register"
+
 export function App({ auth }) {
   return (
     <div>
@@ -40,6 +42,8 @@ export function App({ auth }) {
         <Route path="/rahui/:id" component={RahuiDetail} />
         <Route path="/landing" component={Landing} />
       </Router>
+
+      {/* <Register /> */}
     </div>
   );
 }
