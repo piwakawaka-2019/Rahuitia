@@ -18,6 +18,23 @@ header .header_logo_title {
   text-transform: uppercase;
 }
 
+body {
+  width: 100vw;
+  overflow: hidden;
+}
+.fullscreen-video-wrap{
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#background-video {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
+
 .mapwrapper {
   display: inline-block;
   width: 50%;

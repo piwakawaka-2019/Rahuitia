@@ -14,8 +14,6 @@ export function getRahui() {
 }
 
 export function writeRahui(rahui) {
-  // console.log(rahui)
-  // console.log(res.body)
   return request
     .post('/api/rahui')
     .send(rahui)
@@ -26,7 +24,6 @@ export function writeRahui(rahui) {
 }
 
 export function editRahui(rahui) {
-  // console.log(rahui)
   return request
     .post('/api/rahui')
     .send(rahui)

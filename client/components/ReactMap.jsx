@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 import { compose, withProps } from 'recompose'
 import {  withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps'
 import { DrawingManager } from "react-google-maps/lib/components/drawing/DrawingManager"
-import { fetchAllIwi } from "../actions/iwi";
+import { saveCoordinates } from "../actions/coords";
 
 // const { compose, withProps } = require("recompose");
 // const {
@@ -65,7 +66,7 @@ const MapWithADrawingManager = compose(
             arr.push(coordObj)
           }
           console.log(arr)
- 
+          props.dispatch(saveCoordinates(arr))
         }}
       />     
     </GoogleMap>
@@ -73,4 +74,11 @@ const MapWithADrawingManager = compose(
     
 );
 
-export default MapWithADrawingManager
+
+
+function mapStateToProps({coords}) {
+  return coords
+}
+
+export default connect(mapStateToProps)(MapWithADrawingManager)
+
