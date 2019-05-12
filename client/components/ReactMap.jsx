@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { compose, withProps } from 'recompose'
 import {  withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps'
 import { DrawingManager } from "react-google-maps/lib/components/drawing/DrawingManager"
+import { fetchAllIwi } from "../actions/iwi";
 
 // const { compose, withProps } = require("recompose");
 // const {
@@ -64,13 +65,12 @@ const MapWithADrawingManager = compose(
             arr.push(coordObj)
           }
           console.log(arr)
-          // console.log(polygon)
-          // console.log(polygon.getPath().getArray())
-          // console.log(polygon.getPath().getLength())
-          // console.log("string:",polygon.getPath().getArray().toString().replace(/\(/g,"[").replace(/\)/g,"]"))
+ 
         }}
       />     
     </GoogleMap>
+
+    
 );
 
 export default MapWithADrawingManager

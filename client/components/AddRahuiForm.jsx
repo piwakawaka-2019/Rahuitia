@@ -2,7 +2,9 @@ import React from 'react'
 // import data from '../apis/iwi'
 import { connect } from "react-redux";
 import { fetchAllIwi } from "../actions/iwi";
+import { writeRahui } from "../apis/rahui"
 
+import request from "superagent";
 
 class AddRahuiForm extends React.Component {
     constructor(props) {
@@ -10,44 +12,73 @@ class AddRahuiForm extends React.Component {
         this.state = {
             iwiSelected: null,
             hapuSelected: null,
-            regionSelected: null
+            regionSelected: null,
+            region: null,
+            iwi: null,
+            hapu: null,
+            authoriser: null,
+            datePlaced: null,
+            dateLifted: "Still active",
+            description: null,
+            korero: null,
+            contact: null,
+
         };
+        this.handleChange = this.handleChange.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
         this.handleSelect2 = this.handleSelect2.bind(this);
         this.handleSelect3 = this.handleSelect3.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount() {
         this.props.dispatch(fetchAllIwi())
     }
 
+    handleSubmit(e) {
+        e.preventDefault()
 
-    handleSubmit(event) {
-        event.preventDefault();
-        const data = new FormData(event.target);
+        const rahui = {
+            userId: 5,
+            iwi: this.state.iwiSelected,
+            hapu: this.state.hapuSelected,
+            description: this.state.description,
+            geoRef: this.state.geoRef,
+            korero: this.state.korero,
+            datePlaced: this.state.datePlaced,
+            dateLifted: this.state.date,
+        }
 
-        fetch('/api/form-submit-url', {
-            method: 'POST',
-            body: data,
-        });
+        console.log(rahui)
+
+        writeRahui(
+            rahui
+        )
     }
 
+    handleChange(e) {
+        e.preventDefault()
+        const { name, value } = e.target
+        // console.log({ [name]: value })
+        this.setState({ [name]: value }, () => console.log(this.state));
+    }
+
+
+
     handleSelect(event) {
-        console.log(event.target.value);
         this.setState({
             regionSelected: event.target.value
         });
     }
 
     handleSelect2(event) {
-        console.log(event.target.value);
         this.setState({
             iwiSelected: event.target.value
         });
     }
 
     handleSelect3(event) {
-        console.log(event.target.value);
         this.setState({
             hapuSelected: event.target.value
         });
@@ -55,18 +86,19 @@ class AddRahuiForm extends React.Component {
 
     render() {
 
-        console.log(this.props && this.props.alliwi, "here")
-        console.log(this.props.area, "area")
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form
+                    onSubmit={this.handleSubmit}
+                    noValidate
+                >
                     <div>
                         <h1>Add a Rāhui</h1>
                         <h2>Tell us about the rāhui</h2>
                         <p>select region</p>
                         <select onChange={this.handleSelect}>
                             {this.props.area.map(area => {
-                                return <option>{area}</option>;
+                                return <option htmlFor="region">{area}</option>;
                             })}
                         </select>
                         {this.state.regionSelected && <p>select iwi</p>}
@@ -80,7 +112,7 @@ class AddRahuiForm extends React.Component {
                                         if (area[this.state.regionSelected] != undefined) {
                                             return area[this.state.regionSelected].map(region => {
                                                 for (var iwi in region) {
-                                                    return <option>{iwi}</option>;
+                                                    return <option htmlFor="iwi">{iwi}</option>;
                                                 }
                                             });
                                         }
@@ -100,9 +132,9 @@ class AddRahuiForm extends React.Component {
                                                     region[this.state.iwiSelected] != undefined &&
                                                     region[this.state.iwiSelected].length > 0
                                                 ) {
-                                                    console.log(region[this.state.iwiSelected]);
+                                                    // console.log(region[this.state.iwiSelected]);
                                                     return region[this.state.iwiSelected].map(hapu => {
-                                                        return <option>{hapu}</option>;
+                                                        return <option htmlFor="hapu">{hapu}</option>;
                                                     });
                                                 } else if (
                                                     region[this.state.iwiSelected] != undefined &&
@@ -114,37 +146,36 @@ class AddRahuiForm extends React.Component {
                                         }
                                     })}
                                 </select>
-                                {this.state.hapuSelected && <p>Congrats you picked everything</p>}
+                                {this.state.hapuSelected && <p>next step</p>}
                             </div>
                         )}
                     </div>
 
-
-                    <input type="text" placeholder="Authoriser's Name" />
-
-                    <br></br>
-
-                    date placed <input type="date" />
+                    <input name="authoriser" type="text" placeholder="Authoriser's Name" noValidate onChange={this.handleChange} />
 
                     <br></br>
 
-                    date lifted <input type="date" />
+                    date placed <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
 
                     <br></br>
 
-                    <textarea name="message" placeholder="description" rows="10" cols="60" />
+                    date lifted <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
 
                     <br></br>
 
-                    <textarea name="message" placeholder="korero" rows="20" cols="60" />
+                    <textarea name="description" type="text" placeholder="description" rows="10" cols="60" noValidate onChange={this.handleChange} />
 
                     <br></br>
 
-                    <input type="text" placeholder="Contact Email" />
+                    <textarea name="korero" type="text" placeholder="korero" rows="20" cols="60" noValidate onChange={this.handleChange} />
 
                     <br></br>
 
-                    <input type="submit" value="Add Rahui" />
+                    <input name="contact" type="text" placeholder="Contact Email" noValidate onChange={this.handleChange} />
+
+                    <br></br>
+
+                    <button name="submit">Add Rāhui</button>
 
                 </form>
             </div>
