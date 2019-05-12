@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Map from './Map'
+
 import SplitterLayout from 'react-splitter-layout';
 import { connect } from "react-redux";
 import { fetchAllRahui} from "../actions/rahui";
@@ -9,7 +9,7 @@ import NewMap from "./NewMap"
 class RahuiDetail extends Component {
 
     handleclick=()=>{
-        window.location = `/`; 
+        window.location = `/#/explore`; 
         }
     
     render() { 

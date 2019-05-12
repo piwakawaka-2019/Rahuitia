@@ -18,6 +18,7 @@ class NewMap extends Component {
      <GoogleMap
        defaultCenter = { this.props.coords }
        defaultZoom = {this.props.zoom}
+       
      >
 
       {this.props && this.props.allrahui && this.props.allrahui.map(rahuicoords => {
@@ -48,6 +49,7 @@ class NewMap extends Component {
        <GoogleMapExample
          containerElement={ <div style={{ height: window.innerHeight, width: window.innerWidth}} /> }
          mapElement={ <div style={{ height: `100%`, width: `49%` }} /> }
+         scrollwheel={false}
        />
      </div>
   );

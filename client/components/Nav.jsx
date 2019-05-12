@@ -20,7 +20,7 @@ export class Nav extends Component {
           <Link to="/explore/">EXPLORE</Link>
         </div>
         <div className="add navButton">
-          <Link to="/AddRahuiForm/">ADD A RĀHUI</Link>
+          <Link to="/addrahui/">ADD A RĀHUI</Link>
         </div>
       </div>
     );

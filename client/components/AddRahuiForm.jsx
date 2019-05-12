@@ -56,6 +56,8 @@ class AddRahuiForm extends React.Component {
             console.log("fetchAll")
             }
         )
+
+        window.location = `/#/explore`
     }
 
     handleChange(e) {
