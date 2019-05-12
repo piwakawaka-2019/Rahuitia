@@ -19,16 +19,15 @@ import VideoBackground from "./VideoBackground";
 // import ReactMap from "./ReactMap"
 
 import Login from "../components/Login";
+import ReactMap from "./ReactMap";
+import FormAndMap from "./FormAndMap";
 
 export function App({ auth }) {
   return (
     <div>
       <Router>
         <Nav />
-{/*        
-        <Route exact="true" path="/" component={MapWithADrawingManager} /> */}
         <Route path="/rahui/:id" component={RahuiDetail} />
-        <Route path="/landing" component={Landing} />
 
         <Route path="/about/" component={About} />
         <Route path="/about/team" component={Team} />
@@ -36,11 +35,10 @@ export function App({ auth }) {
         <Route path="/video" component={VideoBackground} />
   
         <Route path="/Login/" component={Login} />
-
-        <Route exact="true" path="/AddRahuiForm" component={AddRahuiForm} />
+        <Route exact="true" path="/AddRahui" component={FormAndMap} />
         <Route exact="true" path="/explore" component={Explore} />
         <Route path="/rahui/:id" component={RahuiDetail} />
-        <Route path="/landing" component={Landing} />
+        <Route exact="true" path="/" component={Landing} />
       </Router>
     </div>
   );

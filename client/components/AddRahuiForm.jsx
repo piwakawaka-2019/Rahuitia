@@ -52,6 +52,8 @@ class AddRahuiForm extends React.Component {
         writeRahui(
             rahui
         )
+
+        window.location = `/#/explore`
     }
 
     handleChange(e) {

@@ -9,7 +9,7 @@ import NewMap from "./NewMap"
 class RahuiDetail extends Component {
 
     handleclick=()=>{
-        window.location = `/`; 
+        window.location = `/#/explore`; 
         }
     
     render() { 
