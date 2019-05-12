@@ -24,7 +24,6 @@ export function writeRahui(rahui) {
 }
 
 export function editRahui(rahui) {
-  // console.log(rahui)
   return request
     .post('/api/rahui')
     .send(rahui)

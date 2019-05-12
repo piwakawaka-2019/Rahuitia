@@ -2,9 +2,6 @@ const express = require('express')
 const db = require('../db/users')
 const router = express.Router()
 
-// get relevant functions.
-
-
 
 router.get('/', (req, res) => {
   db.getRahuiInformation()

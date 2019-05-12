@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 import { fetchAllIwi } from "../actions/iwi";
 import { writeRahui } from "../apis/rahui"
 
-import request from "superagent";
-
 class AddRahuiForm extends React.Component {
     constructor(props) {
         super(props);
@@ -50,8 +48,6 @@ class AddRahuiForm extends React.Component {
             datePlaced: this.state.datePlaced,
             dateLifted: this.state.dateLifted,
         }
-
-        console.log(rahui)
 
         writeRahui(
             rahui
@@ -132,7 +128,7 @@ class AddRahuiForm extends React.Component {
                                                     region[this.state.iwiSelected] != undefined &&
                                                     region[this.state.iwiSelected].length > 0
                                                 ) {
-                                                    // console.log(region[this.state.iwiSelected]);
+
                                                     return region[this.state.iwiSelected].map(hapu => {
                                                         return <option htmlFor="hapu">{hapu}</option>;
                                                     });

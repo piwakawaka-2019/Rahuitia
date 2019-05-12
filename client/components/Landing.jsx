@@ -1,15 +1,24 @@
 import React, { Component } from "react";
 
 class Landing extends Component {
+  constructor (props) {
+    super(props);
+
+    this.state = {
+        videoURL: 'dronevideo.mp4'
+    }
+  }
+
   render() {
     return (
     <div> 
-      <header className="w-header container">
         <div className="fullscreen-video-wrap">
-        <video loop autoPlay>
-              {/* <source src={require('dronevideo.mp4')} type="video/mp4" /> */}
+        <video id="background-video" loop autoPlay muted>
+                <source src={this.state.videoURL} type="video/mp4" />
+                Your browser does not support the video tag.
         </video>
         </div>
+        <div className="overlay">
         <div>
           <h1>Respect the Rahui</h1> 
           <br></br>
@@ -51,10 +60,14 @@ class Landing extends Component {
           <p><a>Github</a> </p>
           </footer>
         </div>
-        </header>
+        </div>
       </div>
     );
   }
 }
 
+
 export default Landing;
+
+
+
