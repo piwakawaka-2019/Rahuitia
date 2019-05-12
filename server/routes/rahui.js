@@ -59,10 +59,10 @@ router.get('/', (req, res) => {
         const dateLifted = rahuiData.dateLifted
         await db.writeRahui(userId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted);
     
-        res.status(200)
+        res.json({})
     }
     catch(err){
-        err => res.status(500).send({message: "Server Error"})
+        err => res.status(500).json({message: "Server Error"})
     }
 })
 
@@ -82,10 +82,10 @@ router.put('/:id', function(req, res, next){
       //await does not work here
       db.editRahui(rahuiId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted);
 
-      res.status(200)
+      res.json({})
   }
   catch(err){
-      err => res.status(500).send({message: "Server Error"})
+      err => res.status(500).json({message: "Server Error"})
   }
 })
 
