@@ -12,14 +12,6 @@ import { DrawingManager } from "react-google-maps/lib/components/drawing/Drawing
 // const { DrawingManager } = require("react-google-maps/lib/components/drawing/DrawingManager");
 
 
-// const coords = [
-//     {lat: -41.267622, lng: 174.745222}, 
-//     {lat: -41.261520, lng: 174.753413},
-//     {lat: -41.267003, lng: 174.761482},
-//     {lat: -41.270654, lng: 174.749472},
-//   ]; 
-
-
 const MapWithADrawingManager = compose(
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCDY6eWTVLvpOoTI2JrH8Q0ycDSV3F2J5o&v=3.exp&libraries=geometry,drawing,places",
@@ -59,27 +51,25 @@ const MapWithADrawingManager = compose(
           
         }}
         onPolygonComplete={(polygon) => {
-          console.log(polygon)
-          console.log(polygon.getPath().getArray().toString())
-          console.log(polygon.getPath().getLength())
+          var v = polygon.getPath();
+          let arr=[]
+          for (var i=0; i < v.getLength(); i++) {
+            var xy = v.getAt(i);
+            let lat = xy.lat();
+            let lng = xy.lng();
+            let coordObj = {
+              lat, 
+              lng
+            }
+            arr.push(coordObj)
+          }
+          console.log(arr)
+          // console.log(polygon)
+          // console.log(polygon.getPath().getArray())
+          // console.log(polygon.getPath().getLength())
+          // console.log("string:",polygon.getPath().getArray().toString().replace(/\(/g,"[").replace(/\)/g,"]"))
         }}
-      />
-
-{/* <Polygon
-        path={coords}
-        key={1}
-        options={{
-            fillColor: "#000",
-            fillOpacity: 0.4,
-            strokeColor: "#000",
-            strokeOpacity: 1,
-            strokeWeight: 1
-        }}/> */}
-        
-     
-      
-
-      
+      />     
     </GoogleMap>
 );
 
