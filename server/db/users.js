@@ -66,23 +66,27 @@ function writeRahui(
   geo_ref,
   date_placed,
   date_lifted,
-) {
+  testDb
+){
   const db = testDb || connection
   return db('rahui')
-    .insert({
-      user_id: user_id,
-      iwi: iwi,
-      hapu: hapu,
-      description: description,
-      korero: korero,
-      geo_ref: geo_ref,
-      date_placed: date_placed,
-      date_lifted: date_lifted,
-    })
+  .insert({
+    user_id: user_id,
+    iwi: iwi,
+    hapu: hapu, 
+    description: description,
+    korero: korero,
+    geo_ref: JSON.stringify(geo_ref),
+    date_placed: date_placed,
+    date_lifted: date_lifted,
+  })
+
 }
 
 function editRahui(
   id,
+  iwi,
+  hapu,
   description,
   korero,
   geo_ref,
@@ -92,14 +96,16 @@ function editRahui(
 ) {
   const db = testDb || connection
   return db('rahui')
-    .where({ id: id })
-    .update({
-      description: description,
-      korero: korero,
-      geo_ref: geo_ref,
-      date_placed: date_placed,
-      date_lifted: date_lifted,
-    })
+  .where({ id: id })
+  .update({
+    iwi: iwi,
+    hapu: hapu, 
+    description:description,
+    korero: korero,
+    geo_ref: geo_ref,
+    date_placed: date_placed,
+    date_lifted: date_lifted,
+  })
 }
 
 //**************/get user function ()
