@@ -14,13 +14,14 @@ import RahuiDetail from "./RahuiDetail";
 import About from "../components/about/About";
 import Team from "../components/about/Team";
 import Resourses from "../components/about/Resourses";
+// import ReactMap from "./ReactMap"
 
 import Login from "../components/Login";
 
 export function App({ auth }) {
   return (
     <div>
-      <Router>
+      {/* <Router>
         <Nav />
         <Route exact="true" path="/addrahui" component={AddRahuiMap} />
         <Route exact="true" path="/" component={MapWithADrawingManager} />
@@ -37,7 +38,8 @@ export function App({ auth }) {
         <Route exact="true" path="/explore" component={Explore} />
         <Route path="/rahui/:id" component={RahuiDetail} />
 
-      </Router>
+      </Router> */}
+      <AddRahuiForm />
     </div>
   );
 }

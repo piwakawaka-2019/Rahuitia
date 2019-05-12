@@ -12,7 +12,7 @@ export function saveAllIwi(iwiArr) {
 }
 
 export function saveArea(iwiArr) {
-    console.log(iwiArr)
+    // console.log(iwiArr)
     return {
         type: 'SAVE_AREA',
         area: iwiArr,
@@ -25,7 +25,7 @@ export function fetchAllIwi() {
     return dispatch => {
 
         getIwi().then(allIwi => {
-            console.log("fetch iwi arr (from actions/iwi.js)", allIwi)
+            // console.log("fetch iwi arr (from actions/iwi.js)", allIwi)
             dispatch(saveAllIwi(allIwi))
             dispatch(saveArea(allIwi))
         })
