@@ -9,9 +9,6 @@ class AddRahuiForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            iwiSelected: null,
-            hapuSelected: null,
-            regionSelected: null,
             region: null,
             iwi: null,
             hapu: null,
@@ -22,8 +19,11 @@ class AddRahuiForm extends React.Component {
             description: null,
             korero: null,
             contact: null,
-
+            iwiSelected: null,
+            hapuSelected: null,
+            regionSelected: null,
         };
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
         this.handleSelect2 = this.handleSelect2.bind(this);
@@ -32,6 +32,7 @@ class AddRahuiForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.renderHapu = this.renderHapu.bind(this)
         this.renderIwi = this.renderIwi.bind(this)
+
     }
 
     componentDidMount() {
@@ -43,24 +44,43 @@ class AddRahuiForm extends React.Component {
 
         const rahui = {
             userId: 5,
-            iwi: this.state.iwiSelected,
-            hapu: this.state.hapuSelected,
+            region: this.state.region,
+            iwi: this.state.iwi,
+            hapu: this.state.hapu,
             description: this.state.description,
             geoRef: this.props.coordinates,
             korero: this.state.korero,
             datePlaced: this.state.datePlaced,
             dateLifted: this.state.dateLifted,
         }
+
+        console.log(rahui)
         //should be a dispatching an action
-        writeRahui(
-            rahui
-        ).then(
-            () => {
-                this.props.dispatch(fetchAllRahui())
-            }
-        )
+        // writeRahui(
+        //     rahui
+        // ).then(
+        //     () => {
+        //         this.props.dispatch(fetchAllRahui())
+        //     }
+        // )
 
         window.location = `/#/explore`
+    }
+
+    submitAdd(){
+        let region = [...this.state.region, this.state.regionSelected]
+        let iwi= [...this.state.iwi, this.state.iwiSelected]
+        let hapu = [...this.state.hapu, this.state.hapuSelected]
+
+        this.setState({
+            region:[...new Set(region)],
+            iwi:[...new Set(iwi)],
+            hapu:[...new Set(hapu)],
+            regionSelected: null,
+            iwiSelected: null,
+            hapuSelected: null
+        })
+        console.log(this.state)
     }
 
     handleChange(e) {
@@ -68,8 +88,6 @@ class AddRahuiForm extends React.Component {
         const { name, value } = e.target
         this.setState({ [name]: value });
     }
-
-
 
     handleSelect(event) {
         this.setState({
@@ -156,7 +174,14 @@ class AddRahuiForm extends React.Component {
                                 this.renderHapu()
                             ) : <option>----------</option>}
                         </select>
-
+                        <br></br>
+                        <button type="button" onClick={this.submitAdd}>Add Another Associated Region/Iwi/Hāpu</button>
+                    <br></br>
+                    <div>Associated iwi/hāpu: <br></br> 
+                    iwi:{this.state.iwi.map(iwi => {return <p>{iwi}, </p>})}<br></br> 
+                    hapu:{this.state.hapu.map(hapu => {return <p>{hapu}, </p>})}<br></br> 
+                    </div>
+                    <br></br>
                     </div>
 
                     <br></br>

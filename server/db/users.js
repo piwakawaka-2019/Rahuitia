@@ -26,6 +26,7 @@ function createUser(
     })
       .then(userIds => {
         const userId = userIds[0];
+        
         return Promise.all(
           iwi.map(iwiName => {
             return writeIwi(iwiName, userId, db)
