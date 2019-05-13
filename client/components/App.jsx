@@ -22,6 +22,8 @@ import Login from "../components/Login";
 import ReactMap from "./ReactMap";
 import FormAndMap from "./FormAndMap";
 
+// import Register from "./Register"
+
 export function App({ auth }) {
   return (
     <div>
@@ -40,6 +42,8 @@ export function App({ auth }) {
         <Route path="/rahui/:id" component={RahuiDetail} />
         <Route exact="true" path="/" component={Landing} />
       </Router>
+
+      {/* <Register /> */}
     </div>
   );
 }

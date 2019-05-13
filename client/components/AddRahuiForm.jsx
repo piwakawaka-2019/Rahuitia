@@ -30,6 +30,8 @@ class AddRahuiForm extends React.Component {
         this.handleSelect3 = this.handleSelect3.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.renderHapu = this.renderHapu.bind(this)
+        this.renderIwi = this.renderIwi.bind(this)
     }
 
     componentDidMount() {
@@ -87,8 +89,40 @@ class AddRahuiForm extends React.Component {
         });
     }
 
-    render() {
+    renderIwi() {
+        // console.log(this.props.alliwi)
+        // console.log(this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected])
 
+        const allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
+
+        if (allIwiInRegion.length > 0) {
+
+            return allIwiInRegion.map(iwi => {
+                console.log(Object.keys(iwi)[0])
+
+                return < option htmlFor="iwi" > {Object.keys(iwi)[0]}</option >
+            })
+        }
+    }
+
+    renderHapu() {
+        const allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
+        const iwiIWant = this.state.iwiSelected
+        const theIwiIFound = allIwiInRegion.filter(iwi => {
+            return iwi[iwiIWant] != undefined
+        })
+
+        const allHapu = theIwiIFound[0][iwiIWant]
+
+        if (allHapu.length > 0) {
+            return allHapu.map(hapu => {
+                return <option htmlFor="hapu">{hapu}</option>;
+            })
+        }
+        else (<option>No hapū</option>)
+    }
+
+    render() {
         return (
             <div>
                 <form
@@ -97,85 +131,89 @@ class AddRahuiForm extends React.Component {
                 >
                     <div>
                         <h1>Add a Rāhui</h1>
-                        <h2>Tell us about the rāhui</h2>
-                        <p>select region</p>
+                        <h2>Tell us about the rāhui. This information will be shared on the explore page.</h2>
+
+                        <br></br>
+                        <br></br>
+
+                        <p>Please select the iwi and/or hapū that has placed the rāhui:</p>
+                        <p>Select region:</p>
                         <select onChange={this.handleSelect}>
                             {this.props.area.map(area => {
                                 return <option htmlFor="region">{area}</option>;
                             })}
                         </select>
-                        {this.state.regionSelected && <p>select iwi</p>}
-                        {/* get all the iwi based on region */}
-                        {this.state.regionSelected && (
-                            <div>
-                                <select onChange={this.handleSelect2}>
-                                    {this.props.alliwi.map(area => {
-                                        // console.log(area, "this one here")
 
-                                        if (area[this.state.regionSelected] != undefined) {
-                                            return area[this.state.regionSelected].map(region => {
-                                                for (var iwi in region) {
-                                                    return <option htmlFor="iwi">{iwi}</option>;
-                                                }
-                                            });
-                                        }
-                                    })}
-                                </select>
-                            </div>
-                        )}
-                        {/* confirm iwi selection in state */}
-                        {this.state.iwiSelected && <p>select hapu</p>}
-                        {this.state.iwiSelected && (
-                            <div>
-                                <select onChange={this.handleSelect3}>
-                                    {this.props.alliwi.map(area => {
-                                        if (area[this.state.regionSelected] != undefined) {
-                                            return area[this.state.regionSelected].map(region => {
-                                                if (
-                                                    region[this.state.iwiSelected] != undefined &&
-                                                    region[this.state.iwiSelected].length > 0
-                                                ) {
+                        <br></br>
+                        <br></br>
 
-                                                    return region[this.state.iwiSelected].map(hapu => {
-                                                        return <option htmlFor="hapu">{hapu}</option>;
-                                                    });
-                                                } else if (
-                                                    region[this.state.iwiSelected] != undefined &&
-                                                    region[this.state.iwiSelected].length <= 0
-                                                ) {
-                                                    return <option>No hapu found</option>;
-                                                }
-                                            });
-                                        }
-                                    })}
-                                </select>
-                                {this.state.hapuSelected && <p>next step</p>}
-                            </div>
-                        )}
+                        {<p>Select iwi:</p>}
+                        <select onChange={this.handleSelect2}>
+                            {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
+                        </select>
+
+                        <br></br>
+                        <br></br>
+
+                        {<p>Select hapū:</p>}
+                        <select onChange={this.handleSelect3}>
+                            {this.state.iwiSelected ? (
+                                this.renderHapu()
+                            ) : <option>----------</option>}
+                        </select>
+
                     </div>
 
-                    <input name="authoriser" type="text" placeholder="Authoriser's Name" noValidate onChange={this.handleChange} />
-
+                    <br></br>
                     <br></br>
 
-                    date placed <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
+                    <p>Please enter the name of the person who has authorised the rahūi:</p>
+
+                    <input name="authoriser" type="text" placeholder="Authorised by" noValidate onChange={this.handleChange} />
 
                     <br></br>
+                    <br></br>
 
-                    date lifted <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
+                    <p>Please enter your name:</p>
+
+                    <input name="submittersName" type="text" placeholder="Submitted by" />
 
                     <br></br>
+                    <br></br>
+
+
+                    <p>Date rahūi placed:</p>
+                    <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
+
+                    <br></br>
+                    <br></br>
+
+
+                    <p>Date rahūi lifted:</p>
+                    <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
+
+                    <br></br>
+                    <br></br>
+
+                    <p>Please add a brief description of the rahūi here:</p>
 
                     <textarea name="description" type="text" placeholder="description" rows="10" cols="60" noValidate onChange={this.handleChange} />
 
                     <br></br>
+                    <br></br>
+
+                    <p>Please add further details of the rahūi here:</p>
 
                     <textarea name="korero" type="text" placeholder="korero" rows="20" cols="60" noValidate onChange={this.handleChange} />
 
                     <br></br>
+                    <br></br>
 
-                    <input name="contact" type="text" placeholder="Contact Email" noValidate onChange={this.handleChange} />
+                    <p>Please enter contact details here:</p>
 
+                    <input name="contact" type="text" placeholder="Email Address" noValidate onChange={this.handleChange} />
+
+                    <br></br>
                     <br></br>
 
                     <button name="submit">Add Rāhui</button>
