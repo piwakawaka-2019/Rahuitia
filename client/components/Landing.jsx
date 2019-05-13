@@ -13,7 +13,7 @@ class Landing extends Component {
     return (
     <div> 
 
-<div className="fullscreen-video-wrap">
+      <div className="fullscreen-video-wrap">
         <video id="background-video" loop autoPlay muted>
                 <source src={this.state.videoURL} type="video/mp4" />
                 Your browser does not support the video tag.
