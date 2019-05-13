@@ -4,10 +4,11 @@ import { connect } from 'react-redux'
 import { incrementCount, decrementCount } from '../actions/tautoko'
 
 class Tautoko extends Component {
-
+    // 
 
     handleBtnActionIncrement = () => {
         this.props.onIncrementClick(this.props.count)
+        // this.ref.btn.setAttribute("disabled", "disabled")
     }
 
     // handleBtnActionDecrement = () => {
@@ -19,7 +20,9 @@ class Tautoko extends Component {
         return (
             <div>
                 <p>{count}</p>
-                <Button action={this.handleBtnActionIncrement} buttonTitle="Tautoko" />
+                <Button
+                    // ref="btn" 
+                    action={this.handleBtnActionIncrement} buttonTitle="Tautoko" />
                 {/* <Button action={this.handleBtnActionDecrement} buttonTitle="-" /> */}
             </div>
         )
