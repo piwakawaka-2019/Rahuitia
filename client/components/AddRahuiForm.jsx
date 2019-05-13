@@ -83,8 +83,8 @@ class AddRahuiForm extends React.Component {
     }
 
     renderIwi() {
-        console.log(this.props.alliwi)
-        console.log(this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected])
+        // console.log(this.props.alliwi)
+        // console.log(this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected])
 
         const allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
 
@@ -97,9 +97,6 @@ class AddRahuiForm extends React.Component {
             })
         }
     }
-
-
-
 
     renderHapu() {
         const allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
@@ -143,52 +140,14 @@ class AddRahuiForm extends React.Component {
                         <br></br>
                         <br></br>
 
-
-
-
-
-
-
-
-
-
-
                         {<p>Select iwi:</p>}
                         <select onChange={this.handleSelect2}>
                             {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
                         </select>
 
-
-                        {/* {<p>Select iwi:</p>} */}
-                        {/* get all the iwi based on region */}
-                        {/* {this.state.regionSelected && (
-                            <div>
-                                <select onChange={this.handleSelect2}>
-                                    {this.props.alliwi.map(area => {
-                                        if (area[this.state.regionSelected] != undefined) {
-                                            return area[this.state.regionSelected].map(region => {
-                                                for (var iwi in region) {
-                                                    return <option htmlFor="iwi">{iwi}</option>;
-                                                }
-                                            });
-                                        }
-                                    })}
-                                </select>
-                            </div>
-                        )} */}
-
-
-
-
-
-
-
-
-
-
-
-                        {/* confirm iwi selection in state */}
                         <br></br>
+                        <br></br>
+
                         {<p>Select hapū:</p>}
                         <select onChange={this.handleSelect3}>
                             {this.state.iwiSelected ? (
