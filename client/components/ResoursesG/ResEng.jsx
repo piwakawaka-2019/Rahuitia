@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 
-class team extends Component {
+
+class ResEng extends Component {
   render() {
     return (
-      <div>
-        <h1>TEAM</h1>
+<div>
+        <h1>RESOURSES</h1>
         <div className="row">
           <div className="column">
             
@@ -32,8 +34,8 @@ class team extends Component {
           
         </div>
       </div>
-    );
-  }
-}
 
-export default team;
+    )}
+  }
+
+  export default ResEng
