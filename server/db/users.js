@@ -43,6 +43,15 @@ function createUser(
   });
 }
 
+
+function userExists(email, testDb) {
+  const db = testDb || connection
+
+  return db('users')
+    .where('email', email)
+    .then(users => users.length > 0)
+}
+
 function getUserByEmail(email, testDb){
   const db = testDb || connection
   return db('users').where('email', email).first()
@@ -197,6 +206,7 @@ function writeTautoko(obj, testDb) {
 module.exports = {
   createUser,
   getUsers,
+  userExists,
   getUserByEmail,
   getRahui,
   editRahui,

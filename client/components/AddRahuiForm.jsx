@@ -57,7 +57,6 @@ class AddRahuiForm extends React.Component {
         ).then(
             () => {
                 this.props.dispatch(fetchAllRahui())
-                console.log("fetchAll")
             }
         )
 
@@ -67,7 +66,7 @@ class AddRahuiForm extends React.Component {
     handleChange(e) {
         e.preventDefault()
         const { name, value } = e.target
-        this.setState({ [name]: value }, () => console.log(this.state));
+        this.setState({ [name]: value });
     }
 
 
@@ -96,8 +95,6 @@ class AddRahuiForm extends React.Component {
         if (allIwiInRegion.length > 0) {
 
             return allIwiInRegion.map(iwi => {
-                console.log(Object.keys(iwi)[0])
-
                 return < option htmlFor="iwi" > {Object.keys(iwi)[0]}</option >
             })
         }
