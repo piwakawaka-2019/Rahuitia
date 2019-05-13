@@ -29,7 +29,7 @@ class AddRahuiForm extends React.Component {
         this.handleSelect2 = this.handleSelect2.bind(this);
         this.handleSelect3 = this.handleSelect3.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+
     }
 
     componentDidMount() {
