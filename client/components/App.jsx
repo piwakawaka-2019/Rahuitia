@@ -22,21 +22,24 @@ import Login from "../components/Login";
 import ReactMap from "./ReactMap";
 import FormAndMap from "./FormAndMap";
 
+
 export function App({ auth }) {
   return (
     <div>
       <Router>
         <Nav />
-       <Route path="/about/" component={About} />
+        <Route exact="true" path="/" component={Landing} />
+        
+        
+        <Route path="/about/" component={About} />
         <Route path="/about/team" component={Team} />
         <Route path="/about/resourses" component={Resourses} />
      
-  
         <Route path="/Login/" component={Login} />
         <Route exact="true" path="/AddRahui" component={FormAndMap} />
         <Route exact="true" path="/explore" component={Explore} />
         <Route path="/rahui/:id" component={RahuiDetail} />
-        <Route exact="true" path="/" component={Landing} />
+        
       </Router>
     </div>
   );

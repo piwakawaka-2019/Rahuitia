@@ -29,6 +29,7 @@ class NewMap extends Component {
         zoomControl: false,
         rotateControl: false,
         fullscreenControl: false,
+        
       }}
      >
 
@@ -43,8 +44,8 @@ class NewMap extends Component {
         key={rahuicoords.id}
         onClick={() => { window.location = `#/rahui/${rahuicoords.id}`}} 
         options={{
-            fillColor: "#DC5757",
-            fillOpacity: 0.9,
+            fillColor: "#DC557",
+            fillOpacity: 0.6,
             strokeColor: "#CE3838",
             strokeOpacity: 1,
             strokeWeight: 1
