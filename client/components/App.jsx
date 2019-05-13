@@ -28,24 +28,25 @@ import Register from "./Register"
 export function App({ auth }) {
   return (
     <div>
-      <Router>
-        <Nav />
+      {/* <Router> */}
+      {/* <Nav />
         <Route exact="true" path="/register" component={Register} />
         <Route path="/rahui/:id" component={RahuiDetail} />
 
         <Route path="/about/" component={About} />
         <Route path="/about/team" component={Team} />
-        <Route path="/about/resourses" component={Resourses} />
-        {/* <Route path="/video" component={VideoBackground} /> */}
+        <Route path="/about/resourses" component={Resourses} /> */}
+      {/* <Route path="/video" component={VideoBackground} /> */}
 
-        <Route path="/Login/" component={Login} />
+      {/* <Route path="/Login/" component={Login} />
         <Route exact="true" path="/AddRahui" component={FormAndMap} />
         <Route exact="true" path="/explore" component={Explore} />
-        <Route path="/rahui/:id" component={RahuiDetail} />
-        {/* <Route path="/" component={Landing} /> */}
-      </Router>
+        <Route path="/rahui/:id" component={RahuiDetail} /> */}
+      {/* <Route path="/" component={Landing} /> */}
+      {/* </Router> */}
 
       {/* <Register /> */}
+
     </div>
   );
 }

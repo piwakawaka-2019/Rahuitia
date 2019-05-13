@@ -13,5 +13,5 @@ export default combineReducers({
   rahui,
   iwi,
   area,
-  coords
+  coords,
 });
