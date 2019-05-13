@@ -48,7 +48,7 @@ class About extends Component {
         <button onClick={this.handleResourcesClick}>Resourses</button>
         <button onClick={this.handleProjectClick}>Project</button>
 
-        <button onClick={this.handleRahuiAPIClick}>About</button>
+        <button onClick={this.handleRahuiAPIClick}>API</button>
 
         {this.state.projectIsVisible ? <Project /> : null}
       </div>
