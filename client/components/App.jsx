@@ -15,6 +15,8 @@ import RahuiDetail from "./RahuiDetail";
 import About from "../components/about/About";
 import Team from "../components/about/Team";
 import Resourses from "../components/about/Resourses";
+import RahuiAPI from "../components/about/RahuiAPI";
+
 import VideoBackground from "./VideoBackground";
 // import ReactMap from "./ReactMap"
 
@@ -32,6 +34,8 @@ export function App({ auth }) {
         <Route path="/about/" component={About} />
         <Route path="/about/team" component={Team} />
         <Route path="/about/resourses" component={Resourses} />
+        <Route path="/about/rahuiapi" component={RahuiAPI} />
+
         <Route path="/video" component={VideoBackground} />
   
         <Route path="/Login/" component={Login} />
