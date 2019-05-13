@@ -1,13 +1,13 @@
 const jwt = require('jsonwebtoken')
-const { getUserByUsername } = require('../db/users')
+const { getUserByEmail } = require('../db/users')
 const verifyJwt = require('express-jwt')
 const { comparePasswordToHash } = require('./hash')
 
 function issue (req, res) {
-  getUserByUsername(req.body.userName)
+  getUserByEmail(req.body.email)
     .then(user => {
       if (!user) {
-        res.status(403).json({ message: 'User does not exist' })
+        res.status(403).json({ message: 'User does not exist, please make an account' })
       } else {
         // needs to be password_hash instead of hash to match db column name
         comparePasswordToHash(req.body.password, user.password_hash)
