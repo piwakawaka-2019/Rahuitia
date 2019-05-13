@@ -21,7 +21,7 @@ class NewMap extends Component {
        defaultZoom = {this.props.zoom}
         defaultOptions={{
         disableDefaultUI: true,
-        mapTypeId: 'hybrid',//google.maps.MapTypeId.SATELLITE,
+        mapTypeId: 'hybrid', //google.maps.MapTypeId.SATELLITE,
         streetViewControl: true,
         scaleControl: false,
         mapTypeControl: false,

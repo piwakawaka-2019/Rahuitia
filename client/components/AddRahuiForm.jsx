@@ -22,6 +22,7 @@ class AddRahuiForm extends React.Component {
             description: null,
             korero: null,
             contact: null,
+            submittersName: null,
 
         };
         this.handleChange = this.handleChange.bind(this);
@@ -43,6 +44,7 @@ class AddRahuiForm extends React.Component {
 
         const rahui = {
             userId: 5,
+            region: this.state.regionSelected,
             iwi: this.state.iwiSelected,
             hapu: this.state.hapuSelected,
             description: this.state.description,
@@ -50,6 +52,9 @@ class AddRahuiForm extends React.Component {
             korero: this.state.korero,
             datePlaced: this.state.datePlaced,
             dateLifted: this.state.dateLifted,
+            submittersName: this.state.submittersName,
+            contact: this.state.contact,
+            authoriser: this.state.authoriser
         }
         //should be a dispatching an action
         writeRahui(

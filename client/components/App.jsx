@@ -40,7 +40,7 @@ export function App({ auth }) {
      
         <Route path="/Login/" component={Login} />
         <Route exact="true" path="/AddRahui" component={FormAndMap} />
-        <Route exact="true" path="/explore" component={Explore} />
+        <Route exact='true' path="/explore" component={Explore} />
         <Route path="/rahui/:id" component={RahuiDetail} />
         
       </Router>

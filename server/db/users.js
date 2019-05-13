@@ -77,6 +77,10 @@ function writeRahui(
   geo_ref,
   date_placed,
   date_lifted,
+  contact,
+  submitter,
+  authoriser,
+  region,
   testDb
 ){
   const db = testDb || connection
@@ -90,6 +94,10 @@ function writeRahui(
     geo_ref: JSON.stringify(geo_ref),
     date_placed: date_placed,
     date_lifted: date_lifted,
+    contact,
+    submitter,
+    authoriser,
+    region: JSON.stringify(region) 
   })
 
 }
@@ -103,6 +111,10 @@ function editRahui(
   geo_ref,
   date_placed,
   date_lifted,
+  contact,
+  submitter,
+  authoriser,
+  region,
   testDb
 ) {
   const db = testDb || connection
@@ -116,6 +128,10 @@ function editRahui(
     geo_ref: geo_ref,
     date_placed: date_placed,
     date_lifted: date_lifted,
+    contact,
+    submitter,
+    authoriser,
+    region,
   })
 }
 
