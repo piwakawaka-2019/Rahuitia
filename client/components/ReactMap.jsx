@@ -29,7 +29,7 @@ const MapWithADrawingManager = compose(
       defaultCenter={new google.maps.LatLng(-41.267622, 174.745222)}
       defaultOptions={{
         disableDefaultUI: true,
-        mapTypeId: 'hybrid',//google.maps.MapTypeId.SATELLITE,
+        mapTypeId: 'hybrid',//google.maps.MapTypeId.HYBRID,
         streetViewControl: false,
         scaleControl: false,
         mapTypeControl: false,
@@ -40,7 +40,8 @@ const MapWithADrawingManager = compose(
         labels: true
       }}
     >
-
+    {/* {lat: -41.267622, lng: 174.745222} */}
+ {/* defaultCenter={ { lat: -25.363882, lng: 131.044922 } } */}
     <DrawingManager
         defaultDrawingMode={google.maps.drawing.OverlayType.POLYGON}
         defaultOptions={{

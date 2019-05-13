@@ -10,7 +10,14 @@ class NewMap extends Component {
     super(props);
     this.state = {  }
 }
-
+// styles : [{
+//   "featureType" : "water",
+//   "elementType" : "geometry",
+//   "stylers" : [{
+//       "color" : "#b6d9ff"
+//   }, {
+//       "lightness" : 17
+//   }]
 
   render() {
 
@@ -28,6 +35,12 @@ class NewMap extends Component {
         zoomControl: false,
         rotateControl: false,
         fullscreenControl: false,
+  //       styles: {
+  // "featureType" : "water",
+  // "elementType" : "geometry",
+  // "stylers" : [{
+  //     "color" : "#b6d9ff"
+  // }
       }}
      >
 
@@ -50,10 +63,6 @@ class NewMap extends Component {
       }}/> 
       </div>)
      })}
- 
-
-
-
 
      </GoogleMap>
   ));
@@ -76,6 +85,7 @@ const mapStateToProps = state =>{
       allrahui: state.rahui
   }
 }
+
 
 export default connect(mapStateToProps)(NewMap);
 
