@@ -17,7 +17,7 @@ class RahuiDetail extends Component {
         let rahuiId = this.props.match.params.id;
         console.log(rahuiId, this.props)
     
-        let {id, geo_ref, iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, email} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
+        let {id, geo_ref, iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, region, authoriser, contact, iwi, hapu} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
         
         
         return ( 
@@ -29,13 +29,14 @@ class RahuiDetail extends Component {
     
             <div className="detailwrapper">
                 <button onClick={this.handleclick.bind(this)}> Back to List </button>
-                <br/><p>{iwi_name}</p> <br/>
+                <br/><p>iwi: {iwi}   |   hapu: {hapu}   |   region: {region}</p> <br/>
                 <h1> {description}</h1>
-                <br/><b>Issued by:</b> <p> {first_name} {last_name} ({iwi_name} | {hapu_name})</p>
+                <br/><b>Authorised by:</b> <p> {authoriser}</p>
+                <br/><b>Submitted by:</b> <p> {first_name} {last_name} ({iwi_name} | {hapu_name})</p>
                 <br/><b>Date placed:</b> <p> {date_placed}</p>
                 <br/><b>Date Lifted:</b> <p> {date_lifted}</p>
                 <br/><b>Korero:</b> <p> {korero}</p>
-                <br/><b>Contact:</b> <p> {email}</p>
+                <br/><b>Contact:</b> <p> {contact}</p>
                 <hr></hr> 
            </div> 
 
