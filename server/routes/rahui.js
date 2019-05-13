@@ -57,7 +57,10 @@ router.get('/', (req, res) => {
         const geoRef = rahuiData.geoRef
         const datePlaced = rahuiData.datePlaced
         const dateLifted = rahuiData.dateLifted
-        await db.writeRahui(userId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted);
+        const authoriser = rahuiData.authoriser
+        const contact = rahuiData.contact
+        const region = rahuiData.region
+        await db.writeRahui(userId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted, authoriser, contact, region);
     
         res.json({})
     }
@@ -79,8 +82,11 @@ router.put('/:id', function(req, res, next){
       const geoRef = rahuiData.geoRef
       const datePlaced = rahuiData.datePlaced
       const dateLifted = rahuiData.dateLifted
+      const authoriser = rahuiData.authoriser
+      const contact = rahuiData.contact
+      const region = rahuiData.region
       //await does not work here
-      db.editRahui(rahuiId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted);
+      db.editRahui(rahuiId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted, authoriser, contact, region);
 
       res.json({})
   }

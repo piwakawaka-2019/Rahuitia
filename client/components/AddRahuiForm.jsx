@@ -22,7 +22,6 @@ class AddRahuiForm extends React.Component {
             description: null,
             korero: null,
             contact: null,
-            submittersName: null,
 
         };
         this.handleChange = this.handleChange.bind(this);
@@ -52,7 +51,6 @@ class AddRahuiForm extends React.Component {
             korero: this.state.korero,
             datePlaced: this.state.datePlaced,
             dateLifted: this.state.dateLifted,
-            submittersName: this.state.submittersName,
             contact: this.state.contact,
             authoriser: this.state.authoriser
         }
@@ -175,13 +173,13 @@ class AddRahuiForm extends React.Component {
                     <input name="authoriser" type="text" placeholder="Authorised by" noValidate onChange={this.handleChange} />
 
                     <br></br>
-                    <br></br>
+                    {/* <br></br>
 
                     <p>Please enter your name:</p>
 
                     <input name="submittersName" type="text" placeholder="Submitted by" />
 
-                    <br></br>
+                    <br></br> */}
                     <br></br>
 
 
