@@ -43,6 +43,17 @@ function createUser(
   });
 }
 
+function getUserByEmail(email, testDb){
+  const db = testDb || connection
+  return db('users').where('email', email).first()
+}
+
+// function getUser (id, db = connection) {
+//   return db('users').where('id', id).first()
+// }
+
+
+
 function writeIwi(iwiName, userId, testDb) {
   const db = testDb || connection
   return db('iwi')
@@ -186,6 +197,7 @@ function writeTautoko(obj, testDb) {
 module.exports = {
   createUser,
   getUsers,
+  getUserByEmail,
   getRahui,
   editRahui,
   writeRahui,
