@@ -3,6 +3,7 @@ import React from 'react'
 import { connect } from "react-redux";
 import { fetchAllIwi } from "../actions/iwi";
 import { writeRahui } from "../apis/rahui"
+import { fetchAllRahui } from '../actions/rahui'
 
 class AddRahuiForm extends React.Component {
     constructor(props) {
