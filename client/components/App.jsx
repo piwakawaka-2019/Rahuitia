@@ -27,9 +27,7 @@ export function App({ auth }) {
     <div>
       <Router>
         <Nav />
-        <Route path="/rahui/:id" component={RahuiDetail} />
-
-        <Route path="/about/" component={About} />
+       <Route path="/about/" component={About} />
         <Route path="/about/team" component={Team} />
         <Route path="/about/resourses" component={Resourses} />
      
