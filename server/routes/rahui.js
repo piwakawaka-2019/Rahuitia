@@ -42,50 +42,50 @@ router.get('/', (req, res) => {
       }
       res.json(arr)
     })
+  })
+
+
+  router.post('/', async (req, res) => {
+    try{
+        console.log("req.body:", req.body)
+        const rahuiData = req.body;
+        const userId = rahuiData.userId
+        const iwi = rahuiData.iwi
+        const hapu = rahuiData.hapu
+        const description = rahuiData.description
+        const korero = rahuiData.korero
+        const geoRef = rahuiData.geoRef
+        const datePlaced = rahuiData.datePlaced
+        const dateLifted = rahuiData.dateLifted
+        await db.writeRahui(userId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted);
+    
+        res.json({})
+    }
+    catch(err){
+        err => res.status(500).json({message: "Server Error"})
+    }
 })
 
 
-router.post('/', async (req, res) => {
-  try {
-    console.log("req.body:", req.body)
-    const rahuiData = req.body;
-    const userId = rahuiData.userId
-    const iwi = rahuiData.iwi
-    const hapu = rahuiData.hapu
-    const description = rahuiData.description
-    const korero = rahuiData.korero
-    const geoRef = rahuiData.geoRef
-    const datePlaced = rahuiData.datePlaced
-    const dateLifted = rahuiData.dateLifted
-    await db.writeRahui(userId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted);
+router.put('/:id', function(req, res, next){
+    try{
+      console.log(req.body)
+      const rahuiId = req.params.id;
+      const rahuiData = req.body;
+      const iwi = rahuiData.iwi
+      const hapu = rahuiData.hapu
+      const description = rahuiData.description
+      const korero = rahuiData.korero
+      const geoRef = rahuiData.geoRef
+      const datePlaced = rahuiData.datePlaced
+      const dateLifted = rahuiData.dateLifted
+      //await does not work here
+      db.editRahui(rahuiId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted);
 
-    res.status(200)
+      res.json({})
   }
-  catch (err) {
-    err => res.status(500).send({ message: "Server Error" })
-  }
-})
-
-
-router.put('/:id', function (req, res, next) {
-  try {
-    console.log(req.body)
-    const rahuiId = req.params.id;
-    const rahuiData = req.body;
-    const iwi = rahuiData.iwi
-    const hapu = rahuiData.hapu
-    const description = rahuiData.description
-    const korero = rahuiData.korero
-    const geoRef = rahuiData.geoRef
-    const datePlaced = rahuiData.datePlaced
-    const dateLifted = rahuiData.dateLifted
-    //await does not work here
-    db.editRahui(rahuiId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted);
-
-    res.status(200)
-  }
-  catch (err) {
-    err => res.status(500).send({ message: "Server Error" })
+  catch(err){
+      err => res.status(500).json({message: "Server Error"})
   }
 })
 

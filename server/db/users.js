@@ -72,8 +72,8 @@ function writeRahui(
   return db('rahui')
   .insert({
     user_id: user_id,
-    iwi: iwi,
-    hapu: hapu, 
+    iwi: JSON.stringify([iwi]),
+    hapu: JSON.stringify([hapu]), 
     description: description,
     korero: korero,
     geo_ref: JSON.stringify(geo_ref),
@@ -123,11 +123,17 @@ function getRahui(testDb) {
 
 function getRahuiInformation(testDb) {
   const db = testDb || connection;
+
   return db("rahui")
     .join("users", "rahui.user_id", "=", "users.id")
     .join("iwi", "rahui.user_id", "=", "iwi.user_id")
     .join("hapu", "rahui.user_id", "=", "hapu.user_id")
-    .select();
+    .select('*', 'rahui.id as rahui_id')
+    .then(rahui => rahui.map(r => {
+      r.id = r.rahui_id
+      delete r.rahui_id
+      return r
+    }));
 }
 
 //**************/get user iwi function ()
