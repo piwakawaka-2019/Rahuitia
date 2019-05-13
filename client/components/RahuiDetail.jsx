@@ -22,7 +22,7 @@ class RahuiDetail extends Component {
         
         return ( 
         <div>
-        <SplitterLayout percentage >
+        <SplitterLayout primaryIndex={0}>
             <div >
                 <NewMap color={"#2E86C1"} zoom={13} coords={geo_ref[0]} />
             </div> 
