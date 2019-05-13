@@ -17,15 +17,13 @@ class About extends Component {
   handleTeamClick = () => {
     this.setState({
       projectIsVisible: false
-
     })
     window.location = `#/about/team`;
   }
 
   handleResourcesClick = () => {
     this.setState({
-      projectIsVisible: false
-      
+      projectIsVisible: false  
     })
     window.location = `#/about/resourses`;
   }
@@ -33,9 +31,7 @@ class About extends Component {
   handleProjectClick = () => {
     this.setState({
       projectIsVisible: true
-      
     })
-    
     window.location = `#/about`;
   }
 

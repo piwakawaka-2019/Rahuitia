@@ -21,25 +21,33 @@ import VideoBackground from "./VideoBackground";
 import Login from "../components/Login";
 import ReactMap from "./ReactMap";
 import FormAndMap from "./FormAndMap";
+import Register from "./Register"
+import Tautoko from "./Tautoko"
+
+// import Register from "./Register"
+
 
 export function App({ auth }) {
   return (
     <div>
       <Router>
         <Nav />
-        <Route path="/rahui/:id" component={RahuiDetail} />
-
+        <Route exact="true" path="/" component={Landing} />
+        
+        
         <Route path="/about/" component={About} />
         <Route path="/about/team" component={Team} />
         <Route path="/about/resourses" component={Resourses} />
-        <Route path="/video" component={VideoBackground} />
-  
+     
         <Route path="/Login/" component={Login} />
         <Route exact="true" path="/AddRahui" component={FormAndMap} />
-        <Route exact="true" path="/explore" component={Explore} />
+        <Route exact='true' path="/explore" component={Explore} />
         <Route path="/rahui/:id" component={RahuiDetail} />
-        <Route exact="true" path="/" component={Landing} />
+        
       </Router>
+
+      {/* <Register /> */}
+        {/* <Tautoko /> */}
     </div>
   );
 }

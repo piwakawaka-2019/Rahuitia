@@ -11,10 +11,6 @@ function userExists(user_name, testDb) {
     .then(users => users.length > 0)
 }
 
-
-
-
-
 module.exports = {
   userExists,
 }
