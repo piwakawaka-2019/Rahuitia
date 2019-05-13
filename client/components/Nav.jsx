@@ -7,7 +7,7 @@ export class Nav extends Component {
     return (
       <div className="navbar">
         <div className="logo">
-          <Link to="/">Rāhui</Link>
+          <Link to="/#/">Rāhui</Link>
         </div>
         <div className="about navButton">
           <Link to="/about/">ABOUT</Link>

@@ -1,5 +1,7 @@
 .splitter-layout {
     position: absolute;
+    top: 40px;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -12,6 +14,14 @@
     flex: 0 0 auto;
     overflow: auto;
   }
+
+  .splitter-layout .map {
+    position: relative;
+    flex: 0 0 auto;
+    overflow: hidden;
+    
+  }
+
   
   .splitter-layout .layout-pane.layout-pane-primary {
     flex: 1 1 auto;
@@ -22,7 +32,7 @@
     width: 4px;
     height: 100%;
     cursor: col-resize;
-    background-color: rgb(169, 43, 43);
+  
   }
   
   .splitter-layout .layout-splitter:hover {

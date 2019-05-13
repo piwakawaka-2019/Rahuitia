@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import SplitterLayout from 'react-splitter-layout';
+
 import { connect } from "react-redux";
 import { fetchAllRahui} from "../actions/rahui";
 import NewMap from "./NewMap"
@@ -21,11 +22,11 @@ class RahuiDetail extends Component {
         
         return ( 
         <div>
-        <SplitterLayout >
+        <SplitterLayout primaryIndex={0}>
             <div >
-                <NewMap color={"#2E86C1"} zoom={15} coords={geo_ref[0]} />
+                <NewMap color={"#2E86C1"} zoom={13} coords={geo_ref[0]} />
             </div> 
-
+    
             <div className="detailwrapper">
                 <button onClick={this.handleclick.bind(this)}> Back to List </button>
                 <br/><p>{iwi_name}</p> <br/>
@@ -35,8 +36,8 @@ class RahuiDetail extends Component {
                 <br/><b>Date Lifted:</b> <p> {date_lifted}</p>
                 <br/><b>Korero:</b> <p> {korero}</p>
                 <br/><b>Contact:</b> <p> {email}</p>
-                <hr></hr>
-            </div>
+                <hr></hr> 
+           </div> 
 
         </SplitterLayout>
         </div>

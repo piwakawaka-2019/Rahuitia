@@ -12,12 +12,16 @@ class Landing extends Component {
   render() {
     return (
     <div> 
-        <div className="fullscreen-video-wrap">
+
+      <div className="fullscreen-video-wrap">
         <video id="background-video" loop autoPlay muted>
                 <source src={this.state.videoURL} type="video/mp4" />
                 Your browser does not support the video tag.
         </video>
         </div>
+
+        
+
         <div className="overlay">
         <div>
           <h1>Respect the Rahui</h1> 
@@ -60,7 +64,12 @@ class Landing extends Component {
           <p><a>Github</a> </p>
           </footer>
         </div>
-        </div>
+</div>
+       
+        
+
+        
+
       </div>
     );
   }

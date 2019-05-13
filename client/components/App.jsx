@@ -15,7 +15,7 @@ import RahuiDetail from "./RahuiDetail";
 import About from "../components/about/About";
 import Team from "../components/about/Team";
 import Resourses from "../components/about/Resourses";
-import VideoBackground from "./VideoBackground";
+
 // import ReactMap from "./ReactMap"
 
 import Login from "../components/Login";
@@ -26,28 +26,28 @@ import Tautoko from "./Tautoko"
 
 // import Register from "./Register"
 
+
 export function App({ auth }) {
   return (
     <div>
-      {/* <Router> */}
-      {/* <Nav />
-        <Route exact="true" path="/register" component={Register} />
-        <Route path="/rahui/:id" component={RahuiDetail} />
-
+      <Router>
+        <Nav />
+        <Route exact="true" path="/" component={Landing} />
+        
+        
         <Route path="/about/" component={About} />
         <Route path="/about/team" component={Team} />
-        <Route path="/about/resourses" component={Resourses} /> */}
-      {/* <Route path="/video" component={VideoBackground} /> */}
-
-      {/* <Route path="/Login/" component={Login} />
+        <Route path="/about/resourses" component={Resourses} />
+     
+        <Route path="/Login/" component={Login} />
         <Route exact="true" path="/AddRahui" component={FormAndMap} />
-        <Route exact="true" path="/explore" component={Explore} />
-        <Route path="/rahui/:id" component={RahuiDetail} /> */}
-      {/* <Route path="/" component={Landing} /> */}
-      {/* </Router> */}
+        <Route exact='true' path="/explore" component={Explore} />
+        <Route path="/rahui/:id" component={RahuiDetail} />
+        
+      </Router>
 
       {/* <Register /> */}
-        <Tautoko />
+        {/* <Tautoko /> */}
     </div>
   );
 }
