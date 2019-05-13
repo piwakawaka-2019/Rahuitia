@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { HashRouter as Router, Route } from "react-router-dom";
 
-import Landing from "./Landing"
+import Landing from "./LandingG/Landing"
 import Nav from "./Nav";
 import Explore from "./Explore";
 
