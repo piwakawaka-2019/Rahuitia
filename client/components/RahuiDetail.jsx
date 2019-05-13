@@ -1,33 +1,29 @@
 import React, { Component } from 'react';
-import Map from './Map'
+
 import SplitterLayout from 'react-splitter-layout';
 import { connect } from "react-redux";
 import { fetchAllRahui} from "../actions/rahui";
+import NewMap from "./NewMap"
 
 
 class RahuiDetail extends Component {
-  
-    componentDidMount(){
-        this.props.dispatch(fetchAllRahui())
-    }
 
     handleclick=()=>{
-        window.location = `/`; 
+        window.location = `/#/explore`; 
         }
     
-
     render() { 
         let rahuiId = this.props.match.params.id;
         console.log(rahuiId, this.props)
     
-        let {iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, email} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
+        let {id, geo_ref, iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, email} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
         
         
         return ( 
         <div>
         <SplitterLayout >
             <div >
-                <Map  />
+                <NewMap color={"#2E86C1"} zoom={15} coords={geo_ref[0]} />
             </div> 
 
             <div className="detailwrapper">

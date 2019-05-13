@@ -12,3 +12,23 @@ export function getRahui() {
       throw Error("You need to implement an API route for /v1/rahui");
     });
 }
+
+export function writeRahui(rahui) {
+  return request
+    .post('/api/rahui')
+    .send(rahui)
+    .then(res => res.body)
+    .catch(err => {
+      throw err
+    })
+}
+
+export function editRahui(rahui) {
+  return request
+    .post('/api/rahui')
+    .send(rahui)
+    .then(res => res.body)
+    .catch(err => {
+      throw err
+    })
+}
