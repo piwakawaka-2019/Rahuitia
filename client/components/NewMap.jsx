@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { fetchAllRahui} from "../actions/rahui";
 import {  withScriptjs, withGoogleMap, GoogleMap, Polygon, Marker } from 'react-google-maps'
+import { relative } from 'path';
 
 
 class NewMap extends Component {
@@ -47,7 +48,7 @@ class NewMap extends Component {
   return(
      <div>
        <GoogleMapExample
-         containerElement={ <div style={{ height: window.innerHeight, width: window.innerWidth}} /> }
+         containerElement={ <div style={{ height: window.outerHeight, width: window.outerWidth, position: relative}} /> }
          mapElement={ <div style={{ height: `100%`, width: `49%` }} /> }
          scrollwheel={false}
        />
