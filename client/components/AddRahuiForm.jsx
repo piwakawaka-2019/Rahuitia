@@ -55,8 +55,9 @@ class AddRahuiForm extends React.Component {
         writeRahui(
             rahui
         ).then(
-            () => {this.props.dispatch(fetchAllRahui())
-            console.log("fetchAll")
+            () => {
+                this.props.dispatch(fetchAllRahui())
+                console.log("fetchAll")
             }
         )
 
@@ -90,9 +91,6 @@ class AddRahuiForm extends React.Component {
     }
 
     renderIwi() {
-        // console.log(this.props.alliwi)
-        // console.log(this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected])
-
         const allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
 
         if (allIwiInRegion.length > 0) {

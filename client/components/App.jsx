@@ -37,7 +37,7 @@ export function App({ auth }) {
         <Route path="/about/team" component={Team} />
         <Route path="/about/resourses" component={Resourses} />
         {/* <Route path="/video" component={VideoBackground} /> */}
-  
+
         <Route path="/Login/" component={Login} />
         <Route exact="true" path="/AddRahui" component={FormAndMap} />
         <Route exact="true" path="/explore" component={Explore} />
