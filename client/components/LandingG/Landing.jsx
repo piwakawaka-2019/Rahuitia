@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import English from './English'
-import TeReo from './TeReo'
+import LandEng from './LandEng'
+import LandReo from './LandReo'
+import { toggleLang } from "../../actions/toggle";
+import { connect } from 'react-redux'
 
 class Landing extends Component {
   constructor (props) {
@@ -22,18 +24,22 @@ class Landing extends Component {
         </video>
 
         </div>
-        {/* const eng = <button onClick={English}>English</button>;
-        const te-reo = <button onClick={TeReo}>Te Reo</button> */}
+    
 
-        this.props.lang == "eng" ? language.english : language.te_reo)
+      {this.props.lang == "eng" ? <LandEng/> : <LandReo/>}
       
       </div>
     );
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    lang: state.toggle
+  }
+}
 
-export default Landing;
+export default connect(mapStateToProps)(Landing);
 
 
 

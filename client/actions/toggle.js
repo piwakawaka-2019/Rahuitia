@@ -4,10 +4,6 @@ export function toggleLang () {
   }
 }
 
-export function toggle() {
-  return (
-  this.props.lang == "eng" ? language.english : language.te_reo)
-}
 
 // export function fetchAllIwi() {
 
