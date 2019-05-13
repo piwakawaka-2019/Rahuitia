@@ -22,6 +22,7 @@ import Login from "../components/Login";
 import ReactMap from "./ReactMap";
 import FormAndMap from "./FormAndMap";
 import Register from "./Register"
+import Tautoko from "./Tautoko"
 
 // import Register from "./Register"
 
@@ -46,6 +47,7 @@ export function App({ auth }) {
       </Router>
 
       {/* <Register /> */}
+        {/* <Tautoko /> */}
     </div>
   );
 }
