@@ -3,7 +3,7 @@ import SplitterLayout from 'react-splitter-layout';
 import { connect } from "react-redux";
 import { fetchAllRahui} from "../../actions/rahui";
 import NewMap from "../NewMap";
-import RahuiList from "../RahuiList";
+import RahuiList from "../RahuiListG/RahuiList";
 
 
 class Explore extends React.Component {
