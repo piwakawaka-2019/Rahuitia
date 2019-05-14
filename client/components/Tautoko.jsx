@@ -4,11 +4,16 @@ import { connect } from 'react-redux'
 import { incrementCount, decrementCount } from '../actions/tautoko'
 
 class Tautoko extends Component {
-    // 
+    // constructor(props) {
+    //     super(props)
+    //     this.state = {
+    //         disabled: false
+    //     }
 
+    // }
     handleBtnActionIncrement = () => {
         this.props.onIncrementClick(this.props.count)
-        // this.ref.btn.setAttribute("disabled", "disabled")
+        // this.forwardRef.btn.setAttribute("disabled", "disabled")
     }
 
     // handleBtnActionDecrement = () => {
@@ -18,13 +23,13 @@ class Tautoko extends Component {
     render() {
         const { count } = this.props
         return (
-            <div>
+            <React.Fragment>
                 <p>{count}</p>
-                <Button
-                    // ref="btn" 
-                    action={this.handleBtnActionIncrement} buttonTitle="Tautoko" />
+                <Button action={this.handleBtnActionIncrement.bind(this)} buttonTitle="Tautoko" />
+
+
                 {/* <Button action={this.handleBtnActionDecrement} buttonTitle="-" /> */}
-            </div>
+            </React.Fragment>
         )
     }
 }
