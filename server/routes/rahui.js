@@ -9,11 +9,12 @@ router.get('/', (req, res) => {
 
       while (rahui.length) {
         let firstEntry = rahui.shift()
-
+        firstEntry.region = JSON.parse(firstEntry.region)
         firstEntry.iwi = JSON.parse(firstEntry.iwi)
         firstEntry.hapu = JSON.parse(firstEntry.hapu)
         firstEntry.iwi_name = [firstEntry.iwi_name]
         firstEntry.hapu_name = [firstEntry.hapu_name]
+        firstEntry.region = [firstEntry.region]
 
         firstEntry.geo_ref = JSON.parse(firstEntry.geo_ref)
 

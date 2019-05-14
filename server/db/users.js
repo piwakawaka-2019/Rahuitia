@@ -74,8 +74,6 @@ function writeHapu(hapuName, userId, testDb) {
     .insert({ hapu_name: hapuName, user_id: userId })
 }
 
-<<<<<<< HEAD
-=======
 
 //**************/write rahui function ()
 function writeRahui(
@@ -141,7 +139,6 @@ function editRahui(
   })
 }
 
->>>>>>> 7dd3f224842a7e430c132a04fec92d26b1c6de25
 //**************/get user function ()
 function getUsers(testDb) {
   const db = testDb || connection;
