@@ -6,6 +6,8 @@ import Landing from "./LandingG/Landing"
 import Nav from "./NavG/Nav";
 import Explore from "./ExploreG/Explore";
 
+// import AddRahuiForm from "./AddRahuiForm";
+
 import AddRahuiMap from "./NewMap";
 import MapWithADrawingManager from './ReactMap'
 import AddRahuiForm from "./AddRahuiForm";
@@ -37,9 +39,9 @@ export function App({ auth }) {
         
         <Route path="/about/" component={About} />
         <Route path="/about/team" component={Team} />
-        <Route path="/about/resourses" component={Resourses} />
-     
-        <Route path="/Login/" component={Login} />
+        <Route path="/about/resources" component={Resources} />
+        <Route path="/register/" component={Register} />
+        <Route path="/login/" component={Login} />
         <Route exact path="/AddRahui" component={FormAndMap} />
         <Route exact path="/explore" component={Explore} />
         <Route path="/rahui/:id" component={RahuiDetail} />
