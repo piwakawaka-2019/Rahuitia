@@ -10,11 +10,9 @@ export class Nav extends Component {
   render() {
     return (
       <div>
-    
-        <button onClick={() => this.props.dispatch(toggleLang())}></button>
-
-        {this.props.lang == "eng" ? 'TeReo' : 'English'}
+        
         {this.props.lang == "eng" ? <NavEng /> : <NavReo />}
+
         </div>
     );
   }

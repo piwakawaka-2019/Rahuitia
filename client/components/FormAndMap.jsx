@@ -2,7 +2,7 @@ import React from "react";
 import SplitterLayout from 'react-splitter-layout';
 import { connect } from "react-redux";
 import ReactMap from "./ReactMap";
-import AddRahuiForm from "./AddRahuiForm";
+import AddRahuiForm from "./AddRahuiFormG/AddRahuiForm";
 
 
 

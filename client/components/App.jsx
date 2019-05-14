@@ -8,7 +8,7 @@ import Explore from "./ExploreG/Explore";
 
 import AddRahuiMap from "./NewMap";
 import MapWithADrawingManager from './ReactMap'
-import AddRahuiForm from "./AddRahuiForm";
+import AddRahuiForm from "./AddRahuiFormG/AddRahuiForm";
 
 
 import RahuiDetail from "./RahuiDetail";

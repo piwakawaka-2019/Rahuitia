@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { toggleLang } from "../../actions/toggle";
+import { connect } from 'react-redux';
 
 
 class NavReo extends Component {
@@ -22,9 +24,17 @@ class NavReo extends Component {
 <div className="add navButton">
   <Link to="/addrahui/">Tāpirihia he Rāhui</Link>
 </div>
+
+<div><button onClick={() => this.props.dispatch(toggleLang())}>{this.props.lang == "eng" ? 'Te Reo' : 'English'}</button></div>
+
 </div>
 
     )}
   }
+  function mapStateToProps(state) {
+    return {
+      lang: state.toggle
+    }
+  }
 
-  export default NavReo
+  export default connect (mapStateToProps)(NavReo); 
