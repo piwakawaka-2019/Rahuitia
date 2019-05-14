@@ -23,7 +23,7 @@ class Explore extends React.Component {
 
                 <SplitterLayout >
                 <div >
-                 <NewMap color={"#FF4C4C"} zoom={6} coords={{lat: -47.892014, lng: 170.897149}}/>
+                 <NewMap color={"#FF4C4C"} zoom={6} coords={{lat: -41.892014, lng: 170.897149}}/>
                 </div> 
                 
                 <div className="detailwrapper">
