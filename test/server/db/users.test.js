@@ -1,5 +1,6 @@
 const testEnv = require("../setup-db");
 const users = require("../../../server/db/users");
+const rahui = require("../../../server/db/rahui");
 
 let testDb = null;
 
@@ -21,20 +22,20 @@ test("createUser - Inserts a single user", () => {
       "address",
       "email",
       "s3cr3t",
-      [''],
-      [''],
+      [""],
+      [""],
       testDb
     )
     .then(ids => {
       let actual = ids.length;
 
       expect(actual).toEqual(expected);
-    })
-    // .then(() => {
-    //   return Promise.all([testDb('iwi').select(), testDb('hapu').select()]).then(data => {
-    //     console.log(data)
-    //   })
-    // });
+    });
+  // .then(() => {
+  //   return Promise.all([testDb('iwi').select(), testDb('hapu').select()]).then(data => {
+  //     console.log(data)
+  //   })
+  // });
 });
 
 test("getUsers - return users", () => {
@@ -50,7 +51,7 @@ test("getUsers - return users", () => {
 test("getRahui - return rahui", () => {
   let expected = true;
 
-  return users.getRahui(testDb).then(rahui => {
+  return rahui.getRahui(testDb).then(rahui => {
     let actual = rahui.length > 0;
 
     expect(actual).toEqual(expected);
@@ -70,7 +71,7 @@ test("getUserHapu - return hapu", () => {
 test("getRahuiAuthor - return rahui author", () => {
   let expected = true;
 
-  return users.getRahuiAuthor(21, testDb).then(rahui => {
+  return rahui.getRahuiAuthor(21, testDb).then(rahui => {
     let actual = rahui.length > 0;
 
     expect(actual).toEqual(expected);
@@ -80,7 +81,7 @@ test("getRahuiAuthor - return rahui author", () => {
 test("getRahuiTautoko - return rahui tautoko", () => {
   let expected = true;
 
-  return users.getRahuiTautoko(30, testDb).then(rahui => {
+  return rahui.getRahuiTautoko(30, testDb).then(rahui => {
     let actual = rahui.length > 0;
 
     expect(actual).toEqual(expected);
@@ -130,7 +131,7 @@ test("getUsers return users", () => {
 test("getRahui return rahui", () => {
   let expected = true;
 
-  return users.getRahui(testDb).then(rahui => {
+  return rahui.getRahui(testDb).then(rahui => {
     let actual = rahui.length > 0;
 
     expect(actual).toEqual(expected);

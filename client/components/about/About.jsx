@@ -21,7 +21,7 @@ class About extends Component {
     this.setState({
       projectIsVisible: false
     });
-    window.location = `#/about/resourses`;
+    window.location = `#/about/resources`;
   };
 
   handleProjectClick = () => {
@@ -45,7 +45,7 @@ class About extends Component {
       <div>
         <h1>About</h1>
         <button onClick={this.handleTeamClick}>Team</button>
-        <button onClick={this.handleResourcesClick}>Resourses</button>
+        <button onClick={this.handleResourcesClick}>Resources</button>
         <button onClick={this.handleProjectClick}>Project</button>
 
         <button onClick={this.handleRahuiAPIClick}>API</button>

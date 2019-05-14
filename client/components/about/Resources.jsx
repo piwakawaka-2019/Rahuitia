@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-class resourses extends Component {
+class resources extends Component {
   render() {
     return (
       <div>
-        <h1>RESOURSES</h1>
+        <h1>RESOURCES</h1>
         <div className="row">
           <div className="column">
             
@@ -36,4 +36,4 @@ class resourses extends Component {
   }
 }
 
-export default resourses;
+export default resources;

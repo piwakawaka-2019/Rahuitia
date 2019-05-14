@@ -14,7 +14,7 @@ import AddRahuiForm from "./AddRahuiForm";
 import RahuiDetail from "./RahuiDetail";
 import About from "../components/about/About";
 import Team from "../components/about/Team";
-import Resourses from "../components/about/Resourses";
+import Resources from "../components/about/Resources";
 import RahuiAPI from "../components/about/RahuiAPI";
 
 import VideoBackground from "./VideoBackground";
@@ -33,7 +33,7 @@ export function App({ auth }) {
 
         <Route path="/about/" component={About} />
         <Route path="/about/team" component={Team} />
-        <Route path="/about/resourses" component={Resourses} />
+        <Route path="/about/resources" component={Resources} />
         <Route path="/about/rahuiapi" component={RahuiAPI} />
 
         <Route path="/video" component={VideoBackground} />
