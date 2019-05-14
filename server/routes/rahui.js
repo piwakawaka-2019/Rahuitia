@@ -1,7 +1,6 @@
-const express = require('express')
-const db = require('../db/users')
-const router = express.Router()
-
+const express = require("express");
+const db = require("../db/rahui");
+const router = express.Router();
 
 router.get('/', (req, res) => {
   db.getRahuiInformation()
@@ -96,4 +95,3 @@ router.put('/:id', function(req, res, next){
 })
 
 module.exports = router
-
