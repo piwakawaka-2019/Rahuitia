@@ -141,7 +141,7 @@ class EditRahuiForm extends React.Component {
         
     }
 
-    resetIwiHapu() {
+    resetIwiHapu(e) {
         e.preventDefault()
         this.setState({
             region: null,
