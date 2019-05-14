@@ -1,7 +1,7 @@
 import request from "superagent";
 
 export function getRahui() {
-  console.log(' API client is working')
+  console.log(" API client is working");
   return request
     .get("/api/rahui")
     .then(res => {
@@ -16,20 +16,20 @@ export function getRahui() {
 export function writeRahui(rahui) {
   console.log(rahui)
   return request
-    .post('/api/rahui')
+    .post("/api/rahui")
     .send(rahui)
     .then(res => res.body)
     .catch(err => {
-      throw err
-    })
+      throw err;
+    });
 }
 
 export function editRahui(rahui) {
   return request
-    .post('/api/rahui')
+    .post("/api/rahui")
     .send(rahui)
     .then(res => res.body)
     .catch(err => {
-      throw err
-    })
+      throw err;
+    });
 }

@@ -10,8 +10,9 @@ class Register extends React.Component {
             first_name: null,
             middle_name: null,
             last_name: null,
-            iwi: null,
-            hapu: null,
+            region: [],
+            iwi: [],
+            hapu: [],
             address: null,
             email: null,
             password: null,
@@ -24,9 +25,10 @@ class Register extends React.Component {
         this.handleSelect = this.handleSelect.bind(this);
         this.handleSelect2 = this.handleSelect2.bind(this);
         this.handleSelect3 = this.handleSelect3.bind(this);
-        this.submit = this.submit.bind(this)
-        this.renderHapu = this.renderHapu.bind(this)
-        this.renderIwi = this.renderIwi.bind(this)
+        this.submit = this.submit.bind(this);
+        this.submitAdd = this.submitAdd.bind(this);
+        this.renderHapu = this.renderHapu.bind(this);
+        this.renderIwi = this.renderIwi.bind(this);
     }
 
     componentDidMount() {
@@ -36,31 +38,55 @@ class Register extends React.Component {
     handleChange(e) {
         e.preventDefault()
         const { name, value } = e.target
-        this.setState({ [name]: value }, () => console.log(this.state));
+        this.setState({ [name]: value });
     }
 
     submit(e) {
         e.preventDefault()
-        let { first_name, middle_name, last_name, iwi, hapu, address, email, password } = this.state
-        if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
-        this.props.dispatch(registerUserRequest({ first_name, middle_name, last_name, iwi, hapu, address, email, password }))
+
+        let { first_name, middle_name, last_name, address, email, password, confirm_password, iwi, hapu } = this.state
+        
+        // console.log("Name:",first_name,"Middle Name:", middle_name, "Last Name:", last_name,"Address:", address,"Email:", email, "Password:", password, "Confirm Password:", confirm_password, "iwi:", iwi,"hapu:", hapu)
+
+        if (confirm_password != password){ 
+            // return this.props.dispatch(loginError("Passwords don't match"))
+            console.log("Login Error- Passwords dont match")
+        } else { 
+            this.props.dispatch(registerUserRequest({ first_name, middle_name, last_name, address, email, password, iwi, hapu }))
+        }
+    }
+
+    submitAdd(){
+        let region = [...this.state.region, this.state.regionSelected]
+        let iwi= [...this.state.iwi, this.state.iwiSelected]
+        let hapu = [...this.state.hapu, this.state.hapuSelected]
+
+        this.setState({
+            region:[...new Set(region)],
+            iwi:[...new Set(iwi)],
+            hapu:[...new Set(hapu)],
+            regionSelected: null,
+            iwiSelected: null,
+            hapuSelected: null
+        })
+        console.log(this.state)
     }
 
     handleSelect(event) {
         this.setState({
-            regionSelected: event.target.value
+            regionSelected: event.target.value,
         });
     }
 
     handleSelect2(event) {
         this.setState({
-            iwiSelected: event.target.value
+            iwiSelected: event.target.value,
         });
     }
 
     handleSelect3(event) {
         this.setState({
-            hapuSelected: event.target.value
+            hapuSelected: event.target.value,
         });
     }
 
@@ -68,10 +94,7 @@ class Register extends React.Component {
         const allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
 
         if (allIwiInRegion.length > 0) {
-
             return allIwiInRegion.map(iwi => {
-                console.log(Object.keys(iwi)[0])
-
                 return < option htmlFor="iwi" > {Object.keys(iwi)[0]}</option >
             })
         }
@@ -106,11 +129,11 @@ class Register extends React.Component {
                 <p>You must register to add a rahui. There is a verficiation process to identify you. This may take up to three days.</p>
                 <br></br>
                 <form className="register-form" onSubmit={this.submit}>
-                    <input type="text" placeholder="first name" noValidate onChange={this.handleChange} />
+                    <input name="first_name" type="text" placeholder="first name" noValidate onChange={this.handleChange} />
                     <br></br>
-                    <input type="text" placeholder="middle name/s" noValidate onChange={this.handleChange} />
+                    <input name="middle_name" type="text" placeholder="middle name/s" noValidate onChange={this.handleChange} />
                     <br></br>
-                    <input type="text" placeholder="last name" noValidate onChange={this.handleChange} />
+                    <input name="last_name" type="text" placeholder="last name" noValidate onChange={this.handleChange} />
                     <br></br>
                     {/* Add iwi */}
 
@@ -140,16 +163,25 @@ class Register extends React.Component {
                             this.renderHapu()
                         ) : <option>----------</option>}
                     </select>
-
-
-
-
+                    <br></br>      
+                    <button type="button" onClick={this.submitAdd}>Add Another Region/Iwi/Hāpu</button>
                     <br></br>
+
+                    <div>Your whakapapa: <br></br> 
+                    iwi:{this.state.iwi.map(iwi => {return <p>{iwi}, </p>})}<br></br> 
+                    hapu:{this.state.hapu.map(hapu => {return <p>{hapu}, </p>})}<br></br> 
+                    </div>
+
+                    <br></br>                    
+                    <input name="address" type="text" placeholder="address" noValidate onChange={this.handleChange} />
                     <br></br>
-                    <input type="text" placeholder="password" noValidate onChange={this.handleChange} />
+                    <input name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
                     <br></br>
-                    <input type="text" placeholder="confirm password" noValidate onChange={this.handleChange} />
+                    <input name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
                     <br></br>
+                    <input name="confirm_password" type="password" placeholder="confirm password" noValidate onChange={this.handleChange} />
+                    <br></br>
+                    <button name="submit">SUBMIT</button>
                 </form>
             </div>)
     }
