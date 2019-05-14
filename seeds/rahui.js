@@ -16,7 +16,10 @@ exports.seed = function (knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
           geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
           date_placed: '12-11-2018',
-          date_lifted: '15-11-2018'
+          date_lifted: '15-11-2018',
+          authoriser: 'Nanz',
+          contact: 'Luke on his phone 021495030',
+          region: "Tamaki"
         },
         {
           id: 22,
@@ -29,7 +32,10 @@ exports.seed = function (knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
           geo_ref: JSON.stringify([{ lat: -41.291369, lng: 174.784672 }, { lat: -41.299236, lng: 174.780209 }, { lat: -41.296367, lng: 174.774158 }, { lat: -41.291369, lng: 174.784672 }]),
           date_placed: '12-11-2018',
-          date_lifted: '15-11-2018'
+          date_lifted: '15-11-2018',
+          authoriser: 'Nanz',
+          contact: 'Luke on his phone 021495030',
+          region: "Tamaki"
         },
         {
           id: 23,
@@ -42,7 +48,10 @@ exports.seed = function (knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
           geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
           date_placed: '12-11-2018',
-          date_lifted: '15-11-2018'
+          date_lifted: '15-11-2018',
+          authoriser: 'Nanz',
+          contact: 'Luke on his phone 021495030',
+          region: "Tamaki"
         },
         {
           id: 24,
@@ -55,7 +64,10 @@ exports.seed = function (knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
           geo_ref: JSON.stringify([{ lat: -41.287499, lng: 174.753687 }, { lat: -41.299236, lng: 174.760296 }, { lat: -41.314646, lng: 174.737723 }, { lat: -41.315379, lng: 174.732734 }, { lat: -41.305934, lng: 174.733034 }, { lat: -41.297810, lng: 174.739043 }, { lat: -41.287499, lng: 174.753687 }]),
           date_placed: '12-11-2018',
-          date_lifted: '15-11-2018'
+          date_lifted: '15-11-2018',
+          authoriser: 'Fudz',
+          contact: 'Luke on his phone 021495030',
+          region: "Tamaki"
         },
 
         {
@@ -69,7 +81,10 @@ exports.seed = function (knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
           geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
           date_placed: '12-11-2018',
-          date_lifted: '15-11-2018'
+          date_lifted: '15-11-2018',
+          authoriser: 'Fudz',
+          contact: 'Luke on his phone 021495030',
+          region: "Tamaki"
         },
         {
           id: 26,
@@ -82,7 +97,10 @@ exports.seed = function (knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
           geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
           date_placed: '12-11-2018',
-          date_lifted: '15-11-2018'
+          date_lifted: '15-11-2018',
+          authoriser: 'Ash',
+          contact: 'Luke on his phone 021495030',
+          region: "Tamaki"
         },
         {
           id: 27,
@@ -95,7 +113,10 @@ exports.seed = function (knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
           geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
           date_placed: '12-11-2018',
-          date_lifted: '15-11-2018'
+          date_lifted: '15-11-2018',
+          authoriser: 'Luke',
+          contact: 'Luke on his phone 021495030',
+          region: "Tamaki"
         },
         {
           id: 28,
@@ -108,7 +129,10 @@ exports.seed = function (knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
           geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
           date_placed: '12-11-2018',
-          date_lifted: '15-11-2018'
+          date_lifted: '15-11-2018',
+          authoriser: 'Nanz',
+          contact: 'Luke on his phone 021495030',
+          region: "Tamaki"
         },
         {
           id: 29,
@@ -121,7 +145,10 @@ exports.seed = function (knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
           geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
           date_placed: '12-11-2018',
-          date_lifted: '15-11-2018'
+          date_lifted: '15-11-2018',
+          authoriser: 'Nanz',
+          contact: 'Luke on his phone 021495030',
+          region: "Tamaki"
         },
         {
           id: 30,
@@ -134,7 +161,10 @@ exports.seed = function (knex, Promise) {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
           geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
           date_placed: '12-11-2018',
-          date_lifted: '15-11-2018'
+          date_lifted: '15-11-2018',
+          authoriser: 'Nanz',
+          contact: 'Luke on his phone 021495030',
+          region: "Tamaki"
         }
       ]);
     });

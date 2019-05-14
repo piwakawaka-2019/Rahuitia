@@ -1,6 +1,9 @@
 import React, { Component } from "react";
-import Project from "./Project";
-
+import Project from "../ProjectG/Project";
+import AboutEng from './AboutEng'
+import AboutReo from './AboutReo'
+import { toggleLang } from "../../actions/toggle";
+import { connect } from 'react-redux'
 
 class About extends Component {
   constructor(props) {
@@ -14,15 +17,13 @@ class About extends Component {
   handleTeamClick = () => {
     this.setState({
       projectIsVisible: false
-
     })
     window.location = `#/about/team`;
   }
 
   handleResourcesClick = () => {
     this.setState({
-      projectIsVisible: false
-      
+      projectIsVisible: false  
     })
     window.location = `#/about/resourses`;
   }
@@ -30,9 +31,7 @@ class About extends Component {
   handleProjectClick = () => {
     this.setState({
       projectIsVisible: true
-      
     })
-    
     window.location = `#/about`;
   }
 
@@ -40,19 +39,17 @@ class About extends Component {
   render() {
     return (
       <div>
-        <h1>About</h1>
-        <button onClick={this.handleTeamClick}>Team</button>
-        <button  onClick={this.handleResourcesClick}>Resourses</button>
-        <button onClick={this.handleProjectClick}>Project</button>
-      
-        
-
-        {this.state.projectIsVisible ? <Project />:null }
-        
-       
+      {this.props.lang == "eng" ? <AboutEng/> : <AboutReo/>}
+      {this.state.projectIsVisible ? <Project />:null }
       </div>
     );
   }
 }
+function mapStateToProps(state) {
+  return {
+    lang: state.toggle
+  }
+}
 
-export default About;
+
+export default connect (mapStateToProps)(About);

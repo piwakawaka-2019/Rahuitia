@@ -52,17 +52,18 @@ class AddRahuiForm extends React.Component {
             korero: this.state.korero,
             datePlaced: this.state.datePlaced,
             dateLifted: this.state.dateLifted,
+            contact: this.state.contact,
+            authoriser: this.state.authoriser
         }
-
-        console.log(rahui)
-        //should be a dispatching an action
-        // writeRahui(
-        //     rahui
-        // ).then(
-        //     () => {
-        //         this.props.dispatch(fetchAllRahui())
-        //     }
-        // )
+        // console.log(rahui)
+        // should be a dispatching an action
+        writeRahui(
+            rahui
+        ).then(
+            () => {
+                this.props.dispatch(fetchAllRahui())
+            }
+        )
 
         window.location = `/#/explore`
     }
@@ -192,13 +193,13 @@ class AddRahuiForm extends React.Component {
                     <input name="authoriser" type="text" placeholder="Authorised by" noValidate onChange={this.handleChange} />
 
                     <br></br>
-                    <br></br>
+                    {/* <br></br>
 
                     <p>Please enter your name:</p>
 
                     <input name="submittersName" type="text" placeholder="Submitted by" />
 
-                    <br></br>
+                    <br></br> */}
                     <br></br>
 
 

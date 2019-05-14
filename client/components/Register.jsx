@@ -46,16 +46,14 @@ class Register extends React.Component {
 
         let { first_name, middle_name, last_name, address, email, password, confirm_password, iwi, hapu } = this.state
         
-        // iwi= [...new Set(iwi)]
-        // hapu = [...new Set(hapu)]
+        // console.log("Name:",first_name,"Middle Name:", middle_name, "Last Name:", last_name,"Address:", address,"Email:", email, "Password:", password, "Confirm Password:", confirm_password, "iwi:", iwi,"hapu:", hapu)
 
-        console.log("Name:",first_name,"Middle Name:", middle_name, "Last Name:", last_name,"Address:", address,"Email:", email, "Password:", password, "Confirm Password:", confirm_password, "iwi:", iwi,"hapu:", hapu)
-        // if (confirm_password != password){ 
-        //     // return this.props.dispatch(loginError("Passwords don't match"))
-        //     console.log("Login Error- Passwords dont match")
-        // } else { 
-        //     this.props.dispatch(registerUserRequest({ first_name, middle_name, last_name, address, email, password, region, iwi, hapu }))
-        // }
+        if (confirm_password != password){ 
+            // return this.props.dispatch(loginError("Passwords don't match"))
+            console.log("Login Error- Passwords dont match")
+        } else { 
+            this.props.dispatch(registerUserRequest({ first_name, middle_name, last_name, address, email, password, region, iwi, hapu }))
+        }
     }
 
     submitAdd(){
