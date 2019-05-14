@@ -1,8 +1,26 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { removeUser } from '../utils/auth'
 // import About from "../components/about/About";
 
 export class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+
+}
+
+handleSubmit(e) {
+  e.preventDefault()
+
+  removeUser()
+
+  window.location = `/#/`
+}
+
   render() {
     return (
       <div className="navbar">
@@ -21,6 +39,11 @@ export class Nav extends Component {
         </div>
         <div className="add navButton">
           <Link to="/addrahui/">ADD A RĀHUI</Link>
+        </div>
+        <div className="logout navButton">
+          <a href="#" onClick={this.handleSubmit}>
+          LOGOUT
+          </a>
         </div>
       </div>
     );

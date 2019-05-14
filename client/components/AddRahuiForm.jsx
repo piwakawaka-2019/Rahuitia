@@ -74,7 +74,6 @@ class AddRahuiForm extends React.Component {
     }
 
     submitAdd(){
-        console.log("blaine", this.state)
         let region = [...this.state.region, this.state.regionSelected]
         let iwi= [...this.state.iwi, this.state.iwiSelected]
         let hapu = [...this.state.hapu, this.state.hapuSelected]

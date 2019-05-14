@@ -1,8 +1,25 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
-
+import { removeUser } from '../../utils/auth'
 
 class NavReo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+
+}
+
+handleSubmit(e) {
+  e.preventDefault()
+
+  removeUser()
+
+  window.location = `/#/`
+}
+
   render() {
     return (
 <div className="navbar">
@@ -21,6 +38,9 @@ class NavReo extends Component {
 </div>
 <div className="add navButton">
   <Link to="/addrahui/">Tāpirihia he Rāhui</Link>
+</div>
+<div className="logout navButton">
+  <a href="#" onClick={this.handleSubmit}>takiputa</a>
 </div>
 </div>
 

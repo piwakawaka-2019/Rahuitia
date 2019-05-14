@@ -108,7 +108,7 @@ button {
 .navbar {
   width: 100%;
   display: grid;
-  grid-template-columns: 11fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-columns: 11fr 1fr 1fr 1fr 1fr 2fr 1fr;
   grid-template-rows: none;
   padding: 10px;
   z-index: 55;
