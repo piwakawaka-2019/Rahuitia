@@ -110,7 +110,8 @@ header .header_logo_title {
 
 /* font styles */
 h1 {
-  padding-bottom: 60px;  
+  padding-bottom: 20px;
+  padding-top: 30px;  
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
@@ -215,4 +216,13 @@ map {
 
 .spaceme {
   padding: 90px;
+}
+
+.step{
+  font-family: Rasa;
+  font-style: bold;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 25px;
+  color: #888a80;
 }

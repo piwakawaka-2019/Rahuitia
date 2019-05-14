@@ -151,12 +151,14 @@ class AddRahuiForm extends React.Component {
                 >
                     <div>
                         <h1>Add a Rāhui</h1>
+                        <div className="step"> step one</div>
+                        <h2>Zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
+                        <div className="step"> step two</div>
+                        
                         <h2>Tell us about the rāhui. This information will be shared on the explore page.</h2>
 
-                        <br></br>
-                        <br></br>
-
-                        <p>Please select the iwi and/or hapū that has placed the rāhui:</p>
+                        
+                        <h3>Please select the iwi and/or hapū that has placed the rāhui:</h3>
                         <p>Select region:</p>
                         <select onChange={this.handleSelect}>
                             {this.props.area.map(area => {
