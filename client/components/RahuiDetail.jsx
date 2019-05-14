@@ -5,7 +5,7 @@ import SplitterLayout from 'react-splitter-layout';
 import { connect } from "react-redux";
 import { fetchAllRahui} from "../actions/rahui";
 import NewMap from "./NewMap"
-
+import Tautoko from "./Tautoko"
 
 class RahuiDetail extends Component {
 
@@ -28,7 +28,7 @@ class RahuiDetail extends Component {
             </div> 
     
             <div className="detailwrapper">
-                <button onClick={this.handleclick.bind(this)}> Back to List </button>
+                <button onClick={this.handleclick.bind(this)}> Back to List </button><Tautoko />
                 <br/><p>iwi: {iwi}   |   hapu: {hapu}   |   region: {region}</p> <br/>
                 <h1> {description}</h1>
                 <br/><b>Authorised by:</b> <p> {authoriser}</p>
@@ -38,6 +38,7 @@ class RahuiDetail extends Component {
                 <br/><b>Korero:</b> <p> {korero}</p>
                 <br/><b>Contact:</b> <p> {contact}</p>
                 <hr></hr> 
+                
            </div> 
 
         </SplitterLayout>
