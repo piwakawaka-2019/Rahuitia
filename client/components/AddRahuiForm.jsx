@@ -1,4 +1,8 @@
 import React from 'react'
+import decode from 'jwt-decode'
+
+import { getUserTokenInfo } from '../utils/auth'
+
 // import data from '../apis/iwi'
 import { connect } from "react-redux";
 import { fetchAllIwi } from "../actions/iwi";
@@ -44,7 +48,7 @@ class AddRahuiForm extends React.Component {
         e.preventDefault()
 
         const rahui = {
-            userId: 5,
+            userId: getUserTokenInfo().user_id,
             region: this.state.region,
             iwi: this.state.iwi,
             hapu: this.state.hapu,
@@ -56,7 +60,7 @@ class AddRahuiForm extends React.Component {
             contact: this.state.contact,
             authoriser: this.state.authoriser
         }
-        // console.log(rahui)
+
         // should be a dispatching an action
         writeRahui(
             rahui
