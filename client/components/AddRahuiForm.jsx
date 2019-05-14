@@ -9,9 +9,9 @@ class AddRahuiForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            region: null,
-            iwi: null,
-            hapu: null,
+            region: [],
+            iwi: [],
+            hapu: [],
             geoRef: null,
             authoriser: null,
             datePlaced: null,
@@ -32,6 +32,7 @@ class AddRahuiForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.renderHapu = this.renderHapu.bind(this)
         this.renderIwi = this.renderIwi.bind(this)
+        this.submitAdd = this.submitAdd.bind(this);
 
     }
 
@@ -69,6 +70,7 @@ class AddRahuiForm extends React.Component {
     }
 
     submitAdd(){
+        console.log("blaine", this.state)
         let region = [...this.state.region, this.state.regionSelected]
         let iwi= [...this.state.iwi, this.state.iwiSelected]
         let hapu = [...this.state.hapu, this.state.hapuSelected]
@@ -81,7 +83,7 @@ class AddRahuiForm extends React.Component {
             iwiSelected: null,
             hapuSelected: null
         })
-        console.log(this.state)
+        
     }
 
     handleChange(e) {
