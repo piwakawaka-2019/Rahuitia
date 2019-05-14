@@ -14,10 +14,9 @@ class NavEng extends Component {
 }
 
 handleSubmit(e) {
-  e.preventDefault()
-
+  console.log('cliock', this.props)
   removeUser()
-
+  this.props.logout()
   window.location = `/#/`
 }
 
@@ -32,7 +31,7 @@ handleSubmit(e) {
 </div>
 
 <div className="login navButton">
-{isAuthenticated() ? <a href="#" onClick={this.handleSubmit}>Logout</a> : <Link to="/login/">Login</Link> }
+{this.props.isAuthenticated ? <a href="#" onClick={this.handleSubmit}>Logout</a> : <Link to="/login/">Login</Link> }
 </div>
 <div className="explore navButton">
   <Link to="/explore/">Explore</Link>

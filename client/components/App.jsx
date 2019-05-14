@@ -54,7 +54,7 @@ export function App({ auth }) {
         <Route exact path="/rahui/:id/edit" component={EditRahuiForm}/>
 
         <Route exact path="/explore" component={Explore} />
-        <Route path="/rahui/:id" component={RahuiDetail} />
+        <Route exact path="/rahui/:id" component={RahuiDetail} />
         <Route path="/register" component={Register} />
         
       </Router> */}

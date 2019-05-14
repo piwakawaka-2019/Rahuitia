@@ -41,29 +41,59 @@ class EditRahuiForm extends React.Component {
         this.submitAdd = this.submitAdd.bind(this);
 
     }
+
+    componentWillReceiveProps(nextProps) {
+        // nextProps.dispatch(fetchAllIwi())
+
+        let rahuiId = nextProps.match.params.id;
+        console.log(nextProps, rahuiId)
+        
+        let rahui = nextProps.allrahui.find( rahui => rahui.id == rahuiId)
+        
+        if (rahui) {
+            let {geo_ref, region, iwi, hapu, description, date_placed, date_lifted, korero, authoriser, contact} = nextProps.allrahui.find( rahui => rahui.id == rahuiId)
+
+
+            this.setState({
+                id: rahuiId,
+                region: region,
+                iwi: iwi,
+                hapu: hapu,
+                authoriser: authoriser,
+                description: description,
+                korero: korero,
+                geoRef: geo_ref,
+                datePlaced: date_placed,
+                dateLifted: date_lifted,
+                contact: contact
+            })
+
+            console.log(rahui)
+      }
+    }
         //Need to hand props to component, reference RahuiDetail.jsx
     componentDidMount() {
         this.props.dispatch(fetchAllIwi())
 
-        console.log(this.props.match.params.id)
+        // console.log(this.props)
 
-        let rahuiId = this.props.match.params.id;
+        // let rahuiId = this.props.match.params.id;
 
-        let {geo_ref, region, iwi, hapu, description, date_placed, date_lifted, korero, authoriser} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
+        // let {geo_ref, region, iwi, hapu, description, date_placed, date_lifted, korero, authoriser, contact} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
 
-        this.setState({
-            id: rahuiId,
-            region: region,
-            iwi: iwi,
-            hapu: hapu,
-            authoriser: authoriser,
-            description: description,
-            korero: korero,
-            geoRef: geo_ref,
-            datePlaced: date_placed,
-            dateLifted: date_lifted,
-            contact: contact
-        })
+        // this.setState({
+        //     id: rahuiId,
+        //     region: region,
+        //     iwi: iwi,
+        //     hapu: hapu,
+        //     authoriser: authoriser,
+        //     description: description,
+        //     korero: korero,
+        //     geoRef: geo_ref,
+        //     datePlaced: date_placed,
+        //     dateLifted: date_lifted,
+        //     contact: contact
+        // })
     }
 
 //Edit existing rāhui
@@ -259,21 +289,21 @@ class EditRahuiForm extends React.Component {
 
                     <p>Please add a brief description of the rahūi here:</p>
 
-                    <textarea name="description" type="text" placeholder={this.state.description}  rows="10" cols="60" noValidate onChange={this.handleChange} />
+                    <textarea name="description" type="text" value={this.state.description}  rows="10" cols="60" noValidate onChange={this.handleChange} />
 
                     <br></br>
                     <br></br>
 
                     <p>Please add further details of the rahūi here:</p>
 
-                    <textarea name="korero" type="text" placeholder={this.state.korero}  rows="20" cols="60" noValidate onChange={this.handleChange} />
+                    <textarea name="korero" type="text" value={this.state.korero}  rows="20" cols="60" noValidate onChange={this.handleChange} />
 
                     <br></br>
                     <br></br>
 
                     <p>Please enter contact details here:</p>
 
-                    <input name="contact" type="text" placeholder={this.state.email}  noValidate onChange={this.handleChange} />
+                    <input name="contact" type="text" value={this.state.contact}  noValidate onChange={this.handleChange} />
 
                     <br></br>
                     <br></br>
@@ -287,6 +317,7 @@ class EditRahuiForm extends React.Component {
 
 const mapStateToProps = state => {
     return {
+        allrahui: state.rahui,
         alliwi: state.iwi,
         area: state.area,
         coordinates: state.coords
