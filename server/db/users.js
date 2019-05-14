@@ -42,14 +42,26 @@ function createUser(
   });
 }
 
+function getUserByEmail(email, testDb){
+  const db = testDb || connection
+  return db('users').where('email', email).first()
+}
+
+// function getUser (id, db = connection) {
+//   return db('users').where('id', id).first()
+// }
+
+
+
 function writeIwi(iwiName, userId, testDb) {
   const db = testDb || connection;
   return db("iwi").insert({ iwi_name: iwiName, user_id: userId });
 }
 
 function writeHapu(hapuName, userId, testDb) {
-  const db = testDb || connection;
-  return db("hapu").insert({ hapu_name: hapuName, user_id: userId });
+  const db = testDb || connection
+  return db('hapu')
+    .insert({ hapu_name: hapuName, user_id: userId })
 }
 
 //**************/get user function ()
@@ -79,9 +91,76 @@ function getUserHapu(users_id, testDb) {
     .select();
 }
 
+// //**************/write rahui function () ----------MOVED TO RAHUI JS
+// function writeRahui(
+//   user_id,
+//   iwi,
+//   hapu,
+//   description,
+//   korero,
+//   geo_ref,
+//   date_placed,
+//   date_lifted,
+//   authoriser,
+//   contact,
+//   region,
+//   testDb
+// ){
+//   const db = testDb || connection
+//   return db('rahui')
+//   .insert({
+//     user_id: user_id,
+//     iwi: JSON.stringify([iwi]),
+//     hapu: JSON.stringify([hapu]), 
+//     description: description,
+//     korero: korero,
+//     geo_ref: JSON.stringify(geo_ref),
+//     date_placed: date_placed,
+//     date_lifted: date_lifted,
+//     contact: contact,
+//     authoriser: authoriser,
+//     region: region
+//   })
+
+// }
+
+// function editRahui(
+//   id,
+//   iwi,
+//   hapu,
+//   description,
+//   korero,
+//   geo_ref,
+//   date_placed,
+//   date_lifted,
+//   authoriser,
+//   contact,
+//   region,
+//   testDb
+// ) {
+//   const db = testDb || connection
+//   return db('rahui')
+//   .where({ id: id })
+//   .update({
+//     iwi: iwi,
+//     hapu: hapu, 
+//     description:description,
+//     korero: korero,
+//     geo_ref: geo_ref,
+//     date_placed: date_placed,
+//     date_lifted: date_lifted,
+//     contact: contact,
+//     authoriser: authoriser,
+//     region,
+//   })
+// }
+
+
+
 module.exports = {
   createUser,
   getUsers,
+  getUserByEmail,
   getUserIwi,
   getUserHapu
 };
