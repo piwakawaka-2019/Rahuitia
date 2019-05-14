@@ -105,7 +105,7 @@ function writeRahui(
     date_lifted: date_lifted,
     contact: contact,
     authoriser: authoriser,
-    region: region
+    region: JSON.stringify([region])
   })
 
 }
