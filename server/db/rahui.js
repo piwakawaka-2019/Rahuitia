@@ -18,8 +18,8 @@ function writeRahui(
   const db = testDb || connection;
   return db("rahui").insert({
     user_id: user_id,
-    iwi: iwi,
-    hapu: hapu,
+    iwi: JSON.stringify(iwi),
+    hapu: JSON.stringify(hapu),
     description: description,
     korero: korero,
     geo_ref: JSON.stringify(geo_ref),
@@ -27,7 +27,7 @@ function writeRahui(
     date_lifted: date_lifted,
     contact: contact,
     authoriser: authoriser,
-    region: region
+    region: JSON.stringify(region)
   });
 }
 

@@ -38,10 +38,12 @@ class RahuiDetail extends Component {
                 <br/><b>Korero:</b> <p> {korero}</p>
                 <br/><b>Contact:</b> <p> {contact}</p>
                 <hr></hr> 
-                
+             <div className="spaceme" />   
            </div> 
+           
 
         </SplitterLayout>
+
         </div>
          );
     }
