@@ -86,7 +86,7 @@ router.put('/:id', function(req, res, next){
       const contact = rahuiData.contact
       const region = rahuiData.region
       //await does not work here
-      db.editRahui(rahuiId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted, authoriser, contact);
+      db.editRahui;
 
       res.json({})
   }
