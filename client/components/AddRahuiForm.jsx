@@ -26,6 +26,7 @@ class AddRahuiForm extends React.Component {
             iwiSelected: null,
             hapuSelected: null,
             regionSelected: null,
+            iwihapuboxIsVisible: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -84,7 +85,8 @@ class AddRahuiForm extends React.Component {
             hapu:[...new Set(hapu)],
             regionSelected: null,
             iwiSelected: null,
-            hapuSelected: null
+            hapuSelected: null,
+            iwihapuboxIsVisible: true
         })
         
     }
@@ -152,41 +154,45 @@ class AddRahuiForm extends React.Component {
                         <h1>Add a Rāhui</h1>
                         <div className="step"> step one</div>
                         <h2>Zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
+                        <hr></hr>
                         <div className="step"> step two</div>
                         
                         <h2>Tell us about the rāhui. This information will be shared on the explore page.</h2>
 
                         
                         <h3>Please select the iwi and/or hapū that has placed the rāhui:</h3>
-                        <p>Select region:</p>
-                        <select onChange={this.handleSelect}>
-                            {this.props.area.map(area => {
-                                return <option htmlFor="region">{area}</option>;
-                            })}
-                        </select>
-
-                        <br></br>
-                      
-                        {<p>Select iwi:</p>}
-                        <select onChange={this.handleSelect2}>
-                            {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
-                        </select>
-
-                        <br></br>
                         
-                        {<p>Select hapū:</p>}
-                        <select onChange={this.handleSelect3}>
-                            {this.state.iwiSelected ? (
-                                this.renderHapu()
-                            ) : <option>----------</option>}
-                        </select>
-                        <br></br>
-                        <button type="button" onClick={this.submitAdd}>Add Another Associated Region/Iwi/Hāpu</button>
+                            <p>Select region:</p>
+                            <select onChange={this.handleSelect}>
+                                {this.props.area.map(area => {
+                                    return <option htmlFor="region">{area}</option>;
+                                })}
+                            </select>
+
+                            <br></br>
+                        
+                            {<p>Select iwi:</p>}
+                            <select onChange={this.handleSelect2}>
+                                {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
+                            </select>
+
+                            <br></br>
+                            
+                            {<p>Select hapū:</p>}
+                            <select onChange={this.handleSelect3}>
+                                {this.state.iwiSelected ? (
+                                    this.renderHapu()
+                                ) : <option>----------</option>}
+                            </select>
+                            <br></br>
+                            <button className="secondarybutton" type="button" onClick={this.submitAdd}>Add Another Associated Region/Iwi/Hāpu</button>
                     <br></br>
-                    <div>Associated iwi/hāpu: <br></br> 
-                    iwi:{this.state.iwi.map(iwi => {return <p>{iwi}, </p>})}<br></br> 
-                    hapu:{this.state.hapu.map(hapu => {return <p>{hapu}, </p>})}<br></br> 
-                    </div>
+                        {this.state.iwihapuboxIsVisible ? 
+                        <div className='iwihapubox'>
+                        <h3> Selected iwi/hāpu: </h3> <br></br>
+                        <h3> iwi:{this.state.iwi.map(iwi => {return <p>{iwi}, </p>})} </h3>
+                        <h3> hapu:{this.state.hapu.map(hapu => {return <p>{hapu}, </p>})} </h3>
+                        </div> : null }
                     <br></br>
                     </div>
 
