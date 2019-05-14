@@ -77,8 +77,8 @@ function writeRahui(
   geo_ref,
   date_placed,
   date_lifted,
-  contact,
   authoriser,
+  contact,
   region,
   testDb
 ){
@@ -95,7 +95,7 @@ function writeRahui(
     date_lifted: date_lifted,
     contact: contact,
     authoriser: authoriser,
-    region: JSON.stringify(region) 
+    region: region
   })
 
 }
@@ -109,8 +109,8 @@ function editRahui(
   geo_ref,
   date_placed,
   date_lifted,
-  contact,
   authoriser,
+  contact,
   region,
   testDb
 ) {
