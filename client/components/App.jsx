@@ -31,7 +31,7 @@ import Tautoko from "./Tautoko"
 export function App({ auth }) {
   return (
     <div>
-      <Router>
+      {/* <Router>
         <Nav />
         <Route exact path="/" component={Landing} />
         
@@ -48,10 +48,10 @@ export function App({ auth }) {
         <Route path="/rahui/:id" component={RahuiDetail} />
         <Route path="/register" component={Register} />
         
-      </Router>
+      </Router> */}
 
       {/* <Register /> */}
-        {/* <Tautoko /> */}
+      <Tautoko />
     </div>
   );
 }
