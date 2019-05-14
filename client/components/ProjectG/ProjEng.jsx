@@ -4,11 +4,10 @@ class ProjEng extends Component {
   render() {
     return (
       <div>
-        <h1>PROJECT</h1>
+        <h1>Project</h1>
         <div className="row">
           <div className="column">
-            
-            <br />
+            <br/>
             <p>
               Until recently, the prevailing view assumed lorem ipsum was born
               as a nonsense text. “It's not Latin, though it looks like it, and
@@ -28,8 +27,6 @@ class ProjEng extends Component {
               text from the Roman philosopher Cicero.
             </p>
           </div>
-
-          
         </div>
       </div>
     );

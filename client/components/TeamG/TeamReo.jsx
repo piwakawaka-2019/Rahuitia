@@ -7,8 +7,7 @@ class teamReo extends Component {
         <h1>TEAM</h1>
         <div className="row">
           <div className="column">
-            
-            <br />
+            <br/>
             <p>
               Until recently, the prevailing view assumed lorem ipsum was born
               as a nonsense text. “It's not Latin, though it looks like it, and
@@ -28,8 +27,6 @@ class teamReo extends Component {
               text from the Roman philosopher Cicero.
             </p>
           </div>
-
-          
         </div>
       </div>
     );
