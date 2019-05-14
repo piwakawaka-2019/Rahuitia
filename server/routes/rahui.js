@@ -1,7 +1,6 @@
-const express = require('express')
-const db = require('../db/users')
-const router = express.Router()
-
+const express = require("express");
+const db = require("../db/rahui");
+const router = express.Router();
 
 router.get('/', (req, res) => {
   db.getRahuiInformation()
@@ -10,11 +9,12 @@ router.get('/', (req, res) => {
 
       while (rahui.length) {
         let firstEntry = rahui.shift()
-
+        // firstEntry.region = JSON.parse(firstEntry.region)
         firstEntry.iwi = JSON.parse(firstEntry.iwi)
         firstEntry.hapu = JSON.parse(firstEntry.hapu)
         firstEntry.iwi_name = [firstEntry.iwi_name]
         firstEntry.hapu_name = [firstEntry.hapu_name]
+        // firstEntry.region = [firstEntry.region]
 
         firstEntry.geo_ref = JSON.parse(firstEntry.geo_ref)
 
@@ -96,4 +96,3 @@ router.put('/:id', function(req, res, next){
 })
 
 module.exports = router
-
