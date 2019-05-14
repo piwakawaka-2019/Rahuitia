@@ -165,16 +165,14 @@ class AddRahuiForm extends React.Component {
                         </select>
 
                         <br></br>
-                        <br></br>
-
+                      
                         {<p>Select iwi:</p>}
                         <select onChange={this.handleSelect2}>
                             {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
                         </select>
 
                         <br></br>
-                        <br></br>
-
+                        
                         {<p>Select hapū:</p>}
                         <select onChange={this.handleSelect3}>
                             {this.state.iwiSelected ? (
@@ -224,14 +222,14 @@ class AddRahuiForm extends React.Component {
 
                     <p>Please add a brief description of the rahūi here:</p>
 
-                    <textarea name="description" type="text" placeholder="description" rows="10" cols="60" noValidate onChange={this.handleChange} />
+                    <textarea name="description" type="text" placeholder="description" rows="5" cols="60" noValidate onChange={this.handleChange} />
 
                     <br></br>
                     <br></br>
 
                     <p>Please add further details of the rahūi here:</p>
 
-                    <textarea name="korero" type="text" placeholder="korero" rows="20" cols="60" noValidate onChange={this.handleChange} />
+                    <textarea name="korero" type="text" placeholder="korero" rows="10" cols="60" noValidate onChange={this.handleChange} />
 
                     <br></br>
                     <br></br>

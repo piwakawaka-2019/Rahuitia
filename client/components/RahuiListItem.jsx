@@ -12,8 +12,8 @@ const RahuiListItem= props => {
 
     return ( 
         <div className="rahuilist" onClick={handleclick}>
-            <p>{rahui.description}</p>
-            <b>{rahui.iwi_name}</b>
+            <h2>{rahui.description}</h2>
+            <p>Issued by {rahui.iwi} on {rahui.date_placed}</p> 
             
             
             <hr></hr>
