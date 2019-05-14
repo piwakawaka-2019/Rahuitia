@@ -43,6 +43,7 @@ export function App({ auth }) {
         <Route exact path="/AddRahui" component={FormAndMap} />
         <Route exact path="/explore" component={Explore} />
         <Route path="/rahui/:id" component={RahuiDetail} />
+        <Route path="/register" component={Register} />
         
       </Router>
 

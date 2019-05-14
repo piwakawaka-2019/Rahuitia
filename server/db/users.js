@@ -27,6 +27,7 @@ function createUser(
       })
       .then(userIds => {
         const userId = userIds[0];
+        
         return Promise.all(
           iwi.map(iwiName => {
             return writeIwi(iwiName, userId, db);
@@ -40,6 +41,15 @@ function createUser(
         });
       });
   });
+}
+
+
+function userExists(email, testDb) {
+  const db = testDb || connection
+
+  return db('users')
+    .where('email', email)
+    .then(users => users.length > 0)
 }
 
 function getUserByEmail(email, testDb){
@@ -160,6 +170,7 @@ function getUserHapu(users_id, testDb) {
 module.exports = {
   createUser,
   getUsers,
+  userExists,
   getUserByEmail,
   getUserIwi,
   getUserHapu
