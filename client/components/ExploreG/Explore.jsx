@@ -28,6 +28,7 @@ class Explore extends React.Component {
                 
                 <div className="detailwrapper">
                 <RahuiList allrahui={this.props.allrahui} /> 
+                <div className="spaceme" />
                 </div>
                
                 </SplitterLayout>

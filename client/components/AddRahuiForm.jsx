@@ -151,12 +151,14 @@ class AddRahuiForm extends React.Component {
                 >
                     <div>
                         <h1>Add a Rāhui</h1>
+                        <div className="step"> step one</div>
+                        <h2>Zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
+                        <div className="step"> step two</div>
+                        
                         <h2>Tell us about the rāhui. This information will be shared on the explore page.</h2>
 
-                        <br></br>
-                        <br></br>
-
-                        <p>Please select the iwi and/or hapū that has placed the rāhui:</p>
+                        
+                        <h3>Please select the iwi and/or hapū that has placed the rāhui:</h3>
                         <p>Select region:</p>
                         <select onChange={this.handleSelect}>
                             {this.props.area.map(area => {
@@ -165,16 +167,14 @@ class AddRahuiForm extends React.Component {
                         </select>
 
                         <br></br>
-                        <br></br>
-
+                      
                         {<p>Select iwi:</p>}
                         <select onChange={this.handleSelect2}>
                             {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
                         </select>
 
                         <br></br>
-                        <br></br>
-
+                        
                         {<p>Select hapū:</p>}
                         <select onChange={this.handleSelect3}>
                             {this.state.iwiSelected ? (
@@ -224,14 +224,14 @@ class AddRahuiForm extends React.Component {
 
                     <p>Please add a brief description of the rahūi here:</p>
 
-                    <textarea name="description" type="text" placeholder="description" rows="10" cols="60" noValidate onChange={this.handleChange} />
+                    <textarea name="description" type="text" placeholder="description" rows="5" cols="60" noValidate onChange={this.handleChange} />
 
                     <br></br>
                     <br></br>
 
                     <p>Please add further details of the rahūi here:</p>
 
-                    <textarea name="korero" type="text" placeholder="korero" rows="20" cols="60" noValidate onChange={this.handleChange} />
+                    <textarea name="korero" type="text" placeholder="korero" rows="10" cols="60" noValidate onChange={this.handleChange} />
 
                     <br></br>
                     <br></br>
