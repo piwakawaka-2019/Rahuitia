@@ -108,7 +108,7 @@ button {
 .navbar {
   width: 100%;
   display: grid;
-  grid-template-columns: 11fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: none;
   padding: 10px;
   z-index: 55;
@@ -131,5 +131,20 @@ a {
 
 map {
   overflow: hidden;
+}
+
+.languageToggle {
+  font-family: Rasa;
+font-style: normal;
+font-weight: bold;
+font-size: 22px;
+line-height: 27px;
+/* display: flex; */
+align-items: center;
+text-align: center;
+text-decoration-line: underline;
+
+color: #DC5757;
+transform: rotate(90deg);
 }
 
