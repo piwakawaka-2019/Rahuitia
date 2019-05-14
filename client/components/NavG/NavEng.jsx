@@ -1,7 +1,26 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { removeUser, isAuthenticated } from '../../utils/auth'
+
 
 class NavEng extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+
+}
+
+handleSubmit(e) {
+  e.preventDefault()
+
+  removeUser()
+
+  window.location = `/#/`
+}
+
   render() {
     return (
 <div className="navbar">
@@ -13,7 +32,7 @@ class NavEng extends Component {
 </div>
 
 <div className="login navButton">
-  <Link to="/login/">Login</Link>
+{isAuthenticated() ? <a href="#" onClick={this.handleSubmit}>Logout</a> : <Link to="/login/">Login</Link> }
 </div>
 <div className="explore navButton">
   <Link to="/explore/">Explore</Link>
