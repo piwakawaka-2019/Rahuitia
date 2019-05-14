@@ -15,10 +15,30 @@ class NewMap extends Component {
 
   render() {
     console.log("MAPP", this.props.allrahui)
+    const rahuiCoods = this.props.allrahui.length > 0 ? this.props.allrahui[this.props.allrahui.length - 1].geo_ref : []
+    let requiredMapBounds
+    let requiredCenter
+    if (rahuiCoods.length > 0) {
+      console.log(rahuiCoods[0].lat)
+      console.log(rahuiCoods[1].lat)
+      console.log(rahuiCoods[0].lng)
+      console.log(rahuiCoods[1].lng)
+
+      requiredMapBounds = new window.google.maps.LatLngBounds();
+
+      rahuiCoods.forEach(rahuiPoint => {
+        requiredMapBounds.extend(new window.google.maps.LatLng(rahuiPoint.lat, rahuiPoint.lng))
+      })
+
+      requiredCenter = requiredMapBounds.getCenter()
+
+      console.log(requiredMapBounds)
+    }
+    
   const GoogleMapExample = withGoogleMap(props => (
      <GoogleMap
-       defaultCenter = { this.props.coords }
-       defaultZoom = {this.props.zoom}
+      //  defaultCenter = { this.props.coords }
+      //  defaultZoom = {this.props.zoom}
         defaultOptions={{
         disableDefaultUI: true,
         mapTypeId: 'hybrid', //google.maps.MapTypeId.SATELLITE,
@@ -30,11 +50,35 @@ class NewMap extends Component {
         rotateControl: false,
         fullscreenControl: false,
       }}
+      ref={map => {
+      // console.log({bounds})
+      // if (map && bounds && bounds.length > 0) {
+      //   console.log(bounds[0].lat)
+      //   console.log(bounds[1].lat)
+      //   console.log(bounds[0].lng)
+      //   console.log(bounds[1].lng)
+      //   const sw = new window.google.maps.LatLng(bounds[0].lat, bounds[0].lng)
+      //   const ne = new window.google.maps.LatLng(bounds[1].lat, bounds[1].lng)
+      //   console.log('made sw ad ne')
+
+      //   const actualBounds = new window.google.maps.LatLngBounds(sw, ne);
+
+      //   console.log(actualBounds)
+      //   map.fitBounds(actualBounds)
+      // }
+
+      console.log({rahuiCoods})
+      if (map && rahuiCoods && rahuiCoods.length > 0) {
+        map.fitBounds(requiredMapBounds)
+      }
+
+      return map
+    }}
      >
 
       {this.props && this.props.allrahui && this.props.allrahui.map(rahuicoords => {
        return (<div> 
-        <Marker key={rahuicoords.id + 100} position={rahuicoords.geo_ref[0]} onClick={() => {
+        <Marker key={rahuicoords.id + 100} position={requiredCenter} onClick={() => {
          window.location = `#/rahui/${rahuicoords.id}`}}  />
         <Polygon
         path={rahuicoords.geo_ref}
@@ -62,7 +106,7 @@ class NewMap extends Component {
      <div>
        <GoogleMapExample
          containerElement={ <div style={{ height: window.innerHeight, width: `100%`, position: relative}} /> }
-         mapElement={ <div style={{ height: `170%`, width: `100%` }} /> }
+         mapElement={ <div style={{ height: `100%`, width: `100%` }} /> }
          
        />
      </div>

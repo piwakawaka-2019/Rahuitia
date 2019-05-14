@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-class project extends Component {
+class teamEng extends Component {
   render() {
     return (
       <div>
-        <h1>PROJECT</h1>
+        <h1>TEAM</h1>
         <div className="row">
           <div className="column">
             
@@ -36,4 +36,4 @@ class project extends Component {
   }
 }
 
-export default project;
+export default teamEng;

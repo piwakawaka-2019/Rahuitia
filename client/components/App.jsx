@@ -2,9 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { HashRouter as Router, Route } from "react-router-dom";
 
-import Landing from "./Landing"
-import Nav from "./Nav";
-import Explore from "./Explore";
+import Landing from "./LandingG/Landing"
+import Nav from "./NavG/Nav";
+import Explore from "./ExploreG/Explore";
 
 import AddRahuiMap from "./NewMap";
 import MapWithADrawingManager from './ReactMap'
@@ -12,9 +12,9 @@ import AddRahuiForm from "./AddRahuiForm";
 
 
 import RahuiDetail from "./RahuiDetail";
-import About from "../components/about/About";
-import Team from "../components/about/Team";
-import Resourses from "../components/about/Resourses";
+import About from "./AboutG/About";
+import Team from "./TeamG/Team";
+import Resourses from "./ResoursesG/Resourses";
 
 // import ReactMap from "./ReactMap"
 
@@ -32,7 +32,7 @@ export function App({ auth }) {
     <div>
       {/* <Router>
         <Nav />
-        <Route exact="true" path="/" component={Landing} />
+        <Route exact path="/" component={Landing} />
         
         
         <Route path="/about/" component={About} />
@@ -40,9 +40,10 @@ export function App({ auth }) {
         <Route path="/about/resourses" component={Resourses} />
      
         <Route path="/Login/" component={Login} />
-        <Route exact="true" path="/AddRahui" component={FormAndMap} />
-        <Route exact='true' path="/explore" component={Explore} />
+        <Route exact path="/AddRahui" component={FormAndMap} />
+        <Route exact path="/explore" component={Explore} />
         <Route path="/rahui/:id" component={RahuiDetail} />
+        <Route path="/register" component={Register} />
         
       </Router> */}
 

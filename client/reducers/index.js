@@ -7,6 +7,7 @@ import iwi from './iwi'
 import area from './area'
 import coords from './coords'
 import tautoko from './tautoko'
+import toggle from './toggle'
 
 export default combineReducers({
   auth,
@@ -15,5 +16,6 @@ export default combineReducers({
   iwi,
   area,
   coords,
-  tautoko
+  tautoko,
+  toggle
 });

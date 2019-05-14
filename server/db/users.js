@@ -26,6 +26,7 @@ function createUser(
     })
       .then(userIds => {
         const userId = userIds[0];
+        
         return Promise.all(
           iwi.map(iwiName => {
             return writeIwi(iwiName, userId, db)
@@ -41,6 +42,15 @@ function createUser(
           )
       });
   });
+}
+
+
+function userExists(email, testDb) {
+  const db = testDb || connection
+
+  return db('users')
+    .where('email', email)
+    .then(users => users.length > 0)
 }
 
 function getUserByEmail(email, testDb){
@@ -77,9 +87,8 @@ function writeRahui(
   geo_ref,
   date_placed,
   date_lifted,
-  contact,
-  submitter,
   authoriser,
+  contact,
   region,
   testDb
 ){
@@ -94,10 +103,9 @@ function writeRahui(
     geo_ref: JSON.stringify(geo_ref),
     date_placed: date_placed,
     date_lifted: date_lifted,
-    contact,
-    submitter,
-    authoriser,
-    region: JSON.stringify(region) 
+    contact: contact,
+    authoriser: authoriser,
+    region: region
   })
 
 }
@@ -111,9 +119,8 @@ function editRahui(
   geo_ref,
   date_placed,
   date_lifted,
-  contact,
-  submitter,
   authoriser,
+  contact,
   region,
   testDb
 ) {
@@ -128,9 +135,8 @@ function editRahui(
     geo_ref: geo_ref,
     date_placed: date_placed,
     date_lifted: date_lifted,
-    contact,
-    submitter,
-    authoriser,
+    contact: contact,
+    authoriser: authoriser,
     region,
   })
 }
@@ -213,6 +219,7 @@ function writeTautoko(obj, testDb) {
 module.exports = {
   createUser,
   getUsers,
+  userExists,
   getUserByEmail,
   getRahui,
   editRahui,

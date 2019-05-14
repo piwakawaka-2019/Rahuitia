@@ -18,9 +18,8 @@ exports.seed = function (knex, Promise) {
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018',
           authoriser: 'Nanz',
-          submitter: 'Ash,
           contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
+          region: "Tamaki"
         },
         {
           id: 22,
@@ -35,9 +34,8 @@ exports.seed = function (knex, Promise) {
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018',
           authoriser: 'Nanz',
-          submitter: 'Fudz',
           contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
+          region: "Tamaki"
         },
         {
           id: 23,
@@ -52,9 +50,8 @@ exports.seed = function (knex, Promise) {
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018',
           authoriser: 'Nanz',
-          submitter: 'Blaine',
           contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
+          region: "Tamaki"
         },
         {
           id: 24,
@@ -69,9 +66,8 @@ exports.seed = function (knex, Promise) {
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018',
           authoriser: 'Fudz',
-          submitter: 'Blaine',
           contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
+          region: "Tamaki"
         },
 
         {
@@ -87,9 +83,8 @@ exports.seed = function (knex, Promise) {
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018',
           authoriser: 'Fudz',
-          submitter: 'Jorge',
           contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
+          region: "Tamaki"
         },
         {
           id: 26,
@@ -104,9 +99,8 @@ exports.seed = function (knex, Promise) {
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018',
           authoriser: 'Ash',
-          submitter: 'Nanz',
           contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
+          region: "Tamaki"
         },
         {
           id: 27,
@@ -121,9 +115,8 @@ exports.seed = function (knex, Promise) {
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018',
           authoriser: 'Luke',
-          submitter: 'Nanz',
           contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
+          region: "Tamaki"
         },
         {
           id: 28,
@@ -138,9 +131,8 @@ exports.seed = function (knex, Promise) {
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018',
           authoriser: 'Nanz',
-          submitter: 'Blaine',
           contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
+          region: "Tamaki"
         },
         {
           id: 29,
@@ -155,9 +147,8 @@ exports.seed = function (knex, Promise) {
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018',
           authoriser: 'Nanz',
-          submitter: 'Blaine',
           contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
+          region: "Tamaki"
         },
         {
           id: 30,
@@ -172,9 +163,8 @@ exports.seed = function (knex, Promise) {
           date_placed: '12-11-2018',
           date_lifted: '15-11-2018',
           authoriser: 'Nanz',
-          submitter: 'Blaine',
           contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
+          region: "Tamaki"
         }
       ]);
     });

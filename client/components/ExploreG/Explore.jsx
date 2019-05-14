@@ -1,9 +1,9 @@
 import React from "react";
 import SplitterLayout from 'react-splitter-layout';
 import { connect } from "react-redux";
-import { fetchAllRahui} from "../actions/rahui";
-import NewMap from "./NewMap";
-import RahuiList from "./RahuiList";
+import { fetchAllRahui} from "../../actions/rahui";
+import NewMap from "../NewMap";
+import RahuiList from "../RahuiList";
 
 
 class Explore extends React.Component {
@@ -22,7 +22,7 @@ class Explore extends React.Component {
             <div >
 
                 <SplitterLayout >
-                <div className="splitter-layout map">
+                <div >
                  <NewMap color={"#FF4C4C"} zoom={6} coords={{lat: -47.892014, lng: 170.897149}}/>
                 </div> 
                 
