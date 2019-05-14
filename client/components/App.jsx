@@ -15,7 +15,7 @@ import RahuiDetail from "./RahuiDetail";
 import About from "./AboutG/About";
 import Team from "./TeamG/Team";
 import Resourses from "./ResoursesG/Resourses";
-import VideoBackground from "./VideoBackground";
+
 // import ReactMap from "./ReactMap"
 
 import Login from "../components/Login";
@@ -32,7 +32,7 @@ export function App({ auth }) {
     <div>
       <Router>
         <Nav />
-        <Route exact="true" path="/" component={Landing} />
+        <Route exact path="/" component={Landing} />
         
         
         <Route path="/about/" component={About} />
@@ -40,8 +40,8 @@ export function App({ auth }) {
         <Route path="/about/resourses" component={Resourses} />
      
         <Route path="/Login/" component={Login} />
-        <Route exact="true" path="/AddRahui" component={FormAndMap} />
-        <Route exact='true' path="/explore" component={Explore} />
+        <Route exact path="/AddRahui" component={FormAndMap} />
+        <Route exact path="/explore" component={Explore} />
         <Route path="/rahui/:id" component={RahuiDetail} />
         
       </Router>
