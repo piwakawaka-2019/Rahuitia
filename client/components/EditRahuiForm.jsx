@@ -303,6 +303,8 @@ class EditRahuiForm extends React.Component {
 
                     <p>Please enter contact details here:</p>
 
+                    <textarea name="korero" type="text" value={this.state.korero}  rows="20" cols="60" noValidate onChange={this.handleChange} />
+                    
                     <input name="contact" type="text" value={this.state.contact}  noValidate onChange={this.handleChange} />
 
                     <br></br>
