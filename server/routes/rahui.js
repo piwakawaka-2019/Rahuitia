@@ -79,14 +79,14 @@ router.put('/:id', function(req, res, next){
       const hapu = rahuiData.hapu
       const description = rahuiData.description
       const korero = rahuiData.korero
-      const geoRef = rahuiData.geoRef
-      const datePlaced = rahuiData.datePlaced
-      const dateLifted = rahuiData.dateLifted
+      const geoRef = rahuiData.geo_ref
+      const datePlaced = rahuiData.date_placed
+      const dateLifted = rahuiData.date_lifted
       const authoriser = rahuiData.authoriser
       const contact = rahuiData.contact
       const region = rahuiData.region
       //await does not work here
-      db.editRahui(rahuiId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted, authoriser, contact, region);
+      db.editRahui(rahuiId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted, authoriser, contact);
 
       res.json({})
   }
