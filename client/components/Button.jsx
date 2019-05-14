@@ -1,12 +1,30 @@
 import React from 'react'
 
-const Button = (props) => {
+class Button extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            disabled: false
+        }
 
-    return (
-        <div>
-            <button onClick={props.action} >{props.buttonTitle}</button>
-        </div>
-    )
+    }
+    handleClick = () => {
+        this.setState({
+            disabled: true
+        })
+        this.props.action()
+    }
+
+    render() {
+        return (
+            <div>
+                <button
+                    onClick={this.handleClick.bind(this)}
+                    disabled={this.state.disabled}> {this.props.buttonTitle}</button>
+            </div>
+        )
+    }
 }
+
 
 export default Button

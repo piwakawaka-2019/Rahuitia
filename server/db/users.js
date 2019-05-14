@@ -74,6 +74,74 @@ function writeHapu(hapuName, userId, testDb) {
     .insert({ hapu_name: hapuName, user_id: userId })
 }
 
+<<<<<<< HEAD
+=======
+
+//**************/write rahui function ()
+function writeRahui(
+  user_id,
+  iwi,
+  hapu,
+  description,
+  korero,
+  geo_ref,
+  date_placed,
+  date_lifted,
+  authoriser,
+  contact,
+  region,
+  testDb
+){
+  const db = testDb || connection
+  return db('rahui')
+  .insert({
+    user_id: user_id,
+    iwi: JSON.stringify([iwi]),
+    hapu: JSON.stringify([hapu]), 
+    description: description,
+    korero: korero,
+    geo_ref: JSON.stringify(geo_ref),
+    date_placed: date_placed,
+    date_lifted: date_lifted,
+    contact: contact,
+    authoriser: authoriser,
+    region: JSON.stringify([region])
+  })
+
+}
+
+function editRahui(
+  id,
+  iwi,
+  hapu,
+  description,
+  korero,
+  geo_ref,
+  date_placed,
+  date_lifted,
+  authoriser,
+  contact,
+  region,
+  testDb
+) {
+  const db = testDb || connection
+  return db('rahui')
+  .where({ id: id })
+  .update({
+    iwi: iwi,
+    hapu: hapu, 
+    description:description,
+    korero: korero,
+    geo_ref: geo_ref,
+    date_placed: date_placed,
+    date_lifted: date_lifted,
+    contact: contact,
+    authoriser: authoriser,
+    region,
+  })
+}
+
+>>>>>>> 7dd3f224842a7e430c132a04fec92d26b1c6de25
 //**************/get user function ()
 function getUsers(testDb) {
   const db = testDb || connection;

@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { HashRouter as Router, Route } from "react-router-dom";
+import { isAuthenticated } from "../utils/auth"
 
 import Landing from "./LandingG/Landing";
 import Nav from "./NavG/Nav";
@@ -46,14 +47,16 @@ export function App({ auth }) {
         <Route path="/about/API" component={RahuiApi} />
 
         <Route path="/Login/" component={Login} />
+        
         <Route exact path="/AddRahui" component={FormAndMap} />
+
         <Route exact path="/explore" component={Explore} />
         <Route path="/rahui/:id" component={RahuiDetail} />
         <Route path="/register" component={Register} />
-      </Router>
+        
+      </Router> */}
 
-      {/* <Register /> */}
-      {/* <Tautoko /> */}
+ 
     </div>
   );
 }
