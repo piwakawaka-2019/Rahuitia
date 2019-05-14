@@ -11,7 +11,7 @@ export class Nav extends Component {
     return (
       <div>
         
-        {this.props.lang == "eng" ? <NavEng /> : <NavReo />}
+        {this.props.lang == "eng" ? <NavEng/> : <NavReo/>}
 
         </div>
     );

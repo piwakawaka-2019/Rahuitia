@@ -9,7 +9,8 @@ class RahuiListEng extends React.Component {
       this.state = {  }
   }
   render() { 
-      console.log(props)
+
+      console.log(this.props.allrahui)
       return (
             <div>
                 <h1>Select to learn more about a Rāhui </h1>

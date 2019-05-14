@@ -14,15 +14,17 @@ class RahuiList extends React.Component {
         console.log(this.props)
         return (
             <div>
-                 {this.props.lang == "eng" ? <RahuiListEng/> : <RahuiListReo/>}
-                 {this.props.allrahui.map(rahui => <RahuiListItem key={rahui.id} rahui={rahui} /> )}   
+                 {this.props.lang == "eng" ? <RahuiListEng {...props}/> : <RahuiListReo {...props}/>}
+                 {this.props.allrahui.map(rahui => <RahuiListItem key={rahui.id} rahui={rahui}  /> )}   
             </div>
            );
     }
 }
+
 function mapStateToProps(state) {
     return {
-      lang: state.toggle
+      lang: state.toggle,
+      rahui: state.rahui
     }
   }
  
