@@ -241,11 +241,12 @@ class AddRahuiForm extends React.Component {
                     <input name="contact" type="text" placeholder="Email Address" noValidate onChange={this.handleChange} />
 
                     <br></br>
-                    <br></br>
+                  
 
                     <button name="submit">Add Rāhui</button>
 
                 </form>
+                <div className="spaceme" />
             </div>
         )
     }
