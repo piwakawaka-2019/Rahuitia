@@ -43,6 +43,17 @@ function createUser(
   });
 }
 
+function getUserByEmail(email, testDb){
+  const db = testDb || connection
+  return db('users').where('email', email).first()
+}
+
+// function getUser (id, db = connection) {
+//   return db('users').where('id', id).first()
+// }
+
+
+
 function writeIwi(iwiName, userId, testDb) {
   const db = testDb || connection
   return db('iwi')
@@ -66,6 +77,9 @@ function writeRahui(
   geo_ref,
   date_placed,
   date_lifted,
+  authoriser,
+  contact,
+  region,
   testDb
 ){
   const db = testDb || connection
@@ -79,6 +93,9 @@ function writeRahui(
     geo_ref: JSON.stringify(geo_ref),
     date_placed: date_placed,
     date_lifted: date_lifted,
+    contact: contact,
+    authoriser: authoriser,
+    region: region
   })
 
 }
@@ -92,6 +109,9 @@ function editRahui(
   geo_ref,
   date_placed,
   date_lifted,
+  authoriser,
+  contact,
+  region,
   testDb
 ) {
   const db = testDb || connection
@@ -105,6 +125,9 @@ function editRahui(
     geo_ref: geo_ref,
     date_placed: date_placed,
     date_lifted: date_lifted,
+    contact: contact,
+    authoriser: authoriser,
+    region,
   })
 }
 
@@ -186,6 +209,7 @@ function writeTautoko(obj, testDb) {
 module.exports = {
   createUser,
   getUsers,
+  getUserByEmail,
   getRahui,
   editRahui,
   writeRahui,
