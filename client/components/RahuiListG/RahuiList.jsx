@@ -11,7 +11,7 @@ class RahuiList extends React.Component {
         this.state = {  }
     }
     render() { 
-        
+        console.log(this.props)
         return (
             <div>
                  {this.props.lang == "eng" ? <RahuiListEng/> : <RahuiListReo/>}

@@ -1,7 +1,7 @@
 import React from "react";
 import SplitterLayout from 'react-splitter-layout';
 import { connect } from "react-redux";
-import { fetchAllRahui} from "../../actions/rahui";
+import { fetchAllRahui } from "../../actions/rahui";
 import NewMap from "../NewMap";
 import RahuiList from "../RahuiListG/RahuiList";
 
@@ -9,38 +9,38 @@ import RahuiList from "../RahuiListG/RahuiList";
 class Explore extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = {}
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.dispatch(fetchAllRahui())
     }
 
-    render() { 
-        console.log( "explore", this.props)
-        return (  
+    render() {
+        console.log("explore", this.props)
+        return (
             <div >
 
                 <SplitterLayout >
-                <div >
-                 <NewMap color={"#FF4C4C"} zoom={6} coords={{lat: -47.892014, lng: 170.897149}}/>
-                </div> 
-                
-                <div className="detailwrapper">
-                <RahuiList allrahui={this.props.allrahui} /> 
-                </div>
-               
+                    <div >
+                        <NewMap color={"#FF4C4C"} zoom={6} coords={{ lat: -47.892014, lng: 170.897149 }} />
+                    </div>
+
+                    <div className="detailwrapper">
+                        <RahuiList allrahui={this.props.allrahui} />
+                    </div>
+
                 </SplitterLayout>
-                
+
             </div>
         );
     }
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = state => {
     return {
         allrahui: state.rahui
     }
 }
- 
+
 export default connect(mapStateToProps)(Explore);
