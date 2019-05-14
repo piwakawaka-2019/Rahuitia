@@ -16,7 +16,7 @@ handleSubmit(e) {
   e.preventDefault()
 
   removeUser()
-
+  
   window.location = `/#/`
 }
 
@@ -31,16 +31,13 @@ handleSubmit(e) {
 </div>
 
 <div className="login navButton">
-  <Link to="/login/">Takiuru</Link>
+{isAuthenticated() ? <a href="#" onClick={this.handleSubmit}>takiputa</a> : <Link to="/login/">Takiuru</Link>}
 </div>
 <div className="explore navButton">
   <Link to="/explore/">Torohē</Link>
 </div>
 <div className="add navButton">
   <Link to="/addrahui/">Tāpirihia he Rāhui</Link>
-</div>
-<div className="logout navButton">
-  <a href="#" onClick={this.handleSubmit}>takiputa</a>
 </div>
 </div>
 
