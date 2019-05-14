@@ -27,10 +27,7 @@
       "@babel/plugin-proposal-class-properties",
       "@babel/plugin-proposal-object-rest-spread"
     ]
-    
   },
-  
-
   "devDependencies": {
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
@@ -38,8 +35,6 @@
     "sqlite3": "^4.0.6",
     "supertest": "^4.0.2"
   },
-
-  
   "dependencies": {
     "@babel/core": "^7.4.4",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
@@ -73,6 +68,7 @@
     "react-scroll": "^1.7.11",
     "react-splitter-layout": "^4.0.0",
     "react-test-renderer": "^16.8.6",
+    "recompose": "^0.30.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "superagent": "^5.0.5",

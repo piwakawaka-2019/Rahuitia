@@ -1,9 +1,10 @@
 import React from "react";
 import SplitterLayout from 'react-splitter-layout';
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom"
 import ReactMap from "./ReactMap";
 import AddRahuiForm from "./AddRahuiForm";
-
+import { isAuthenticated } from "../utils/auth"
 
 
 class Explore extends React.Component {
@@ -15,8 +16,8 @@ class Explore extends React.Component {
    
 
     render() { 
-        console.log( "explore", this.props)
-        return (  
+        console.log( isAuthenticated() )
+        return isAuthenticated() ? (  
             <div >
 
                 <SplitterLayout >
@@ -31,7 +32,7 @@ class Explore extends React.Component {
                 </SplitterLayout>
                 
             </div>
-        );
+        ) : <Redirect to='/register'/>
     }
 }
 

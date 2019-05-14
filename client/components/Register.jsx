@@ -52,7 +52,7 @@ class Register extends React.Component {
             // return this.props.dispatch(loginError("Passwords don't match"))
             console.log("Login Error- Passwords dont match")
         } else { 
-            this.props.dispatch(registerUserRequest({ first_name, middle_name, last_name, address, email, password, region, iwi, hapu }))
+            this.props.dispatch(registerUserRequest({ first_name, middle_name, last_name, address, email, password, iwi, hapu }))
         }
     }
 
