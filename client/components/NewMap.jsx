@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { fetchAllRahui} from "../actions/rahui";
 import {  withScriptjs, withGoogleMap, GoogleMap, Polygon, Marker } from 'react-google-maps'
+import { relative } from 'path';
 
 
 class NewMap extends Component {
@@ -10,15 +11,6 @@ class NewMap extends Component {
     super(props);
     this.state = {  }
 }
-// styles : [{
-//   "featureType" : "water",
-//   "elementType" : "geometry",
-//   "stylers" : [{
-//       "color" : "#b6d9ff"
-//   }, {
-//       "lightness" : 17
-//   }]
-
   render() {
 
   const GoogleMapExample = withGoogleMap(props => (
@@ -35,21 +27,15 @@ class NewMap extends Component {
         zoomControl: false,
         rotateControl: false,
         fullscreenControl: false,
-  //       styles: {
-  // "featureType" : "water",
-  // "elementType" : "geometry",
-  // "stylers" : [{
-  //     "color" : "#b6d9ff"
-  // }
       }}
      >
 
       {this.props && this.props.allrahui && this.props.allrahui.map(rahuicoords => {
        return (<div> 
         <Marker key={rahuicoords.id + 100} position={rahuicoords.geo_ref[0]} onClick={() => {
-         window.location = `#/rahui/${rahuicoords.id}`}} icon={{
-          href: './images/face.png'
-        }} />
+         window.location = `#/rahui/${rahuicoords.id}`}}
+          />
+
         <Polygon
         path={rahuicoords.geo_ref}
         key={rahuicoords.id}
@@ -63,15 +49,14 @@ class NewMap extends Component {
       }}/> 
       </div>)
      })}
-
-     </GoogleMap>
+         </GoogleMap>
   ));
 
 
   return(
      <div>
        <GoogleMapExample
-         containerElement={ <div style={{ height: `400px`, width: `100%`}} /> }
+         containerElement={ <div style={{ height: window.innerHeight, width: `100%`, position: relative}} /> }
          mapElement={ <div style={{ height: `170%`, width: `100%` }} /> }
          
        />
@@ -86,7 +71,4 @@ const mapStateToProps = state =>{
   }
 }
 
-
 export default connect(mapStateToProps)(NewMap);
-
-

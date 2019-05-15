@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import SplitterLayout from 'react-splitter-layout';
 import { connect } from "react-redux";
 import { fetchAllRahui} from "../actions/rahui";
