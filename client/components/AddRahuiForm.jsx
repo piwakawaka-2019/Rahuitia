@@ -156,10 +156,16 @@ class AddRahuiForm extends React.Component {
                 >
                     <div>
                     <h1>Add a Rāhui</h1>
-                    <div className="step one"> step one</div>
-                        <img src="mapthumbnail.png" className="thumbnail" />
-                        <h2>Zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
+                    <div className="step"> step one</div>
+                   
+                        <div>
+                            <img src="mapthumbnail.png" className="thumbnail" />
+                            <h2 className="one">Zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
                         <hr></hr>
+                       
+                        </div>
+        
+                        
                     <div className="step"> step two</div>
                         
                         <h2>Tell us about the rāhui. This information will be shared on the explore page.</h2>
