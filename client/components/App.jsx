@@ -40,26 +40,26 @@ export function App({ auth }) {
         <Route exact path="/" component={Landing} />
 
         <Route path="/about" component={About} />
-        <Route exact path="/about" component={Project}/>
+        <Route exact path="/about" component={Project} />
         <Route path="/about/team" component={Team} />
         <Route path="/about/resourses" component={Resourses} />
 
         <Route path="/about/API" component={RahuiApi} />
 
-        <Route path="/Login/" component={Login} />
-        
+        <Route path="/login/" component={Login} />
+
         <Route exact path="/AddRahui" component={FormAndMap} />
 
         <Route exact path="/explore" component={Explore} />
         <Route path="/rahui/:id" component={RahuiDetail} />
         <Route path="/register" component={Register} />
-        
-      </Router> 
 
- 
+      </Router>
+
+
     </div>
   );
-    }
+}
 
 const mapStateToProps = ({ auth }) => {
   return {

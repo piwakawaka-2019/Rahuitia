@@ -84,6 +84,14 @@ exports.seed = function(knex, Promise) {
           last_name: "Lumsden",
           address: "kia ora 469",
           email: "arts74@gmail.com"
+        },
+        {
+        id: 11,
+          first_name: "",
+          middle_name: "",
+          last_name: "",
+          address: "",
+          email: ""
         }
       ]);
     });
