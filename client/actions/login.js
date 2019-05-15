@@ -19,6 +19,12 @@ export function receiveLogin (user) {
   }
 }
 
+export function receiveLogout () {
+  return {
+    type: 'LOGOUT_SUCCESS'
+  }
+}
+
 export function loginError (message) {
   return {
     type: 'LOGIN_FAILURE',

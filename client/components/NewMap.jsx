@@ -14,31 +14,26 @@ class NewMap extends Component {
 
 
   render() {
-    console.log("MAPP", this.props.allrahui)
-    const rahuiCoods = this.props.allrahui.length > 0 ? this.props.allrahui[this.props.allrahui.length - 1].geo_ref : []
-    let requiredMapBounds
-    let requiredCenter
-    if (rahuiCoods.length > 0) {
-      console.log(rahuiCoods[0].lat)
-      console.log(rahuiCoods[1].lat)
-      console.log(rahuiCoods[0].lng)
-      console.log(rahuiCoods[1].lng)
+   
+    // const rahuiCoods = this.props.allrahui.length > 0 ? this.props.allrahui[9].geo_ref : []
+    // let requiredMapBounds
+    // let requiredCenter
+    // if (rahuiCoods.length > 0) {
+    //   requiredMapBounds = new window.google.maps.LatLngBounds();
 
-      requiredMapBounds = new window.google.maps.LatLngBounds();
+    //   rahuiCoods.forEach(rahuiPoint => {
+    //     requiredMapBounds.extend(new window.google.maps.LatLng(rahuiPoint.lat, rahuiPoint.lng))
+    //   })
 
-      rahuiCoods.forEach(rahuiPoint => {
-        requiredMapBounds.extend(new window.google.maps.LatLng(rahuiPoint.lat, rahuiPoint.lng))
-      })
-
-      requiredCenter = requiredMapBounds.getCenter()
-
-      console.log(requiredMapBounds)
-    }
+    //   requiredCenter = requiredMapBounds.getCenter()
+    // }
     
+
+
   const GoogleMapExample = withGoogleMap(props => (
      <GoogleMap
-      //  defaultCenter = { this.props.coords }
-      //  defaultZoom = {this.props.zoom}
+       defaultCenter = { this.props.coords }
+       defaultZoom = {this.props.zoom}
         defaultOptions={{
         disableDefaultUI: true,
         mapTypeId: 'hybrid', //google.maps.MapTypeId.SATELLITE,
@@ -50,35 +45,33 @@ class NewMap extends Component {
         rotateControl: false,
         fullscreenControl: false,
       }}
-      ref={map => {
-      // console.log({bounds})
-      // if (map && bounds && bounds.length > 0) {
-      //   console.log(bounds[0].lat)
-      //   console.log(bounds[1].lat)
-      //   console.log(bounds[0].lng)
-      //   console.log(bounds[1].lng)
-      //   const sw = new window.google.maps.LatLng(bounds[0].lat, bounds[0].lng)
-      //   const ne = new window.google.maps.LatLng(bounds[1].lat, bounds[1].lng)
-      //   console.log('made sw ad ne')
+      // ref={map => {
+      // // console.log({bounds})
+      // // if (map && bounds && bounds.length > 0) {
+      // //   console.log(bounds[0].lat)
+      // //   console.log(bounds[1].lat)
+      // //   console.log(bounds[0].lng)
+      // //   console.log(bounds[1].lng)
+      // //   const sw = new window.google.maps.LatLng(bounds[0].lat, bounds[0].lng)
+      // //   const ne = new window.google.maps.LatLng(bounds[1].lat, bounds[1].lng)
+      // //   console.log('made sw ad ne')
 
-      //   const actualBounds = new window.google.maps.LatLngBounds(sw, ne);
+      // //   const actualBounds = new window.google.maps.LatLngBounds(sw, ne);
 
-      //   console.log(actualBounds)
-      //   map.fitBounds(actualBounds)
+      // //   console.log(actualBounds)
+      // //   map.fitBounds(actualBounds)
+      // // }
+
+      // if (map && rahuiCoods && rahuiCoods.length > 0) {
+      //   map.fitBounds(requiredMapBounds)
       // }
-
-      console.log({rahuiCoods})
-      if (map && rahuiCoods && rahuiCoods.length > 0) {
-        map.fitBounds(requiredMapBounds)
-      }
-
-      return map
-    }}
+      // return map
+      // }}
      >
 
       {this.props && this.props.allrahui && this.props.allrahui.map(rahuicoords => {
        return (<div> 
-        <Marker key={rahuicoords.id + 100} position={requiredCenter} onClick={() => {
+        <Marker key={rahuicoords.id + 100} position={rahuicoords.geo_ref[0]} onClick={() => {
          window.location = `#/rahui/${rahuicoords.id}`}}  />
         <Polygon
         path={rahuicoords.geo_ref}
@@ -94,10 +87,6 @@ class NewMap extends Component {
       </div>)
      })}
  
-
-
-
-
      </GoogleMap>
   ));
 

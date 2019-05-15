@@ -9,7 +9,7 @@ class Landing extends Component {
     super(props);
 
     this.state = {
-        videoURL: 'dronevideo.mp4'
+        videoURL: 'Farm aerials at sunrise_HD-web.mp4'
     }
   }
 
