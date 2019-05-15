@@ -311,7 +311,6 @@ class EditRahuiForm extends React.Component {
 
                     <br></br>
                     <br></br>
-
                     <button name="submit">Submit edit</button>
                 </form>
             </div>
