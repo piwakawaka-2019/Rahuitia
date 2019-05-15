@@ -19,7 +19,7 @@ class NavReo extends Component {
   <Link to="/login/">Takiuru</Link>
 </div>
 <div className="explore navButton">
-  <Link to="/explore/">Torohē</Link>
+  <Link to="/explore/">Te Tūhara</Link>
 </div>
 <div className="add navButton">
   <Link to="/addrahui/">Tāpirihia he Rāhui</Link>

@@ -60,15 +60,15 @@ Kua whakanohoia te Rahūi ra</p>
 <br></br>
 <br></br>
 <p>Tēnā koa tāpirihia he whakaahua poto o te rahūi i konei:</p>
-<textarea name="description" type="text" placeholder="Whakāturanga" rows="10" cols="60" noValidate onChange={this.handleChange} />
+<textarea name="description" type="text" placeholder="whakāturanga" rows="10" cols="60" noValidate onChange={this.handleChange} />
 <br></br>
 <br></br>
 <p>Tēnā koa tāpirihia ētahi atu taipitopito o te rahūi i konei:</p>
-<textarea name="korero" type="text" placeholder="Kōrero" rows="20" cols="60" noValidate onChange={this.handleChange} />
+<textarea name="korero" type="text" placeholder="kōrero" rows="20" cols="60" noValidate onChange={this.handleChange} />
 <br></br>
 <br></br>
 <p>Tēnā koa whakauruhia ngā taipitopito whakapā ināianei:</p>
-<input name="contact" type="text" placeholder="Whakapa Mai" noValidate onChange={this.handleChange} />
+<input name="contact" type="text" placeholder="whakapa mai" noValidate onChange={this.handleChange} />
 <br></br>
 <br></br>
 <button name="submit">Tāpirihia he Rāhui</button>

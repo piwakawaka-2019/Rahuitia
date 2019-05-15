@@ -11,7 +11,7 @@ class ResReo extends Component {
           <div className="column">
             <br/>
             <p>
-              Whakataka te hau ki te uru, whakataka te hau ki te tonga. Kia makinakina ki uta, Kia mataratara kia tai. E hii ake ana te atakura. He Tio, He Huka , He Haugunga. Tihei Mauri Ora
+            Kei raro nei nga rauemi e whakamahia ana i roto i tenei kaupapa -
             </p>
           </div>
         </div>

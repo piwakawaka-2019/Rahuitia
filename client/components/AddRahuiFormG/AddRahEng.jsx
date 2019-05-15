@@ -62,11 +62,11 @@ hapu:{this.props.data.hapu.map(hapu => {return <p>{hapu}, </p>})}<br></br>
 <br></br>
 <br></br>
 <p>Please add further details of the rahūi here:</p>
-<textarea name="korero" type="text" placeholder="korero" rows="20" cols="60" noValidate onChange={this.handleChange} />
+<textarea name="korero" type="text" placeholder="kōrero" rows="20" cols="60" noValidate onChange={this.handleChange} />
 <br></br>
 <br></br>
 <p>Please enter contact details here:</p>
-<input name="contact" type="text" placeholder="Email Address" noValidate onChange={this.handleChange} />
+<input name="contact" type="text" placeholder="email address" noValidate onChange={this.handleChange} />
 <br></br>
 <br></br>
 <button name="submit">Add Rāhui</button>

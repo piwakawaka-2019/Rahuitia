@@ -11,13 +11,13 @@ class LoginReo extends Component {
                   noValidate
                   className="login-wrapper" >
                      
-                  <input name="email" type="text" placeholder="Īmera" noValidate onChange={this.handleChange} />
+                  <input name="email" type="text" placeholder="īmera" noValidate onChange={this.handleChange} />
 
                   <br></br>
 
-                  <input name="password" type="password" placeholder="Kupuhipa" noValidate onChange={this.handleChange} />
+                  <input name="password" type="password" placeholder="kupuhipa" noValidate onChange={this.handleChange} />
                   <br></br>
-                  <button name="submit">Takiuru</button>
+                  <button name="submit">TAKIURU</button>
               </form>
           </div>
 
