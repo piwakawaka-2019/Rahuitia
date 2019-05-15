@@ -464,6 +464,16 @@ map {
 
 }
 
+.dropdownboxedit {
+  display: inline-block;
+  width: 40%;
+  /* margin-right: 20px; */
+  padding: 20px;
+  border-radius: 4px;
+  background: #eceee3;
+
+}
+
 .selectediwi {
   display: inline-block;
   width: 40%;
@@ -471,8 +481,22 @@ map {
   padding: 20px;
   border-radius: 4px;
   background: #eceee3;
-  vertical-align: top
-  
+  vertical-align: top;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.selectediwiedit {
+  display: inline-block;
+  width: 40%;
+  margin-top:20px;
+  /* margin-right: 20px; */
+  padding: 20px;
+  border-radius: 4px;
+  background: #eceee3;
+  vertical-align: top;
+  font-size: 19px;
+  font-weight: bold;
 }
 
 
@@ -511,8 +535,24 @@ font-size: 20px;
 
 
 .registerButton {
+  display: block;
   width: 200px;
-  margin: 0px 0px 200px 0px;
+  margin: 20px 0px 200px 0px;
+  font-size: 20px;
+}
+
+.registerButton1 {
+  display: block;
+  width: 200px;
+  margin: 20px 0px 20px 0px;
+  font-size: 20px;
+  color: #434834;
+  background: white;
+}
+
+.addAnotherButton {
+  width: 300px;
+  margin: 0px 0px 0px 0px;
   font-size: 20px;
 }
 
@@ -541,4 +581,10 @@ font-size: 20px;
   vertical-align: top;
   font-size: 19px;
   font-weight: bold;
+}
+
+.submitedit {
+  font-size: 19px;
+  width: 170px;
+  display: inline-block
 }
