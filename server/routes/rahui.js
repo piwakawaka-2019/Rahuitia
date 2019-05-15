@@ -90,8 +90,8 @@ router.put('/:id', async (req, res) => {
       const authoriser = rahuiData.authoriser
       const contact = rahuiData.contact
       const region = rahuiData.region
-      //await does not work here
-      await db.editRahui(rahui);
+ 
+      await db.editRahui( rahuiId, iwi, hapu, description, korero, geoRef, datePlaced , dateLifted, authoriser, contact, region );
 
       res.json({})
   }
@@ -99,6 +99,7 @@ router.put('/:id', async (req, res) => {
       err => res.status(500).json({message: "Server Error"})
   }
 })
+
 
 router.post('/tautoko', async (req, res) => {
   try{
