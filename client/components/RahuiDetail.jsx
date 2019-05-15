@@ -44,7 +44,6 @@ class RahuiDetail extends Component {
                 <br/><b>Date Lifted:</b> <p> {date_lifted}</p>
                 <br/><b>Korero:</b> <p> {korero}</p>
                 <br/><b>Contact:</b> <p> {contact}</p>
-                
                 {userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : "" }   
 
              <div className="spaceme" />   
