@@ -7,6 +7,7 @@ class ResEng extends Component {
     return (
 <div>
         <h1 className="aboutHeading2">Resources</h1>
+        <h1>Resources</h1>
         <div className="row">
           <div className="column">
             
@@ -27,11 +28,12 @@ class ResEng extends Component {
               consectetur—a genuine, albeit rare, Latin word. Consulting a Latin
               dictionary led McClintock to a passage from De Finibus Bonorum et
               Malorum (“On the Extremes of Good and Evil”), a first-century B.C.
-              text from the Roman philosopher Cicero.
+              text from the Roman philosopher Cicero. </p>
+            <br/>
+            <p>
+              Below are the resources used within this project - 
             </p>
           </div>
-
-          
         </div>
       </div>
 

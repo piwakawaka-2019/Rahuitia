@@ -4,7 +4,7 @@ import ProjReo from './ProjReo'
 import { toggleLang } from "../../actions/toggle";
 import { connect } from 'react-redux'
 
-class project extends Component {
+class Project extends Component {
   render() {
     return (
     <div>
@@ -20,6 +20,6 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect (mapStateToProps)(project);
+export default connect (mapStateToProps)(Project);
 
 
