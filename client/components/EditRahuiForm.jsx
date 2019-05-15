@@ -108,9 +108,9 @@ class EditRahuiForm extends React.Component {
             authoriser: this.state.authoriser,
             description: this.state.description,
             korero: this.state.korero,
-            geo_ref: this.state.geoRef,
-            date_placed: this.state.datePlaced,
-            date_lifted: this.state.dateLifted,
+            geoRef: this.state.coordinates,
+            datePlaced: this.state.datePlaced,
+            dateLifted: this.state.dateLifted,
             contact: this.state.contact
         }
 
@@ -215,8 +215,10 @@ class EditRahuiForm extends React.Component {
                 >
                     <div>
                         <h1>Edit Rāhui</h1>
-                        <br></br>
-
+                        <div className="step"> step one</div>
+                        <h2>Zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
+                        <hr></hr>
+                        <div className="step"> step two</div>
                         <p>Edit details for this rāhui:</p>
                         <div>
                         <p>edit iwi/hapū:</p>
