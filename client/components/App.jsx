@@ -27,7 +27,7 @@ import RahuiApi from "./RahuiAPIG/RahuiApi";
 import Login from "../components/LoginG/Login";
 import ReactMap from "./ReactMap";
 import FormAndMap from "./FormAndMap";
-import Register from "./RegisterG/Register";
+import Register from "./Register";
 import Tautoko from "./Tautoko";
 import Project from "./ProjectG/Project";
 import EditFromAndMap from "./EditFromAndMap";
