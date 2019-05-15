@@ -11,7 +11,7 @@ import AddRahuiMap from "./NewMap";
 import MapWithADrawingManager from './ReactMap'
 import AddRahuiForm from "./AddRahuiFormG/AddRahuiForm";
 
-import RahuiDetail from "./RahuiDetail";
+import RahuiDetail from "./RahuiDetailG/RahuiDetail";
 import About from "./AboutG/About";
 import Team from "./TeamG/Team";
 import Resourses from "./ResoursesG/Resourses";
@@ -23,10 +23,10 @@ import RahuiApi from "./RahuiAPIG/RahuiApi";
 
 
 
-import Login from "../components/Login";
+import Login from "../components/LoginG/Login";
 import ReactMap from "./ReactMap";
 import FormAndMap from "./FormAndMap";
-import Register from "./Register";
+import Register from "./RegisterG/Register";
 import Tautoko from "./Tautoko";
 import Project from "./ProjectG/Project";
 
@@ -54,12 +54,13 @@ export function App({ auth }) {
         <Route path="/rahui/:id" component={RahuiDetail} />
         <Route path="/register" component={Register} />
         
-      </Router> */}
+      </Router> 
 
  
     </div>
   );
-}
+    }
+
 const mapStateToProps = ({ auth }) => {
   return {
     auth

@@ -8,9 +8,7 @@ class projReo extends Component {
         <div className="row">
           <div className="column">
             <br/>
-            <p>
-            Rāhuitia: a passive form of Rāhui which effectively implies an imperative that we must Rāhui, to respect Mana Whenua, Mana Moana, Mana Tangata
-            </p>
+            <p> Rāhuitia: he puka paari o Rāhui e tino whai tikanga ana he tikanga nui kia Rāhui, kia whakaute i Mana Whenua, Mana Moana, Mana Tangata</p>
           </div>
         </div>
       </div>

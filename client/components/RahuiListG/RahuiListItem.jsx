@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RahuiDetail from '../RahuiDetail';
+// import RahuiDetail from '../RahuiDetail';
 
 
 

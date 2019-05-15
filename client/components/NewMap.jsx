@@ -38,7 +38,7 @@ class NewMap extends Component {
   const GoogleMapExample = withGoogleMap(props => (
      <GoogleMap
       //  defaultCenter = { this.props.coords }
-      //  defaultZoom = {this.props.zoom}
+       defaultZoom = {this.props.zoom}
         defaultOptions={{
         disableDefaultUI: true,
         mapTypeId: 'hybrid', //google.maps.MapTypeId.SATELLITE,
@@ -51,21 +51,6 @@ class NewMap extends Component {
         fullscreenControl: false,
       }}
       ref={map => {
-      // console.log({bounds})
-      // if (map && bounds && bounds.length > 0) {
-      //   console.log(bounds[0].lat)
-      //   console.log(bounds[1].lat)
-      //   console.log(bounds[0].lng)
-      //   console.log(bounds[1].lng)
-      //   const sw = new window.google.maps.LatLng(bounds[0].lat, bounds[0].lng)
-      //   const ne = new window.google.maps.LatLng(bounds[1].lat, bounds[1].lng)
-      //   console.log('made sw ad ne')
-
-      //   const actualBounds = new window.google.maps.LatLngBounds(sw, ne);
-
-      //   console.log(actualBounds)
-      //   map.fitBounds(actualBounds)
-      // }
 
       console.log({rahuiCoods})
       if (map && rahuiCoods && rahuiCoods.length > 0) {
@@ -93,9 +78,6 @@ class NewMap extends Component {
       }}/> 
       </div>)
      })}
- 
-
-
 
 
      </GoogleMap>

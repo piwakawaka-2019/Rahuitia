@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
-import {loginUser, loginError} from '../actions/login'
+import {loginUser, loginError} from '../../actions/login'
+import { toggleLang } from "../../actions/toggle";
 // table.integer('password_hash')
 // table.integer('email')
+import LoginEng from './LoginEng'
+import LoginReo from './LoginReo'
 
 class Login extends React.Component {
   constructor(props) {
@@ -28,30 +31,18 @@ class Login extends React.Component {
   }
 
   render() {
-    const {auth} = this.props
       return (
-          <div className="login-wrapper">
-              <form
-                  onSubmit={this.submit}
-                  noValidate
-                  className="login-wrapper"
-              >        
-                  <input name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
-
-                  <br></br>
-
-                  <input name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
-                  <br></br>
-                  <button name="submit">SIGN IN</button>
-              </form>
-          </div>
+     <div>   {console.log(this.props, this.state)}
+      {this.props.lang == "eng" ? <LoginEng {...this.props} /> : <LoginReo {...this.props} />}
+     </div>
       )
   }
 }
 
-const mapStateToProps = ({auth}) => {
+const mapStateToProps = ({auth}, state) => {
   return {
-    auth
+    auth,
+    lang: state.toggle
   }
 }
 

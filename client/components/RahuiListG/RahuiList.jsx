@@ -14,7 +14,7 @@ class RahuiList extends React.Component {
         console.log(this.props)
         return (
             <div>
-                 {this.props.lang == "eng" ? <RahuiListEng {...props}/> : <RahuiListReo {...props}/>}
+                 {this.props.lang == "eng" ? <RahuiListEng {...this.props}/> : <RahuiListReo {...this.props}/>}
                  {this.props.allrahui.map(rahui => <RahuiListItem key={rahui.id} rahui={rahui}  /> )}   
             </div>
            );

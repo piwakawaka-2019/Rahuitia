@@ -8,6 +8,7 @@ class RahuiListEng extends React.Component {
       super(props);
       this.state = {  }
   }
+  
   render() { 
 
       console.log(this.props.allrahui)
@@ -19,6 +20,7 @@ class RahuiListEng extends React.Component {
            );
     }
 }
+
 function mapStateToProps(state) {
   return {
     lang: state.toggle
