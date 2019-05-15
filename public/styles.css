@@ -126,6 +126,7 @@ h2{
   font-size: 25px;
   line-height: 27px;
   color: #434734;
+  margin-top: 15px
 }
 
 h3{
@@ -134,6 +135,7 @@ h3{
   font-size: 22px;
   line-height: 23px;
   color: #434734;
+  margin-top: 10px
 }
 
 
@@ -217,7 +219,8 @@ button {
   padding: 8px;
   font-size: 14px;
   border-radius: 4px;
-  border: #434734 2px;
+  border-color: #434734 ;
+  border-width: 1px;
   background: white;
   color: #434734;
   font-style: normal;
@@ -244,18 +247,27 @@ map {
   font-weight: bold;
   font-size: 22px;
   line-height: 25px;
-  color: #888a80;
+  color: #DC5757;
+  margin-bottom: 20px;
+  margin-top: 20px
 }
 
 .one{
-  display: flex;
+  width:60%;
+  padding: 20px;
+  display: grid;
+  display: inline-block;
+  margin-top:5px;
+  vertical-align: top
 }
 
 .thumbnail {
+  display: inline-block;
   background-size: cover;
   border-radius:50% 50% 50% 50%;
   width:100px;
   height:100px;
+  
 }
 
 .iwihapubox {
@@ -272,6 +284,7 @@ map {
   padding: 20px;
   border-radius: 4px;
   background: #eceee3;
+
 }
 
 .selectediwi {
@@ -280,6 +293,7 @@ map {
   margin-right: 20px;
   padding: 20px;
   border-radius: 4px;
-  background: yellow;
-  border: #434734 2px;
+  background: #eceee3;
+  vertical-align: top
+  
 }
