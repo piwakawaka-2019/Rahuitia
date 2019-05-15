@@ -191,7 +191,7 @@ class EditRahuiForm extends React.Component {
                     onSubmit={this.handleSubmit}
                     noValidate
                 >
-                    <div>
+                    <div className="editContainer">
                         <h1>Edit Rāhui</h1>
                         <div className="step"> step one</div>
                         <h2>Please zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
