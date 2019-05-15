@@ -17,7 +17,7 @@ class EditRahuiForm extends React.Component {
             region: [],
             iwi: [],
             hapu: [],
-            geoRef: null,
+            geoRef: [],
             authoriser: null,
             datePlaced: null,
             dateLifted: null,
@@ -39,7 +39,7 @@ class EditRahuiForm extends React.Component {
         this.renderHapu = this.renderHapu.bind(this)
         this.renderIwi = this.renderIwi.bind(this)
         this.submitAdd = this.submitAdd.bind(this);
-
+        this.resetIwiHapu = this.resetIwiHapu.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -66,14 +66,13 @@ class EditRahuiForm extends React.Component {
                 dateLifted: date_lifted,
                 contact: contact
             })
-
-            console.log(rahui)
       }
     }
 
     componentDidMount() {
         this.props.dispatch(fetchAllIwi())
     }
+
 
     handleSubmit(e) {
         e.preventDefault()
@@ -86,7 +85,7 @@ class EditRahuiForm extends React.Component {
             authoriser: this.state.authoriser,
             description: this.state.description,
             korero: this.state.korero,
-            geoRef: this.state.coordinates,
+            geoRef: this.props.coordinates,
             datePlaced: this.state.datePlaced,
             dateLifted: this.state.dateLifted,
             contact: this.state.contact
@@ -121,10 +120,11 @@ class EditRahuiForm extends React.Component {
 
     resetIwiHapu(e) {
         e.preventDefault()
+        
         this.setState({
-            region: null,
-            iwi: null,
-            hapu: null,
+            region: [],
+            iwi: [],
+            hapu: [],
             regionSelected: null,
             iwiSelected: null,
             hapuSelected: null
@@ -199,7 +199,8 @@ class EditRahuiForm extends React.Component {
                         <div className="step"> step two</div>
                         <p>Edit details for this rāhui:</p>
                         <div>
-                        <p>edit iwi/hapū:</p>
+                        <p>edit region/iwi/hapū:</p>
+                        <p>region:{this.state.region.map(region => {return <p>{region}, </p>})}</p>
                         iwi:{this.state.iwi.map(iwi => {return <p>{iwi}, </p>})}<br></br>
                         <p>
                         hapu:
