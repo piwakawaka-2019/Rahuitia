@@ -21,10 +21,11 @@ class RahuiDetail extends Component {
     
         let {id, geo_ref, iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, region, authoriser, contact, iwi, hapu} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
         
+        let eachRahui = this.props.allrahui.find( rahui => rahui.id == rahuiId)
         
         return ( 
             <div>
-            {this.props.lang== "eng" ? <DetailEng {...this.props}/> : <DetailReo {...this.props}/>}
+            {this.props.lang== "eng" ? <DetailEng {...eachRahui}/> : <DetailReo {...eachRahui}/>}
             </div>
          );
     }

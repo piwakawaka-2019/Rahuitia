@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
+import SplitterLayout from 'react-splitter-layout';
+import Tautoko from "../Tautoko"
+import NewMap from '../NewMap'
+
 
 
 class DetailReo extends React.Component {
@@ -7,14 +11,19 @@ class DetailReo extends React.Component {
       super(props);
       this.state = {  }
   }
+
+  handleclick=()=>{
+    window.location = `/#/explore`; 
+    }
+
    render() 
-  { 
+  { let {id, geo_ref, iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, region, authoriser, contact, iwi, hapu} = this.props
     return (
 
 <div>
 <SplitterLayout primaryIndex={0}>
     <div >
-        <NewMap color={"#2E86C1"} zoom={13} coords={geo_ref[0]} />
+        <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
     </div> 
 
     <div className="detailwrapper">

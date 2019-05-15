@@ -20,7 +20,7 @@ exports.seed = function (knex, Promise) {
           date_lifted: '',
           authoriser: 'Robert Willoughby',
           contact: '09 403 7012',
-          region: "Te Tai Tokerau"
+          region: JSON.stringify(["Te Tai Tokerau"])
         },
         {
           id: 32,
@@ -39,7 +39,7 @@ exports.seed = function (knex, Promise) {
           date_lifted: '25-04-2019',
           authoriser: 'Rangi Leaf',
           contact: 'Not stated',
-          region: "Tākitimu"
+          region: JSON.stringify(["Tākitimu"])
         },
         {
           id: 33,
@@ -57,7 +57,7 @@ exports.seed = function (knex, Promise) {
           date_lifted: '',
           authoriser: 'Aperahama (Abe) Edwards',
           contact: 'Kensington blvd',
-          region: "Te Tai Tokerau"
+          region: JSON.stringify(["Te Tai Tokerau"])
         },
         {
           id: 34,
@@ -73,7 +73,7 @@ exports.seed = function (knex, Promise) {
           date_lifted: '',
           authoriser: 'Edward Ashby',
           contact: 'Sorghum place',
-          region: "Tāmaki"
+          region: JSON.stringify(["Tāmaki"])
         },
       ]);
     });
