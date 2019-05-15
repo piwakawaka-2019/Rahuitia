@@ -4,7 +4,7 @@ class ProjEng extends Component {
   render() {
     return (
       <div>
-        <h1 className="aboutHeading2">PROJECT</h1>
+        <h1 className="aboutHeading2">Project</h1>
         <div className="row">
           <div className="column">
 

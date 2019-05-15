@@ -4,12 +4,12 @@ class teamReo extends Component {
   render() {
     return (
       <div>
-        <h1>TEAM</h1>
+        <h1 className="aboutHeading2">Tima</h1>
         <div className="row">
           <div className="column">
-            
+
             <br />
-            <p>
+            <p className="aboutBody">
               Until recently, the prevailing view assumed lorem ipsum was born
               as a nonsense text. “It's not Latin, though it looks like it, and
               it actually says nothing,” Before & After magazine answered a
@@ -29,7 +29,7 @@ class teamReo extends Component {
             </p>
           </div>
 
-          
+
         </div>
       </div>
     );

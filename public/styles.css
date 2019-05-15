@@ -92,28 +92,52 @@ color: #DC5757;
 text-decoration: underline;
 }
 
+
 .aboutNav {
-width: 15%;
+width: auto;
 background: none;
 border: none;
 color: #434734;
+
+/* text-decoration: underline; */
+/* margin: 0px 20px 20px 0px; */
+}
+
+
+
+.aboutNav:hover {
 text-decoration: underline;
-margin: 0px 20px 20px 0px;
+}
+
+.aboutNav:selection {
+text-decoration-line: underline;
 }
 
 .aboutBody {
-  margin: 0px 300px 0px 80px
+  margin: 40px 300px 0px 80px;
+  font-size: 36px;
+  line-height: 50px;
+}
 
+.aboutContainer {
+  margin: 40px 40px 40px 70px;
+}
+
+.aboutMargin {
+  margin: 40px 20px 20px 70px; 
 }
 
 .aboutHeading {
-  margin: 20px 20px 20px 70px;
+  /* margin: 40px 20px 20px 70px; */
   padding: 10px 10px 10px 10px;
+  font-size: 64px;
+  text-decoration: underline;
 }
 
 .aboutHeading2 {
-  margin: 20px 20px 20px 70px;
+  margin: 100px 20px 20px 70px;
   padding: 10px 10px 10px 10px;
+  font-size: 96px;
 }
 
 
