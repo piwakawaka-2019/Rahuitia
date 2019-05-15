@@ -12,7 +12,7 @@ import AddRahEng from './AddRahEng'
 import AddRahReo from './AddRahReo'
 import { toggleLang } from "../../actions/toggle";
 
-class AddRahuiForm extends React.Component {
+class AddRahEng extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -41,8 +41,8 @@ class AddRahuiForm extends React.Component {
         this.renderHapu = this.renderHapu.bind(this)
         this.renderIwi = this.renderIwi.bind(this)
         this.submitAdd = this.submitAdd.bind(this);
-
     }
+
 
     componentDidMount() {
         this.props.dispatch(fetchAllIwi())
@@ -239,4 +239,4 @@ const mapStateToProps = state => {
 
     }
 }
-export default connect(mapStateToProps)(AddRahuiForm);
+export default connect(mapStateToProps)(AddRahEng);
