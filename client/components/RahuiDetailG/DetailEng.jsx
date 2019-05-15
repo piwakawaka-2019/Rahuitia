@@ -27,9 +27,12 @@ class DetailEng extends React.Component {
     </div> 
 
     <div className="detailwrapper">
-        <button className="secondarybutton" onClick={this.handleclick.bind(this)}> Back to List </button><Tautoko />
+        <a className="secondarybutton" onClick={this.handleclick.bind(this)}> Back to List </a>
+       
+        
+        <h1> {description}</h1> 
+        <Tautoko />
         <br/><p>iwi: {iwi}   |   hapu: {hapu}   |   region: {region}</p> <br/>
-        <h1> {description}</h1>
         <br/><b>Authorised by:</b> <p> {authoriser}</p>
         <br/><b>Submitted by:</b> <p> {first_name} {last_name} ({iwi_name} | {hapu_name})</p>
         <br/><b>Date placed:</b> <p> {date_placed}</p>

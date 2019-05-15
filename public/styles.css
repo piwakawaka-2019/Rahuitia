@@ -35,7 +35,7 @@ header .header_logo_title {
 .tautoko {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 2fr 5fr 1fr ;
+  grid-template-columns: 1fr 4fr 4fr 1fr ;
   grid-template-rows: none;
 
   position: relative;
@@ -53,24 +53,25 @@ header .header_logo_title {
 }
 
 .respect{
-  padding: 15px;
+  padding: 30px 15px 25px 20px;
   color: rgb(169, 169, 169);
   vertical-align: center
 }
 
 .count{
   text-align: right;
-  font-size: 44px;
+  font-size: 52px;
   color: #DC5757;
-  padding: 15px;
+  padding: 20px 5px 20px 0px;
   vertical-align: center
 }
 
+
 .tangata{
+  padding: 30px 15px 25px 15px;
   font-size: 17px;
   color: #DC5757;
   vertical-align: center;
-  padding: 15px;
 
 }
 
@@ -78,6 +79,10 @@ header .header_logo_title {
   text-align: center;
 }
 
+hr{
+  padding: 0;
+  margin: 0;
+}
 
 /* landing page styling */
 .overlay {
@@ -132,7 +137,7 @@ header .header_logo_title {
 
 
 .languageToggleButton {
-width: 10%;
+width: 8%;
 position: fixed;
 bottom: 3em;
 right: 0;
@@ -141,6 +146,7 @@ background: none;
 border: none;
 color: #DC5757;
 text-decoration: underline;
+z-index: 55;
 }
 
 
@@ -186,8 +192,15 @@ text-decoration-line: underline;
   line-height: 50px;
 }
 
+.landingtext {
+  margin: 30px 30px 30px 30px;
+  font-size: 28px;
+  line-height: 38px;
+  color: #434734
+}
+
 .aboutContainer {
-  margin: 40px 40px 40px 70px;
+  margin: 60px 40px 60px 70px;
 }
 
 .aboutMargin {
@@ -236,12 +249,23 @@ text-decoration-line: underline;
 /* font styles */
 h1 {
   padding-bottom: 20px;
-  padding-top: 30px;  
+  padding-top: 10px;  
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
   line-height: 58px;
   color: #434734;
+}
+
+.title {
+  padding-bottom: 20px;
+  padding-top: 30px;  
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 55px;
+  color: #434734;
+  z-index: 55;
 }
 
 h2{

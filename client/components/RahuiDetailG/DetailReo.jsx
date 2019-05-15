@@ -27,7 +27,8 @@ class DetailReo extends React.Component {
     </div> 
 
     <div className="detailwrapper">
-        <button className="secondarybutton" onClick={this.handleclick.bind(this)}> Back to List </button><Tautoko />
+        <button className="secondarybutton" onClick={this.handleclick.bind(this)}> Back to List </button>
+        <Tautoko />
         <br/><p>iwi: {iwi}   |   hapu: {hapu}   |   region: {region}</p> <br/>
         <h1> {description}</h1>
         <br/><b>Authorised by:</b> <p> {authoriser}</p>
