@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 
         console.log("One entry:",firstEntry)
 
-        // firstEntry.iwi = JSON.parse(firstEntry.iwi)
+        firstEntry.iwi = JSON.parse(firstEntry.iwi)
         firstEntry.hapu = JSON.parse(firstEntry.hapu)
         firstEntry.region = JSON.parse(firstEntry.region)
         firstEntry.iwi_name = [firstEntry.iwi_name]

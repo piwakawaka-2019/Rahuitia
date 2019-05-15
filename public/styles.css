@@ -244,6 +244,12 @@ button {
   margin: 20px 0px 20px 0px;
 }
 
+button :active {
+  background: #9fa09a;
+
+}
+
+
  .secondarybutton {
   width: 100%;
   cursor: pointer;
