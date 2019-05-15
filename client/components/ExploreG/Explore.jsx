@@ -17,7 +17,6 @@ class Explore extends React.Component {
     }
 
     render() {
-        console.log("explore", this.props)
         return (
             <div >
 
@@ -40,7 +39,7 @@ class Explore extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        allrahui: state.rahui
+        allrahui: state.rahui.reverse()
     }
 }
 
