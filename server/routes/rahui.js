@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
       while (rahui.length) {
         let firstEntry = rahui.shift()
 
-        // console.log("One entry:",firstEntry)
+        console.log("One entry:",firstEntry)
 
         firstEntry.iwi = JSON.parse(firstEntry.iwi)
         firstEntry.hapu = JSON.parse(firstEntry.hapu)
@@ -77,9 +77,10 @@ router.get('/', (req, res) => {
 
 router.put('/:id', async (req, res) => {
   try{
-      console.log(req.body)
-      const rahuiId = req.params.id;
+      console.log("this is req.body:", req.body)
       const rahuiData = req.body;
+      const region = rahuiData.region
+      const rahuiId = rahuiData.id;
       const iwi = rahuiData.iwi
       const hapu = rahuiData.hapu
       const description = rahuiData.description
@@ -89,9 +90,8 @@ router.put('/:id', async (req, res) => {
       const dateLifted = rahuiData.dateLifted
       const authoriser = rahuiData.authoriser
       const contact = rahuiData.contact
-      const region = rahuiData.region
- 
-      await db.editRahui( rahuiId, iwi, hapu, description, korero, geoRef, datePlaced , dateLifted, authoriser, contact, region );
+    
+      await db.editRahui( rahuiId, region, iwi, hapu, description, korero, geoRef, datePlaced , dateLifted, authoriser, contact );
 
       res.json({})
   }
@@ -99,7 +99,6 @@ router.put('/:id', async (req, res) => {
       err => res.status(500).json({message: "Server Error"})
   }
 })
-
 
 router.post('/tautoko', async (req, res) => {
   try{

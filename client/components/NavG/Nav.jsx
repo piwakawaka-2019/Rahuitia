@@ -12,8 +12,8 @@ export class Nav extends Component {
   render() {
   return (
       <div>
-    
-        <button onClick={() => this.props.dispatch(toggleLang())}></button>
+        
+        {/* {this.props.lang == "eng" ? <NavEng/> : <NavReo/>} */}
 
         {this.props.lang == "eng" ? 'TeReo' : 'English'}
         {this.props.lang == "eng" ? <NavEng isAuthenticated={this.props.isAuthenticated} logout={this.props.logout}/> : <NavReo isAuthenticated={this.props.isAuthenticated} logout={this.props.logout} />}

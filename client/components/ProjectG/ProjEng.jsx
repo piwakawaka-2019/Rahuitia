@@ -5,6 +5,7 @@ class ProjEng extends Component {
     return (
       <div>
         <h1 className="aboutHeading2">Project</h1>
+        <h1>Project</h1>
         <div className="row">
           <div className="column">
 
@@ -24,11 +25,12 @@ class ProjEng extends Component {
               consectetur—a genuine, albeit rare, Latin word. Consulting a Latin
               dictionary led McClintock to a passage from De Finibus Bonorum et
               Malorum (“On the Extremes of Good and Evil”), a first-century B.C.
-              text from the Roman philosopher Cicero.
+              text from the Roman philosopher Cicero.</p>
+            <br/>
+            <p>
+            Rāhuitia: a passive form of Rāhui which effectively implies an imperative that we must Rāhui, to respect Mana Whenua, Mana Moana, Mana Tangata
             </p>
-          </div>
-
-
+           </div>
         </div>
       </div>
     );

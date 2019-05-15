@@ -98,16 +98,13 @@ class Register extends React.Component {
             })
         }
     }
-
     renderHapu() {
         const allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
         const iwiIWant = this.state.iwiSelected
         const theIwiIFound = allIwiInRegion.filter(iwi => {
             return iwi[iwiIWant] != undefined
         })
-
         const allHapu = theIwiIFound[0][iwiIWant]
-
         if (allHapu.length > 0) {
             return allHapu.map(hapu => {
                 return <option htmlFor="hapu">{hapu}</option>;
@@ -115,7 +112,6 @@ class Register extends React.Component {
         }
         else (<option>No hapū</option>)
     }
-
     render() {
         return (
             <div className="registerContainer">
@@ -135,8 +131,26 @@ class Register extends React.Component {
 
                     <input name="last_name" type="text" placeholder="last name" noValidate onChange={this.handleChange} />
                     <br></br>
-                    {/* Add iwi */}
-
+                    <p>Select region:</p>
+                    <select onChange={this.handleSelect}>
+                        {this.props.area.map(area => {
+                            return <option htmlFor="region">{area}</option>;
+                        })}
+                    </select>
+                    <br></br>
+                    <br></br>
+                    <p>Select iwi:</p>
+                    <select onChange={this.handleSelect2}>
+                        {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
+                    </select>
+                    <br></br>
+                    <br></br>
+                    <p>Select hapū:</p>
+                    <select onChange={this.handleSelect3}>
+                        {this.state.iwiSelected ? (
+                            this.renderHapu()
+                        ) : <option>----------</option>}
+                    </select>
                     <br></br>
                     <div className="dropdownbox">
 
@@ -167,9 +181,11 @@ class Register extends React.Component {
                     <div className="selectediwi">Your whakapapa: <br></br>
                         iwi:{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
                         hapu:{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}<br></br>
+                    
                     </div>
                     <br></br>
                     <br></br>
+                    <br></br>                    
                     <input name="address" type="text" placeholder="address" noValidate onChange={this.handleChange} />
                     <br></br>
                     <br></br>
@@ -203,5 +219,4 @@ const mapStateToProps = state => {
         auth: state.auth
     }
 }
-
 export default connect(mapStateToProps)(Register);

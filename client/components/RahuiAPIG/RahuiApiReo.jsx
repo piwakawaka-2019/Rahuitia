@@ -14,7 +14,9 @@ class rahuiApiReo extends Component {
               it actually says nothing,” Before & After magazine answered a
               curious reader, “Its ‘words’ loosely approximate the frequency
               with which letters occur in English, which is why at a glance it
-              looks pretty real.
+              looks pretty real. </p>
+            <p>
+            Kei raro nei nga taipitopito mo nga API i whakamahia:
             </p>
           </div>
         </div>

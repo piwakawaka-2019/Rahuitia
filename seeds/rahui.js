@@ -17,14 +17,14 @@ exports.seed = function (knex, Promise) {
           geo_ref: JSON.stringify([{ lat: -35.16643533792861, lng: 174.3177917555065 }, { lat: -35.188043311071716, lng: 174.1965988233776 }, { lat: -35.23264419283272, lng: 174.2728164747448 }, { lat: -35.16643533792861, lng: 174.3177917555065 }
           ]),
           date_placed: '01-12-2010',
-          date_lifted: '',
+          date_lifted: 'This Rāhui is still active',
           authoriser: 'Robert Willoughby',
           contact: '09 403 7012',
-          region: "Te Tai Tokerau"
+          region: JSON.stringify(["Te Tai Tokerau"])
         },
         {
           id: 32,
-          user_id: 11,
+          user_id: 12,
           iwi: JSON.stringify(["Ngāti Kahungunu ki Heretaunga Tamatea"]),
           hapu: JSON.stringify(["Ngati Kere"]),
           description:
@@ -37,31 +37,31 @@ exports.seed = function (knex, Promise) {
           ]),
           date_placed: '04-04-2019',
           date_lifted: '25-04-2019',
-          authoriser: 'Not stated',
+          authoriser: 'Rangi Leaf',
           contact: 'Not stated',
-          region: "Tākitimu"
+          region: JSON.stringify(["Tākitimu"])
         },
         {
           id: 33,
-          user_id: 11,
+          user_id: 13,
           iwi: JSON.stringify(["Ngātiwai"]),
           hapu: JSON.stringify(["Te Whānau a Rangiwhaakahu"]),
           description:
-            "Rahūi at Te Wai O Taniwhawas (also known as Mermaid Pools) designed to preserve the cultural, ecological and physical environment.",
+            "Rahūi at Te Wai O Taniwha was (also known as Mermaid Pools) designed to preserve the cultural, ecological and physical environment.",
           korero:
             "The Te Whanau ā Rangiwhakaahu hapū yesterday morning put a rāhui in place over the popular pools at the northern headland of Matapouri and the access route over the Rangitapu headland to restore their environment, cultural and spiritual wellbeing. A ceremony took place at Matapouri Beach at 5am yesterday to bless and dedicate a carved pou before those present went to the local marae to conclude the formalities. the picturesque, turquoise tidal rock pools are enormously popular and draw hundreds of people in a day during long weekends and holidays. Environmentalists, community groups, civic leaders and the local hapū have long been concerned about the degraded state of the pools and the condition of the track. Issues include no provision of basic infrastructure like a proper track, toilets or rubbish disposal facilities and all these will have to be addressed going forward, the hapu said. Hapū trust board chairman Aperahama Edwards said a rāhui should not discourage people from visiting Matapouri and surrounding areas.",
           geo_ref: JSON.stringify([
             { lat: -35.55578112464781, lng: 174.5075801639855 }, { lat: -35.56157660076433, lng: 174.51556241801381 }, { lat: -35.55878365253887, lng: 174.5185664921105 }, { lat: -35.55396558810553, lng: 174.50989759257436 }, { lat: -35.55578112464781, lng: 174.5075801639855 }
           ]),
           date_placed: '19-04-2019',
-          date_lifted: '',
+          date_lifted: 'This Rāhui is still active',
           authoriser: 'Aperahama (Abe) Edwards',
-          contact: 'None',
-          region: "Te Tai Tokerau"
+          contact: 'Kensington blvd',
+          region: JSON.stringify(["Te Tai Tokerau"])
         },
         {
           id: 34,
-          user_id: 11,
+          user_id: 14,
           iwi: JSON.stringify(["Te Kawerau a Maki"]),
           hapu: JSON.stringify([""]),
           description:
@@ -70,10 +70,10 @@ exports.seed = function (knex, Promise) {
             "A rāhui has been placed over the Waitakere Ranges by the mana whenua in a bid to stop the spread of kauri dieback disease. In August an Auckland Council report said the rate of kauri dieback in the ranges had more than doubled from 8 percent five years ago to 19 percent. Prominent scientist Peter de Lange warned the kauri are headed for extinction and the biggest problem was the spread of the dieback disease by people.",
           geo_ref: JSON.stringify([{}]),
           date_placed: '02-12-2019',
-          date_lifted: '',
+          date_lifted: 'This Rāhui is still active',
           authoriser: 'Edward Ashby',
-          contact: '',
-          region: "Tāmaki"
+          contact: 'Sorghum place',
+          region: JSON.stringify(["Tāmaki"])
         },
       ]);
     });
