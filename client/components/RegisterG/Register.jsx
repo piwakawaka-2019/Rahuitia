@@ -4,6 +4,7 @@ import { registerUserRequest } from '../../actions/register'
 import { fetchAllIwi } from "../../actions/iwi";
 import RegEng from "./RegEng"
 import RegReo from "./RegReo"
+import { loginError } from '../actions/login';
 
 class Register extends React.Component {
     constructor() {
@@ -48,10 +49,8 @@ class Register extends React.Component {
 
         let { first_name, middle_name, last_name, address, email, password, confirm_password, iwi, hapu } = this.state
         
-        // console.log("Name:",first_name,"Middle Name:", middle_name, "Last Name:", last_name,"Address:", address,"Email:", email, "Password:", password, "Confirm Password:", confirm_password, "iwi:", iwi,"hapu:", hapu)
-
         if (confirm_password != password){ 
-            // return this.props.dispatch(loginError("Passwords don't match"))
+            return this.props.dispatch(loginError("Passwords don't match"))
             console.log("Login Error- Passwords dont match")
         } else { 
             this.props.dispatch(registerUserRequest({ first_name, middle_name, last_name, address, email, password, iwi, hapu }))
@@ -130,8 +129,6 @@ class Register extends React.Component {
         )
         }}
     
-
-
 
 const mapStateToProps = state => {
     return {

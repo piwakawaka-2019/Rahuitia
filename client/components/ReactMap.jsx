@@ -34,8 +34,8 @@ const MapWithADrawingManager = compose(
         streetViewControl: false,
         scaleControl: false,
         mapTypeControl: false,
-        panControl: false,
-        zoomControl: false,
+        panControl: true,
+        zoomControl: true,
         rotateControl: false,
         fullscreenControl: false,
         labels: true
@@ -55,14 +55,17 @@ const MapWithADrawingManager = compose(
               // google.maps.drawing.OverlayType.RECTANGLE,
             ],
           },
-          // circleOptions: {
-          //   fillColor: `#ffff00`,
-          //   fillOpacity: 1,
-          //   strokeWeight: 5,
-          //   clickable: false,
-          //   editable: true,
-          //   zIndex: 1,
-          // },
+          polygonOptions: {
+            fillColor: "#DC5757",
+            fillOpacity: 0.9,
+            strokeColor: "#DC5757",
+            strokeOpacity: 1,
+            strokeWeight: 1,
+            clickable: false,
+            editable: true,
+            draggable: true,
+            zIndex: 1,
+          },
           
         }}
         onPolygonComplete={(polygon) => {

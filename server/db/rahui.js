@@ -71,10 +71,16 @@ function getRahui(testDb) {
 function getRahuiInformation(testDb) {
   const db = testDb || connection;
 
+  console.log(db("rahui")
+  .join("users", "rahui.user_id", "=", "users.id")
+  .join("iwi", "rahui.user_id", "=", "iwi.user_id")
+  .join("hapu", "rahui.user_id", "=", "hapu.user_id")
+  .select("*", "rahui.id as rahui_id").toString())
+
   return db("rahui")
     .join("users", "rahui.user_id", "=", "users.id")
-    .join("iwi", "rahui.user_id", "=", "iwi.user_id")
-    .join("hapu", "rahui.user_id", "=", "hapu.user_id")
+    .leftOuterJoin("iwi", "rahui.user_id", "=", "iwi.user_id")
+    .leftOuterJoin("hapu", "rahui.user_id", "=", "hapu.user_id")
     .select("*", "rahui.id as rahui_id")
     .then(rahui =>
       rahui.map(r => {

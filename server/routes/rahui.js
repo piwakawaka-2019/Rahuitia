@@ -7,14 +7,19 @@ router.get('/', (req, res) => {
     .then(rahui => {
       let arr = []
 
+      console.log(rahui.length)
+
       while (rahui.length) {
         let firstEntry = rahui.shift()
-        firstEntry.region = JSON.parse(firstEntry.region)
+
+        // console.log("One entry:",firstEntry)
+
         firstEntry.iwi = JSON.parse(firstEntry.iwi)
         firstEntry.hapu = JSON.parse(firstEntry.hapu)
+        firstEntry.region = JSON.parse(firstEntry.region)
         firstEntry.iwi_name = [firstEntry.iwi_name]
         firstEntry.hapu_name = [firstEntry.hapu_name]
-        firstEntry.region = [firstEntry.region]
+        // firstEntry.region = [firstEntry.region]
 
         firstEntry.geo_ref = JSON.parse(firstEntry.geo_ref)
 
@@ -70,8 +75,8 @@ router.get('/', (req, res) => {
 })
 
 
-router.put('/:id', function(req, res, next){
-    try{
+router.put('/:id', async (req, res) => {
+  try{
       console.log(req.body)
       const rahuiId = req.params.id;
       const rahuiData = req.body;
@@ -85,9 +90,28 @@ router.put('/:id', function(req, res, next){
       const authoriser = rahuiData.authoriser
       const contact = rahuiData.contact
       const region = rahuiData.region
-      //await does not work here
-      db.editRahui(rahuiId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted, authoriser, contact, region);
+ 
+      await db.editRahui( rahuiId, iwi, hapu, description, korero, geoRef, datePlaced , dateLifted, authoriser, contact, region );
 
+      res.json({})
+  }
+  catch(err){
+      err => res.status(500).json({message: "Server Error"})
+  }
+})
+
+
+router.post('/tautoko', async (req, res) => {
+  try{
+      console.log("req.body:", req.body)
+
+      const tautokoData = req.body;
+      const rahuiId = tautokoData.rahui_id;
+      const userId = tautokoData.user_id
+
+      const tautoko = { rahui_id: rahuiId, userId: userId }
+
+      await db.writeTautoko( tautoko ); 
       res.json({})
   }
   catch(err){

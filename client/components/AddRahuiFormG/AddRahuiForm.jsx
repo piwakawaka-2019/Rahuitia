@@ -26,6 +26,8 @@ class AddRahuiForm extends React.Component {
             iwiSelected: null,
             hapuSelected: null,
             regionSelected: null,
+            iwihapuboxIsVisible: false,
+            iwihapuButtonText: "Click to select the Region/Iwi/Hāpu"
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -74,7 +76,6 @@ class AddRahuiForm extends React.Component {
     }
 
     submitAdd(){
-        console.log("blaine", this.state)
         let region = [...this.state.region, this.state.regionSelected]
         let iwi= [...this.state.iwi, this.state.iwiSelected]
         let hapu = [...this.state.hapu, this.state.hapuSelected]
@@ -85,7 +86,9 @@ class AddRahuiForm extends React.Component {
             hapu:[...new Set(hapu)],
             regionSelected: null,
             iwiSelected: null,
-            hapuSelected: null
+            hapuSelected: null,
+            iwihapuboxIsVisible: true,
+            iwihapuButtonText: "Add Another Associated Region/Iwi/Hāpu"
         })
         
     }
@@ -115,13 +118,15 @@ class AddRahuiForm extends React.Component {
     }
 
     renderIwi() {
-        const allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
+        let allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
+        
 
         if (allIwiInRegion.length > 0) {
-
-            return allIwiInRegion.map(iwi => {
-                return < option htmlFor="iwi" > {Object.keys(iwi)[0]}</option >
-            })
+            // allIwiInRegion.unshift( "Choose Iwi" );
+            return (
+                allIwiInRegion.map(iwi => {
+                return < option htmlFor="iwi"> {Object.keys(iwi)[0]}</option >
+            }))
         }
     }
     renderHapu() {
@@ -148,6 +153,7 @@ class AddRahuiForm extends React.Component {
                 {this.props.lang == "eng" ? <AddRahEng area={this.props.area} data={this.state}/> : <AddRahReo area={this.props.area} data={this.state}/>}
                    </div>
                 </form>
+                <div className="spaceme" />
             </div>
         )
     }

@@ -9,32 +9,38 @@ import { relative } from 'path';
 class NewMap extends Component {
   constructor(props) {
     super(props);
-    this.state = {  }
+    this.state = { 
+      rahuiBounds: [{lat: -36.543484, lng: 172.880926}, {lat: -43.622458, lng: 170.036187}]
+     }
 }
 
+handleBoundChange =() => {
+  this.setState({
+    rahuiBounds: this.props.rahuiBounds
+})
+}
+
+componentWillMount = () => {
+  this.handleBoundChange()
+}
 
   render() {
-    console.log("MAPP", this.props.allrahui)
-    const rahuiCoods = this.props.allrahui.length > 0 ? this.props.allrahui[this.props.allrahui.length - 1].geo_ref : []
+   
+    const rahuiCoods = this.props.allrahui.length > 0 ? this.state.rahuiBounds : []
     let requiredMapBounds
-    let requiredCenter
+    // let requiredCenter
     if (rahuiCoods.length > 0) {
-      console.log(rahuiCoods[0].lat)
-      console.log(rahuiCoods[1].lat)
-      console.log(rahuiCoods[0].lng)
-      console.log(rahuiCoods[1].lng)
-
       requiredMapBounds = new window.google.maps.LatLngBounds();
 
       rahuiCoods.forEach(rahuiPoint => {
         requiredMapBounds.extend(new window.google.maps.LatLng(rahuiPoint.lat, rahuiPoint.lng))
       })
 
-      requiredCenter = requiredMapBounds.getCenter()
-
-      console.log(requiredMapBounds)
+      // requiredCenter = requiredMapBounds.getCenter()
     }
     
+
+
   const GoogleMapExample = withGoogleMap(props => (
      <GoogleMap
       //  defaultCenter = { this.props.coords }
@@ -52,34 +58,40 @@ class NewMap extends Component {
       }}
       ref={map => {
 
-      console.log({rahuiCoods})
       if (map && rahuiCoods && rahuiCoods.length > 0) {
         map.fitBounds(requiredMapBounds)
       }
-
       return map
-    }}
+      }}
      >
 
       {this.props && this.props.allrahui && this.props.allrahui.map(rahuicoords => {
        return (<div> 
-        <Marker key={rahuicoords.id + 100} position={requiredCenter} onClick={() => {
+        <Marker key={rahuicoords.id + 100} position={rahuicoords.geo_ref[0]} onClick={() => { let newBounds=rahuicoords.geo_ref
+          this.setState({
+            rahuiBounds: newBounds
+          })
          window.location = `#/rahui/${rahuicoords.id}`}}  />
+
         <Polygon
         path={rahuicoords.geo_ref}
         key={rahuicoords.id}
-        onClick={() => { window.location = `#/rahui/${rahuicoords.id}`}} 
+        onClick={() => { let newBounds=rahuicoords.geo_ref
+          this.setState({
+            rahuiBounds: newBounds
+          })
+          window.location = `#/rahui/${rahuicoords.id}`}} 
+
         options={{
             fillColor: "#DC5757",
             fillOpacity: 0.9,
-            strokeColor: "#CE3838",
+            strokeColor: "#DC5757",
             strokeOpacity: 1,
             strokeWeight: 1
       }}/> 
       </div>)
      })}
-
-
+ 
      </GoogleMap>
   ));
 

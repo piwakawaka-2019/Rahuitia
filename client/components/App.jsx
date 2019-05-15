@@ -10,6 +10,7 @@ import Explore from "./ExploreG/Explore";
 import AddRahuiMap from "./NewMap";
 import MapWithADrawingManager from './ReactMap'
 import AddRahuiForm from "./AddRahuiFormG/AddRahuiForm";
+import EditRahuiForm from "./EditRahuiForm";
 
 import RahuiDetail from "./RahuiDetailG/RahuiDetail";
 import About from "./AboutG/About";
@@ -29,6 +30,7 @@ import FormAndMap from "./FormAndMap";
 import Register from "./RegisterG/Register";
 import Tautoko from "./Tautoko";
 import Project from "./ProjectG/Project";
+import EditFromAndMap from "./EditFromAndMap";
 
 // import Register from "./Register"
 
@@ -50,8 +52,11 @@ export function App({ auth }) {
 
         <Route exact path="/AddRahui" component={FormAndMap} />
 
+        <Route exact path="/rahui/:id/edit" component={EditFromAndMap}/>
+       
+
         <Route exact path="/explore" component={Explore} />
-        <Route path="/rahui/:id" component={RahuiDetail} />
+        <Route exact path="/rahui/:id" component={RahuiDetail} />
         <Route path="/register" component={Register} />
 
       </Router>

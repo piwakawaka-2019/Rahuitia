@@ -22,14 +22,15 @@ class Explore extends React.Component {
             <div >
 
                 <SplitterLayout >
-                    <div >
-                        <NewMap color={"#FF4C4C"} zoom={6} coords={{ lat: -47.892014, lng: 170.897149 }} />
-                    </div>
-
-                    <div className="detailwrapper">
-                        <RahuiList allrahui={this.props.allrahui} />
-                    </div>
-
+                <div >
+                 <NewMap color={"#FF4C4C"}   rahuiBounds={[{lat: -36.543484, lng: 172.880926}, {lat: -43.622458, lng: 170.036187}]}/>
+                </div> 
+                
+                <div className="detailwrapper">
+                <RahuiList allrahui={this.props.allrahui} /> 
+                <div className="spaceme" />
+                </div>
+               
                 </SplitterLayout>
 
             </div>
