@@ -203,10 +203,10 @@ h2{
 }
 
 h3{
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 21px;
+  font-style: bold;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 23px;
   color: #434734;
 }
 
@@ -216,7 +216,7 @@ p{
   font-style: normal;
   font-weight: normal;
   font-size: 19px;
-  line-height: 25px;
+  line-height: 22px;
   color: #434734;
 }
 
@@ -252,11 +252,11 @@ textarea {
 }
 
 select {
-  width: 50%;
+  width: 100%;
   padding: 33px 20px;
   border: none;
   border-radius: 4px;
-  background-color: #eceee3;
+  background-color: white;
   font-size: 17px;
   outline: none;
 }
@@ -285,6 +285,24 @@ button {
   margin-top: 20px;
 }
 
+ .secondarybutton {
+  width: 100%;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: #434734 2px;
+  background: white;
+  color: #434734;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 33px;
+  text-align: center;
+  font-family: Rasa;
+  margin-top: 20px;
+}
+
 
 map {
   overflow: hidden;
@@ -301,4 +319,41 @@ map {
   font-size: 22px;
   line-height: 25px;
   color: #888a80;
+}
+
+.one{
+  display: flex;
+}
+
+.thumbnail {
+  background-size: cover;
+  border-radius:50% 50% 50% 50%;
+  width:100px;
+  height:100px;
+}
+
+.iwihapubox {
+  position: relative;
+  width: 30%;
+  background: #eceee3;
+  padding: 10px;
+}
+
+.dropdownbox {
+  display: inline-block;
+  width: 40%;
+  margin-right: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  background: #eceee3;
+}
+
+.selectediwi {
+  display: inline-block;
+  width: 40%;
+  margin-right: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  background: yellow;
+  border: #434734 2px;
 }

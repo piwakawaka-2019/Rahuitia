@@ -1,9 +1,10 @@
 import React from "react";
 import SplitterLayout from 'react-splitter-layout';
 import { connect } from "react-redux";
-import { fetchAllRahui} from "../../actions/rahui";
-import NewMap from "../NewMap";
-import RahuiList from "../RahuiList";
+import { Redirect } from "react-router-dom"
+import ReactMap from "./ReactMap";
+import EditRahuiForm from "./EditRahuiForm";
+import { isAuthenticated } from "../utils/auth"
 
 
 class Explore extends React.Component {
@@ -12,36 +13,37 @@ class Explore extends React.Component {
         this.state = {  }
     }
 
-    componentDidMount(){
-        this.props.dispatch(fetchAllRahui())
-    }
+   
 
     render() { 
-        console.log( "explore", this.props)
-        return (  
+        console.log("edit props", this.props.match.params.id)
+        return isAuthenticated() ? (  
             <div >
 
                 <SplitterLayout >
                 <div >
-                 <NewMap color={"#FF4C4C"}   rahuiBounds={[{lat: -36.543484, lng: 172.880926}, {lat: -43.622458, lng: 170.036187}]}/>
+                 <ReactMap/>
                 </div> 
                 
                 <div className="detailwrapper">
-                <RahuiList allrahui={this.props.allrahui} /> 
-                <div className="spaceme" />
+                <EditRahuiForm rahuiId={this.props.match.params.id}/> 
                 </div>
                
                 </SplitterLayout>
                 
             </div>
-        );
+        ) : <Redirect to='/register'/>
     }
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = state => {
     return {
-        allrahui: state.rahui
+        allrahui: state.rahui,
+        alliwi: state.iwi,
+        area: state.area,
+        coordinates: state.coords
     }
 }
+
  
 export default connect(mapStateToProps)(Explore);

@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from "react-redux";
 import { registerUserRequest } from '../actions/register'
 import { fetchAllIwi } from "../actions/iwi";
+import { loginError } from '../actions/login';
 
 class Register extends React.Component {
     constructor() {
@@ -46,10 +47,8 @@ class Register extends React.Component {
 
         let { first_name, middle_name, last_name, address, email, password, confirm_password, iwi, hapu } = this.state
         
-        // console.log("Name:",first_name,"Middle Name:", middle_name, "Last Name:", last_name,"Address:", address,"Email:", email, "Password:", password, "Confirm Password:", confirm_password, "iwi:", iwi,"hapu:", hapu)
-
         if (confirm_password != password){ 
-            // return this.props.dispatch(loginError("Passwords don't match"))
+            return this.props.dispatch(loginError("Passwords don't match"))
             console.log("Login Error- Passwords dont match")
         } else { 
             this.props.dispatch(registerUserRequest({ first_name, middle_name, last_name, address, email, password, iwi, hapu }))
@@ -180,6 +179,7 @@ class Register extends React.Component {
                     <input name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
                     <br></br>
                     <input name="confirm_password" type="password" placeholder="confirm password" noValidate onChange={this.handleChange} />
+                    <p>{this.props.auth.errorMessage}</p>
                     <br></br>
                     <button name="submit">SUBMIT</button>
                 </form>
@@ -191,6 +191,7 @@ const mapStateToProps = state => {
     return {
         alliwi: state.iwi,
         area: state.area,
+        auth: state.auth
     }
 }
 

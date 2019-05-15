@@ -14,10 +14,11 @@ const newArr = (iwi) => {
 
     iwi.map(area => {
         for (var i in area) {
-            areaNames.push(i);
+            areaNames.push(i)
         }
-
+        
     });
+
     return areaNames
 }
 
