@@ -5,6 +5,8 @@ import { isAuthenticated } from "../utils/auth"
 
 import Landing from "./LandingG/Landing";
 import Toggle from "./ToggleG/Toggle";
+
+
 import Explore from "./ExploreG/Explore";
 
 import AddRahuiMap from "./NewMap";
@@ -29,7 +31,7 @@ import FormAndMap from "./FormAndMap";
 import Register from "./Register";
 import Tautoko from "./Tautoko";
 import Project from "./ProjectG/Project";
-import Nav from "./Nav"
+// import Nav from "./Nav"
 
 // import Register from "./Register"
 
@@ -37,9 +39,9 @@ export function App({ auth }) {
   return (
     <div>
       <Router>
-
-        <Nav />
         <Toggle />
+
+        {/* <Nav /> */}
         <Route exact path="/" component={Landing} />
 
         <Route path="/about" component={About} />

@@ -32,7 +32,6 @@ header .header_logo_title {
   text-transform: uppercase;
 }
 
-
 /* landing page styling */
 .overlay {
   position: absolute;
@@ -66,15 +65,66 @@ header .header_logo_title {
   z-index: -20;
 
 }
+
 .navbar {
   width: 100%;
   display: grid;
-  grid-template-columns: 11fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-columns: 0.25fr 0.25fr 0.25fr 1fr 1fr 0.35fr 0.25fr;
   grid-template-rows: none;
   padding: 10px;
   z-index: 55;
   background: #434734;
   position: relative;
+  font-size: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.languageToggleButton {
+width: 10%;
+position: fixed;
+bottom: 3em;
+right: 0;
+transform: rotate(90deg);
+background: none;
+border: none;
+color: #DC5757;
+text-decoration: underline;
+}
+
+.aboutNav {
+width: 15%;
+background: none;
+border: none;
+color: #434734;
+text-decoration: underline;
+margin: 0px 20px 20px 0px;
+}
+
+.aboutBody {
+  margin: 0px 300px 0px 80px
+
+}
+
+.aboutHeading {
+  margin: 20px 20px 20px 70px;
+  padding: 10px 10px 10px 10px;
+}
+
+.aboutHeading2 {
+  margin: 20px 20px 20px 70px;
+  padding: 10px 10px 10px 10px;
+}
+
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+
+}
+
+.navbar :active {
+  text-decoration: underline;
 }
 
 .navButton {
@@ -85,6 +135,7 @@ header .header_logo_title {
   font-family: 'Rasa', serif;
   font-size: 1.8em;
 }
+
 
 /* split screen */
 .mapwrapper {

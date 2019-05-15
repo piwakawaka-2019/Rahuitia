@@ -4,17 +4,17 @@ class projReo extends Component {
   render() {
     return (
       <div>
-        <h1>Whakatakanga</h1>
+        <h1 className="aboutHeading2">Whakatakanga</h1>
         <div className="row">
           <div className="column">
-            
+
             <br />
-            <p>
+            <p className="aboutBody">
               Maori kupu
             </p>
           </div>
 
-          
+
         </div>
       </div>
     );

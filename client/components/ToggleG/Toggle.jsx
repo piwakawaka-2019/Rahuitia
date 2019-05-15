@@ -9,13 +9,15 @@ import ToggleReo from './ToggleReo'
 export class Toggle extends Component {
   render() {
     return (
-      <div className="buttonRotate">
+      <div>
 
-        <a className="languageToggle" onClick={() => this.props.dispatch(toggleLang())}>
-          {this.props.lang == "eng" ? 'TeReo' : 'English'}
-          {/* {this.props.lang == "eng" ? <ToggleEng /> : <ToggleReo />} */}
-        </a>
+        <button className="languageToggleButton" onClick={() => this.props.dispatch(toggleLang())}>
 
+          {this.props.lang == "eng" ? 'Te Reo' : 'English'}
+
+        </button>
+
+        {this.props.lang == "eng" ? <ToggleEng /> : <ToggleReo />}
 
       </div>
     );

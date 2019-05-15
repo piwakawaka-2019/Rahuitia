@@ -8,18 +8,21 @@ class ToggleEng extends Component {
         <div className="logo">
           <Link to="/">Rāhui</Link>
         </div>
+        <div className="explore navButton">
+          <Link to="/explore/">Explore</Link>
+        </div>
         <div className="about navButton">
           <Link to="/about/">About</Link>
         </div>
 
-        <div className="login navButton">
-          <Link to="/login/">Login</Link>
-        </div>
-        <div className="explore navButton">
-          <Link to="/explore/">Explore</Link>
-        </div>
+        <div className="navbutton"></div>
+        <div className="navbutton"></div>
+
         <div className="add navButton">
           <Link to="/addrahui/">Add a Rāhui</Link>
+        </div>
+        <div className="login navButton">
+          <Link to="/login/">Login</Link>
         </div>
       </div>
 

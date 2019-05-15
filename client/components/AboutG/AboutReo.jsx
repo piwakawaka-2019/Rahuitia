@@ -33,12 +33,11 @@ class AboutReo extends Component {
   render() {
     return (
       <div>
-        <h1>Pēwhea</h1>
-        <button onClick={this.handleTeamClick}>Tima</button>
-        <button onClick={this.handleResourcesClick}>Rauemi Ipurangi</button>
-        <button onClick={this.handleProjectClick}>Whakatakanga</button>
-
-        <button onClick={this.handleRahuiAPIClick}>API</button>
+        <h1 className="aboutHeading">Pēwhea</h1>
+        <button className="aboutNav" onClick={this.handleTeamClick}>Tima</button>
+        <button className="aboutNav" onClick={this.handleResourcesClick}>Rauemi Ipurangi</button>
+        <button className="aboutNav" onClick={this.handleProjectClick}>Whakatakanga</button>
+        <button className="aboutNav" onClick={this.handleRahuiAPIClick}>API</button>
       </div>
     );
   }

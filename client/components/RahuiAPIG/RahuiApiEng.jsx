@@ -4,11 +4,11 @@ class rahuiApiEng extends Component {
   render() {
     return (
       <div>
-        <h1>Fudziiiiiiiiiiiii</h1>
+        <h1 className="aboutHeading2">Fudziiiiiiiiiiiii</h1>
         <div className="row">
           <div className="column">
             <br />
-            <p>
+            <p className="aboutBody">
               Until recently, the prevailing view assumed lorem ipsum was born
               as a nonsense text. “It's not Latin, though it looks like it, and
               it actually says nothing,” Before & After magazine answered a
