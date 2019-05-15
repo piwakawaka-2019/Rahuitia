@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
     table.increments("id").primary();
     table.string("user_id");
     table.string("iwi");
-    table.string("hapu")
+    table.string("hapu");
     table.string("description");
     table.string("korero");
     table.string("geo_ref");
