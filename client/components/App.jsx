@@ -30,6 +30,7 @@ import FormAndMap from "./FormAndMap";
 import Register from "./Register";
 import Tautoko from "./Tautoko";
 import Project from "./ProjectG/Project";
+import EditFromAndMap from "./EditFromAndMap";
 
 // import Register from "./Register"
 
@@ -51,7 +52,8 @@ export function App({ auth }) {
         
         <Route exact path="/AddRahui" component={FormAndMap} />
 
-        <Route exact path="/rahui/:id/edit" component={EditRahuiForm}/>
+        <Route exact path="/rahui/:id/edit" component={EditFromAndMap}/>
+       
 
         <Route exact path="/explore" component={Explore} />
         <Route exact path="/rahui/:id" component={RahuiDetail} />

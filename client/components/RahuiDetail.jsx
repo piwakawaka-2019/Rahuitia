@@ -15,7 +15,7 @@ class RahuiDetail extends Component {
     
     render() { 
         let rahuiId = this.props.match.params.id;
-        console.log("props", this.props)
+        // console.log("props", this.props)
     
         let {id, geo_ref, iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, region, authoriser, contact, iwi, hapu} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
 

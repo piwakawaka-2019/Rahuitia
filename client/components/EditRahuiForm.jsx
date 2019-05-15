@@ -45,7 +45,7 @@ class EditRahuiForm extends React.Component {
     componentWillReceiveProps(nextProps) {
         // nextProps.dispatch(fetchAllIwi())
 
-        let rahuiId = nextProps.match.params.id;
+        let rahuiId = nextProps.rahuiId;
         console.log(nextProps, rahuiId)
         
         let rahui = nextProps.allrahui.find( rahui => rahui.id == rahuiId)
