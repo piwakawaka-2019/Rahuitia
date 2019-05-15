@@ -32,6 +32,21 @@ header .header_logo_title {
   text-transform: uppercase;
 }
 
+.navbar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 11fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-rows: none;
+  padding: 10px;
+  z-index: 55;
+  background: #434734;
+  position: relative;
+}
+
+.navButton {
+  text-align: center;
+}
+
 
 /* landing page styling */
 .overlay {
@@ -65,20 +80,6 @@ header .header_logo_title {
   align-items: center;
   z-index: -20;
 
-}
-.navbar {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 11fr 1fr 1fr 1fr 1fr 2fr;
-  grid-template-rows: none;
-  padding: 10px;
-  z-index: 55;
-  background: #434734;
-  position: relative;
-}
-
-.navButton {
-  text-align: center;
 }
 
 .logo {
@@ -130,8 +131,8 @@ h2{
 h3{
   font-style: normal;
   font-weight: normal;
-  font-size: 17px;
-  line-height: 21px;
+  font-size: 22px;
+  line-height: 23px;
   color: #434734;
 }
 
@@ -141,7 +142,7 @@ p{
   font-style: normal;
   font-weight: normal;
   font-size: 19px;
-  line-height: 25px;
+  line-height: 22px;
   color: #434734;
 }
 
@@ -210,6 +211,24 @@ button {
   margin-top: 20px;
 }
 
+ .secondarybutton {
+  width: 50%;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  border-radius: 4px;
+  background: white;
+  color: #434734;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 33px;
+  text-align: center;
+  font-family: Rasa;
+  margin-top: 20px;
+}
+
 
 map {
   overflow: hidden;
@@ -226,4 +245,18 @@ map {
   font-size: 22px;
   line-height: 25px;
   color: #888a80;
+}
+
+.iwihapubox {
+  position: relative;
+  width: 30%;
+  background: #eceee3;
+  padding: 10px;
+  
+}
+
+.dropdowns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: none;
 }

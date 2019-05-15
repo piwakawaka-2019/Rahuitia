@@ -34,8 +34,8 @@ const MapWithADrawingManager = compose(
         streetViewControl: false,
         scaleControl: false,
         mapTypeControl: false,
-        panControl: false,
-        zoomControl: false,
+        panControl: true,
+        zoomControl: true,
         rotateControl: false,
         fullscreenControl: false,
         labels: true

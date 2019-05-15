@@ -80,7 +80,7 @@ class NewMap extends Component {
         options={{
             fillColor: "#DC5757",
             fillOpacity: 0.9,
-            strokeColor: "#CE3838",
+            strokeColor: "#DC5757",
             strokeOpacity: 1,
             strokeWeight: 1
       }}/> 
