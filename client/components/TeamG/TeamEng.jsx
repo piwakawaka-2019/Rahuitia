@@ -5,11 +5,8 @@ class teamEng extends Component {
     return (
       <div>
         <h1 className="aboutHeading2">Team</h1>
-        <h1>Team</h1>
         <div className="row">
           <div className="column">
-
-            <br />
             <p className="aboutBody">
               Until recently, the prevailing view assumed lorem ipsum was born
               as a nonsense text. “It's not Latin, though it looks like it, and

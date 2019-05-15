@@ -26,7 +26,7 @@ class Explore extends React.Component {
                 </div> 
                 
                 <div className="detailwrapper">
-                <RahuiList allrahui={this.props.allrahui} /> 
+                <RahuiList allrahui={this.props.allrahui.reverse()} /> 
                 <div className="spaceme" />
                 </div>
                
@@ -39,7 +39,7 @@ class Explore extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        allrahui: state.rahui.reverse()
+        allrahui: state.rahui
     }
 }
 
