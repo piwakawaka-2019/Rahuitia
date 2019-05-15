@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { getUserTokenInfo } from '../utils/auth'
+import { Link } from "react-router-dom";
+
 import SplitterLayout from 'react-splitter-layout';
 
 import { connect } from "react-redux";
@@ -16,13 +19,19 @@ class RahuiDetail extends Component {
         let rahuiId = this.props.match.params.id;
         // console.log("props", this.props)
     
-        let {id, geo_ref, iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, region, authoriser, contact, iwi, hapu} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
+        let {id, user_id, geo_ref, iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, region, authoriser, contact, iwi, hapu} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
+
+        const userId = () => {
+            return getUserTokenInfo().user_id != undefined ? getUserTokenInfo().user_id : 0
+        } 
+
+        console.log(userId(), user_id)
 
         return ( 
         <div>
         <SplitterLayout primaryIndex={0}>
             <div >
-                <NewMap color={"#2E86C1"} zoom={13} coords={geo_ref[0]} />
+                <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
             </div> 
     
             <div className="detailwrapper">
@@ -35,7 +44,8 @@ class RahuiDetail extends Component {
                 <br/><b>Date Lifted:</b> <p> {date_lifted}</p>
                 <br/><b>Korero:</b> <p> {korero}</p>
                 <br/><b>Contact:</b> <p> {contact}</p>
-                <hr></hr> 
+                {userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : "" }   
+
              <div className="spaceme" />   
            </div> 
            

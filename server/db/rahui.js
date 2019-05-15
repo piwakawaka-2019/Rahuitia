@@ -33,6 +33,7 @@ function writeRahui(
 
 function editRahui(
   id,
+  region,
   iwi,
   hapu,
   description,
@@ -42,23 +43,23 @@ function editRahui(
   date_lifted,
   authoriser,
   contact,
-  region,
   testDb
 ) {
+  // console.log( "id:", id, "region:", region, "iwi:", iwi,"hapu:", hapu, "description:", description, "Korero:", korero, "geo_ref:", geo_ref, "date_placed:", date_placed,"date_lifted:", date_lifted,"authoriser:", authoriser,"contact:", contact)
   const db = testDb || connection;
   return db("rahui")
     .where({ id: id })
     .update({
-      iwi: iwi,
-      hapu: hapu,
+      region: JSON.stringify(region),
+      iwi: JSON.stringify(iwi),
+      hapu: JSON.stringify(hapu),
       description: description,
       korero: korero,
-      geo_ref: geo_ref,
+      geo_ref: JSON.stringify(geo_ref),
       date_placed: date_placed,
       date_lifted: date_lifted,
       contact: contact,
       authoriser: authoriser,
-      region,
     });
 }
 

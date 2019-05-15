@@ -32,6 +32,52 @@ header .header_logo_title {
   text-transform: uppercase;
 }
 
+.tautoko {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 5fr 1fr ;
+  grid-template-rows: none;
+
+  position: relative;
+}
+
+.navbar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 11fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-rows: none;
+  padding: 15px;
+  z-index: 55;
+  background: #434734;
+  position: relative;
+}
+
+.respect{
+  padding: 15px;
+  color: rgb(169, 169, 169);
+  vertical-align: center
+}
+
+.count{
+  text-align: right;
+  font-size: 44px;
+  color: #DC5757;
+  padding: 15px;
+  vertical-align: center
+}
+
+.tangata{
+  font-size: 17px;
+  color: #DC5757;
+  vertical-align: center;
+  padding: 15px;
+
+}
+
+.navButton {
+  text-align: center;
+}
+
 
 /* landing page styling */
 .overlay {
@@ -41,7 +87,7 @@ header .header_logo_title {
   z-index: 55;
   width:50%;
   float: right;
-  overflow: auto;
+ 
   background: white;
   opacity: .9;
   margin: 50px;
@@ -66,15 +112,63 @@ header .header_logo_title {
   z-index: -20;
 
 }
+
+
+/* main navbar styling */
+
 .navbar {
   width: 100%;
   display: grid;
-  grid-template-columns: 11fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-columns: 0.25fr 0.25fr 0.25fr 1fr 1fr 0.35fr 0.25fr;
   grid-template-rows: none;
   padding: 10px;
   z-index: 55;
   background: #434734;
   position: relative;
+  font-size: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+
+.languageToggleButton {
+width: 10%;
+position: fixed;
+bottom: 3em;
+right: 0;
+transform: rotate(90deg);
+background: none;
+border: none;
+color: #DC5757;
+text-decoration: underline;
+}
+
+
+/* about styling */
+
+.aboutNav {
+width: auto;
+background: none;
+border: none;
+color: #434734;
+}
+
+.aboutNav:hover {
+text-decoration: underline;
+}
+
+.aboutNav:selection {
+text-decoration-line: underline;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+
+}
+
+.navbar :active {
+  text-decoration: underline;
 }
 
 .navButton {
@@ -85,6 +179,37 @@ header .header_logo_title {
   font-family: 'Rasa', serif;
   font-size: 1.8em;
 }
+
+.aboutBody {
+  margin: 40px 300px 0px 80px;
+  font-size: 36px;
+  line-height: 50px;
+}
+
+.aboutContainer {
+  margin: 40px 40px 40px 70px;
+}
+
+.aboutMargin {
+  margin: 40px 20px 20px 70px; 
+}
+
+.aboutHeading {
+  /* margin: 40px 20px 20px 70px; */
+  padding: 10px 10px 10px 10px;
+  font-size: 64px;
+  text-decoration: underline;
+}
+
+.aboutHeading2 {
+  margin: 100px 20px 20px 70px;
+  padding: 10px 10px 10px 10px;
+  font-size: 96px;
+}
+
+
+
+
 
 /* split screen */
 .mapwrapper {
@@ -125,14 +250,16 @@ h2{
   font-size: 25px;
   line-height: 27px;
   color: #434734;
+  margin-top: 15px
 }
 
 h3{
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 21px;
+  font-style: bold;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 23px;
   color: #434734;
+  margin-top: 10px
 }
 
 
@@ -141,7 +268,7 @@ p{
   font-style: normal;
   font-weight: normal;
   font-size: 19px;
-  line-height: 25px;
+  line-height: 22px;
   color: #434734;
 }
 
@@ -177,11 +304,11 @@ textarea {
 }
 
 select {
-  width: 50%;
+  width: 100%;
   padding: 33px 20px;
   border: none;
   border-radius: 4px;
-  background-color: #eceee3;
+  background-color: white;
   font-size: 17px;
   outline: none;
 }
@@ -207,6 +334,31 @@ button {
   line-height: 33px;
   text-align: center;
   font-family: Rasa;
+  margin: 20px 0px 20px 0px;
+}
+
+button :active {
+  background: #9fa09a;
+
+}
+
+
+ .secondarybutton {
+  width: 100%;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border-color: #434734 ;
+  border-width: 1px;
+  background: white;
+  color: #434734;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 33px;
+  text-align: center;
+  font-family: Rasa;
   margin-top: 20px;
 }
 
@@ -225,5 +377,81 @@ map {
   font-weight: bold;
   font-size: 22px;
   line-height: 25px;
-  color: #888a80;
+  color: #DC5757;
+  margin-bottom: 20px;
+  margin-top: 20px
+}
+
+.one{
+  width:60%;
+  padding: 20px;
+  display: grid;
+  display: inline-block;
+  margin-top:5px;
+  vertical-align: top
+}
+
+.thumbnail {
+  display: inline-block;
+  background-size: cover;
+  border-radius:50% 50% 50% 50%;
+  width:100px;
+  height:100px;
+  
+}
+
+.iwihapubox {
+  position: relative;
+  width: 30%;
+  background: #eceee3;
+  padding: 10px;
+}
+
+.dropdownbox {
+  display: inline-block;
+  width: 40%;
+  margin-right: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  background: #eceee3;
+
+}
+
+.selectediwi {
+  display: inline-block;
+  width: 40%;
+  margin-right: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  background: #eceee3;
+  vertical-align: top
+  
+}
+
+
+.login-wrapper {
+  margin: auto;
+  width: 30%;
+}
+
+.loginInput {
+  margin: 10px 10px 10px 10px;
+}
+
+.loginButton {
+  width: 150px;
+  margin: 10px 10px 10px 10px;
+}
+
+.loginHeader {
+  margin: 100px 10px 10px 10px;
+
+}
+
+
+/* register style */
+
+.registerContainer {
+  width: 75%;
+  margin: auto;
 }

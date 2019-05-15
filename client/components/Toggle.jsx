@@ -7,28 +7,9 @@ const language = {
 }
 
 const bodyText =
-render(
-  <p>{language[this.props.lang]}</p>
-)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  render(
+    <p>{language[this.props.lang]}</p>
+  )
 
 
 

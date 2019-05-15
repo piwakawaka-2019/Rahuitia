@@ -17,7 +17,7 @@ class EditRahuiForm extends React.Component {
             region: [],
             iwi: [],
             hapu: [],
-            geoRef: null,
+            geoRef: [],
             authoriser: null,
             datePlaced: null,
             dateLifted: null,
@@ -39,14 +39,13 @@ class EditRahuiForm extends React.Component {
         this.renderHapu = this.renderHapu.bind(this)
         this.renderIwi = this.renderIwi.bind(this)
         this.submitAdd = this.submitAdd.bind(this);
-
+        this.resetIwiHapu = this.resetIwiHapu.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
         // nextProps.dispatch(fetchAllIwi())
 
-        let rahuiId = nextProps.rahuiId;
-        console.log(nextProps, rahuiId)
+        let rahuiId = nextProps.rahuiId;       
         
         let rahui = nextProps.allrahui.find( rahui => rahui.id == rahuiId)
         
@@ -67,36 +66,14 @@ class EditRahuiForm extends React.Component {
                 dateLifted: date_lifted,
                 contact: contact
             })
-
-            console.log(rahui)
       }
     }
-        //Need to hand props to component, reference RahuiDetail.jsx
+
     componentDidMount() {
         this.props.dispatch(fetchAllIwi())
-
-        // console.log(this.props)
-
-        // let rahuiId = this.props.match.params.id;
-
-        // let {geo_ref, region, iwi, hapu, description, date_placed, date_lifted, korero, authoriser, contact} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
-
-        // this.setState({
-        //     id: rahuiId,
-        //     region: region,
-        //     iwi: iwi,
-        //     hapu: hapu,
-        //     authoriser: authoriser,
-        //     description: description,
-        //     korero: korero,
-        //     geoRef: geo_ref,
-        //     datePlaced: date_placed,
-        //     dateLifted: date_lifted,
-        //     contact: contact
-        // })
     }
 
-//Edit existing rāhui
+
     handleSubmit(e) {
         e.preventDefault()
 
@@ -108,9 +85,9 @@ class EditRahuiForm extends React.Component {
             authoriser: this.state.authoriser,
             description: this.state.description,
             korero: this.state.korero,
-            geo_ref: this.state.geoRef,
-            date_placed: this.state.datePlaced,
-            date_lifted: this.state.dateLifted,
+            geoRef: this.props.coordinates,
+            datePlaced: this.state.datePlaced,
+            dateLifted: this.state.dateLifted,
             contact: this.state.contact
         }
 
@@ -143,10 +120,11 @@ class EditRahuiForm extends React.Component {
 
     resetIwiHapu(e) {
         e.preventDefault()
+        
         this.setState({
-            region: null,
-            iwi: null,
-            hapu: null,
+            region: [],
+            iwi: [],
+            hapu: [],
             regionSelected: null,
             iwiSelected: null,
             hapuSelected: null
@@ -215,17 +193,19 @@ class EditRahuiForm extends React.Component {
                 >
                     <div>
                         <h1>Edit Rāhui</h1>
-                        <br></br>
-
+                        <div className="step"> step one</div>
+                        <h2>Zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
+                        <hr></hr>
+                        <div className="step"> step two</div>
                         <p>Edit details for this rāhui:</p>
                         <div>
-                        <p>edit iwi/hapū:</p>
+                        <p>edit region/iwi/hapū:</p>
+                        <p>region:{this.state.region.map(region => {return <p>{region}, </p>})}</p>
                         iwi:{this.state.iwi.map(iwi => {return <p>{iwi}, </p>})}<br></br>
                         <p>
                         hapu:
                         </p> 
                         {this.state.hapu.map(hapu => {return <p>{hapu}</p>})}<br></br> 
-                        <button type="button" onClick={this.resetIwiHapu}>Reset</button>
                         </div>
                         <br></br>
                         <select onChange={this.handleSelect}>
@@ -253,6 +233,7 @@ class EditRahuiForm extends React.Component {
                         </select>
                         <br></br>
                         <button type="button" onClick={this.submitAdd}>Add Another Associated Region/Iwi/Hāpu</button>
+                        <button type="button" onClick={this.resetIwiHapu}>reset iwi/hapū</button>
                     <br></br>
                     </div>
 
@@ -309,7 +290,6 @@ class EditRahuiForm extends React.Component {
 
                     <br></br>
                     <br></br>
-
                     <button name="submit">Submit edit</button>
                 </form>
             </div>

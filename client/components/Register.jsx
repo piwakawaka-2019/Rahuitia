@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from "react-redux";
 import { registerUserRequest } from '../actions/register'
 import { fetchAllIwi } from "../actions/iwi";
+import { loginError } from '../actions/login';
 
 class Register extends React.Component {
     constructor() {
@@ -45,26 +46,24 @@ class Register extends React.Component {
         e.preventDefault()
 
         let { first_name, middle_name, last_name, address, email, password, confirm_password, iwi, hapu } = this.state
-        
-        // console.log("Name:",first_name,"Middle Name:", middle_name, "Last Name:", last_name,"Address:", address,"Email:", email, "Password:", password, "Confirm Password:", confirm_password, "iwi:", iwi,"hapu:", hapu)
 
-        if (confirm_password != password){ 
-            // return this.props.dispatch(loginError("Passwords don't match"))
+        if (confirm_password != password) {
+            return this.props.dispatch(loginError("Passwords don't match"))
             console.log("Login Error- Passwords dont match")
-        } else { 
+        } else {
             this.props.dispatch(registerUserRequest({ first_name, middle_name, last_name, address, email, password, iwi, hapu }))
         }
     }
 
-    submitAdd(){
+    submitAdd() {
         let region = [...this.state.region, this.state.regionSelected]
-        let iwi= [...this.state.iwi, this.state.iwiSelected]
+        let iwi = [...this.state.iwi, this.state.iwiSelected]
         let hapu = [...this.state.hapu, this.state.hapuSelected]
 
         this.setState({
-            region:[...new Set(region)],
-            iwi:[...new Set(iwi)],
-            hapu:[...new Set(hapu)],
+            region: [...new Set(region)],
+            iwi: [...new Set(iwi)],
+            hapu: [...new Set(hapu)],
             regionSelected: null,
             iwiSelected: null,
             hapuSelected: null
@@ -99,16 +98,13 @@ class Register extends React.Component {
             })
         }
     }
-
     renderHapu() {
         const allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
         const iwiIWant = this.state.iwiSelected
         const theIwiIFound = allIwiInRegion.filter(iwi => {
             return iwi[iwiIWant] != undefined
         })
-
         const allHapu = theIwiIFound[0][iwiIWant]
-
         if (allHapu.length > 0) {
             return allHapu.map(hapu => {
                 return <option htmlFor="hapu">{hapu}</option>;
@@ -116,16 +112,12 @@ class Register extends React.Component {
         }
         else (<option>No hapū</option>)
     }
-
     render() {
         return (
-            <div>
+            <div className="registerContainer">
                 <h1>Register</h1>
-                <br></br>
                 <h3>Ekore e tika kia noho he Maori rawakore ki tenei whenua; ehara tenei i te mea e ora ai tatou e tika ai ranei ratou. </h3>
-                <br></br>
                 <h3>Who can add a rāhui?</h3>
-                <br></br>
                 <p>You must register to add a rahui. There is a verficiation process to identify you. This may take up to three days.</p>
                 <br></br>
                 <form className="register-form" onSubmit={this.submit}>
@@ -136,8 +128,6 @@ class Register extends React.Component {
                     <input name="last_name" type="text" placeholder="last name" noValidate onChange={this.handleChange} />
                     <br></br>
                     {/* Add iwi */}
-
-
                     <br></br>
                     <p>Select region:</p>
                     <select onChange={this.handleSelect}>
@@ -145,33 +135,31 @@ class Register extends React.Component {
                             return <option htmlFor="region">{area}</option>;
                         })}
                     </select>
-
                     <br></br>
                     <br></br>
-
-                    {<p>Select iwi:</p>}
+                    <p>Select iwi:</p>
                     <select onChange={this.handleSelect2}>
                         {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
                     </select>
-
                     <br></br>
                     <br></br>
-
-                    {<p>Select hapū:</p>}
+                    <p>Select hapū:</p>
                     <select onChange={this.handleSelect3}>
                         {this.state.iwiSelected ? (
                             this.renderHapu()
                         ) : <option>----------</option>}
                     </select>
-                    <br></br>      
+                    <br></br>
                     <button type="button" onClick={this.submitAdd}>Add Another Region/Iwi/Hāpu</button>
                     <br></br>
 
-                    <div>Your whakapapa: <br></br> 
-                    iwi:{this.state.iwi.map(iwi => {return <p>{iwi}, </p>})}<br></br> 
-                    hapu:{this.state.hapu.map(hapu => {return <p>{hapu}, </p>})}<br></br> 
+                    <div>Your whakapapa: <br></br>
+                        iwi:{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
+                        hapu:{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}<br></br>
+                    
                     </div>
 
+                    <br></br>
                     <br></br>                    
                     <input name="address" type="text" placeholder="address" noValidate onChange={this.handleChange} />
                     <br></br>
@@ -180,6 +168,7 @@ class Register extends React.Component {
                     <input name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
                     <br></br>
                     <input name="confirm_password" type="password" placeholder="confirm password" noValidate onChange={this.handleChange} />
+                    <p>{this.props.auth.errorMessage}</p>
                     <br></br>
                     <button name="submit">SUBMIT</button>
                 </form>
@@ -191,7 +180,7 @@ const mapStateToProps = state => {
     return {
         alliwi: state.iwi,
         area: state.area,
+        auth: state.auth
     }
 }
-
 export default connect(mapStateToProps)(Register);

@@ -7,30 +7,30 @@ class LandReo extends Component {
         <div>
           <h1>Rāhuitia</h1>
           <br></br>
-          <button>Torohe</button>
+          <button>Te Tūhura Mahere</button>
         </div>
         <br></br>
         <div>
           <h1>He aha te Rāhui? He aha te mea nui?</h1>
           <p>
-            TO BE TRANSLATED - A Rāhui is a ritual prohibition that is used to restrict the use of natural resources for a period of time. It is also imposed in the case of a Tangi. Death pollutes land, water and people through Tapu. When Tapu has been breached, Rāhui is then put in place so balance can be restored and returned to a state of Noa. A Rāhui may be placed on forests, food gathering areas, rivers, lakes or the sea, and may be placed for a variety of reasons such as claiming ownership, respecting the site of a recent death, the need to replenish food stocks or resources in an area, or to prevent the risk or spread of disease. The power of a Rāhui comes from the Mana of the person or group that impose it. For that reason, Rāhui can only exist under the mantle of the Mana Whenua.
+          Ko tēnei mea te Rāhui he ritenga whai mana e whakamahia ana ki te aukati i te whakamahinga o ngā rawa o te taiao mō tētahi wā.  Uruhina ai hoki i ngā tangihanga. Nā te tapu o tēnei mea te mate ka whakapokea te whenua, te wai, me te tangata. Ina takahia te Tapu, ka whakatakotoria he Rāhui hei whakahoki mai i te taurite kia noa ai anō. Ka uruhina pea he Rāhui ki ngā ngahere, ngā mahinga kai, ngā wāhi kohi kai, ngā awa, ngā roto, te moana hoki. He whānui ngā take mō te whakatakoto i tētehi Rāhui, pēnei i te kokoraho, te tiaki i te wāhi i mate ai tētahi i nā noa nei, te hiahia rānei hei whakaora anō i ngā puna kai, i ngā rawa rānei i tētehi takiwā, hei ārai rānei i te horapa o tētehi mate mau noa. E ahu mai ana te mana o te Rāhui i te Mana o te tangata, te rōpū rānei e uruhi ana i te Rāhui. Nā reira, mā te whai Mana Whenua anake ka taea tētahi Rāhui te uruhi.
           </p>
         </div>
         <br></br>
         <div>
-          <h1>Iwi</h1>
+          <h1>Mo nga Iwi</h1>
 
-          <h3>he aha i tuhia ai te rahui?</h3>
+          <h3>He aha i tuhia ai te Rāhui?</h3>
           <br></br>
           <p>
-            Whakataka te hau ki te uru, whakataka te hau ki te tonga. kia makinakina ki uta, Kia mataratara ki tai. E hii ake ana te atakura. He Tio, he Huka, He Hauhunga. Tihei mauri ora
+            [TE REO PLACEHOLDER]
           </p>
-          <button>Tapirihia he Rahui</button>
+          <button> Tāpirihia he Rāhui</button>
           <br></br>
           <footer>
             <br></br>
-            <p>Whakapa Mai:<a href="mailto:someone@example.com">someone@example.com</a></p>
-            <p><a>Imera</a> </p>
+            <p>Whakapa Mai:<a href="mēra ki:Tuhinga@tauira.com">Tuhinga@tauira.com</a></p>
+            <p><a>Īmera</a> </p>
           </footer>
         </div>
       </div>

@@ -34,12 +34,11 @@ class AboutEng extends Component {
   render() {
     return (
       <div>
-        <h1>About</h1>
-        <button onClick={this.handleTeamClick}>Team</button>
-        <button onClick={this.handleResourcesClick}>Resources</button>
-        <button onClick={this.handleProjectClick}>Project</button>
-
-        <button onClick={this.handleRahuiAPIClick}>API</button>
+        <h1 className="aboutHeading">About</h1>
+        <button className="aboutNav" onClick={this.handleTeamClick}>Team</button>
+        <button className="aboutNav" onClick={this.handleResourcesClick}>Resources</button>
+        <button className="aboutNav" onClick={this.handleProjectClick}>Project</button>
+        <button className="aboutNav" onClick={this.handleRahuiAPIClick}>API</button>
 
         {/* {this.state.projectIsVisible ? <Project />:null } */}
       </div>
