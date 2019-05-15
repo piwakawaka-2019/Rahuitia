@@ -60,7 +60,7 @@ header .header_logo_title {
 
 .respect{
   padding: 30px 15px 25px 20px;
-  color: rgb(169, 169, 169);
+  color: rgb(133, 133, 133);
   vertical-align: center
 }
 
@@ -241,18 +241,23 @@ text-decoration-line: underline;
 }
 
 .detailwrapper {
-  padding: 10px 70px 0px 70px;
+  padding: 10px 90px 0px 90px;
 }
 
 /* rahui list view */
 
 .rahuilist {
   cursor: pointer;
-  padding: 0px 10px 0px 10px
+  padding: 30px 0px 30px 0px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 33px;
+  line-height: 40px;
+  color: #434734;
 }
 
 .rahuilist:hover{
-  background-color: rgb(216, 210, 255);
+  color: #DC5757;
   border-radius: 5px
 }
 
@@ -262,9 +267,10 @@ h1 {
   padding-top: 10px;  
   font-style: normal;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 52px;
   line-height: 58px;
   color: #434734;
+  margin-top: 20px
 }
 
 .title {
