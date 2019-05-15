@@ -26,7 +26,7 @@ class AddRahReo extends Component {
 
                <div className="dropdownbox">
                     <h3>
-                        Te iwi me te Hapū e whakatakoto ana i te Rāhui:
+                        Te Iwi me te Hapū e whakatakoto ana i te Rāhui:
                     </h3>
                     <p>Tīpako Rohe:</p>
                     <select onChange={this.handleSelect}>
