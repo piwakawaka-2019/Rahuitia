@@ -118,15 +118,15 @@ class AddRahuiForm extends React.Component {
     }
 
     renderIwi() {
-        const allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
+        let allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
         
-        // allIwiInRegion.unshift( "Choose Iwi" );
 
         if (allIwiInRegion.length > 0) {
-
-            return allIwiInRegion.map(iwi => {
+            // allIwiInRegion.unshift( "Choose Iwi" );
+            return (
+                allIwiInRegion.map(iwi => {
                 return < option htmlFor="iwi"> {Object.keys(iwi)[0]}</option >
-            })
+            }))
         }
     }
 
@@ -138,8 +138,6 @@ class AddRahuiForm extends React.Component {
         })
 
         const allHapu = theIwiIFound[0][iwiIWant]
-
-    //    allHapu.unshift("Choose Hapu")
 
         if (allHapu.length > 0) {
             return allHapu.map(hapu => {
@@ -170,6 +168,7 @@ class AddRahuiForm extends React.Component {
                             <h3>Iwi and/or Hapū placing the rāhui:</h3>
                             <p>Select region:</p>
                             <select onChange={this.handleSelect}>
+                            {this.state.regionSelected == null && <option>Choose Region</option> }
                                 {this.props.area.map(area => {
                                     return <option htmlFor="region">{area}</option>;
                                 })}
@@ -177,11 +176,13 @@ class AddRahuiForm extends React.Component {
                         
                             {<p>Select iwi:</p>}
                             <select onChange={this.handleSelect2}>
+                            {this.state.iwiSelected == null && <option>Choose Iwi</option> }
                                 {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
                             </select>
                             
                             {<p>Select hapū:</p>}
                             <select onChange={this.handleSelect3}>
+                            {this.state.hapuSelected == null && <option>Choose hapu</option> }
                                 {this.state.iwiSelected ? (
                                     this.renderHapu()
                                 ) : <option>----------</option>}
