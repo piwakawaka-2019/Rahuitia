@@ -113,10 +113,103 @@ header .header_logo_title {
 
 }
 
+
+/* main navbar styling */
+
+.navbar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.25fr 0.25fr 0.25fr 1fr 1fr 0.35fr 0.25fr;
+  grid-template-rows: none;
+  padding: 10px;
+  z-index: 55;
+  background: #434734;
+  position: relative;
+  font-size: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+
+.languageToggleButton {
+width: 10%;
+position: fixed;
+bottom: 3em;
+right: 0;
+transform: rotate(90deg);
+background: none;
+border: none;
+color: #DC5757;
+text-decoration: underline;
+}
+
+
+/* about styling */
+
+.aboutNav {
+width: auto;
+background: none;
+border: none;
+color: #434734;
+}
+
+.aboutNav:hover {
+text-decoration: underline;
+}
+
+.aboutNav:selection {
+text-decoration-line: underline;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+
+}
+
+.navbar :active {
+  text-decoration: underline;
+}
+
+.navButton {
+  text-align: center;
+}
+
 .logo {
   font-family: 'Rasa', serif;
   font-size: 1.8em;
 }
+
+.aboutBody {
+  margin: 40px 300px 0px 80px;
+  font-size: 36px;
+  line-height: 50px;
+}
+
+.aboutContainer {
+  margin: 40px 40px 40px 70px;
+}
+
+.aboutMargin {
+  margin: 40px 20px 20px 70px; 
+}
+
+.aboutHeading {
+  /* margin: 40px 20px 20px 70px; */
+  padding: 10px 10px 10px 10px;
+  font-size: 64px;
+  text-decoration: underline;
+}
+
+.aboutHeading2 {
+  margin: 100px 20px 20px 70px;
+  padding: 10px 10px 10px 10px;
+  font-size: 96px;
+}
+
+
+
+
 
 /* split screen */
 .mapwrapper {
@@ -333,4 +426,32 @@ map {
   background: #eceee3;
   vertical-align: top
   
+}
+
+
+.login-wrapper {
+  margin: auto;
+  width: 30%;
+}
+
+.loginInput {
+  margin: 10px 10px 10px 10px;
+}
+
+.loginButton {
+  width: 150px;
+  margin: 10px 10px 10px 10px;
+}
+
+.loginHeader {
+  margin: 100px 10px 10px 10px;
+
+}
+
+
+/* register style */
+
+.registerContainer {
+  width: 75%;
+  margin: auto;
 }

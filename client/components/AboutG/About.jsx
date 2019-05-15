@@ -16,7 +16,7 @@ class About extends Component {
 
   render() {
     return (
-      <div>
+      <div className="aboutContainer">
         {this.props.lang == "eng" ? <AboutEng /> : <AboutReo />}
         {this.state.projectIsVisible ? <Project /> : null}
       </div>
