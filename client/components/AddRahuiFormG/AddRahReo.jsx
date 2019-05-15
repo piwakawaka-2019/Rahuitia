@@ -29,7 +29,8 @@ class AddRahReo extends React.Component {
             iwiSelected: null,
             hapuSelected: null,
             regionSelected: null,
-            iwihapuboxIsVisible: false
+            iwihapuboxIsVisible: false,
+            iwihapuButtonText: "Click to select the Region/Iwi/Hāpu"
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -90,7 +91,8 @@ class AddRahReo extends React.Component {
             regionSelected: null,
             iwiSelected: null,
             hapuSelected: null,
-            iwihapuboxIsVisible: true
+            iwihapuboxIsVisible: true,
+            iwihapuButtonText: "Add Another Associated Region/Iwi/Hāpu"
         })
         
     }
@@ -154,16 +156,24 @@ class AddRahReo extends React.Component {
                     <div>
                         <h1>Tāpirihia he Rāhui</h1>
                         <div className="step"> Takahia Tetahi</div>
-                        <h2>Tomo mai ki tetahi rohe i runga i te mahere me te tuhi i tetahi waahanga mo te wahi e hiahia ana koe ki te whakatakoto i te rahui.</h2>
+                        <div>
+                            <img src="mapthumbnail.png" className="thumbnail" />
+                        <h2 className="one">Tomo mai ki tetahi rohe i runga i te mahere me te tuhi i tetahi waahanga mo te wahi e hiahia ana koe ki te whakatakoto i te rahui.</h2>
+                        <br></br><br></br>
                         <hr></hr>
+                        </div>
+                        <br></br>
+                        <br></br>
                         <div className="step">Takahia e Rua</div>
                         
                         <h2>Korero mai ki a matou te rahui. Ka tuhia enei korero ki te waa tirotiro.</h2>
                         
+                        <div className="dropdownbox">
                         <h3>Tēnā koa tīpakohia te iwi me te hapū kua whakaturia te rahui:</h3>
                         
                             <p>Tīpako Rohe:</p>
                             <select onChange={this.handleSelect}>
+                            {this.state.regionSelected == null && <option>Choose region</option> }
                                 {this.props.area.map(area => {
                                     return <option htmlFor="region">{area}</option>;
                                 })}
@@ -172,22 +182,24 @@ class AddRahReo extends React.Component {
                         
                             {<p>Tīpako Iwi:</p>}
                             <select onChange={this.handleSelect2}>
+                            {this.state.iwiSelected == null && <option>Choose iwi</option> }
                                 {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
                             </select>
                             <br></br>
                             
                             {<p>Tīpako Hapū:</p>}
                             <select onChange={this.handleSelect3}>
+                            {this.state.hapuSelected == null && <option>Choose hapū</option> }
                                 {this.state.iwiSelected ? (
                                     this.renderHapu()
                                 ) : <option>----------</option>}
                             </select>
                             <br></br>
-                            <button className="secondarybutton" type="button" onClick={this.submitAdd}>Add Another Associated Region/Iwi/Hāpu</button>
-                    <br></br>
+                            <button className="secondarybutton" type="button" onClick={this.submitAdd}>{this.state.iwihapuButtonText}</button>
+                    <br></br> </div>
                         {this.state.iwihapuboxIsVisible ? 
-                        <div className='iwihapubox'>
-                        <h3> Iwi / hapu kua tīpakohia: </h3> <br></br>
+                       <div className='selectediwi'>
+                        <h3> <img src="tick.png" style={{width:"20px"}}/> Iwi / hapu kua tīpakohia: </h3> <br></br>
                         <h3> iwi:{this.state.iwi.map(iwi => {return <p>{iwi}, </p>})} </h3>
                         <h3> hapu:{this.state.hapu.map(hapu => {return <p>{hapu}, </p>})} </h3>
                         </div> : null }
@@ -202,14 +214,19 @@ class AddRahReo extends React.Component {
                     <p>Please enter your name:</p>
                     <input name="submittersName" type="text" placeholder="Submitted by" />
                     <br></br> */}
-                    <br></br>
-                    <p>Kua whakanohoia te Rahūi ra:</p>
-                    <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
-                    <br></br>
-                    <br></br>
-                    <p>I whakanuia te Rahūi:</p>
-                    <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
-                    <br></br>
+                    <br></br><br />
+
+
+                    <div className="twocol">
+                        <div className="date"><p>Kua whakanohoia te Rahūi ra:</p>
+                        <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
+                        </div>
+                        <div>
+                        <p>I whakanuia te Rahūi:</p>
+                        <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
+                        </div>
+                    </div>
+
                     <br></br>
                     <p>Tēnā koa tāpirihia he whakaahua poto o te rahūi i konei:</p>
                     <textarea name="description" type="text" placeholder="whakaahua" rows="5" cols="60" noValidate onChange={this.handleChange} />

@@ -53,6 +53,7 @@ header .header_logo_title {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: none;
+  padding: 0px, 10px, 0px , 0px
 }
 
 .navbar {
@@ -319,7 +320,8 @@ p{
   line-height: 27px;
   color: #434734;
   padding: 0px;
-  margin-top: 5px
+  margin-top: 5px;
+  margin-bottom: 10px
 }
 
 b {
@@ -337,6 +339,9 @@ a {
   color: #DC5757
 }
 
+.date{
+  padding-right: 20px
+}
 /* form styles  */
 
 input {
@@ -346,7 +351,8 @@ input {
   border-radius: 4px;
   background-color: #eceee3;
   border: none;
-  font-size: 17px
+  font-size: 17px;
+  margin-right: 10px
 }
 
 input:focus {
