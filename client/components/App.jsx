@@ -4,7 +4,9 @@ import { HashRouter as Router, Route } from "react-router-dom";
 import { isAuthenticated } from "../utils/auth"
 
 import Landing from "./LandingG/Landing";
-import Nav from "./NavG/Nav";
+import Toggle from "./ToggleG/Toggle";
+
+
 import Explore from "./ExploreG/Explore";
 
 import AddRahuiMap from "./NewMap";
@@ -38,7 +40,9 @@ export function App({ auth }) {
   return (
     <div>
       <Router>
-        <Nav />
+        <Toggle />
+
+        {/* <Nav /> */}
         <Route exact path="/" component={Landing} />
 
         <Route path="/about" component={About} />

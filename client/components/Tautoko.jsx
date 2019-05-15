@@ -4,31 +4,33 @@ import { connect } from 'react-redux'
 import { incrementCount, decrementCount } from '../actions/tautoko'
 
 class Tautoko extends Component {
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         disabled: false
-    //     }
 
-    // }
     handleBtnActionIncrement = () => {
         this.props.onIncrementClick(this.props.count)
-        // this.forwardRef.btn.setAttribute("disabled", "disabled")
+  
     }
-
-    // handleBtnActionDecrement = () => {
-    //     this.props.onDecrementClick(this.props.count)
-    // }
 
     render() {
         const { count } = this.props
         return (
             <React.Fragment>
-                <p>{count}</p>
-                <Button action={this.handleBtnActionIncrement.bind(this)} buttonTitle="Tautoko" />
+                <hr></hr>
+                <div className="tautoko">
 
+                <div><Button action={this.handleBtnActionIncrement.bind(this)} buttonTitle="Tautoko" /></div>
+                
 
-                {/* <Button action={this.handleBtnActionDecrement} buttonTitle="-" /> */}
+                <div className="respect">Respect the rahui? <br></br>Show your tautoko</div>
+                
+
+                <div className="count">{count}</div>
+                
+                <div className="tangata">tanagata tautoko</div>
+                
+                </div>
+                <hr></hr>
+
+                
             </React.Fragment>
         )
     }
