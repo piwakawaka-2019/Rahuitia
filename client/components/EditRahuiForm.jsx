@@ -289,8 +289,8 @@ class EditRahuiForm extends React.Component {
                     <br></br>
 
                     <p>Please enter contact details here:</p>
-
-                    <input name="contact" type="text" value={this.state.contact} noValidate onChange={this.handleChange} />
+                    
+                    <input name="contact" type="text" value={this.state.contact}  noValidate onChange={this.handleChange} />
 
                     <br></br>
                     <br></br>

@@ -52,6 +52,8 @@ class AddRahuiForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
 
+        console.log("handleSubmitToken:", getUserTokenInfo().user_id)
+
         const rahui = {
             userId: getUserTokenInfo().user_id,
             region: this.state.region,
