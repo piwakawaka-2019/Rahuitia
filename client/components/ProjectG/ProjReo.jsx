@@ -7,14 +7,9 @@ class projReo extends Component {
         <h1>Whakatakanga</h1>
         <div className="row">
           <div className="column">
-            
-            <br />
-            <p>
-              Maori kupu
-            </p>
+            <br/>
+            <p> Rāhuitia: he puka paari o Rāhui e tino whai tikanga ana he tikanga nui kia Rāhui, kia whakaute i Mana Whenua, Mana Moana, Mana Tangata</p>
           </div>
-
-          
         </div>
       </div>
     );

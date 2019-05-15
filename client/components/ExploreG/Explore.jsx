@@ -1,24 +1,24 @@
 import React from "react";
 import SplitterLayout from 'react-splitter-layout';
 import { connect } from "react-redux";
-import { fetchAllRahui} from "../../actions/rahui";
+import { fetchAllRahui } from "../../actions/rahui";
 import NewMap from "../NewMap";
-import RahuiList from "../RahuiList";
+import RahuiList from "../RahuiListG/RahuiList";
 
 
 class Explore extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = {}
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.dispatch(fetchAllRahui())
     }
 
-    render() { 
-        console.log( "explore", this.props)
-        return (  
+    render() {
+        console.log("explore", this.props)
+        return (
             <div >
 
                 <SplitterLayout >
@@ -32,16 +32,16 @@ class Explore extends React.Component {
                 </div>
                
                 </SplitterLayout>
-                
+
             </div>
         );
     }
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = state => {
     return {
         allrahui: state.rahui
     }
 }
- 
+
 export default connect(mapStateToProps)(Explore);
