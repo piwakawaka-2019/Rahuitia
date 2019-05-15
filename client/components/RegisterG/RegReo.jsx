@@ -52,7 +52,7 @@ class RegReo extends React.Component {
               ) : <option>----------</option>}
           </select>
           <br></br>      
-          <button type="button" onClick={this.submitAdd}>Add Another Region/Iwi/Hāpu</button>
+          <button type="button" onClick={this.submitAdd}>Tāpirihia tetahi atu Rohe/ Iwi/Hāpu</button>
           <br></br>
 
           <div>To Whakapapa: <br></br> 
