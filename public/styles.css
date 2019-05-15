@@ -32,15 +32,46 @@ header .header_logo_title {
   text-transform: uppercase;
 }
 
+.tautoko {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 5fr 1fr ;
+  grid-template-rows: none;
+
+  position: relative;
+}
+
 .navbar {
   width: 100%;
   display: grid;
   grid-template-columns: 11fr 1fr 1fr 1fr 1fr 2fr;
   grid-template-rows: none;
-  padding: 10px;
+  padding: 15px;
   z-index: 55;
   background: #434734;
   position: relative;
+}
+
+.respect{
+  padding: 15px;
+  color: rgb(169, 169, 169);
+  vertical-align: center
+}
+
+.count{
+  text-align: right;
+  font-size: 44px;
+  color: #DC5757;
+  padding: 15px;
+  vertical-align: center
+}
+
+.tangata{
+  font-size: 17px;
+  color: #DC5757;
+  vertical-align: center;
+  padding: 15px;
+
 }
 
 .navButton {
@@ -210,7 +241,7 @@ button {
   line-height: 33px;
   text-align: center;
   font-family: Rasa;
-  margin-top: 20px;
+  margin: 20px 0px 20px 0px;
 }
 
  .secondarybutton {
