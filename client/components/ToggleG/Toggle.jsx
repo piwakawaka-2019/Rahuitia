@@ -16,7 +16,7 @@ export class Toggle extends Component {
     return (
       <div>
 
-        <button className="languageToggleButton" onClick={() => this.props.dispatch(toggleLang())}>
+        <button className="languageToggleButton" onClick={() => this.props.toggleLang()}>
 
           {this.props.lang == "eng" ? 'Te Reo' : 'English'}
 
@@ -31,7 +31,8 @@ export class Toggle extends Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    logout: () => dispatch(receiveLogout())
+    logout: () => dispatch(receiveLogout()),
+    toggleLang: () => dispatch(toggleLang())
   }
 }
 
