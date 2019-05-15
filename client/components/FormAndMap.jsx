@@ -3,7 +3,8 @@ import SplitterLayout from 'react-splitter-layout';
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom"
 import ReactMap from "./ReactMap";
-import AddRahuiForm from "./AddRahuiForm";
+import AddRahuiForm from "./AddRahuiFormG/AddRahuiForm";
+
 import { isAuthenticated } from "../utils/auth"
 
 
