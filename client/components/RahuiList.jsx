@@ -8,11 +8,11 @@ class RahuiList extends React.Component {
         this.state = {  }
     }
     render() { 
-        
+        console.log("Reverse")
         return (
             <div>
                 <h1>Select to learn more about a Rāhui </h1>
-                 {this.props.allrahui.reverse().map(rahui => <RahuiListItem key={rahui.id} rahui={rahui} /> )}   
+                 {this.props.allrahui.map(rahui => <RahuiListItem key={rahui.id} rahui={rahui} /> )}   
             </div>
            );
     }
