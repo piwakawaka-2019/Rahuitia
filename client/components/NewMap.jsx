@@ -9,15 +9,26 @@ import { relative } from 'path';
 class NewMap extends Component {
   constructor(props) {
     super(props);
-    this.state = {  }
+    this.state = { 
+      rahuiBounds: [{lat: -36.543484, lng: 172.880926}, {lat: -43.622458, lng: 170.036187}]
+     }
 }
 
+handleBoundChange =() => {
+  this.setState({
+    rahuiBounds: this.props.rahuiBounds
+})
+}
+
+componentWillMount = () => {
+  this.handleBoundChange()
+}
 
   render() {
    
-    const rahuiCoods = this.props.allrahui.length > 0 ? this.props.allrahui[9].geo_ref : []
+    const rahuiCoods = this.props.allrahui.length > 0 ? this.state.rahuiBounds : []
     let requiredMapBounds
-    let requiredCenter
+    // let requiredCenter
     if (rahuiCoods.length > 0) {
       requiredMapBounds = new window.google.maps.LatLngBounds();
 
@@ -25,7 +36,7 @@ class NewMap extends Component {
         requiredMapBounds.extend(new window.google.maps.LatLng(rahuiPoint.lat, rahuiPoint.lng))
       })
 
-      requiredCenter = requiredMapBounds.getCenter()
+      // requiredCenter = requiredMapBounds.getCenter()
     }
     
 
@@ -71,12 +82,21 @@ class NewMap extends Component {
 
       {this.props && this.props.allrahui && this.props.allrahui.map(rahuicoords => {
        return (<div> 
-        <Marker key={rahuicoords.id + 100} position={rahuicoords.geo_ref[0]} onClick={() => {
+        <Marker key={rahuicoords.id + 100} position={rahuicoords.geo_ref[0]} onClick={() => { let newBounds=rahuicoords.geo_ref
+          this.setState({
+            rahuiBounds: newBounds
+          })
          window.location = `#/rahui/${rahuicoords.id}`}}  />
+
         <Polygon
         path={rahuicoords.geo_ref}
         key={rahuicoords.id}
-        onClick={() => { window.location = `#/rahui/${rahuicoords.id}`}} 
+        onClick={() => { let newBounds=rahuicoords.geo_ref
+          this.setState({
+            rahuiBounds: newBounds
+          })
+          window.location = `#/rahui/${rahuicoords.id}`}} 
+
         options={{
             fillColor: "#DC5757",
             fillOpacity: 0.9,

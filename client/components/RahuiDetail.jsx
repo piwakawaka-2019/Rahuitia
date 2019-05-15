@@ -23,7 +23,7 @@ class RahuiDetail extends Component {
         <div>
         <SplitterLayout primaryIndex={0}>
             <div >
-                <NewMap color={"#2E86C1"} zoom={10} coords={geo_ref[0]} />
+                <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
             </div> 
     
             <div className="detailwrapper">
