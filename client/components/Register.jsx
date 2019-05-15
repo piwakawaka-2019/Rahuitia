@@ -117,42 +117,22 @@ class Register extends React.Component {
             <div className="registerContainer">
                 <h1>Register</h1>
                 <h3>Ekore e tika kia noho he Maori rawakore ki tenei whenua; ehara tenei i te mea e ora ai tatou e tika ai ranei ratou. </h3>
-                <h3>Who can add a rāhui?</h3>
-                <p>You must register to add a rahui. There is a verficiation process to identify you. This may take up to three days.</p>
+                <p>Please register below to add a rahūi. There is a verficiation process to identify you. Please note that this process this may take up to three days.</p>
                 <br></br>
                 <form className="register-form" onSubmit={this.submit}>
-                    <input className="" name="first_name" type="text" placeholder="first name" noValidate onChange={this.handleChange} />
+                    <input className="inputRegister" name="first_name" type="text" placeholder="first name" noValidate onChange={this.handleChange} />
                     <br></br>
                     <br></br>
 
-                    <input name="middle_name" type="text" placeholder="middle name/s" noValidate onChange={this.handleChange} />
+                    <input className="inputRegister" name="middle_name" type="text" placeholder="middle name/s" noValidate onChange={this.handleChange} />
                     <br></br>
                     <br></br>
 
-                    <input name="last_name" type="text" placeholder="last name" noValidate onChange={this.handleChange} />
-                    <br></br>
-                    <p>Select region:</p>
-                    <select onChange={this.handleSelect}>
-                        {this.props.area.map(area => {
-                            return <option htmlFor="region">{area}</option>;
-                        })}
-                    </select>
+                    <input className="inputRegister" name="last_name" type="text" placeholder="last name" noValidate onChange={this.handleChange} />
                     <br></br>
                     <br></br>
-                    <p>Select iwi:</p>
-                    <select onChange={this.handleSelect2}>
-                        {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
-                    </select>
-                    <br></br>
-                    <br></br>
-                    <p>Select hapū:</p>
-                    <select onChange={this.handleSelect3}>
-                        {this.state.iwiSelected ? (
-                            this.renderHapu()
-                        ) : <option>----------</option>}
-                    </select>
-                    <br></br>
-                    <div className="dropdownbox">
+
+                    <div className="dropdownboxRegion">
 
                         <p>Select region:</p>
                         <select onChange={this.handleSelect}>
@@ -163,7 +143,7 @@ class Register extends React.Component {
 
                         {<p>Select iwi:</p>}
                         <select onChange={this.handleSelect2}>
-                            {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
+                            {this.state.regionSelected ? (this.renderIwi()) : <option disabled></option>}
                         </select>
 
 
@@ -172,43 +152,43 @@ class Register extends React.Component {
                         <select onChange={this.handleSelect3}>
                             {this.state.iwiSelected ? (
                                 this.renderHapu()
-                            ) : <option>----------</option>}
+                            ) : <option disabled></option>}
                         </select>
                         <br></br>
-                        <button type="button" onClick={this.submitAdd}>Add Another Region/Iwi/Hāpu</button>
+                        <button className="addAnotherRegionButton" type="button" onClick={this.submitAdd}>Add Another Region/Iwi/Hāpu</button>
                         <br></br>
                     </div>
-                    <div className="selectediwi">Your whakapapa: <br></br>
-                        iwi:{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
-                        hapu:{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}<br></br>
-                    
+                    <div className="selectediwiRegister">Whakapapa <br></br>
+                        Iwi:{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
+                        Hapū:{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}
+
+
                     </div>
                     <br></br>
+
                     <br></br>
-                    <br></br>                    
-                    <input name="address" type="text" placeholder="address" noValidate onChange={this.handleChange} />
+
+                    <input className="inputRegister" name="address" type="text" placeholder="address" noValidate onChange={this.handleChange} />
                     <br></br>
                     <br></br>
 
 
-                    <input name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
+                    <input className="inputRegister" name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
                     <br></br>
                     <br></br>
-                    <input name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
+                    <input className="inputRegister" name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
                     <br></br>
                     <br></br>
-                    <input name="confirm_password" type="password" placeholder="confirm password" noValidate onChange={this.handleChange} />
+                    <input className="inputRegister" name="confirm_password" type="password" placeholder="confirm password" noValidate onChange={this.handleChange} />
                     <p>{this.props.auth.errorMessage}</p>
                     <br></br>
-                    <button name="submit">SUBMIT</button>
-                    <br></br>
-                    <br></br>
-                    <br></br>
+                    <button className="registerButton" name="submit">Register</button>
                     <br></br>
 
 
                 </form>
-            </div>)
+            </div>
+        )
     }
 }
 
