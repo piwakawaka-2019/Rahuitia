@@ -53,6 +53,8 @@ class RegReo extends React.Component {
     } else {
       this.props.dispatch(registerUserRequest({ first_name, middle_name, last_name, address, email, password, iwi, hapu }))
     }
+    console.log("registered")
+    window.location = `/#/addrahui`
   }
 
   submitAdd() {
