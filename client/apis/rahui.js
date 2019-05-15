@@ -26,8 +26,18 @@ export function writeRahui(rahui) {
 
 export function editRahui(rahui) {
   return request
-    .post("/api/rahui")
+    .put("/api/rahui/" + rahui.id)
     .send(rahui)
+    .then(res => res.body)
+    .catch(err => {
+      throw err;
+    });
+}
+
+export function writeTautoko(tautoko) {
+  return request
+    .post("/api/rahui/tautoko")
+    .send(tautoko)
     .then(res => res.body)
     .catch(err => {
       throw err;
