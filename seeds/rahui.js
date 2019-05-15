@@ -6,167 +6,6 @@ exports.seed = function (knex, Promise) {
       // Inserts seed entries
       return knex("rahui").insert([
         {
-          id: 21,
-          user_id: 1,
-          iwi: JSON.stringify(["Ngati Haua"]),
-          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
-          description:
-            "A Rahui with polygon",
-          korero:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
-          date_placed: '12-11-2018',
-          date_lifted: '15-11-2018',
-          authoriser: 'Nanz',
-          contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"]),
-        },
-        {
-          id: 22,
-          user_id: 2,
-          iwi: JSON.stringify(["Ngati Whatua"]),
-          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
-          description:
-            "This is a Rahui with polygon",
-          korero:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: JSON.stringify([{ lat: -41.291369, lng: 174.784672 }, { lat: -41.299236, lng: 174.780209 }, { lat: -41.296367, lng: 174.774158 }, { lat: -41.291369, lng: 174.784672 }]),
-          date_placed: '12-11-2018',
-          date_lifted: '15-11-2018',
-          authoriser: 'Nanz',
-          contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
-        },
-        {
-          id: 23,
-          user_id: 3,
-          iwi: JSON.stringify(["Ngati Whatua"]),
-          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
-          description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          korero:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
-          date_placed: '12-11-2018',
-          date_lifted: '15-11-2018',
-          authoriser: 'Nanz',
-          contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
-        },
-        {
-          id: 24,
-          user_id: 4,
-          iwi: JSON.stringify(["Ngati Whatua"]),
-          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
-          description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          korero:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: JSON.stringify([{ lat: -41.287499, lng: 174.753687 }, { lat: -41.299236, lng: 174.760296 }, { lat: -41.314646, lng: 174.737723 }, { lat: -41.315379, lng: 174.732734 }, { lat: -41.305934, lng: 174.733034 }, { lat: -41.297810, lng: 174.739043 }, { lat: -41.287499, lng: 174.753687 }]),
-          date_placed: '12-11-2018',
-          date_lifted: '15-11-2018',
-          authoriser: 'Fudz',
-          contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
-        },
-
-        {
-          id: 25,
-          user_id: 5,
-          iwi: JSON.stringify(["Ngati Whatua"]),
-          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
-          description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          korero:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
-          date_placed: '12-11-2018',
-          date_lifted: '15-11-2018',
-          authoriser: 'Fudz',
-          contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
-        },
-        {
-          id: 26,
-          user_id: 6,
-          iwi: JSON.stringify(["Ngati Whatua"]),
-          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
-          description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          korero:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
-          date_placed: '12-11-2018',
-          date_lifted: '15-11-2018',
-          authoriser: 'Ash',
-          contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
-        },
-        {
-          id: 27,
-          user_id: 7,
-          iwi: JSON.stringify(["Ngati Whatua"]),
-          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
-          description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          korero:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
-          date_placed: '12-11-2018',
-          date_lifted: '15-11-2018',
-          authoriser: 'Luke',
-          contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
-        },
-        {
-          id: 28,
-          user_id: 8,
-          iwi: JSON.stringify(["Ngati Whatua"]),
-          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
-          description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          korero:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
-          date_placed: '12-11-2018',
-          date_lifted: '15-11-2018',
-          authoriser: 'Nanz',
-          contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
-        },
-        {
-          id: 29,
-          user_id: 9,
-          iwi: JSON.stringify(["Ngati Whatua"]),
-          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
-          description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          korero:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
-          date_placed: '12-11-2018',
-          date_lifted: '15-11-2018',
-          authoriser: 'Nanz',
-          contact: 'Luke on his phone 021495030',
-          region: JSON.stringify(["Tamaki"])
-        },
-        {
-          id: 30,
-          user_id: 10,
-          iwi: JSON.stringify(["Ngati Whatua"]),
-          hapu: JSON.stringify(["Ngati Hinga", "Ngati Ruinga"]),
-          description:
-            "Rahui imposed after Okahu Bay urupā flooding",
-          korero:
-            "Ngāti Whātua Ōrākei and Ngāti Whātua Ōrākei Reserves Board have imposed a three-day rahui on Okahu Bay, as floodwaters from their cemetery are cleared to the sea.",
-          geo_ref: JSON.stringify([{ lat: -36.836032, lng: 174.469357 }, { lat: -36.846032, lng: 174.70357 }, { lat: -36.816032, lng: 174.468357 }, { lat: -36.826032, lng: 174.469957 }]),
-          date_placed: '6-04-2017',
-          date_lifted: '9-04-2017',
-          authoriser: 'Koro',
-          contact: '0508 NW Orakei',
-          region: "Tamaki"
-        },
-        {
           id: 31,
           user_id: 11,
           iwi: JSON.stringify(["Ngāpuhi"]),
@@ -185,7 +24,7 @@ exports.seed = function (knex, Promise) {
         },
         {
           id: 32,
-          user_id: 11,
+          user_id: 12,
           iwi: JSON.stringify(["Ngāti Kahungunu ki Heretaunga Tamatea"]),
           hapu: JSON.stringify(["Ngati Kere"]),
           description:
@@ -198,17 +37,17 @@ exports.seed = function (knex, Promise) {
           ]),
           date_placed: '04-04-2019',
           date_lifted: '25-04-2019',
-          authoriser: 'Not stated',
+          authoriser: 'Rangi Leaf',
           contact: 'Not stated',
           region: "Tākitimu"
         },
         {
           id: 33,
-          user_id: 11,
+          user_id: 13,
           iwi: JSON.stringify(["Ngātiwai"]),
           hapu: JSON.stringify(["Te Whānau a Rangiwhaakahu"]),
           description:
-            "Rahūi at Te Wai O Taniwhawas (also known as Mermaid Pools) designed to preserve the cultural, ecological and physical environment.",
+            "Rahūi at Te Wai O Taniwha was (also known as Mermaid Pools) designed to preserve the cultural, ecological and physical environment.",
           korero:
             "The Te Whanau ā Rangiwhakaahu hapū yesterday morning put a rāhui in place over the popular pools at the northern headland of Matapouri and the access route over the Rangitapu headland to restore their environment, cultural and spiritual wellbeing. A ceremony took place at Matapouri Beach at 5am yesterday to bless and dedicate a carved pou before those present went to the local marae to conclude the formalities. the picturesque, turquoise tidal rock pools are enormously popular and draw hundreds of people in a day during long weekends and holidays. Environmentalists, community groups, civic leaders and the local hapū have long been concerned about the degraded state of the pools and the condition of the track. Issues include no provision of basic infrastructure like a proper track, toilets or rubbish disposal facilities and all these will have to be addressed going forward, the hapu said. Hapū trust board chairman Aperahama Edwards said a rāhui should not discourage people from visiting Matapouri and surrounding areas.",
           geo_ref: JSON.stringify([
@@ -217,12 +56,12 @@ exports.seed = function (knex, Promise) {
           date_placed: '19-04-2019',
           date_lifted: '',
           authoriser: 'Aperahama (Abe) Edwards',
-          contact: 'None',
+          contact: 'Kensington blvd',
           region: "Te Tai Tokerau"
         },
         {
           id: 34,
-          user_id: 11,
+          user_id: 14,
           iwi: JSON.stringify(["Te Kawerau a Maki"]),
           hapu: JSON.stringify([""]),
           description:
@@ -233,7 +72,7 @@ exports.seed = function (knex, Promise) {
           date_placed: '02-12-2019',
           date_lifted: '',
           authoriser: 'Edward Ashby',
-          contact: '',
+          contact: 'Sorghum place',
           region: "Tāmaki"
         },
       ]);

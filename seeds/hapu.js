@@ -5,55 +5,26 @@ exports.seed = function(knex, Promise) {
     .then(function() {
       // Inserts seed entries
       return knex("hapu").insert([
+        
         {
           id: 81,
-          user_id: 1,
-          hapu_name: "Ngati Irakehu"
+          user_id: 11,
+          hapu_name: ["Ngati Kuta", "Patukeha ki Te Rawhiti"]
         },
         {
           id: 82,
-          user_id: 2,
-          hapu_name: "Ngati Kahungunu ki Heretaunga"
+          user_id: 12,
+          hapu_name: "Ngati Kere"
         },
         {
           id: 83,
-          user_id: 3,
-          hapu_name: "Hgati Tawhaki"
+          user_id: 13,
+          hapu_name: "Te Whānau a Rangiwhaakahu"
         },
         {
           id: 84,
-          user_id: 4,
-          hapu_name: "Ngati Makino"
-        },
-        {
-          id: 85,
-          user_id: 5,
-          hapu_name: "Nga Paerangi"
-        },
-        {
-          id: 86,
-          user_id: 6,
-          hapu_name: "Ngati Hine"
-        },
-        {
-          id: 87,
-          user_id: 7,
-          hapu_name: "Nga Rauru"
-        },
-        {
-          id: 88,
-          user_id: 8,
-          hapu_name: "Te Ati Awa"
-        },
-        {
-          id: 89,
-          user_id: 9,
-          hapu_name: "Te Aupouri"
-        },
-        {
-          id: 90,
-          user_id: 10,
-          hapu_name: "Rangitane"
+          user_id: 14,
+          hapu_name: ""
         }
       ]);
     });
