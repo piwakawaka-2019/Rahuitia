@@ -18,6 +18,7 @@ export function saveAllRahui (rahuiArr) {
 
 
 export function fetchAllRahui () {
+    console.log("fetchAllRahui")
     return dispatch => { 
         getRahui().then(allrahui => {
             dispatch(saveAllRahui(allrahui))
@@ -25,4 +26,4 @@ export function fetchAllRahui () {
     }
 }
 
-  
+

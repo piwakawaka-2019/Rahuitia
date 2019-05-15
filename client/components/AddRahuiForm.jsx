@@ -1,152 +1,257 @@
 import React from 'react'
+import decode from 'jwt-decode'
+
+import { getUserTokenInfo } from '../utils/auth'
+
 // import data from '../apis/iwi'
 import { connect } from "react-redux";
 import { fetchAllIwi } from "../actions/iwi";
-
+import { writeRahui } from "../apis/rahui"
+import { fetchAllRahui } from '../actions/rahui'
 
 class AddRahuiForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            region: [],
+            iwi: [],
+            hapu: [],
+            geoRef: null,
+            authoriser: null,
+            datePlaced: null,
+            dateLifted: "This Rāhui is still active",
+            description: null,
+            korero: null,
+            contact: null,
             iwiSelected: null,
             hapuSelected: null,
-            regionSelected: null
+            regionSelected: null,
+            iwihapuboxIsVisible: false
         };
+
+        this.handleChange = this.handleChange.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
         this.handleSelect2 = this.handleSelect2.bind(this);
         this.handleSelect3 = this.handleSelect3.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.renderHapu = this.renderHapu.bind(this)
+        this.renderIwi = this.renderIwi.bind(this)
+        this.submitAdd = this.submitAdd.bind(this);
+
     }
 
     componentDidMount() {
         this.props.dispatch(fetchAllIwi())
     }
 
+    handleSubmit(e) {
+        e.preventDefault()
 
-    handleSubmit(event) {
-        event.preventDefault();
-        const data = new FormData(event.target);
+        const rahui = {
+            userId: getUserTokenInfo().user_id,
+            region: this.state.region,
+            iwi: this.state.iwi,
+            hapu: this.state.hapu,
+            description: this.state.description,
+            geoRef: this.props.coordinates,
+            korero: this.state.korero,
+            datePlaced: this.state.datePlaced,
+            dateLifted: this.state.dateLifted,
+            contact: this.state.contact,
+            authoriser: this.state.authoriser
+        }
 
-        fetch('/api/form-submit-url', {
-            method: 'POST',
-            body: data,
-        });
+        // should be a dispatching an action
+        writeRahui(
+            rahui
+        ).then(
+            () => {
+                this.props.dispatch(fetchAllRahui())
+            }
+        )
+
+        window.location = `/#/explore`
+    }
+
+    submitAdd(){
+        let region = [...this.state.region, this.state.regionSelected]
+        let iwi= [...this.state.iwi, this.state.iwiSelected]
+        let hapu = [...this.state.hapu, this.state.hapuSelected]
+
+        this.setState({
+            region:[...new Set(region)],
+            iwi:[...new Set(iwi)],
+            hapu:[...new Set(hapu)],
+            regionSelected: null,
+            iwiSelected: null,
+            hapuSelected: null,
+            iwihapuboxIsVisible: true
+        })
+        
+    }
+
+    handleChange(e) {
+        e.preventDefault()
+        const { name, value } = e.target
+        this.setState({ [name]: value });
     }
 
     handleSelect(event) {
-        console.log(event.target.value);
         this.setState({
             regionSelected: event.target.value
         });
     }
 
     handleSelect2(event) {
-        console.log(event.target.value);
         this.setState({
             iwiSelected: event.target.value
         });
     }
 
     handleSelect3(event) {
-        console.log(event.target.value);
         this.setState({
             hapuSelected: event.target.value
         });
     }
 
-    render() {
+    renderIwi() {
+        const allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
 
-        console.log(this.props && this.props.alliwi, "here")
-        console.log(this.props.area, "area")
+        if (allIwiInRegion.length > 0) {
+
+            return allIwiInRegion.map(iwi => {
+                return < option htmlFor="iwi" > {Object.keys(iwi)[0]}</option >
+            })
+        }
+    }
+
+    renderHapu() {
+        const allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
+        const iwiIWant = this.state.iwiSelected
+        const theIwiIFound = allIwiInRegion.filter(iwi => {
+            return iwi[iwiIWant] != undefined
+        })
+
+        const allHapu = theIwiIFound[0][iwiIWant]
+
+        if (allHapu.length > 0) {
+            return allHapu.map(hapu => {
+                return <option htmlFor="hapu">{hapu}</option>;
+            })
+        }
+        else (<option>No hapū</option>)
+    }
+
+    render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form
+                    onSubmit={this.handleSubmit}
+                    noValidate
+                >
                     <div>
                         <h1>Add a Rāhui</h1>
-                        <h2>Tell us about the rāhui</h2>
-                        <p>select region</p>
-                        <select onChange={this.handleSelect}>
-                            {this.props.area.map(area => {
-                                return <option>{area}</option>;
-                            })}
-                        </select>
-                        {this.state.regionSelected && <p>select iwi</p>}
-                        {/* get all the iwi based on region */}
-                        {this.state.regionSelected && (
-                            <div>
-                                <select onChange={this.handleSelect2}>
-                                    {this.props.alliwi.map(area => {
-                                        // console.log(area, "this one here")
+                        <div className="step"> step one</div>
+                        <h2>Zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
+                        <hr></hr>
+                        <div className="step"> step two</div>
+                        
+                        <h2>Tell us about the rāhui. This information will be shared on the explore page.</h2>
 
-                                        if (area[this.state.regionSelected] != undefined) {
-                                            return area[this.state.regionSelected].map(region => {
-                                                for (var iwi in region) {
-                                                    return <option>{iwi}</option>;
-                                                }
-                                            });
-                                        }
-                                    })}
-                                </select>
-                            </div>
-                        )}
-                        {/* confirm iwi selection in state */}
-                        {this.state.iwiSelected && <p>select hapu</p>}
-                        {this.state.iwiSelected && (
-                            <div>
-                                <select onChange={this.handleSelect3}>
-                                    {this.props.alliwi.map(area => {
-                                        if (area[this.state.regionSelected] != undefined) {
-                                            return area[this.state.regionSelected].map(region => {
-                                                if (
-                                                    region[this.state.iwiSelected] != undefined &&
-                                                    region[this.state.iwiSelected].length > 0
-                                                ) {
-                                                    console.log(region[this.state.iwiSelected]);
-                                                    return region[this.state.iwiSelected].map(hapu => {
-                                                        return <option>{hapu}</option>;
-                                                    });
-                                                } else if (
-                                                    region[this.state.iwiSelected] != undefined &&
-                                                    region[this.state.iwiSelected].length <= 0
-                                                ) {
-                                                    return <option>No hapu found</option>;
-                                                }
-                                            });
-                                        }
-                                    })}
-                                </select>
-                                {this.state.hapuSelected && <p>Congrats you picked everything</p>}
-                            </div>
-                        )}
+                        
+                        <h3>Please select the iwi and/or hapū that has placed the rāhui:</h3>
+                        
+                            <p>Select region:</p>
+                            <select onChange={this.handleSelect}>
+                                {this.props.area.map(area => {
+                                    return <option htmlFor="region">{area}</option>;
+                                })}
+                            </select>
+
+                            <br></br>
+                        
+                            {<p>Select iwi:</p>}
+                            <select onChange={this.handleSelect2}>
+                                {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
+                            </select>
+
+                            <br></br>
+                            
+                            {<p>Select hapū:</p>}
+                            <select onChange={this.handleSelect3}>
+                                {this.state.iwiSelected ? (
+                                    this.renderHapu()
+                                ) : <option>----------</option>}
+                            </select>
+                            <br></br>
+                            <button className="secondarybutton" type="button" onClick={this.submitAdd}>Add Another Associated Region/Iwi/Hāpu</button>
+                    <br></br>
+                        {this.state.iwihapuboxIsVisible ? 
+                        <div className='iwihapubox'>
+                        <h3> Selected iwi/hāpu: </h3> <br></br>
+                        <h3> iwi:{this.state.iwi.map(iwi => {return <p>{iwi}, </p>})} </h3>
+                        <h3> hapu:{this.state.hapu.map(hapu => {return <p>{hapu}, </p>})} </h3>
+                        </div> : null }
+                    <br></br>
                     </div>
 
-
-                    <input type="text" placeholder="Authoriser's Name" />
-
+                    <br></br>
                     <br></br>
 
-                    date placed <input type="date" />
+                    <p>Please enter the name of the person who has authorised the rahūi:</p>
+
+                    <input name="authoriser" type="text" placeholder="Authorised by" noValidate onChange={this.handleChange} />
 
                     <br></br>
+                    {/* <br></br>
 
-                    date lifted <input type="date" />
+                    <p>Please enter your name:</p>
 
+                    <input name="submittersName" type="text" placeholder="Submitted by" />
+
+                    <br></br> */}
                     <br></br>
 
-                    <textarea name="message" placeholder="description" rows="10" cols="60" />
+
+                    <p>Date rahūi placed:</p>
+                    <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
 
                     <br></br>
-
-                    <textarea name="message" placeholder="korero" rows="20" cols="60" />
-
                     <br></br>
 
-                    <input type="text" placeholder="Contact Email" />
+
+                    <p>Date rahūi lifted:</p>
+                    <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
 
                     <br></br>
+                    <br></br>
 
-                    <input type="submit" value="Add Rahui" />
+                    <p>Please add a brief description of the rahūi here:</p>
+
+                    <textarea name="description" type="text" placeholder="description" rows="5" cols="60" noValidate onChange={this.handleChange} />
+
+                    <br></br>
+                    <br></br>
+
+                    <p>Please add further details of the rahūi here:</p>
+
+                    <textarea name="korero" type="text" placeholder="korero" rows="10" cols="60" noValidate onChange={this.handleChange} />
+
+                    <br></br>
+                    <br></br>
+
+                    <p>Please enter contact details here:</p>
+
+                    <input name="contact" type="text" placeholder="Email Address" noValidate onChange={this.handleChange} />
+
+                    <br></br>
+                  
+
+                    <button name="submit">Add Rāhui</button>
 
                 </form>
+                <div className="spaceme" />
             </div>
         )
     }
@@ -156,6 +261,7 @@ const mapStateToProps = state => {
     return {
         alliwi: state.iwi,
         area: state.area,
+        coordinates: state.coords
     }
 }
 

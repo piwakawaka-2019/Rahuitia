@@ -1,8 +1,10 @@
+
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 import { compose, withProps } from 'recompose'
 import {  withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps'
 import { DrawingManager } from "react-google-maps/lib/components/drawing/DrawingManager"
-import { fetchAllIwi } from "../actions/iwi";
+import { saveCoordinates } from "../actions/coords";
 
 // const { compose, withProps } = require("recompose");
 // const {
@@ -17,25 +19,26 @@ const MapWithADrawingManager = compose(
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCDY6eWTVLvpOoTI2JrH8Q0ycDSV3F2J5o&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
-    mapElement: <div style={{ height: `100%`, width: `50%` }} />,
+    containerElement: <div style={{ height: window.innerHeight }} />,
+    mapElement: <div style={{ height: `170%`, width:`100%` }} />,
   }),
   withScriptjs,
   withGoogleMap
   )(props =>
     <GoogleMap
-      defaultZoom={5}
-      defaultCenter={new google.maps.LatLng(-41.267622, 174.745222)}
+      defaultZoom={6}
+      defaultCenter={new google.maps.LatLng({lat: -47.892014, lng: 170.897149})}
       defaultOptions={{
         disableDefaultUI: true,
-        mapTypeId: 'satellite',//google.maps.MapTypeId.SATELLITE,
+        mapTypeId: 'hybrid',//google.maps.MapTypeId.SATELLITE,
         streetViewControl: false,
         scaleControl: false,
         mapTypeControl: false,
-        panControl: false,
-        zoomControl: false,
+        panControl: true,
+        zoomControl: true,
         rotateControl: false,
-        fullscreenControl: false
+        fullscreenControl: false,
+        labels: true
       }}
     >
 
@@ -76,7 +79,7 @@ const MapWithADrawingManager = compose(
             arr.push(coordObj)
           }
           console.log(arr)
- 
+          props.dispatch(saveCoordinates(arr))
         }}
       />     
     </GoogleMap>
@@ -84,4 +87,11 @@ const MapWithADrawingManager = compose(
   
 );
 
-export default MapWithADrawingManager
+
+
+function mapStateToProps({coords}) {
+  return coords
+}
+
+export default connect(mapStateToProps)(MapWithADrawingManager)
+

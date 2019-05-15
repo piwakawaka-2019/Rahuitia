@@ -11,10 +11,9 @@ const reducer = (state = initialState, action) => {
 
 let areaNames = [];
 const newArr = (iwi) => {
-    console.log(iwi, "this is the current one")
+
     iwi.map(area => {
         for (var i in area) {
-            console.log(i);
             areaNames.push(i);
         }
 

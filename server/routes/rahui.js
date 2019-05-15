@@ -1,57 +1,58 @@
-const express = require('express')
-const db = require('../db/users')
-const router = express.Router()
-
-// get relevant functions.
-
-
+const express = require("express");
+const db = require("../db/rahui");
+const router = express.Router();
 
 router.get('/', (req, res) => {
   db.getRahuiInformation()
-  .then(rahui => { 
-    let arr = []
+    .then(rahui => {
+      let arr = []
 
-    while(rahui.length){
-      let firstEntry = rahui.shift()
+      console.log(rahui.length)
 
-      firstEntry.iwi = JSON.parse(firstEntry.iwi)
-      firstEntry.hapu = JSON.parse(firstEntry.hapu)
-      firstEntry.iwi_name = [firstEntry.iwi_name]
-      firstEntry.hapu_name = [firstEntry.hapu_name]
+      while (rahui.length) {
+        let firstEntry = rahui.shift()
 
-      firstEntry.geo_ref = JSON.parse(firstEntry.geo_ref)
+        // console.log("One entry:",firstEntry)
 
-      let duplicates = rahui.filter(item => {
-        return firstEntry.id === item.id
-      }) 
+        firstEntry.iwi = JSON.parse(firstEntry.iwi)
+        firstEntry.hapu = JSON.parse(firstEntry.hapu)
+        // firstEntry.region = JSON.parse(firstEntry.region)
+        firstEntry.iwi_name = [firstEntry.iwi_name]
+        firstEntry.hapu_name = [firstEntry.hapu_name]
+        // firstEntry.region = [firstEntry.region]
 
-      rahui = rahui.filter(item => {
-        return firstEntry.id !== item.id
-      })
+        firstEntry.geo_ref = JSON.parse(firstEntry.geo_ref)
 
-      if(duplicates.length){
-        let iwiName = duplicates.map(item => item.iwi_name)
-        iwiName.push(firstEntry.iwi_name[0])
-        let hapuName = duplicates.map(item => item.hapu_name)
-        hapuName.push(firstEntry.hapu_name[0])
-        iwiName = [...new Set(iwiName)]
-        hapuName = [...new Set(hapuName)]
+        let duplicates = rahui.filter(item => {
+          return firstEntry.id === item.id
+        })
 
-        firstEntry.iwi_name = iwiName
-        firstEntry.hapu_name = hapuName
+        rahui = rahui.filter(item => {
+          return firstEntry.id !== item.id
+        })
+
+        if (duplicates.length) {
+          let iwiName = duplicates.map(item => item.iwi_name)
+          iwiName.push(firstEntry.iwi_name[0])
+          let hapuName = duplicates.map(item => item.hapu_name)
+          hapuName.push(firstEntry.hapu_name[0])
+          iwiName = [...new Set(iwiName)]
+          hapuName = [...new Set(hapuName)]
+
+          firstEntry.iwi_name = iwiName
+          firstEntry.hapu_name = hapuName
+        }
+
+        arr.push(firstEntry)
       }
-      
-      arr.push(firstEntry)
-    } 
-    res.json(arr)
+      res.json(arr)
     })
   })
 
 
   router.post('/', async (req, res) => {
-    //Save a rāhui //
     try{
-        console.log(req.body)
+        console.log("req.body:", req.body)
         const rahuiData = req.body;
         const userId = rahuiData.userId
         const iwi = rahuiData.iwi
@@ -61,18 +62,21 @@ router.get('/', (req, res) => {
         const geoRef = rahuiData.geoRef
         const datePlaced = rahuiData.datePlaced
         const dateLifted = rahuiData.dateLifted
-        await db.writeRahui(userId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted);
+        const authoriser = rahuiData.authoriser
+        const contact = rahuiData.contact
+        const region = rahuiData.region
+        await db.writeRahui(userId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted, authoriser, contact, region);
     
-        res.status(200)
+        res.json({})
     }
     catch(err){
-        err => res.status(500).send({message: "Server Error"})
+        err => res.status(500).json({message: "Server Error"})
     }
 })
 
 
-router.put('/:id', function(req, res, next){
-    try{
+router.put('/:id', async (req, res) => {
+  try{
       console.log(req.body)
       const rahuiId = req.params.id;
       const rahuiData = req.body;
@@ -83,15 +87,36 @@ router.put('/:id', function(req, res, next){
       const geoRef = rahuiData.geoRef
       const datePlaced = rahuiData.datePlaced
       const dateLifted = rahuiData.dateLifted
-      //await does not work here
-      db.editRahui(rahuiId, iwi, hapu, description, korero, geoRef, datePlaced, dateLifted);
+      const authoriser = rahuiData.authoriser
+      const contact = rahuiData.contact
+      const region = rahuiData.region
+ 
+      await db.editRahui( rahuiId, iwi, hapu, description, korero, geoRef, datePlaced , dateLifted, authoriser, contact, region );
 
-      res.status(200)
+      res.json({})
   }
   catch(err){
-      err => res.status(500).send({message: "Server Error"})
+      err => res.status(500).json({message: "Server Error"})
+  }
+})
+
+
+router.post('/tautoko', async (req, res) => {
+  try{
+      console.log("req.body:", req.body)
+
+      const tautokoData = req.body;
+      const rahuiId = tautokoData.rahui_id;
+      const userId = tautokoData.user_id
+
+      const tautoko = { rahui_id: rahuiId, userId: userId }
+
+      await db.writeTautoko( tautoko ); 
+      res.json({})
+  }
+  catch(err){
+      err => res.status(500).json({message: "Server Error"})
   }
 })
 
 module.exports = router
-

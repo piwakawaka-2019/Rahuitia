@@ -16,37 +16,56 @@ function createUser(
   const db = testDb || connection;
 
   return generatePasswordHash(password).then(hash => {
-    return db("users").insert({
-      first_name: first_name,
-      middle_name: middle_name,
-      last_name: last_name,
-      address: address,
-      email: email,
-      password_hash: hash
-    })
+    return db("users")
+      .insert({
+        first_name: first_name,
+        middle_name: middle_name,
+        last_name: last_name,
+        address: address,
+        email: email,
+        password_hash: hash
+      })
       .then(userIds => {
         const userId = userIds[0];
+        
         return Promise.all(
           iwi.map(iwiName => {
-            return writeIwi(iwiName, userId, db)
+            return writeIwi(iwiName, userId, db);
           })
-        )
-          .then(() => {
-            return Promise.all(
-              hapu.map(hapuName => {
-                return writeHapu(hapuName, userId, db)
-              })
-            )
-          }
-          )
+        ).then(() => {
+          return Promise.all(
+            hapu.map(hapuName => {
+              return writeHapu(hapuName, userId, db);
+            })
+          );
+        });
       });
   });
 }
 
-function writeIwi(iwiName, userId, testDb) {
+
+function userExists(email, testDb) {
   const db = testDb || connection
-  return db('iwi')
-    .insert({ iwi_name: iwiName, user_id: userId })
+
+  return db('users')
+    .where('email', email)
+    .then(users => users.length > 0)
+}
+
+function getUserByEmail(email, testDb){
+  const db = testDb || connection
+  return db('users').where('email', email).first()
+}
+
+// function getUser (id, db = connection) {
+//   return db('users').where('id', id).first()
+// }
+
+
+
+function writeIwi(iwiName, userId, testDb) {
+  const db = testDb || connection;
+  return db("iwi").insert({ iwi_name: iwiName, user_id: userId });
 }
 
 function writeHapu(hapuName, userId, testDb) {
@@ -66,19 +85,25 @@ function writeRahui(
   geo_ref,
   date_placed,
   date_lifted,
+  authoriser,
+  contact,
+  region,
   testDb
 ){
   const db = testDb || connection
   return db('rahui')
   .insert({
     user_id: user_id,
-    iwi: iwi,
-    hapu: hapu, 
+    iwi: JSON.stringify([iwi]),
+    hapu: JSON.stringify([hapu]), 
     description: description,
     korero: korero,
     geo_ref: JSON.stringify(geo_ref),
     date_placed: date_placed,
     date_lifted: date_lifted,
+    contact: contact,
+    authoriser: authoriser,
+    region: JSON.stringify([region])
   })
 
 }
@@ -92,6 +117,9 @@ function editRahui(
   geo_ref,
   date_placed,
   date_lifted,
+  authoriser,
+  contact,
+  region,
   testDb
 ) {
   const db = testDb || connection
@@ -105,6 +133,9 @@ function editRahui(
     geo_ref: geo_ref,
     date_placed: date_placed,
     date_lifted: date_lifted,
+    contact: contact,
+    authoriser: authoriser,
+    region,
   })
 }
 
@@ -113,21 +144,6 @@ function getUsers(testDb) {
   const db = testDb || connection;
 
   return db("users").select();
-}
-
-//**************/get rahui function ()
-function getRahui(testDb) {
-  const db = testDb || connection;
-  return db("rahui").select();
-}
-
-function getRahuiInformation(testDb) {
-  const db = testDb || connection;
-  return db("rahui")
-    .join("users", "rahui.user_id", "=", "users.id")
-    .join("iwi", "rahui.user_id", "=", "iwi.user_id")
-    .join("hapu", "rahui.user_id", "=", "hapu.user_id")
-    .select();
 }
 
 //**************/get user iwi function ()
@@ -150,42 +166,77 @@ function getUserHapu(users_id, testDb) {
     .select();
 }
 
-//**************/get rahui author function ()
-function getRahuiAuthor(rahui_id, testDb) {
-  const db = testDb || connection;
+// //**************/write rahui function () ----------MOVED TO RAHUI JS
+// function writeRahui(
+//   user_id,
+//   iwi,
+//   hapu,
+//   description,
+//   korero,
+//   geo_ref,
+//   date_placed,
+//   date_lifted,
+//   authoriser,
+//   contact,
+//   region,
+//   testDb
+// ){
+//   const db = testDb || connection
+//   return db('rahui')
+//   .insert({
+//     user_id: user_id,
+//     iwi: JSON.stringify([iwi]),
+//     hapu: JSON.stringify([hapu]), 
+//     description: description,
+//     korero: korero,
+//     geo_ref: JSON.stringify(geo_ref),
+//     date_placed: date_placed,
+//     date_lifted: date_lifted,
+//     contact: contact,
+//     authoriser: authoriser,
+//     region: region
+//   })
 
-  return db("users")
-    .join("rahui", "users.id", "=", "rahui.user_id")
-    .where("rahui.id", "=", rahui_id)
-    .select();
-}
+// }
 
-//**************/get rahui tautoko function ()
-function getRahuiTautoko(rahui_id, testDb) {
-  const db = testDb || connection;
+// function editRahui(
+//   id,
+//   iwi,
+//   hapu,
+//   description,
+//   korero,
+//   geo_ref,
+//   date_placed,
+//   date_lifted,
+//   authoriser,
+//   contact,
+//   region,
+//   testDb
+// ) {
+//   const db = testDb || connection
+//   return db('rahui')
+//   .where({ id: id })
+//   .update({
+//     iwi: iwi,
+//     hapu: hapu, 
+//     description:description,
+//     korero: korero,
+//     geo_ref: geo_ref,
+//     date_placed: date_placed,
+//     date_lifted: date_lifted,
+//     contact: contact,
+//     authoriser: authoriser,
+//     region,
+//   })
+// }
 
-  return db("users")
-    .join("tautoko", "users.id", "=", "tautoko.user_id")
-    .join("rahui", "rahui.id", "=", "tautoko.rahui_id")
-    .where("tautoko.rahui_id", "=", rahui_id)
-    .select();
-}
 
-function writeTautoko(obj, testDb) {
-  const db = testDb || connection
-  return db('tautoko')
-    .insert(obj)
-}
 
 module.exports = {
   createUser,
   getUsers,
-  getRahui,
-  editRahui,
-  writeRahui,
+  userExists,
+  getUserByEmail,
   getUserIwi,
-  getUserHapu,
-  getRahuiAuthor,
-  getRahuiTautoko,
-  getRahuiInformation,
+  getUserHapu
 };

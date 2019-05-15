@@ -1,9 +1,28 @@
 import React, { Component } from "react";
 
-class landing extends Component {
+class Landing extends Component {
+  constructor (props) {
+    super(props);
+
+    this.state = {
+        videoURL: 'Farm aerials at sunrise_HD-web'
+    }
+  }
+
   render() {
     return (
-    <div>
+    <div> 
+
+      <div className="fullscreen-video-wrap">
+        <video id="background-video" loop autoPlay muted>
+                <source src={this.state.videoURL} type="video/mp4" />
+                Your browser does not support the video tag.
+        </video>
+        </div>
+
+        
+
+        <div className="overlay">
         <div>
           <h1>Respect the Rahui</h1> 
           <br></br>
@@ -45,9 +64,19 @@ class landing extends Component {
           <p><a>Github</a> </p>
           </footer>
         </div>
+</div>
+       
+        
+
+        
+
       </div>
     );
   }
 }
 
-export default landing;
+
+export default Landing;
+
+
+

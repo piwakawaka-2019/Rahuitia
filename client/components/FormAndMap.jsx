@@ -1,52 +1,45 @@
-class postData extends Component {
+import React from "react";
+import SplitterLayout from 'react-splitter-layout';
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom"
+import ReactMap from "./ReactMap";
+import AddRahuiForm from "./AddRahuiForm";
+import { isAuthenticated } from "../utils/auth"
 
-  constructor() {
-      super();
-      this.state = { user: {} };
-      this.onSubmit = this.handleSubmit.bind(this);
-      this.iwiField = React.createRef();
-      this.hapuField = React.createRef();
-      this.authoriserField = React.createRef(); 
-      this.datePlacedField = React.createRef();
-      this.dateLiftedField = React.createRef();
-      this.descriptionField = React.createRef();
-      this.koreroField = React.createRef();
-      this.contactEmailField = React.createRef();
-  }
 
-    handleSubmit(e) {
-      e.preventDefault();
-      // var self = this;
-      // On submit of the form, send a POST request with the data to the server.
-      fetch('http://localhost:5000', { 
-          method: 'POST',
-          body: {
-            Iwi: this.iwiField.current.value,
-            Hapu: this.hapuField.current.value,
-            Authoriser: this.authoriserField.current.value,  
-            DatePlaced: this.datePlacedField.current.value,
-            DateLifted: this.dateLiftedField.current.value,
-            Description: this.descriptionField.current.value,
-            Koreo: this.koreroField.current.value,
-            ContactEmail: this.contactEmailField.current.value,
-          }
-        })
-        .then(function(response) {
-          return response.json()
-        }).then(function(body) {
-          console.log(body);
-        });
+class Explore extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {  }
     }
-    render() {
-      return (
-        <form onSubmit={this.onSubmit}>
-          <input type="text" placeholder="First Name" ref={this.firstNameField}/>
-          <input type="text" placeholder="Last Name" ref={this.lastNameField}/>
 
-          <input type="submit" />
-        </form>
-      );
+   
+
+    render() { 
+        console.log( isAuthenticated() )
+        return isAuthenticated() ? (  
+            <div >
+
+                <SplitterLayout >
+                <div >
+                 <ReactMap/>
+                </div> 
+                
+                <div className="detailwrapper">
+                <AddRahuiForm/> 
+                </div>
+               
+                </SplitterLayout>
+                
+            </div>
+        ) : <Redirect to='/register'/>
     }
 }
 
-export default postData; 
+const mapStateToProps = state =>{
+    return {
+        allrahui: state.rahui
+    }
+}
+ 
+export default connect(mapStateToProps)(Explore);
