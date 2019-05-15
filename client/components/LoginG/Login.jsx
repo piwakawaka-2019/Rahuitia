@@ -31,6 +31,7 @@ class Login extends React.Component {
   }
 
   render() {
+    const {auth} = this.props
       return (
      <div>   {console.log(this.props, this.state)}
       {this.props.lang == "eng" ? <LoginEng {...this.props} /> : <LoginReo {...this.props} />}

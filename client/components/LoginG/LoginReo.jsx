@@ -17,7 +17,7 @@ class LoginReo extends Component {
 
                   <input name="password" type="password" placeholder="kupuhipa" noValidate onChange={this.handleChange} />
                   <br></br>
-                  <button name="submit">TAKIURU</button>
+                  <button name="submit">Takiuru</button>
               </form>
           </div>
 
