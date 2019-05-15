@@ -4,7 +4,7 @@ class rahuiApiEng extends Component {
   render() {
     return (
       <div>
-        <h1 className="aboutHeading2">Fudziiiiiiiiiiiii</h1>
+        <h1 className="aboutHeading2">API</h1>
         <div className="row">
           <div className="column">
             <br />
