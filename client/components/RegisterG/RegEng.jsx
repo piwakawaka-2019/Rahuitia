@@ -157,10 +157,10 @@ class RegEng extends React.Component {
                     <div>Your whakapapa: <br></br>
                         iwi:{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
                         hapu:{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}<br></br>
-                    
+
                     </div>
                     <br></br>
-                    <br></br>                    
+                    <br></br>
                     <input name="address" type="text" placeholder="address" noValidate onChange={this.handleChange} />
                     <br></br>
                     <input name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />

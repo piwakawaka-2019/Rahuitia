@@ -45,12 +45,12 @@ class EditRahuiForm extends React.Component {
     componentWillReceiveProps(nextProps) {
         // nextProps.dispatch(fetchAllIwi())
 
-        let rahuiId = nextProps.rahuiId;       
-        
-        let rahui = nextProps.allrahui.find( rahui => rahui.id == rahuiId)
-        
+        let rahuiId = nextProps.rahuiId;
+
+        let rahui = nextProps.allrahui.find(rahui => rahui.id == rahuiId)
+
         if (rahui) {
-            let {geo_ref, region, iwi, hapu, description, date_placed, date_lifted, korero, authoriser, contact} = nextProps.allrahui.find( rahui => rahui.id == rahuiId)
+            let { geo_ref, region, iwi, hapu, description, date_placed, date_lifted, korero, authoriser, contact } = nextProps.allrahui.find(rahui => rahui.id == rahuiId)
 
 
             this.setState({
@@ -66,7 +66,7 @@ class EditRahuiForm extends React.Component {
                 dateLifted: date_lifted,
                 contact: contact
             })
-      }
+        }
     }
 
     componentDidMount() {
@@ -102,25 +102,25 @@ class EditRahuiForm extends React.Component {
         window.location = `/#/explore`
     }
 
-    submitAdd(){
+    submitAdd() {
         let region = [...this.state.region, this.state.regionSelected]
-        let iwi= [...this.state.iwi, this.state.iwiSelected]
+        let iwi = [...this.state.iwi, this.state.iwiSelected]
         let hapu = [...this.state.hapu, this.state.hapuSelected]
 
         this.setState({
-            region:[...new Set(region)],
-            iwi:[...new Set(iwi)],
-            hapu:[...new Set(hapu)],
+            region: [...new Set(region)],
+            iwi: [...new Set(iwi)],
+            hapu: [...new Set(hapu)],
             regionSelected: null,
             iwiSelected: null,
             hapuSelected: null
         })
-        
+
     }
 
     resetIwiHapu(e) {
         e.preventDefault()
-        
+
         this.setState({
             region: [],
             iwi: [],
@@ -130,8 +130,8 @@ class EditRahuiForm extends React.Component {
             hapuSelected: null
         })
     }
-    
-    
+
+
     handleChange(e) {
         e.preventDefault()
         const { name, value } = e.target
@@ -191,58 +191,65 @@ class EditRahuiForm extends React.Component {
                     onSubmit={this.handleSubmit}
                     noValidate
                 >
-                    <div>
+                    <div className="editContainer">
                         <h1>Edit Rāhui</h1>
                         <div className="step"> step one</div>
-                        <h2>Zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
+                        <h2>Please zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
                         <hr></hr>
                         <div className="step"> step two</div>
-                        <p>Edit details for this rāhui:</p>
-                        <div>
-                        <p>edit region/iwi/hapū:</p>
-                        <p>region:{this.state.region.map(region => {return <p>{region}, </p>})}</p>
-                        iwi:{this.state.iwi.map(iwi => {return <p>{iwi}, </p>})}<br></br>
-                        <p>
-                        hapu:
-                        </p> 
-                        {this.state.hapu.map(hapu => {return <p>{hapu}</p>})}<br></br> 
+                        <h2>Edit details for this rāhui:</h2>
+
+
+                        <br></br>
+                        <div className="dropdownboxedit">
+                            <p>Select region:</p>
+
+                            <select onChange={this.handleSelect}>
+                                {this.props.area.map(area => {
+                                    return <option htmlFor="region">{area}</option>;
+                                })}
+                            </select>
+
+                            <br></br>
+                            <br></br>
+
+                            {<p>Select iwi:</p>}
+                            <select onChange={this.handleSelect2}>
+                                {this.state.regionSelected ? (this.renderIwi()) : <option disabled></option>}
+                            </select>
+
+                            <br></br>
+                            <br></br>
+
+                            {<p>Select hapū:</p>}
+                            <select onChange={this.handleSelect3}>
+                                {this.state.iwiSelected ? (
+                                    this.renderHapu()
+                                ) : <option disabled></option>}
+                            </select>
                         </div>
                         <br></br>
-                        <select onChange={this.handleSelect}>
-                            {this.props.area.map(area => {
-                                return <option htmlFor="region">{area}</option>;
-                            })}
-                        </select>
+                        {/* <br></br> */}
 
+                        <div>
+                            <div className="selectediwiedit">
+                                {/* <p>region:{this.state.region.map(region => { return <p>{region}, </p> })}</p> */}
+                                iwi:{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
+                                hapū:
+                                {this.state.hapu.map(hapu => { return <p>{hapu}</p> })}<br></br>
+                            </div >
+                        </div>
                         <br></br>
+                        <button className="addAnotherButton" type="button" onClick={this.submitAdd}>Add another associated region/iwi/hāpu</button>
+                        <button className="registerButton1" type="button" onClick={this.resetIwiHapu}>Reset iwi/hapū</button>
                         <br></br>
-
-                        {<p>Select iwi:</p>}
-                        <select onChange={this.handleSelect2}>
-                            {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
-                        </select>
-
-                        <br></br>
-                        <br></br>
-
-                        {<p>Select hapū:</p>}
-                        <select onChange={this.handleSelect3}>
-                            {this.state.iwiSelected ? (
-                                this.renderHapu()
-                            ) : <option>----------</option>}
-                        </select>
-                        <br></br>
-                        <button type="button" onClick={this.submitAdd}>Add Another Associated Region/Iwi/Hāpu</button>
-                        <button type="button" onClick={this.resetIwiHapu}>reset iwi/hapū</button>
-                    <br></br>
                     </div>
 
-                    <br></br>
-                    <br></br>
+
 
                     <p>Please enter the name of the person who has authorised the rahūi:</p>
 
-                    <input name="authoriser" type="text" placeholder={this.state.authoriser} noValidate onChange={this.handleChange} />
+                    <input placeholder="authoriser" name="authoriser" type="text" placeholder={this.state.authoriser} noValidate onChange={this.handleChange} />
 
                     <br></br>
                     {/* <br></br>
@@ -270,16 +277,15 @@ class EditRahuiForm extends React.Component {
 
                     <p>Please add a brief description of the rahūi here:</p>
 
-                    <textarea name="description" type="text" value={this.state.description}  rows="10" cols="60" noValidate onChange={this.handleChange} />
+                    <textarea placeholder="description" name="description" type="text" value={this.state.description} rows="10" cols="60" noValidate onChange={this.handleChange} />
 
                     <br></br>
                     <br></br>
 
                     <p>Please add further details of the rahūi here:</p>
 
-                    <textarea name="korero" type="text" value={this.state.korero}  rows="20" cols="60" noValidate onChange={this.handleChange} />
+                    <textarea placeholder="korero" name="korero" type="text" value={this.state.korero} rows="20" cols="60" noValidate onChange={this.handleChange} />
 
-                    <br></br>
                     <br></br>
 
                     <p>Please enter contact details here:</p>
@@ -288,7 +294,7 @@ class EditRahuiForm extends React.Component {
 
                     <br></br>
                     <br></br>
-                    <button name="submit">Submit edit</button>
+                    <button className="submitedit" name="submit">Submit edit</button>
                 </form>
             </div>
         )
