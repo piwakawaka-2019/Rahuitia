@@ -46,24 +46,24 @@ class Register extends React.Component {
         e.preventDefault()
 
         let { first_name, middle_name, last_name, address, email, password, confirm_password, iwi, hapu } = this.state
-        
-        if (confirm_password != password){ 
+
+        if (confirm_password != password) {
             return this.props.dispatch(loginError("Passwords don't match"))
             console.log("Login Error- Passwords dont match")
-        } else { 
+        } else {
             this.props.dispatch(registerUserRequest({ first_name, middle_name, last_name, address, email, password, iwi, hapu }))
         }
     }
 
-    submitAdd(){
+    submitAdd() {
         let region = [...this.state.region, this.state.regionSelected]
-        let iwi= [...this.state.iwi, this.state.iwiSelected]
+        let iwi = [...this.state.iwi, this.state.iwiSelected]
         let hapu = [...this.state.hapu, this.state.hapuSelected]
 
         this.setState({
-            region:[...new Set(region)],
-            iwi:[...new Set(iwi)],
-            hapu:[...new Set(hapu)],
+            region: [...new Set(region)],
+            iwi: [...new Set(iwi)],
+            hapu: [...new Set(hapu)],
             regionSelected: null,
             iwiSelected: null,
             hapuSelected: null
@@ -118,13 +118,10 @@ class Register extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="registerContainer">
                 <h1>Register</h1>
-                <br></br>
                 <h3>Ekore e tika kia noho he Maori rawakore ki tenei whenua; ehara tenei i te mea e ora ai tatou e tika ai ranei ratou. </h3>
-                <br></br>
                 <h3>Who can add a rāhui?</h3>
-                <br></br>
                 <p>You must register to add a rahui. There is a verficiation process to identify you. This may take up to three days.</p>
                 <br></br>
                 <form className="register-form" onSubmit={this.submit}>
@@ -145,16 +142,12 @@ class Register extends React.Component {
                         })}
                     </select>
 
-                    <br></br>
-                    <br></br>
-
                     {<p>Select iwi:</p>}
                     <select onChange={this.handleSelect2}>
                         {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
                     </select>
 
-                    <br></br>
-                    <br></br>
+
 
                     {<p>Select hapū:</p>}
                     <select onChange={this.handleSelect3}>
@@ -162,16 +155,16 @@ class Register extends React.Component {
                             this.renderHapu()
                         ) : <option>----------</option>}
                     </select>
-                    <br></br>      
+                    <br></br>
                     <button type="button" onClick={this.submitAdd}>Add Another Region/Iwi/Hāpu</button>
                     <br></br>
 
-                    <div>Your whakapapa: <br></br> 
-                    iwi:{this.state.iwi.map(iwi => {return <p>{iwi}, </p>})}<br></br> 
-                    hapu:{this.state.hapu.map(hapu => {return <p>{hapu}, </p>})}<br></br> 
+                    <div>Your whakapapa: <br></br>
+                        iwi:{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
+                        hapu:{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}<br></br>
                     </div>
 
-                    <br></br>                    
+                    <br></br>
                     <input name="address" type="text" placeholder="address" noValidate onChange={this.handleChange} />
                     <br></br>
                     <input name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
