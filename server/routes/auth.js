@@ -8,7 +8,9 @@ router.post('/register', register, token.issue)
 function register (req, res, next) {
   // needs to match json date object keys supplied by client
   const { first_name, middle_name, last_name, iwi, hapu, address, email, password } = req.body
+
   console.log(first_name, middle_name, last_name, iwi, hapu, address, email, password)
+  
   userExists(email)
     .then(exists => {
       if (exists) return res.status(400).send({ message: "User Name Taken" })
