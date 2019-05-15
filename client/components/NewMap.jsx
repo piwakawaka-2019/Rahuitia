@@ -99,7 +99,7 @@ componentWillMount = () => {
 
         options={{
             fillColor: "#DC5757",
-            fillOpacity: 0.9,
+            fillOpacity: 0.7,
             strokeColor: "#DC5757",
             strokeOpacity: 1,
             strokeWeight: 1

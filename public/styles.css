@@ -56,7 +56,7 @@ header .header_logo_title {
   z-index: 55;
   width:50%;
   float: right;
-  overflow: auto;
+ 
   background: white;
   opacity: .9;
   margin: 50px;
