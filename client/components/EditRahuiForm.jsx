@@ -45,8 +45,7 @@ class EditRahuiForm extends React.Component {
     componentWillReceiveProps(nextProps) {
         // nextProps.dispatch(fetchAllIwi())
 
-        let rahuiId = nextProps.rahuiId;
-        console.log(nextProps, rahuiId)
+        let rahuiId = nextProps.rahuiId;       
         
         let rahui = nextProps.allrahui.find( rahui => rahui.id == rahuiId)
         
@@ -71,32 +70,11 @@ class EditRahuiForm extends React.Component {
             console.log(rahui)
       }
     }
-        //Need to hand props to component, reference RahuiDetail.jsx
+
     componentDidMount() {
         this.props.dispatch(fetchAllIwi())
-
-        // console.log(this.props)
-
-        // let rahuiId = this.props.match.params.id;
-
-        // let {geo_ref, region, iwi, hapu, description, date_placed, date_lifted, korero, authoriser, contact} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
-
-        // this.setState({
-        //     id: rahuiId,
-        //     region: region,
-        //     iwi: iwi,
-        //     hapu: hapu,
-        //     authoriser: authoriser,
-        //     description: description,
-        //     korero: korero,
-        //     geoRef: geo_ref,
-        //     datePlaced: date_placed,
-        //     dateLifted: date_lifted,
-        //     contact: contact
-        // })
     }
 
-//Edit existing rāhui
     handleSubmit(e) {
         e.preventDefault()
 
@@ -227,7 +205,6 @@ class EditRahuiForm extends React.Component {
                         hapu:
                         </p> 
                         {this.state.hapu.map(hapu => {return <p>{hapu}</p>})}<br></br> 
-                        <button type="button" onClick={this.resetIwiHapu}>Reset</button>
                         </div>
                         <br></br>
                         <select onChange={this.handleSelect}>
@@ -255,6 +232,7 @@ class EditRahuiForm extends React.Component {
                         </select>
                         <br></br>
                         <button type="button" onClick={this.submitAdd}>Add Another Associated Region/Iwi/Hāpu</button>
+                        <button type="button" onClick={this.resetIwiHapu}>reset iwi/hapū</button>
                     <br></br>
                     </div>
 
@@ -311,7 +289,6 @@ class EditRahuiForm extends React.Component {
 
                     <br></br>
                     <br></br>
-
                     <button name="submit">Submit edit</button>
                 </form>
             </div>
