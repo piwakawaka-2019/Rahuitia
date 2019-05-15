@@ -14,6 +14,7 @@ class RahuiListEng extends React.Component {
       console.log(this.props.allrahui)
       return (
             <div>
+              <br></br>
                 <h1>Select to learn more about a Rāhui </h1>
                  {this.props.allrahui.map(rahui => <RahuiListItem key={rahui.id} rahui={rahui} /> )}   
             </div>
