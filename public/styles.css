@@ -66,6 +66,9 @@ header .header_logo_title {
 
 }
 
+
+/* main navbar styling */
+
 .navbar {
   width: 100%;
   display: grid;
@@ -80,6 +83,7 @@ header .header_logo_title {
   text-align: center;
 }
 
+
 .languageToggleButton {
 width: 10%;
 position: fixed;
@@ -93,17 +97,14 @@ text-decoration: underline;
 }
 
 
+/* about styling */
+
 .aboutNav {
 width: auto;
 background: none;
 border: none;
 color: #434734;
-
-/* text-decoration: underline; */
-/* margin: 0px 20px 20px 0px; */
 }
-
-
 
 .aboutNav:hover {
 text-decoration: underline;
@@ -111,6 +112,25 @@ text-decoration: underline;
 
 .aboutNav:selection {
 text-decoration-line: underline;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+
+}
+
+.navbar :active {
+  text-decoration: underline;
+}
+
+.navButton {
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Rasa', serif;
+  font-size: 1.8em;
 }
 
 .aboutBody {
@@ -141,24 +161,7 @@ text-decoration-line: underline;
 }
 
 
-.navbar a {
-  color: white;
-  text-decoration: none;
 
-}
-
-.navbar :active {
-  text-decoration: underline;
-}
-
-.navButton {
-  text-align: center;
-}
-
-.logo {
-  font-family: 'Rasa', serif;
-  font-size: 1.8em;
-}
 
 
 /* split screen */
