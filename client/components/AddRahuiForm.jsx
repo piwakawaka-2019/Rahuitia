@@ -26,7 +26,8 @@ class AddRahuiForm extends React.Component {
             iwiSelected: null,
             hapuSelected: null,
             regionSelected: null,
-            iwihapuboxIsVisible: false
+            iwihapuboxIsVisible: false,
+            iwihapuButtonText: "Click to select the Region/Iwi/Hāpu"
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -86,7 +87,8 @@ class AddRahuiForm extends React.Component {
             regionSelected: null,
             iwiSelected: null,
             hapuSelected: null,
-            iwihapuboxIsVisible: true
+            iwihapuboxIsVisible: true,
+            iwihapuButtonText: "Add Another Associated Region/Iwi/Hāpu"
         })
         
     }
@@ -116,13 +118,15 @@ class AddRahuiForm extends React.Component {
     }
 
     renderIwi() {
-        const allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
+        let allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
+        
 
         if (allIwiInRegion.length > 0) {
-
-            return allIwiInRegion.map(iwi => {
-                return < option htmlFor="iwi" > {Object.keys(iwi)[0]}</option >
-            })
+            // allIwiInRegion.unshift( "Choose Iwi" );
+            return (
+                allIwiInRegion.map(iwi => {
+                return < option htmlFor="iwi"> {Object.keys(iwi)[0]}</option >
+            }))
         }
     }
 
@@ -151,48 +155,49 @@ class AddRahuiForm extends React.Component {
                     noValidate
                 >
                     <div>
-                        <h1>Add a Rāhui</h1>
-                        <div className="step"> step one</div>
+                    <h1>Add a Rāhui</h1>
+                    <div className="step one"> step one</div>
+                        <img src="mapthumbnail.png" className="thumbnail" />
                         <h2>Zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
                         <hr></hr>
-                        <div className="step"> step two</div>
+                    <div className="step"> step two</div>
                         
                         <h2>Tell us about the rāhui. This information will be shared on the explore page.</h2>
 
-                        
-                        <h3>Please select the iwi and/or hapū that has placed the rāhui:</h3>
-                        
+                       <div className="dropdownbox">
+                            <h3>Iwi and/or Hapū placing the rāhui:</h3>
                             <p>Select region:</p>
                             <select onChange={this.handleSelect}>
+                            {this.state.regionSelected == null && <option>Choose Region</option> }
                                 {this.props.area.map(area => {
                                     return <option htmlFor="region">{area}</option>;
                                 })}
                             </select>
-
-                            <br></br>
                         
                             {<p>Select iwi:</p>}
                             <select onChange={this.handleSelect2}>
+                            {this.state.iwiSelected == null && <option>Choose Iwi</option> }
                                 {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
                             </select>
-
-                            <br></br>
                             
                             {<p>Select hapū:</p>}
                             <select onChange={this.handleSelect3}>
+                            {this.state.hapuSelected == null && <option>Choose hapu</option> }
                                 {this.state.iwiSelected ? (
                                     this.renderHapu()
                                 ) : <option>----------</option>}
-                            </select>
+                            </select> <br />
+                            <button type="button" className="secondarybutton" onClick={this.submitAdd}>{this.state.iwihapuButtonText}</button>
                             <br></br>
-                            <button className="secondarybutton" type="button" onClick={this.submitAdd}>Add Another Associated Region/Iwi/Hāpu</button>
-                    <br></br>
-                        {this.state.iwihapuboxIsVisible ? 
-                        <div className='iwihapubox'>
-                        <h3> Selected iwi/hāpu: </h3> <br></br>
-                        <h3> iwi:{this.state.iwi.map(iwi => {return <p>{iwi}, </p>})} </h3>
-                        <h3> hapu:{this.state.hapu.map(hapu => {return <p>{hapu}, </p>})} </h3>
-                        </div> : null }
+                        </div> 
+                       
+                            {this.state.iwihapuboxIsVisible ? <div className="selectediwi">
+                            <h3> Associated iwi/hāpu:</h3> 
+                            <p>iwi:</p>{this.state.iwi.map(iwi => {return <p>{iwi} </p>})}
+                            <p>hapu:</p>{this.state.hapu.map(hapu => {return <p>{hapu} </p>})}
+                            </div> : null }
+                       
+
                     <br></br>
                     </div>
 
