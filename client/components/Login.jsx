@@ -33,18 +33,16 @@ class Login extends React.Component {
     const { auth } = this.props
     return (
       <div className="login-wrapper">
+        <h1>Log in</h1>
         <form
           onSubmit={this.submit}
-          noValidate
-          className="login-wrapper"
-        >
-          <input name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
+          noValidate>
+          <input className="loginInput" name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
 
           <br></br>
-
-          <input name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
+          <input className="loginInput" name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
           <br></br>
-          <button name="submit">Sign in</button>
+          <button className="loginInput" name="submit">Sign in</button>
         </form>
       </div>
     )
