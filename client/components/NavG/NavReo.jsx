@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { toggleLang } from "../../actions/toggle";
 import { connect } from 'react-redux';
 
-import { removeUser } from '../../utils/auth'
+// import { removeUser } from '../../utils/auth'
 
 class NavReo extends Component {
   constructor(props) {
@@ -33,9 +33,9 @@ handleSubmit(e) {
   <Link to="/about/">Pēwhea</Link>
 </div>
 
-<div className="login navButton">
+{/* <div className="login navButton">
 {isAuthenticated() ? <a href="#" onClick={this.handleSubmit}>takiputa</a> : <Link to="/login/">Takiuru</Link>}
-</div>
+</div> */}
 <div className="explore navButton">
   <Link to="/explore/">Te Tūhara</Link>
 </div>

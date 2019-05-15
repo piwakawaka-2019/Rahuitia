@@ -4,7 +4,7 @@ import { registerUserRequest } from '../../actions/register'
 import { fetchAllIwi } from "../../actions/iwi";
 import RegEng from "./RegEng"
 import RegReo from "./RegReo"
-import { loginError } from '../actions/login';
+// import { loginError } from '../actions/login';
 
 class Register extends React.Component {
     constructor() {
