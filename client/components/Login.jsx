@@ -25,6 +25,8 @@ class Login extends React.Component {
     e.preventDefault()
     let {email, password} = this.state
     this.props.dispatch(loginUser({email, password}))
+    window.location = `/#/explore`
+    
   }
 
   render() {

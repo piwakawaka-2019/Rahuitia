@@ -6,6 +6,8 @@ import rahui from "./rahui"
 import iwi from './iwi'
 import area from './area'
 import coords from './coords'
+import tautoko from './tautoko'
+import toggle from './toggle'
 
 export default combineReducers({
   auth,
@@ -13,5 +15,7 @@ export default combineReducers({
   rahui,
   iwi,
   area,
-  coords
+  coords,
+  tautoko,
+  toggle
 });

@@ -10,11 +10,18 @@ function requestLogin () {
 }
 
 export function receiveLogin (user) {
+  console.log("receive")
   return {
     type: 'LOGIN_SUCCESS',
     isFetching: false,
     isAuthenticated: true,
     user
+  }
+}
+
+export function receiveLogout () {
+  return {
+    type: 'LOGOUT_SUCCESS'
   }
 }
 

@@ -27,5 +27,3 @@ module.exports = {
     parseUsersData,
     parseMeetingsData
 }
-
-

@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { compose, withProps } from 'recompose'
@@ -18,7 +19,7 @@ const MapWithADrawingManager = compose(
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCDY6eWTVLvpOoTI2JrH8Q0ycDSV3F2J5o&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
+    containerElement: <div style={{ height: window.innerHeight }} />,
     mapElement: <div style={{ height: `170%`, width:`100%` }} />,
   }),
   withScriptjs,
@@ -26,7 +27,7 @@ const MapWithADrawingManager = compose(
   )(props =>
     <GoogleMap
       defaultZoom={6}
-      defaultCenter={new google.maps.LatLng(-41.267622, 174.745222)}
+      defaultCenter={new google.maps.LatLng({lat: -47.892014, lng: 170.897149})}
       defaultOptions={{
         disableDefaultUI: true,
         mapTypeId: 'hybrid',//google.maps.MapTypeId.HYBRID,

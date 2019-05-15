@@ -1,4 +1,8 @@
 import React from 'react'
+import decode from 'jwt-decode'
+
+import { getUserTokenInfo } from '../utils/auth'
+
 // import data from '../apis/iwi'
 import { connect } from "react-redux";
 import { fetchAllIwi } from "../actions/iwi";
@@ -9,12 +13,9 @@ class AddRahuiForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            iwiSelected: null,
-            hapuSelected: null,
-            regionSelected: null,
-            region: null,
-            iwi: null,
-            hapu: null,
+            region: [],
+            iwi: [],
+            hapu: [],
             geoRef: null,
             authoriser: null,
             datePlaced: null,
@@ -22,8 +23,11 @@ class AddRahuiForm extends React.Component {
             description: null,
             korero: null,
             contact: null,
-
+            iwiSelected: null,
+            hapuSelected: null,
+            regionSelected: null,
         };
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
         this.handleSelect2 = this.handleSelect2.bind(this);
@@ -32,6 +36,8 @@ class AddRahuiForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.renderHapu = this.renderHapu.bind(this)
         this.renderIwi = this.renderIwi.bind(this)
+        this.submitAdd = this.submitAdd.bind(this);
+
     }
 
     componentDidMount() {
@@ -42,35 +48,52 @@ class AddRahuiForm extends React.Component {
         e.preventDefault()
 
         const rahui = {
-            userId: 5,
-            iwi: this.state.iwiSelected,
-            hapu: this.state.hapuSelected,
+            userId: getUserTokenInfo().user_id,
+            region: this.state.region,
+            iwi: this.state.iwi,
+            hapu: this.state.hapu,
             description: this.state.description,
             geoRef: this.props.coordinates,
             korero: this.state.korero,
             datePlaced: this.state.datePlaced,
             dateLifted: this.state.dateLifted,
+            contact: this.state.contact,
+            authoriser: this.state.authoriser
         }
-        //should be a dispatching an action
+
+        // should be a dispatching an action
         writeRahui(
             rahui
         ).then(
             () => {
                 this.props.dispatch(fetchAllRahui())
-                console.log("fetchAll")
             }
         )
 
         window.location = `/#/explore`
     }
 
+    submitAdd(){
+        let region = [...this.state.region, this.state.regionSelected]
+        let iwi= [...this.state.iwi, this.state.iwiSelected]
+        let hapu = [...this.state.hapu, this.state.hapuSelected]
+
+        this.setState({
+            region:[...new Set(region)],
+            iwi:[...new Set(iwi)],
+            hapu:[...new Set(hapu)],
+            regionSelected: null,
+            iwiSelected: null,
+            hapuSelected: null
+        })
+        
+    }
+
     handleChange(e) {
         e.preventDefault()
         const { name, value } = e.target
-        this.setState({ [name]: value }, () => console.log(this.state));
+        this.setState({ [name]: value });
     }
-
-
 
     handleSelect(event) {
         this.setState({
@@ -96,8 +119,6 @@ class AddRahuiForm extends React.Component {
         if (allIwiInRegion.length > 0) {
 
             return allIwiInRegion.map(iwi => {
-                console.log(Object.keys(iwi)[0])
-
                 return < option htmlFor="iwi" > {Object.keys(iwi)[0]}</option >
             })
         }
@@ -129,12 +150,14 @@ class AddRahuiForm extends React.Component {
                 >
                     <div>
                         <h1>Add a Rāhui</h1>
+                        <div className="step"> step one</div>
+                        <h2>Zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
+                        <div className="step"> step two</div>
+                        
                         <h2>Tell us about the rāhui. This information will be shared on the explore page.</h2>
 
-                        <br></br>
-                        <br></br>
-
-                        <p>Please select the iwi and/or hapū that has placed the rāhui:</p>
+                        
+                        <h3>Please select the iwi and/or hapū that has placed the rāhui:</h3>
                         <p>Select region:</p>
                         <select onChange={this.handleSelect}>
                             {this.props.area.map(area => {
@@ -143,23 +166,28 @@ class AddRahuiForm extends React.Component {
                         </select>
 
                         <br></br>
-                        <br></br>
-
+                      
                         {<p>Select iwi:</p>}
                         <select onChange={this.handleSelect2}>
                             {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
                         </select>
 
                         <br></br>
-                        <br></br>
-
+                        
                         {<p>Select hapū:</p>}
                         <select onChange={this.handleSelect3}>
                             {this.state.iwiSelected ? (
                                 this.renderHapu()
                             ) : <option>----------</option>}
                         </select>
-
+                        <br></br>
+                        <button type="button" onClick={this.submitAdd}>Add Another Associated Region/Iwi/Hāpu</button>
+                    <br></br>
+                    <div>Associated iwi/hāpu: <br></br> 
+                    iwi:{this.state.iwi.map(iwi => {return <p>{iwi}, </p>})}<br></br> 
+                    hapu:{this.state.hapu.map(hapu => {return <p>{hapu}, </p>})}<br></br> 
+                    </div>
+                    <br></br>
                     </div>
 
                     <br></br>
@@ -170,13 +198,13 @@ class AddRahuiForm extends React.Component {
                     <input name="authoriser" type="text" placeholder="Authorised by" noValidate onChange={this.handleChange} />
 
                     <br></br>
-                    <br></br>
+                    {/* <br></br>
 
                     <p>Please enter your name:</p>
 
                     <input name="submittersName" type="text" placeholder="Submitted by" />
 
-                    <br></br>
+                    <br></br> */}
                     <br></br>
 
 
@@ -195,14 +223,14 @@ class AddRahuiForm extends React.Component {
 
                     <p>Please add a brief description of the rahūi here:</p>
 
-                    <textarea name="description" type="text" placeholder="description" rows="10" cols="60" noValidate onChange={this.handleChange} />
+                    <textarea name="description" type="text" placeholder="description" rows="5" cols="60" noValidate onChange={this.handleChange} />
 
                     <br></br>
                     <br></br>
 
                     <p>Please add further details of the rahūi here:</p>
 
-                    <textarea name="korero" type="text" placeholder="korero" rows="20" cols="60" noValidate onChange={this.handleChange} />
+                    <textarea name="korero" type="text" placeholder="korero" rows="10" cols="60" noValidate onChange={this.handleChange} />
 
                     <br></br>
                     <br></br>
@@ -212,11 +240,12 @@ class AddRahuiForm extends React.Component {
                     <input name="contact" type="text" placeholder="Email Address" noValidate onChange={this.handleChange} />
 
                     <br></br>
-                    <br></br>
+                  
 
                     <button name="submit">Add Rāhui</button>
 
                 </form>
+                <div className="spaceme" />
             </div>
         )
     }
