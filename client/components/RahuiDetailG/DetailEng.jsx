@@ -27,19 +27,26 @@ class DetailEng extends React.Component {
     </div> 
 
     <div className="detailwrapper">
-        <a className="secondarybutton" onClick={this.handleclick.bind(this)}> Back to List </a>
+        <button style={{width:"15%" , marginBottom:"10px", padding:"0px"}} className="secondarybutton" onClick={this.handleclick.bind(this)}> Back to List </button>
        
-        
         <h1> {description}</h1> 
         <Tautoko />
-        <br/><p>iwi: {iwi}   |   hapu: {hapu}   |   region: {region}</p> <br/>
-        <br/><b>Authorised by:</b> <p> {authoriser}</p>
-        <br/><b>Submitted by:</b> <p> {first_name} {last_name} ({iwi_name} | {hapu_name})</p>
-        <br/><b>Date placed:</b> <p> {date_placed}</p>
-        <br/><b>Date Lifted:</b> <p> {date_lifted}</p>
-        <br/><b>Korero:</b> <p> {korero}</p>
-        <br/><b>Contact:</b> <p> {contact}</p>
+        <br/><b>Issued by </b><p> {hapu}   •  {iwi} •  {region}</p> 
+        <br/><b>Authorised by</b> <p> {authoriser}</p>
+        <br />
+        <div className="twocol">
+          <div ><b>Date placed</b> <p> {date_placed}</p></div>
+          <div ><b>Date Lifted</b> <p> {date_lifted}</p> </div>
+        </div>
+        <br/><b>Korero</b> <p> {korero}</p>
+        <br /><br></br>
+        <div className="twocol">
+          <div><b>Submitted by</b> <p> {first_name} {last_name}</p></div>
+          <div><b>Contact</b> <p> {contact}</p></div>
+        </div>
+        <br></br>
         <hr></hr> 
+        <div className="spaceme" />
         
    </div> 
 

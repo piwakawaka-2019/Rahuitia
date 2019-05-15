@@ -29,6 +29,7 @@ class Tautoko extends Component {
                 
                 </div>
                 <hr></hr>
+                <br/>
 
                 
             </React.Fragment>

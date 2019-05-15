@@ -41,6 +41,12 @@ header .header_logo_title {
   position: relative;
 }
 
+.twocol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: none;
+}
+
 .navbar {
   width: 100%;
   display: grid;
@@ -82,6 +88,7 @@ header .header_logo_title {
 hr{
   padding: 0;
   margin: 0;
+  opacity: .45;
 }
 
 /* landing page styling */
@@ -137,16 +144,19 @@ hr{
 
 
 .languageToggleButton {
-width: 8%;
+width: 7%;
 position: fixed;
 bottom: 3em;
-right: 0;
+right: -60px;
 transform: rotate(90deg);
-background: none;
+background: #DC5757;
 border: none;
-color: #DC5757;
-text-decoration: underline;
+color: white;
+font-size: 22px;
 z-index: 55;
+margin: 0px 20px 0px 0px;
+padding: 2px;
+outline: none;
 }
 
 
@@ -288,12 +298,25 @@ h3{
 
 
 p{
-  font-family: Rasa;
+  font-family: "Rasa";
   font-style: normal;
   font-weight: normal;
-  font-size: 19px;
-  line-height: 22px;
+  font-size: 22px;
+  line-height: 27px;
   color: #434734;
+  padding: 0px;
+  margin-top: 5px
+}
+
+b {
+  font-family: "Rasa";
+font-style: bold;
+font-weight: bold;
+font-size: 22px;
+line-height: 27px;
+padding: 0px;
+color:  #434734;
+text-decoration: underline;
 }
 
 a {
