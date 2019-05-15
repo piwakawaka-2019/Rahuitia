@@ -478,7 +478,7 @@ map {
 
 .login-wrapper {
   margin: auto;
-  width: 30%;
+  width: 50%;
 }
 
 .loginInput {
@@ -488,6 +488,7 @@ map {
 .loginButton {
   width: 150px;
   margin: 10px 10px 10px 10px;
+  font-size: 20px;
 }
 
 .loginHeader {
@@ -501,4 +502,43 @@ map {
 .registerContainer {
   width: 75%;
   margin: auto;
+}
+
+.addAnotherRegionButton {
+font-size: 20px;
+}
+
+
+
+.registerButton {
+  width: 200px;
+  margin: 0px 0px 200px 0px;
+  font-size: 20px;
+}
+
+.inputRegister {
+  width: 40%
+}
+
+.dropdownboxRegion{
+  display: inline-block;
+  width: 40%;
+  /* margin-right: 20px; */
+  padding: 20px;
+  border-radius: 4px;
+  background: #eceee3;
+
+}
+
+.selectediwiRegister{
+  display: inline-block;
+  width: 40%;
+  /* margin-right: 20px; */
+  margin-left: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  background: #eceee3;
+  vertical-align: top;
+  font-size: 19px;
+  font-weight: bold;
 }

@@ -39,7 +39,7 @@ class AddRahReo extends Component {
                     {<p>Tīpako Iwi:</p>}
                     <select onChange={this.handleSelect2}>
                     {this.state.iwiSelected == null && <option>Whiriwhiri Iwi</option> }
-                        {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
+                        {this.state.regionSelected ? (this.renderIwi()) : <option disabled></option>}
                     </select>
                     
                     {<p>Tīpako Hapū:</p>}
@@ -47,7 +47,7 @@ class AddRahReo extends Component {
                     {this.state.hapuSelected == null && <option>Whiriwhiri Hapu</option> }
                         {this.state.iwiSelected ? (
                             this.renderHapu()
-                        ) : <option>----------</option>}
+                        ) : <option disabled></option>}
                     </select> <br />
                     <button type="button" className="secondarybutton" onClick={this.submitAdd}>{this.state.iwihapuButtonText}</button>
                     <br></br>
