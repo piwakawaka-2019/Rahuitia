@@ -1,4 +1,3 @@
-
 import React from 'react'
 import decode from 'jwt-decode'
 
@@ -10,7 +9,7 @@ import { fetchAllIwi } from "../../actions/iwi";
 import { writeRahui } from "../../apis/rahui"
 import { fetchAllRahui } from '../../actions/rahui'
 import AddRahEng from './AddRahEng'
-import AddRahReo from './AddRahReo'
+
 import { toggleLang } from "../../actions/toggle";
 
 class AddRahReo extends React.Component {
@@ -238,7 +237,6 @@ const mapStateToProps = state => {
         area: state.area,
         coordinates: state.coords,
         lang: state.toggle
-
     }
 }
 export default connect(mapStateToProps)(AddRahReo);

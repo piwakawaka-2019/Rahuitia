@@ -8,11 +8,10 @@ import { connect } from "react-redux";
 import { fetchAllIwi } from "../../actions/iwi";
 import { writeRahui } from "../../apis/rahui"
 import { fetchAllRahui } from '../../actions/rahui'
-import AddRahEng from './AddRahEng'
-import AddRahReo from './AddRahReo'
+
 import { toggleLang } from "../../actions/toggle";
 
-class AddRahEng extends React.Component {
+class AddRahuiForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -41,8 +40,8 @@ class AddRahEng extends React.Component {
         this.renderHapu = this.renderHapu.bind(this)
         this.renderIwi = this.renderIwi.bind(this)
         this.submitAdd = this.submitAdd.bind(this);
-    }
 
+    }
 
     componentDidMount() {
         this.props.dispatch(fetchAllIwi())
@@ -236,7 +235,6 @@ const mapStateToProps = state => {
         area: state.area,
         coordinates: state.coords,
         lang: state.toggle
-
     }
 }
-export default connect(mapStateToProps)(AddRahEng);
+export default connect(mapStateToProps)(AddRahuiForm);
