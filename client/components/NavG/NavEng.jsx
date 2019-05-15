@@ -23,6 +23,7 @@ handleSubmit(e) {
 }
 
   render() {
+    console.log("nanz", this.props.isAuthenticated)
     return (
       
       <div className="navbar">
