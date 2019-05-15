@@ -125,56 +125,72 @@ class Register extends React.Component {
                 <p>You must register to add a rahui. There is a verficiation process to identify you. This may take up to three days.</p>
                 <br></br>
                 <form className="register-form" onSubmit={this.submit}>
-                    <input name="first_name" type="text" placeholder="first name" noValidate onChange={this.handleChange} />
+                    <input className="" name="first_name" type="text" placeholder="first name" noValidate onChange={this.handleChange} />
                     <br></br>
+                    <br></br>
+
                     <input name="middle_name" type="text" placeholder="middle name/s" noValidate onChange={this.handleChange} />
                     <br></br>
+                    <br></br>
+
                     <input name="last_name" type="text" placeholder="last name" noValidate onChange={this.handleChange} />
                     <br></br>
                     {/* Add iwi */}
 
-
                     <br></br>
-                    <p>Select region:</p>
-                    <select onChange={this.handleSelect}>
-                        {this.props.area.map(area => {
-                            return <option htmlFor="region">{area}</option>;
-                        })}
-                    </select>
+                    <div className="dropdownbox">
 
-                    {<p>Select iwi:</p>}
-                    <select onChange={this.handleSelect2}>
-                        {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
-                    </select>
+                        <p>Select region:</p>
+                        <select onChange={this.handleSelect}>
+                            {this.props.area.map(area => {
+                                return <option htmlFor="region">{area}</option>;
+                            })}
+                        </select>
+
+                        {<p>Select iwi:</p>}
+                        <select onChange={this.handleSelect2}>
+                            {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
+                        </select>
 
 
 
-                    {<p>Select hapū:</p>}
-                    <select onChange={this.handleSelect3}>
-                        {this.state.iwiSelected ? (
-                            this.renderHapu()
-                        ) : <option>----------</option>}
-                    </select>
-                    <br></br>
-                    <button type="button" onClick={this.submitAdd}>Add Another Region/Iwi/Hāpu</button>
-                    <br></br>
-
-                    <div>Your whakapapa: <br></br>
+                        {<p>Select hapū:</p>}
+                        <select onChange={this.handleSelect3}>
+                            {this.state.iwiSelected ? (
+                                this.renderHapu()
+                            ) : <option>----------</option>}
+                        </select>
+                        <br></br>
+                        <button type="button" onClick={this.submitAdd}>Add Another Region/Iwi/Hāpu</button>
+                        <br></br>
+                    </div>
+                    <div className="selectediwi">Your whakapapa: <br></br>
                         iwi:{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
                         hapu:{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}<br></br>
                     </div>
-
+                    <br></br>
                     <br></br>
                     <input name="address" type="text" placeholder="address" noValidate onChange={this.handleChange} />
                     <br></br>
+                    <br></br>
+
+
                     <input name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
                     <br></br>
+                    <br></br>
                     <input name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
+                    <br></br>
                     <br></br>
                     <input name="confirm_password" type="password" placeholder="confirm password" noValidate onChange={this.handleChange} />
                     <p>{this.props.auth.errorMessage}</p>
                     <br></br>
                     <button name="submit">SUBMIT</button>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+
+
                 </form>
             </div>)
     }
