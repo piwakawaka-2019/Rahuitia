@@ -5,31 +5,13 @@ class ProjEng extends Component {
     return (
       <div>
         <h1 className="aboutHeading2">Project</h1>
-        <h1>Project</h1>
         <div className="row">
           <div className="column">
-
             <p className="aboutBody">
-              Until recently, the prevailing view assumed lorem ipsum was born
-              as a nonsense text. “It's not Latin, though it looks like it, and
-              it actually says nothing,” Before & After magazine answered a
-              curious reader, “Its ‘words’ loosely approximate the frequency
-              with which letters occur in English, which is why at a glance it
-              looks pretty real.” As Cicero would put it, “Um, not so fast.” The
-              placeholder text, beginning with the line “Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit”, looks like Latin because in
-              its youth, centuries ago, it was Latin. Richard McClintock, a
-              Latin scholar from Hampden-Sydney College, is credited with
-              discovering the source behind the ubiquitous filler text. In
-              seeing a sample of lorem ipsum, his interest was piqued by
-              consectetur—a genuine, albeit rare, Latin word. Consulting a Latin
-              dictionary led McClintock to a passage from De Finibus Bonorum et
-              Malorum (“On the Extremes of Good and Evil”), a first-century B.C.
-              text from the Roman philosopher Cicero.</p>
-            <br/>
-            <p>
-            Rāhuitia: a passive form of Rāhui which effectively implies an imperative that we must Rāhui, to respect Mana Whenua, Mana Moana, Mana Tangata
-            </p>
+            Rāhuitia comes from the passive form of the te reo word Rāhui, which stresses that we must Rāhui in order to respect mana whenua, mana moana, and mana tangata. The intention of this website and app is to provide a platform for all iwi and hapū to register and display coordinates and information relating to rāhui and other kaupapa relating to the landscape. The app has the ambition to distribute knowledge, create consciousness and promote the aforementioned respect amongst all people of Aotearoa/New Zealand. 
+            <br></br>
+            The app firstly allows users to register and create a profile that contains information relating to their whakapapa/genealogy. Once a user is authenticated they can then add a rāhui, wether it be current or historical to the map of Aotearoa/New Zealand. This can be on behalf of their iwi, hapū, themselves or someone else. By drawing and defining the territory that the rāhui applies to, the user can communicate what areas to be mindful and respectful toward. </p>
+            <br></br>
            </div>
         </div>
       </div>
