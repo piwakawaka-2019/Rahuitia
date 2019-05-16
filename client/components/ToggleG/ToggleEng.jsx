@@ -23,7 +23,7 @@ handleSubmit(e) {
     return (
       <div className="navbar">
         <div className="logo">
-          <Link to="/">Rāhui</Link>
+          <Link to="/">Rāhuitia</Link>
         </div>
         <div className="explore navButton">
           <Link to="/explore/">Explore</Link>

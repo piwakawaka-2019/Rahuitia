@@ -203,6 +203,7 @@ text-decoration-line: underline;
 .logo {
   font-family: 'Rasa', serif;
   font-size: 1.8em;
+  text-align: center;
 }
 
 .aboutBody {
