@@ -25,7 +25,7 @@ class DetailReo extends React.Component {
 
 
   userId = () => {
-    return getUserTokenInfo().user_id != undefined ? getUserTokenInfo().user_id : 0
+    return getUserTokenInfo() != null ? getUserTokenInfo().user_id : 0
   }
 
   render() {
@@ -38,10 +38,6 @@ class DetailReo extends React.Component {
           <div >
             <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
           </div>
-
-          <div className="detailwrapper">
-            <button style={{ width: "15%", marginBottom: "10px", padding: "0px" }} className="secondarybutton" onClick={this.handleclick.bind(this)}> Back to List </button>
-
             <div className="detailwrapper">
               <button style={{ width: "15%", marginBottom: "10px", padding: "0px" }} className="secondarybutton" onClick={this.handleclick.bind(this)}> Back to List </button>
               {/* <h1>{console.log("usertokeninfo:", getUserTokenInfo())}</h1> */}
@@ -64,9 +60,6 @@ class DetailReo extends React.Component {
               <hr></hr>
               <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : ""}</h3>
               <div className="spaceme" />
-
-            </div>
-
           </div>
 
         </SplitterLayout>
