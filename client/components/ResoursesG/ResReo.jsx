@@ -8,7 +8,6 @@ class ResReo extends Component {
       <div>
         <h1 className="aboutHeading2">Rauemi Ipurangi</h1>
       <div>
-        <h1>Rauemi Ipurangi</h1>
         <div className="row">
           <div className="column">
             <p className="aboutBody">

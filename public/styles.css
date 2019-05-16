@@ -176,6 +176,7 @@ width: auto;
 background: none;
 border: none;
 color: #434734;
+margin-top: 0px
 }
 
 .aboutNav:hover {
@@ -207,9 +208,9 @@ text-decoration-line: underline;
 }
 
 .aboutBody {
-  margin: 40px 300px 0px 80px;
-  font-size: 36px;
-  line-height: 50px;
+  margin: 10px 600px 0px 80px;
+  font-size: 22px;
+  line-height: 34px;
 }
 
 .landingtext {
@@ -229,15 +230,15 @@ text-decoration-line: underline;
 
 .aboutHeading {
   /* margin: 40px 20px 20px 70px; */
-  padding: 10px 10px 10px 10px;
-  font-size: 64px;
+  padding: 10px 10px 0px 10px;
+  font-size: 48px;
   text-decoration: underline;
 }
 
 .aboutHeading2 {
-  margin: 100px 20px 20px 70px;
+  margin: 50px 20px 0px 70px;
   padding: 10px 10px 10px 10px;
-  font-size: 96px;
+  font-size: 64px;
 }
 
 
