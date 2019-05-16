@@ -58,23 +58,7 @@ exports.seed = function (knex, Promise) {
           authoriser: 'Aperahama (Abe) Edwards',
           contact: 'Kensington blvd',
           region: JSON.stringify(["Te Tai Tokerau"])
-        },
-        {
-          id: 34,
-          user_id: 14,
-          iwi: JSON.stringify(["Te Kawerau a Maki"]),
-          hapu: JSON.stringify([""]),
-          description:
-            "Rāhui on Waitakere Ranges to protect kauri",
-          korero:
-            "A rāhui has been placed over the Waitakere Ranges by the mana whenua in a bid to stop the spread of kauri dieback disease. In August an Auckland Council report said the rate of kauri dieback in the ranges had more than doubled from 8 percent five years ago to 19 percent. Prominent scientist Peter de Lange warned the kauri are headed for extinction and the biggest problem was the spread of the dieback disease by people.",
-          geo_ref: JSON.stringify([{}]),
-          date_placed: '02-12-2019',
-          date_lifted: 'This Rāhui is still active',
-          authoriser: 'Edward Ashby',
-          contact: 'Sorghum place',
-          region: JSON.stringify(["Tāmaki"])
-        },
+        }
       ]);
     });
 };

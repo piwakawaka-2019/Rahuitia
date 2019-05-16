@@ -11,16 +11,16 @@ exports.seed = function(knex, Promise) {
           first_name: "Robert",
           middle_name: "",
           last_name: "Willoughby",
-          address: "",
-          email: ""
+          address: "whanganui street",
+          email: "robert@gmail.com"
         },
         {
           id: 12,
           first_name: "Rangi",
           middle_name: "",
           last_name: "Leaf",
-          address: "",
-          email: ""
+          address: "essex street",
+          email: "rangi@gmail.com"
         },
         {
           id: 13,
@@ -28,7 +28,7 @@ exports.seed = function(knex, Promise) {
           middle_name: "",
           last_name: "Edwards",
           address: "Kensington blvd",
-          email: ""
+          email: "aperahama@gmail.com"
         },
         {
           id: 14,
@@ -36,7 +36,7 @@ exports.seed = function(knex, Promise) {
           middle_name: "",
           last_name: "Ashby",
           address: "Sorghum place",
-          email: ""
+          email: "edward@gmail.com"
         }
       ]);
     });
