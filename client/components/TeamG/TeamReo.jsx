@@ -5,7 +5,6 @@ class teamReo extends Component {
     return (
       <div>
         <h1 className="aboutHeading2">Tima</h1>
-        <h1>Te Kapa</h1>
         <div className="row">
           <div className="column">
             <p className="aboutBody">

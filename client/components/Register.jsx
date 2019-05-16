@@ -143,7 +143,7 @@ class Register extends React.Component {
 
                         {<p>Select iwi:</p>}
                         <select onChange={this.handleSelect2}>
-                            {this.state.regionSelected ? (this.renderIwi()) : <option disabled></option>}
+                            {this.state.regionSelected ? (this.renderIwi()) : <option >-</option>}
                         </select>
 
 
@@ -152,7 +152,7 @@ class Register extends React.Component {
                         <select onChange={this.handleSelect3}>
                             {this.state.iwiSelected ? (
                                 this.renderHapu()
-                            ) : <option disabled></option>}
+                            ) : <option >-</option>}
                         </select>
                         <br></br>
                         <button className="addAnotherRegionButton" type="button" onClick={this.submitAdd}>Add Another Region/Iwi/Hāpu</button>
