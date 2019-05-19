@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import SplitterLayout from 'react-splitter-layout';
+
 
 class Landing extends Component {
   constructor (props) {
@@ -12,17 +14,17 @@ class Landing extends Component {
   render() {
     return (
     <div> 
-
+         <SplitterLayout primaryIndex={0}>
       <div className="fullscreen-video-wrap">
         <video id="background-video" loop autoPlay muted>
                 <source src={this.state.videoURL} type="video/mp4" />
                 Your browser does not support the video tag.
         </video>
-        </div>
+      </div>
 
         
 
-        <div className="overlay">
+        <div className="detailwrapper">
         <div>
           <h1>Respect the Rahui</h1> 
           <br></br>
@@ -63,14 +65,17 @@ class Landing extends Component {
           <p>Contact:<a href="mailto:someone@example.com">someone@example.com</a></p>
           <p><a>Github</a> </p>
           </footer>
+
         </div>
+        </div>
+        </SplitterLayout>
 </div>
        
         
 
         
 
-      </div>
+      
     );
   }
 }

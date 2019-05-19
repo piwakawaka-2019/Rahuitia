@@ -8,7 +8,7 @@ export function registerUserRequest (creds) {
       .then(token => {
         const userInfo = saveUserToken(token)
         dispatch(receiveLogin(userInfo))
-        document.location = '/#/'
+        document.location = '/#/addrahui'
       })
       .catch(err => dispatch(loginError(err.response.body.message)))
   }

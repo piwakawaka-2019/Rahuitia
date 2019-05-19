@@ -14,7 +14,7 @@ class Tautoko extends Component {
         const { count } = this.props
         return (
             <React.Fragment>
-                <hr></hr>
+                {/* <hr></hr> */}
                 <div className="tautoko">
 
                 <div><Button action={this.handleBtnActionIncrement.bind(this)} buttonTitle="Tautoko" /></div>
@@ -29,6 +29,7 @@ class Tautoko extends Component {
                 
                 </div>
                 <hr></hr>
+                <br/>
 
                 
             </React.Fragment>

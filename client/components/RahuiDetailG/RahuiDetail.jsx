@@ -13,7 +13,7 @@ class RahuiDetail extends Component {
 
     handleclick=()=>{
         window.location = `/#/explore`; 
-        }
+    }
     
     render() { 
         let rahuiId = this.props.match.params.id;

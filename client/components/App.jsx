@@ -13,6 +13,7 @@ import AddRahuiMap from "./NewMap";
 import MapWithADrawingManager from './ReactMap'
 import AddRahuiForm from "./AddRahuiFormG/AddRahuiForm";
 import EditRahuiForm from "./EditRahuiForm";
+import Nav from "./NavG/Nav";
 
 import RahuiDetail from "./RahuiDetailG/RahuiDetail";
 import About from "./AboutG/About";

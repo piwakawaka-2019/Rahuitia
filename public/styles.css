@@ -14,6 +14,14 @@ body {
   overflow: auto;
 }
 
+.pMain {
+  margin-top: 20px;
+  font-size: 26px;
+  line-height: 34px;
+}
+
+
+
 /* nav styling */
 header {
   padding:10px 0px;
@@ -35,10 +43,17 @@ header .header_logo_title {
 .tautoko {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 2fr 5fr 1fr ;
+  grid-template-columns: 1fr 4fr 4fr 1fr ;
   grid-template-rows: none;
 
   position: relative;
+}
+
+.twocol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: none;
+  padding: 0px, 10px, 0px , 0px
 }
 
 .navbar {
@@ -53,24 +68,25 @@ header .header_logo_title {
 }
 
 .respect{
-  padding: 15px;
-  color: rgb(169, 169, 169);
+  padding: 30px 15px 25px 20px;
+  color: rgb(133, 133, 133);
   vertical-align: center
 }
 
 .count{
   text-align: right;
-  font-size: 44px;
+  font-size: 52px;
   color: #DC5757;
-  padding: 15px;
+  padding: 20px 5px 20px 0px;
   vertical-align: center
 }
 
+
 .tangata{
+  padding: 30px 15px 25px 15px;
   font-size: 17px;
   color: #DC5757;
   vertical-align: center;
-  padding: 15px;
 
 }
 
@@ -78,6 +94,11 @@ header .header_logo_title {
   text-align: center;
 }
 
+hr{
+  padding: 0;
+  margin: 0;
+  opacity: .45;
+}
 
 /* landing page styling */
 .overlay {
@@ -132,15 +153,19 @@ header .header_logo_title {
 
 
 .languageToggleButton {
-width: 10%;
+width: 7%;
 position: fixed;
 bottom: 3em;
-right: 0;
+right: -60px;
 transform: rotate(90deg);
-background: none;
+background: #DC5757;
 border: none;
-color: #DC5757;
-text-decoration: underline;
+color: white;
+font-size: 22px;
+z-index: 55;
+margin: 0px 20px 0px 0px;
+padding: 2px;
+outline: none;
 }
 
 
@@ -151,6 +176,7 @@ width: auto;
 background: none;
 border: none;
 color: #434734;
+margin-top: 0px
 }
 
 .aboutNav:hover {
@@ -178,16 +204,24 @@ text-decoration-line: underline;
 .logo {
   font-family: 'Rasa', serif;
   font-size: 1.8em;
+  text-align: center;
 }
 
 .aboutBody {
-  margin: 40px 300px 0px 80px;
-  font-size: 36px;
-  line-height: 50px;
+  margin: 10px 600px 0px 80px;
+  font-size: 22px;
+  line-height: 34px;
+}
+
+.landingtext {
+  margin: 30px 30px 30px 30px;
+  font-size: 28px;
+  line-height: 38px;
+  color: #434734
 }
 
 .aboutContainer {
-  margin: 40px 40px 40px 70px;
+  margin: 60px 40px 60px 70px;
 }
 
 .aboutMargin {
@@ -196,15 +230,15 @@ text-decoration-line: underline;
 
 .aboutHeading {
   /* margin: 40px 20px 20px 70px; */
-  padding: 10px 10px 10px 10px;
-  font-size: 64px;
+  padding: 10px 10px 0px 10px;
+  font-size: 48px;
   text-decoration: underline;
 }
 
 .aboutHeading2 {
-  margin: 100px 20px 20px 70px;
+  margin: 50px 20px 0px 70px;
   padding: 10px 10px 10px 10px;
-  font-size: 96px;
+  font-size: 64px;
 }
 
 
@@ -218,30 +252,47 @@ text-decoration-line: underline;
 }
 
 .detailwrapper {
-  padding: 10px 70px 0px 70px;
+  padding: 10px 90px 0px 90px;
 }
 
 /* rahui list view */
 
 .rahuilist {
   cursor: pointer;
-  padding: 0px 10px 0px 10px
+  padding: 30px 0px 30px 0px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 33px;
+  line-height: 40px;
+  color: #434734;
 }
 
 .rahuilist:hover{
-  background-color: rgb(216, 210, 255);
+  color: #DC5757;
   border-radius: 5px
 }
 
 /* font styles */
 h1 {
   padding-bottom: 20px;
+  padding-top: 10px;  
+  font-style: normal;
+  font-weight: bold;
+  font-size: 52px;
+  line-height: 58px;
+  color: #434734;
+  margin-top: 20px
+}
+
+.title {
+  padding-bottom: 20px;
   padding-top: 30px;  
   font-style: normal;
   font-weight: bold;
-  font-size: 48px;
-  line-height: 58px;
+  font-size: 40px;
+  line-height: 55px;
   color: #434734;
+  z-index: 55;
 }
 
 h2{
@@ -264,18 +315,35 @@ h3{
 
 
 p{
-  font-family: Rasa;
+  font-family: "Rasa";
   font-style: normal;
   font-weight: normal;
-  font-size: 19px;
-  line-height: 22px;
+  font-size: 22px;
+  line-height: 27px;
   color: #434734;
+  padding: 0px;
+  margin-top: 5px;
+  margin-bottom: 10px
+}
+
+b {
+  font-family: "Rasa";
+font-style: bold;
+font-weight: bold;
+font-size: 22px;
+line-height: 27px;
+padding: 0px;
+color:  #434734;
+text-decoration: underline;
 }
 
 a {
   color: #DC5757
 }
 
+.date{
+  padding-right: 20px
+}
 /* form styles  */
 
 input {
@@ -285,7 +353,8 @@ input {
   border-radius: 4px;
   background-color: #eceee3;
   border: none;
-  font-size: 17px
+  font-size: 17px;
+  margin-right: 10px
 }
 
 input:focus {
@@ -339,6 +408,14 @@ button {
 
 button :active {
   background: #9fa09a;
+
+}
+
+
+
+.buttonExplore {
+color: #434734;
+background: none;
 
 }
 
@@ -417,6 +494,16 @@ map {
 
 }
 
+.dropdownboxedit {
+  display: inline-block;
+  width: 40%;
+  /* margin-right: 20px; */
+  padding: 20px;
+  border-radius: 4px;
+  background: #eceee3;
+
+}
+
 .selectediwi {
   display: inline-block;
   width: 40%;
@@ -424,14 +511,28 @@ map {
   padding: 20px;
   border-radius: 4px;
   background: #eceee3;
-  vertical-align: top
-  
+  vertical-align: top;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.selectediwiedit {
+  display: inline-block;
+  width: 40%;
+  margin-top:20px;
+  /* margin-right: 20px; */
+  padding: 20px;
+  border-radius: 4px;
+  background: #eceee3;
+  vertical-align: top;
+  font-size: 19px;
+  font-weight: bold;
 }
 
 
 .login-wrapper {
   margin: auto;
-  width: 30%;
+  width: 50%;
 }
 
 .loginInput {
@@ -441,6 +542,7 @@ map {
 .loginButton {
   width: 150px;
   margin: 10px 10px 10px 10px;
+  font-size: 20px;
 }
 
 .loginHeader {
@@ -455,3 +557,84 @@ map {
   width: 75%;
   margin: auto;
 }
+
+.addAnotherRegionButton {
+font-size: 20px;
+}
+
+
+
+.registerButton {
+  display: block;
+  width: 200px;
+  margin: 20px 0px 200px 0px;
+  font-size: 20px;
+}
+
+.registerButton1 {
+  display: block;
+  width: 200px;
+  margin: 20px 0px 20px 0px;
+  font-size: 20px;
+  color: #434834;
+  background: white;
+}
+
+.addAnotherButton {
+  width: 40%;
+  margin: 0px 0px 0px 0px;
+  font-size: 20px;
+  /* padding: */
+}
+
+.inputRegister {
+  width: 40%
+}
+
+.dropdownboxRegion{
+  display: inline-block;
+  width: 40%;
+  /* margin-right: 20px; */
+  padding: 20px;
+  border-radius: 4px;
+  background: #eceee3;
+
+}
+
+.selectediwiRegister{
+  display: inline-block;
+  width: 40%;
+  /* margin-right: 20px; */
+  margin-left: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  background: #eceee3;
+  vertical-align: top;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+
+.selectediwiedit {
+  display: inline-block;
+  width: 40%;
+  margin-top:20px;
+  /* margin-right: 20px; */
+  padding: 20px;
+  border-radius: 4px;
+  background: #eceee3;
+  vertical-align: top;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.submitedit {
+  font-size: 19px;
+  width: 170px;
+  display: inline-block
+}
+
+/* .editContainer {
+  width: 100%;
+  margin: auto;
+} */

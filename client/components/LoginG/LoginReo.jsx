@@ -5,21 +5,23 @@ class LoginReo extends Component {
   render() {
     return (
 
-    <div className="login-wrapper">
-              <form
-                  onSubmit={this.submit}
-                  noValidate
-                  className="login-wrapper" >
-                     
-                  <input name="email" type="text" placeholder="īmera" noValidate onChange={this.handleChange} />
+      <div className="login-wrapper">
 
-                  <br></br>
+        <form
+          onSubmit={this.submit}
+          noValidate
+          className="login-wrapper" >
 
-                  <input name="password" type="password" placeholder="kupuhipa" noValidate onChange={this.handleChange} />
-                  <br></br>
-                  <button name="submit">Takiuru</button>
-              </form>
-          </div>
+          <h2 className="loginHeader" >Takiuru</h2>
+
+          <input className="loginInput" name="email" type="text" placeholder="īmera" noValidate onChange={this.handleChange} />
+
+          <br></br>
+          <input className="loginInput" name="password" type="password" placeholder="kupuhipa" noValidate onChange={this.handleChange} />
+          <br></br>
+          <button className="loginButton" name="submit">Takiuru</button>
+        </form>
+      </div>
 
     )
   }
@@ -32,4 +34,4 @@ function mapStateToProps(state) {
 }
 
 
-export default connect (mapStateToProps)(LoginReo) 
+export default connect(mapStateToProps)(LoginReo) 

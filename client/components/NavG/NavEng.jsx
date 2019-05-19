@@ -13,18 +13,19 @@ class NavEng extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this)
 
-}
+  }
 
-handleSubmit(e) {
-  console.log('cliock', this.props)
-  removeUser()
-  this.props.logout()
-  window.location = `/#/`
-}
+  handleSubmit(e) {
+    console.log('cliock', this.props)
+    removeUser()
+    this.props.logout()
+    window.location = `/#/`
+  }
 
   render() {
+    console.log("nanz", this.props.isAuthenticated)
     return (
-      
+
       <div className="navbar">
         <div className="logo">
           <Link to="/">Rāhui</Link>
@@ -33,7 +34,7 @@ handleSubmit(e) {
           <Link to="/about/">About</Link>
         </div>
         <div className="login navButton">
-        {this.props.isAuthenticated ? <a href="#" onClick={this.handleSubmit}>Logout</a> : <Link to="/login/">Login</Link> }
+          {this.props.isAuthenticated ? <a href="#" onClick={this.handleSubmit}>Logout</a> : <Link to="/login/">Login</Link>}
         </div>
         <div className="explore navButton">
           <Link to="/explore/">Explore</Link>
@@ -51,8 +52,8 @@ handleSubmit(e) {
 function mapStateToProps(state) {
   return {
     lang: state.toggle
-    }
   }
+}
 
 
 export default connect(mapStateToProps)(NavEng); 

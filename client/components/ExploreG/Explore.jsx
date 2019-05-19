@@ -17,7 +17,6 @@ class Explore extends React.Component {
     }
 
     render() {
-        console.log("explore", this.props)
         return (
             <div >
 
@@ -27,7 +26,7 @@ class Explore extends React.Component {
                 </div> 
                 
                 <div className="detailwrapper">
-                <RahuiList allrahui={this.props.allrahui} /> 
+                <RahuiList allrahui={this.props.allrahui.reverse()} /> 
                 <div className="spaceme" />
                 </div>
                

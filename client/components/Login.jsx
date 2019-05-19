@@ -40,6 +40,7 @@ class Login extends React.Component {
           <input className="loginInput" name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
 
           <br></br>
+          <br></br>
           <input className="loginInput" name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
           <br></br>
           <button className="loginButton" name="submit">Sign in</button>
