@@ -12,6 +12,7 @@ body {
 	padding: 0;
   border: 0;
   overflow: auto;
+  background: #F1ECE8;
 }
 
 .pMain {
@@ -109,7 +110,7 @@ hr{
   width:50%;
   float: right;
  
-  background: white;
+  background: #F1ECE8;
   opacity: .9;
   margin: 50px;
   padding: 50px;
@@ -160,7 +161,7 @@ right: -60px;
 transform: rotate(90deg);
 background: #DC5757;
 border: none;
-color: white;
+color: #F1ECE8;
 font-size: 22px;
 z-index: 55;
 margin: 0px 20px 0px 0px;
@@ -188,7 +189,7 @@ text-decoration-line: underline;
 }
 
 .navbar a {
-  color: white;
+  color: #F1ECE8;
   text-decoration: none;
 
 }
@@ -253,6 +254,7 @@ text-decoration-line: underline;
 
 .detailwrapper {
   padding: 10px 90px 0px 90px;
+  background: #F1ECE8;
 }
 
 /* rahui list view */
@@ -377,7 +379,7 @@ select {
   padding: 33px 20px;
   border: none;
   border-radius: 4px;
-  background-color: white;
+  background-color: #F1ECE8;
   font-size: 17px;
   outline: none;
 }
@@ -396,7 +398,7 @@ button {
   font-size: 14px;
   background: #434734;
   border-radius: 4px;
-  color: white;
+  color: #F1ECE8;
   font-style: normal;
   font-weight: normal;
   font-size: 27px;
@@ -428,7 +430,7 @@ background: none;
   border-radius: 4px;
   border-color: #434734 ;
   border-width: 1px;
-  background: white;
+  background: #F1ECE8;
   color: #434734;
   font-style: normal;
   font-weight: normal;
