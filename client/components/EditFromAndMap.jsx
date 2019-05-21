@@ -16,7 +16,6 @@ class Explore extends React.Component {
    
 
     render() { 
-        console.log("edit props", this.props.match.params.id)
         return isAuthenticated() ? (  
             <div >
 

@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import TeamEng from './TeamEng'
 import TeamReo from './TeamReo'
-import { toggleLang } from "../../actions/toggle";
 import { connect } from 'react-redux'
 
 
-class team extends Component {
+class Team extends Component {
   render() {
     return (
       <div>
@@ -20,4 +19,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(team);
+export default connect(mapStateToProps)(Team);

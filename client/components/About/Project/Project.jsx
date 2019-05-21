@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-import ProjEng from './ProjEng'
-import ProjReo from './ProjReo'
-import { toggleLang } from "../../actions/toggle";
+import ProjectEng from './ProjectEng'
+import ProjectReo from './ProjectReo'
 import { connect } from 'react-redux'
 
 class Project extends Component {
   render() {
     return (
     <div>
-      {this.props.lang == "eng" ? <ProjEng/> : <ProjReo/>}
+      {this.props.lang == "eng" ? <ProjectEng/> : <ProjectReo/>}
     </div>
     );
   }

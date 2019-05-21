@@ -16,7 +16,7 @@ export function register (creds) {
   if (isAuthenticated()) {
     headers['Authorization'] = `Bearer ${token}`
   }
-  console.log(creds)  
+    
   return request
     .post('/api/auth/register')
     // put token in the header of req (like POSTMAN)
