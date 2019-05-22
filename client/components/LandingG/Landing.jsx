@@ -36,7 +36,7 @@ class Landing extends Component {
 
     return (
       <div>
-        <SplitterLayout primaryIndex={0}>
+        <SplitterLayout primaryIndex={0} allowResize={false}>
 
           <div className="detailwrapper">
             {this.props.lang == "eng" ? <LandEng /> : <LandReo />}
@@ -48,7 +48,7 @@ class Landing extends Component {
               Your browser does not support the video tag.
             </video>
           </div>
-          
+
         </SplitterLayout>
       </div>
     )
