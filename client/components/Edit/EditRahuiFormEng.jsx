@@ -1,36 +1,29 @@
 import React from 'react'
-import decode from 'jwt-decode'
 
-import { getUserTokenInfo } from '../../utils/auth'
-
-// import data from '../apis/iwi'
 import { connect } from "react-redux";
 import { fetchAllIwi } from "../../actions/iwi";
-import { writeRahui } from "../../apis/rahui"
+import { editRahui } from "../../apis/rahui"
 import { fetchAllRahui } from '../../actions/rahui'
 
-import { toggleLang } from "../../actions/toggle";
-import { decorator } from '@babel/types';
-
-class AddRahuiForm extends React.Component {
+class EditRahuiFormEng extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: null,
             region: [],
             iwi: [],
             hapu: [],
-            geoRef: null,
+            geoRef: [],
             authoriser: null,
             datePlaced: null,
-            dateLifted: "This Rāhui is still active",
+            dateLifted: null,
             description: null,
             korero: null,
+            email: null,
             contact: null,
             iwiSelected: null,
             hapuSelected: null,
             regionSelected: null,
-            iwihapuboxIsVisible: false,
-            iwihapuButtonText: "Click to select the Region/Iwi/Hāpu"
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -42,59 +35,98 @@ class AddRahuiForm extends React.Component {
         this.renderHapu = this.renderHapu.bind(this)
         this.renderIwi = this.renderIwi.bind(this)
         this.submitAdd = this.submitAdd.bind(this);
+        this.resetIwiHapu = this.resetIwiHapu.bind(this);
+    }
 
+    componentWillReceiveProps(nextProps) {
+        // nextProps.dispatch(fetchAllIwi())
+
+        let rahuiId = nextProps.rahuiId;
+
+        let rahui = nextProps.allrahui.find(rahui => rahui.id == rahuiId)
+
+        if (rahui) {
+            let { geo_ref, region, iwi, hapu, description, date_placed, date_lifted, korero, authoriser, contact } = nextProps.allrahui.find(rahui => rahui.id == rahuiId)
+
+
+            this.setState({
+                id: rahuiId,
+                region: region,
+                iwi: iwi,
+                hapu: hapu,
+                authoriser: authoriser,
+                description: description,
+                korero: korero,
+                geoRef: geo_ref,
+                datePlaced: date_placed,
+                dateLifted: date_lifted,
+                contact: contact
+            })
+        }
     }
 
     componentDidMount() {
         this.props.dispatch(fetchAllIwi())
     }
 
+
     handleSubmit(e) {
         e.preventDefault()
 
-        const rahui = {
-            userId: getUserTokenInfo().user_id,
+        const editedRahui = {
+            id: this.state.id,
             region: this.state.region,
             iwi: this.state.iwi,
             hapu: this.state.hapu,
+            authoriser: this.state.authoriser,
             description: this.state.description,
-            geoRef: this.props.coordinates,
             korero: this.state.korero,
+            geoRef: this.props.coordinates,
             datePlaced: this.state.datePlaced,
             dateLifted: this.state.dateLifted,
-            contact: this.state.contact,
-            authoriser: this.state.authoriser
+            contact: this.state.contact
         }
 
         // should be a dispatching an action
-        writeRahui(
-            rahui
+        editRahui(
+            editedRahui
         ).then(
             () => {
                 this.props.dispatch(fetchAllRahui())
             }
         )
-
         window.location = `/#/explore`
     }
 
-    submitAdd(){
+    submitAdd() {
         let region = [...this.state.region, this.state.regionSelected]
-        let iwi= [...this.state.iwi, this.state.iwiSelected]
+        let iwi = [...this.state.iwi, this.state.iwiSelected]
         let hapu = [...this.state.hapu, this.state.hapuSelected]
 
         this.setState({
-            region:[...new Set(region)],
-            iwi:[...new Set(iwi)],
-            hapu:[...new Set(hapu)],
+            region: [...new Set(region)],
+            iwi: [...new Set(iwi)],
+            hapu: [...new Set(hapu)],
             regionSelected: null,
             iwiSelected: null,
-            hapuSelected: null,
-            iwihapuboxIsVisible: true,
-            iwihapuButtonText: "Add Another Associated Region/Iwi/Hāpu"
+            hapuSelected: null
         })
-        
+
     }
+
+    resetIwiHapu(e) {
+        e.preventDefault()
+
+        this.setState({
+            region: [],
+            iwi: [],
+            hapu: [],
+            regionSelected: null,
+            iwiSelected: null,
+            hapuSelected: null
+        })
+    }
+
 
     handleChange(e) {
         e.preventDefault()
@@ -130,13 +162,16 @@ class AddRahuiForm extends React.Component {
             })
         }
     }
+
     renderHapu() {
         const allIwiInRegion = this.props.alliwi[this.props.area.indexOf(this.state.regionSelected)][this.state.regionSelected]
         const iwiIWant = this.state.iwiSelected
         const theIwiIFound = allIwiInRegion.filter(iwi => {
             return iwi[iwiIWant] != undefined
         })
+
         const allHapu = theIwiIFound[0][iwiIWant]
+
         if (allHapu.length > 0) {
             return allHapu.map(hapu => {
                 return <option htmlFor="hapu">{hapu}</option>;
@@ -144,120 +179,131 @@ class AddRahuiForm extends React.Component {
         }
         else (<option>No hapū</option>)
     }
+
     render() {
         return (
-           <div>   
-                 <div>
+            <div>
                 <form
                     onSubmit={this.handleSubmit}
                     noValidate
                 >
-                    <div>
-                        <h1>Add a Rāhui</h1>
+                    <div className="editContainer">
+                        <h1>Edit Rāhui</h1>
                         <div className="step"> step one</div>
-                        <div>
-                            <img src="mapthumbnail.png" className="thumbnail" />
-                           <h2 className="one">Zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
-                        <br></br><br></br>
+                        <h2>Please zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
                         <hr></hr>
-                        </div>
-                        <br></br>
-                        <br></br>
                         <div className="step"> step two</div>
-                        
-                        <h2>Tell us about the rāhui.</h2>
-                        
-                        <div className="dropdownbox">
-                           <h3>Iwi and/or Hapū placing the rāhui:</h3>
+                        <h2>Edit details for this rāhui:</h2>
+
+
+                        <br></br>
+                        <div className="dropdownboxedit">
                             <p>Select region:</p>
+
                             <select onChange={this.handleSelect}>
-                            {this.state.regionSelected == null && <option>Choose region</option> }
                                 {this.props.area.map(area => {
                                     return <option htmlFor="region">{area}</option>;
                                 })}
                             </select>
-                            <br></br><br />
-                        
-                            <p>Select iwi:</p>
+
+                            <br></br>
+                            <br></br>
+
+                            {<p>Select iwi:</p>}
                             <select onChange={this.handleSelect2}>
-                            {this.state.iwiSelected == null && <option>Choose iwi</option> }
-                                {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
+                                {this.state.regionSelected ? (this.renderIwi()) : <option disabled></option>}
                             </select>
-                            <br></br> <br />
-                            
-                            <p>Select hapū:</p>
+
+                            <br></br>
+                            <br></br>
+
+                            {<p>Select hapū:</p>}
                             <select onChange={this.handleSelect3}>
-                            {this.state.hapuSelected == null && <option>Choose hapū</option> }
                                 {this.state.iwiSelected ? (
                                     this.renderHapu()
-                                ) : <option>----------</option>}
-                            </select><br />
-                            <br></br>
-                            <button type="button" className="secondarybutton" onClick={this.submitAdd}>{this.state.iwihapuButtonText}</button>
-                    <br></br>
+                                ) : <option disabled></option>}
+                            </select>
+                        </div>
+                        <br></br>
+                        {/* <br></br> */}
+
+                        <div>
+                            <div className="selectediwiedit">
+                                {/* <p>region:{this.state.region.map(region => { return <p>{region}, </p> })}</p> */}
+                                iwi:{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
+                                hapū:
+                                {this.state.hapu.map(hapu => { return <p>{hapu}</p> })}<br></br>
+                            </div >
+                        </div>
+                        <br></br>
+                        <button className="addAnotherButton" type="button" onClick={this.submitAdd}>Add another associated region/iwi/hāpu</button>
+                        <button className="registerButton1" type="button" onClick={this.resetIwiHapu}>Reset iwi/hapū</button>
+                        <br></br>
                     </div>
-                        {this.state.iwihapuboxIsVisible ? 
-                        <div className='selectediwi'>
-                        
-                        <h3> <img src="tick.png" style={{width:"20px"}}/> Selected iwi/hāpu: </h3> <br></br>
-                        <h3> Iwi:{this.state.iwi.map(iwi => {return <p>{iwi}</p> })} </h3>
-                        <h3> Hapū:{this.state.hapu.map(hapu => {return <p>{hapu}</p>  })} </h3>
-                        </div> : null }
-                    
-                    <br></br>
-                    </div>
-                    <br></br>
-                    <br></br>
+
+
+
                     <p>Please enter the name of the person who has authorised the rahūi:</p>
-                    <input name="authoriser" type="text" placeholder="Authorised by" noValidate onChange={this.handleChange} />
+
+                    <input placeholder="authoriser" name="authoriser" type="text" placeholder={this.state.authoriser} noValidate onChange={this.handleChange} />
+
                     <br></br>
                     {/* <br></br>
+
                     <p>Please enter your name:</p>
+
                     <input name="submittersName" type="text" placeholder="Submitted by" />
+
                     <br></br> */}
-                    <br></br> <br />
+                    <br></br>
 
-                    <div className="twocol">
 
-                    <div className="date"><p>Date rahūi placed:</p>
+                    <p>Date rahūi placed:</p>
                     <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
-                    </div>
-                    
-                    <div>
-                     <p>Date rahūi lifted:</p>
+
+                    <br></br>
+                    <br></br>
+
+
+                    <p>Date rahūi lifted:</p>
                     <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
-                
-                    </div>
-                    </div>
-                    
+
                     <br></br>
                     <br></br>
-                    <p>A brief description of the rahūi here:</p>
-                    <textarea name="description" type="text" placeholder="description" rows="5" cols="60" noValidate onChange={this.handleChange} />
+
+                    <p>Please add a brief description of the rahūi here:</p>
+
+                    <textarea placeholder="description" name="description" type="text" value={this.state.description} rows="10" cols="60" noValidate onChange={this.handleChange} />
+
                     <br></br>
                     <br></br>
-                    <p>Further details of the rahūi here:</p>
-                    <textarea name="korero" type="text" placeholder="korero" rows="10" cols="60" noValidate onChange={this.handleChange} />
+
+                    <p>Please add further details of the rahūi here:</p>
+
+                    <textarea placeholder="korero" name="korero" type="text" value={this.state.korero} rows="20" cols="60" noValidate onChange={this.handleChange} />
+
                     <br></br>
-                    <br></br>
+
                     <p>Please enter contact details here:</p>
-                    <input name="contact" type="text" placeholder="Contact info" noValidate onChange={this.handleChange} />
+                    
+                    <input name="contact" type="text" value={this.state.contact}  noValidate onChange={this.handleChange} />
+
                     <br></br>
-                  
-                    <button name="submit">Add Rāhui</button>
+                    <br></br>
+                    <button className="submitedit" name="submit">Submit edit</button>
                 </form>
-                <div className="spaceme" />
-            </div>            
-           </div>
+            </div>
         )
     }
 }
+
 const mapStateToProps = state => {
     return {
+        allrahui: state.rahui,
         alliwi: state.iwi,
         area: state.area,
-        coordinates: state.coords,
-        lang: state.toggle
+        coordinates: state.coords
     }
 }
-export default connect(mapStateToProps)(AddRahuiForm);
+
+export default connect(mapStateToProps)(EditRahuiFormEng);

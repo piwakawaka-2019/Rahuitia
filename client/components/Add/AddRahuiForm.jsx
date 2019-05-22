@@ -1,15 +1,13 @@
 import React from 'react'
-import AddRahEng from './AddRahEng'
-import AddRahReo from './AddRahReo'
-import { toggleLang } from "../../actions/toggle";
 import { connect } from 'react-redux'
-
+import AddRahuiFormEng from './AddRahuiFormEng'
+import AddRahuiFormReo from './AddRahuiFormReo'
 
 class AddRahuiForm extends React.Component{
     render() {
         return (
            <div>               
-                {this.props.lang == "eng" ? <AddRahEng /> : <AddRahReo />}
+                {this.props.lang == "eng" ? <AddRahuiFormEng /> : <AddRahuiFormReo />}
            </div>
         )
     }

@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from "react-redux";
-import { registerUserRequest } from '../actions/register'
-import { fetchAllIwi } from "../actions/iwi";
-import { loginError } from '../actions/login';
+import { registerUserRequest } from '../../actions/register'
+import { fetchAllIwi } from "../../actions/iwi";
+import { loginError } from '../../actions/login';
 
-class RegReo extends React.Component {
+class RegisterReo extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -182,4 +182,4 @@ const mapStateToProps = state => {
     auth: state.auth
   }
 }
-export default connect(mapStateToProps)(RegReo);
+export default connect(mapStateToProps)(RegisterReo);
