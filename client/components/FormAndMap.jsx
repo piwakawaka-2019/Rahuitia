@@ -17,7 +17,6 @@ class Explore extends React.Component {
    
 
     render() { 
-        console.log( isAuthenticated() )
         return isAuthenticated() ? (  
             <div >
 

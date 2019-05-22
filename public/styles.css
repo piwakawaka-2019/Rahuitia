@@ -636,7 +636,16 @@ font-size: 20px;
   display: inline-block
 }
 
-/* .editContainer {
-  width: 100%;
-  margin: auto;
-} */
+.aboutnav {
+  display: flex;
+}
+
+.aboutwrapper {
+  width: 50vw;
+}
+
+.aboutBody {
+  margin: 10px 10px 0px 80px;
+  font-size: 22px;
+  line-height: 34px;
+}

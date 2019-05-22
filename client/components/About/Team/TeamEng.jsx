@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 
-class teamEng extends Component {
+class TeamEng extends Component {
   render() {
     return (
       <div>
         <h1 className="aboutHeading2">Team</h1>
-        <div className="row">
-          <div className="column">
             <p className="aboutBody">
               Until recently, the prevailing view assumed lorem ipsum was born
               as a nonsense text. “It's not Latin, though it looks like it, and
@@ -15,13 +13,9 @@ class teamEng extends Component {
               with which letters occur in English, which is why at a glance it
               looks pretty real.
              </p> 
-          </div>
-
-
-        </div>
       </div>
     );
   }
 }
 
-export default teamEng;
+export default TeamEng;

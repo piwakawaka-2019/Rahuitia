@@ -1,7 +1,33 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
+import { loginUser, loginError } from '../../actions/login';
 
 class LoginEng extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: null,
+      password: null,
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.submit = this.submit.bind(this)
+  }
+
+  handleChange(e) {
+    console.log("changing")
+    e.preventDefault()
+    const { name, value } = e.target
+    this.setState({ [name]: value }, () => console.log(this.state));
+  }
+
+  submit(e) {
+    console.log("submitting")
+    e.preventDefault()
+    let { email, password } = this.state
+    this.props.dispatch(loginUser({ email, password }))
+    window.location = `/#/explore`
+  }
+
   render() {
     return (
 

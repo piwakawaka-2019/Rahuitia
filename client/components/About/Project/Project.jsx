@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import ProjEng from './ProjEng'
-import ProjReo from './ProjReo'
-import { toggleLang } from "../../actions/toggle";
+import ProjectEng from './ProjectEng'
+import ProjectReo from './ProjectReo'
 import { connect } from 'react-redux'
 import SplitterLayout from 'react-splitter-layout';
 
@@ -21,18 +20,10 @@ class Project extends Component {
     // );
 
     return (
-      <div>
-        <SplitterLayout primaryIndex={0}>
-          <div>
-            {this.props.lang == "eng" ? <ProjEng /> : <ProjReo />}
-          </div>
-
-          <div className="about-image">
-            <img src={this.state.aboutImage} alt="Tahuaroa" />
-          </div>
-        </SplitterLayout>
-      </div>
-    )
+    <div>
+      {this.props.lang == "eng" ? <ProjectEng/> : <ProjectReo/>}
+    </div>
+    );
   }
 }
 
