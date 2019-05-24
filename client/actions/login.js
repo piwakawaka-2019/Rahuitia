@@ -10,7 +10,6 @@ function requestLogin () {
 }
 
 export function receiveLogin (user) {
-  console.log("receive")
   return {
     type: 'LOGIN_SUCCESS',
     isFetching: false,
@@ -35,6 +34,7 @@ export function loginError (message) {
 }
 
 export function loginUser (creds) {
+  console.log("login action")
   return dispatch => {
     dispatch(requestLogin(creds))
     return login(creds)
