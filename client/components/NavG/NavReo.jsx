@@ -25,21 +25,21 @@ class NavReo extends Component {
 
   render() {
     return (
-      <div className="navbar">
+      <div className="navbarContainer">
         <div className="logo">
           <Link to="/">Rāhui</Link>
         </div>
-        <div className="about navButton">
+        <div className="navButton">
           <Link to="/about/">Pēwhea</Link>
         </div>
 
-        <div className="login navButton">
+        <div className="navButton">
           {isAuthenticated() ? <a href="#" onClick={this.handleSubmit}>takiputa</a> : <Link to="/login/">Takiuru</Link>}
         </div>
-        <div className="explore navButton">
+        <div className="navButton">
           <Link to="/explore/">Te Tūhara</Link>
         </div>
-        <div className="add navButton">
+        <div className="navButton">
           <Link to="/addrahui/">Tāpirihia he Rāhui</Link>
         </div>
 

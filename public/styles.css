@@ -7,7 +7,7 @@ html{
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   margin: 0px;
 	padding: 0;
   border: 0;
@@ -23,8 +23,75 @@ body {
 
 
 
+
+
+.tautoko {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr 4fr 1fr ;
+  grid-template-rows: none;
+
+  position: relative;
+}
+
+/* .twocol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: none;
+  padding: 0px, 10px, 0px , 0px
+} */
+
+
+
+/* navbar style */
+
+/* .navbar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 11fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-rows: none;
+  padding: 15px;
+  z-index: 55;
+  background: #434734;
+  position: relative;
+} */
+
+/* .navbar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.25fr 0.25fr 0.25fr 1fr 1fr 0.35fr 0.25fr;
+  grid-template-rows: none;
+  padding: 10px;
+  z-index: 55;
+  background: #434734;
+  position: relative;
+  font-size: 20px;
+  align-items: center;
+  text-align: center;
+} */
+
+/* .logo {
+  font-family: 'Rasa', serif;
+  font-size: 1.8em;
+  text-align: center;
+} */
+
+/* .navButton {
+  text-align: left;
+} */
+
+/* .navbar a {
+  color: #F1ECE8;
+  text-decoration: none;
+
+}
+
+.navbar :active {
+  text-decoration: underline;
+} */
+
 /* nav styling */
-header {
+/* header {
   padding:10px 0px;
   transition: all 300ms ease-in;
 }
@@ -39,36 +106,55 @@ header .header_logo_venue {
 
 header .header_logo_title {
   text-transform: uppercase;
-}
+} */
 
-.tautoko {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 4fr 4fr 1fr ;
-  grid-template-rows: none;
-
-  position: relative;
-}
-
-.twocol {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: none;
-  padding: 0px, 10px, 0px , 0px
-}
-
-.navbar {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 11fr 1fr 1fr 1fr 1fr 2fr;
-  grid-template-rows: none;
-  padding: 15px;
-  z-index: 55;
+.navbarContainer {
+  display: flex;
+  height: 100%;
+  align-items: center;
   background: #434734;
-  position: relative;
 }
 
-.respect{
+.navbarContainer a {
+  color: #F1ECE8;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.logoNav {
+  padding: 20px 20px 20px 20px;
+}
+
+.logoNav a {
+  font-size: 30px;
+}
+
+.exploreNav{
+  padding: 20px 20px 20px 20px;
+}
+
+.aboutNav {
+  padding: 20px 20px 20px 20px;
+}
+
+.addNav {
+  padding: 20px 20px 20px 20px;
+  margin-left: auto;
+}
+
+.loginNav {
+  padding: 20px 20px 20px 20px;
+}
+
+
+
+
+
+
+
+
+
+.respect {
   padding: 30px 15px 25px 20px;
   color: rgb(133, 133, 133);
   vertical-align: center
@@ -91,11 +177,9 @@ header .header_logo_title {
 
 }
 
-.navButton {
-  text-align: center;
-}
 
-hr{
+
+hr {
   padding: 0;
   margin: 0;
   opacity: .45;
@@ -136,22 +220,6 @@ hr{
 }
 
 
-/* main navbar styling */
-
-.navbar {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 0.25fr 0.25fr 0.25fr 1fr 1fr 0.35fr 0.25fr;
-  grid-template-rows: none;
-  padding: 10px;
-  z-index: 55;
-  background: #434734;
-  position: relative;
-  font-size: 20px;
-  align-items: center;
-  text-align: center;
-}
-
 
 .languageToggleButton {
 width: 7%;
@@ -188,25 +256,11 @@ text-decoration: underline;
 text-decoration-line: underline;
 }
 
-.navbar a {
-  color: #F1ECE8;
-  text-decoration: none;
 
-}
 
-.navbar :active {
-  text-decoration: underline;
-}
 
-.navButton {
-  text-align: center;
-}
 
-.logo {
-  font-family: 'Rasa', serif;
-  font-size: 1.8em;
-  text-align: center;
-}
+
 
 .aboutBody {
   margin: 10px 600px 0px 80px;
@@ -297,7 +351,7 @@ h1 {
   z-index: 55;
 }
 
-h2{
+h2 {
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
@@ -306,7 +360,7 @@ h2{
   margin-top: 15px
 }
 
-h3{
+h3 {
   font-style: bold;
   font-weight: bold;
   font-size: 22px;
@@ -316,7 +370,7 @@ h3{
 }
 
 
-p{
+p {
   font-family: "Rasa";
   font-style: normal;
   font-weight: normal;
@@ -330,20 +384,20 @@ p{
 
 b {
   font-family: "Rasa";
-font-style: bold;
-font-weight: bold;
-font-size: 22px;
-line-height: 27px;
-padding: 0px;
-color:  #434734;
-text-decoration: underline;
+  font-style: bold;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 27px;
+  padding: 0px;
+  color:  #434734;
+  text-decoration: underline;
 }
 
 a {
   color: #DC5757
 }
 
-.date{
+.date {
   padding-right: 20px
 }
 /* form styles  */
@@ -416,8 +470,8 @@ button :active {
 
 
 .buttonExplore {
-color: #434734;
-background: none;
+  color: #434734;
+  background: none;
 
 }
 
@@ -450,7 +504,7 @@ map {
   padding: 90px;
 }
 
-.step{
+.step {
   font-family: Rasa;
   font-style: bold;
   font-weight: bold;
@@ -461,7 +515,7 @@ map {
   margin-top: 20px
 }
 
-.one{
+.one {
   width:60%;
   padding: 20px;
   display: grid;
@@ -561,7 +615,7 @@ map {
 }
 
 .addAnotherRegionButton {
-font-size: 20px;
+  font-size: 20px;
 }
 
 
@@ -603,7 +657,7 @@ font-size: 20px;
 
 }
 
-.selectediwiRegister{
+.selectediwiRegister {
   display: inline-block;
   width: 40%;
   /* margin-right: 20px; */

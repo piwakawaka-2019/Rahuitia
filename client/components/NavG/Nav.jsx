@@ -10,14 +10,11 @@ import NavReo from './NavReo'
 export class Nav extends Component {
 
   render() {
-  return (
+    return (
       <div>
-        
-        {/* {this.props.lang == "eng" ? <NavEng/> : <NavReo/>} */}
-
         {this.props.lang == "eng" ? 'TeReo' : 'English'}
-        {this.props.lang == "eng" ? <NavEng isAuthenticated={this.props.isAuthenticated} logout={this.props.logout}/> : <NavReo isAuthenticated={this.props.isAuthenticated} logout={this.props.logout} />}
-        </div>
+        {this.props.lang == "eng" ? <NavEng isAuthenticated={this.props.isAuthenticated} logout={this.props.logout} /> : <NavReo isAuthenticated={this.props.isAuthenticated} logout={this.props.logout} />}
+      </div>
     );
   }
 }
@@ -37,4 +34,4 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(Nav);
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);

@@ -11,7 +11,7 @@ class ToggleReo extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this)
 
-}
+  }
 
   handleSubmit(e) {
     removeUser()
@@ -21,26 +21,21 @@ class ToggleReo extends Component {
 
   render() {
     return (
-      <div className="navbar">
-        <div className="logo">
+      <div className="navbarContainer">
+        <div className="logoNav">
           <Link to="/">Rāhuitia</Link>
         </div>
-        <div className="explore navButton">
+        <div className="exploreNav">
           <Link to="/explore/">Torohē</Link>
         </div>
-        <div className="about navButton">
+        <div className="aboutNav">
           <Link to="/about/">Pēwhea</Link>
         </div>
-        
-        <div className="navbutton"></div>
-        <div className="navbutton"></div>
-        
-
-        <div className="add navButton">
+        <div className="addNav">
           <Link to="/addrahui/">Tāpirihia he Rāhui</Link>
         </div>
-        <div className="login navButton">
-        {this.props.isAuthenticated ? <a href="#" onClick={this.handleSubmit}>Takiputa</a> : <Link to="/login/">Takiuru</Link> }
+        <div className="loginNav">
+          {this.props.isAuthenticated ? <a href="#" onClick={this.handleSubmit}>Takiputa</a> : <Link to="/login/">Takiuru</Link>}
         </div>
       </div>
 
@@ -51,8 +46,8 @@ class ToggleReo extends Component {
 function mapStateToProps(state) {
   return {
     lang: state.toggle
-    }
   }
+}
 
 
 export default connect(mapStateToProps)(ToggleReo)

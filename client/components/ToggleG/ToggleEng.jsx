@@ -21,24 +21,20 @@ handleSubmit(e) {
 
   render() {
     return (
-      <div className="navbar">
-        <div className="logo">
+      <div className="navbarContainer">
+        <div className="logoNav">
           <Link to="/">Rāhuitia</Link>
         </div>
-        <div className="explore navButton">
+        <div className="exploreNav">
           <Link to="/explore/">Explore</Link>
         </div>
-        <div className="about navButton">
+        <div className="aboutNav">
           <Link to="/about/">About</Link>
         </div>
-
-        <div className="navbutton"></div>
-        <div className="navbutton"></div>
-
-        <div className="add navButton">
+        <div className="addNav">
           <Link to="/addrahui/">Add a Rāhui</Link>
         </div>
-        <div className="login navButton">
+        <div className="loginNav">
         {this.props.isAuthenticated ? <a href="#" onClick={this.handleSubmit}>Logout</a> : <Link to="/login/">Login</Link> }
         </div>
       </div>

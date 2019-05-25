@@ -23,23 +23,21 @@ class NavEng extends Component {
   }
 
   render() {
-    console.log("nanz", this.props.isAuthenticated)
     return (
-
-      <div className="navbar">
+      <div className="navbarContainer">
         <div className="logo">
           <Link to="/">Rāhui</Link>
         </div>
-        <div className="about navButton">
+        <div className="navButton">
           <Link to="/about/">About</Link>
         </div>
-        <div className="login navButton">
+        <div className="navButton">
           {this.props.isAuthenticated ? <a href="#" onClick={this.handleSubmit}>Logout</a> : <Link to="/login/">Login</Link>}
         </div>
-        <div className="explore navButton">
+        <div className="navButton">
           <Link to="/explore/">Explore</Link>
         </div>
-        <div className="add navButton">
+        <div className="navButton">
           <Link to="/addrahui/">Add a Rāhui</Link>
         </div>
         <div>
