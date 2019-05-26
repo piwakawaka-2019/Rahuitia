@@ -1,15 +1,11 @@
 import React from 'react'
-import decode from 'jwt-decode'
 
-import { getUserTokenInfo } from '../utils/auth'
-
-// import data from '../apis/iwi'
 import { connect } from "react-redux";
-import { fetchAllIwi } from "../actions/iwi";
-import { editRahui } from "../apis/rahui"
-import { fetchAllRahui } from '../actions/rahui'
+import { fetchAllIwi } from "../../actions/iwi";
+import { editRahui } from "../../apis/rahui"
+import { fetchAllRahui } from '../../actions/rahui'
 
-class EditRahuiForm extends React.Component {
+class EditRahuiFormReo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -43,7 +39,6 @@ class EditRahuiForm extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        // nextProps.dispatch(fetchAllIwi())
 
         let rahuiId = nextProps.rahuiId;
 
@@ -310,4 +305,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(EditRahuiForm);
+export default connect(mapStateToProps)(EditRahuiFormReo);

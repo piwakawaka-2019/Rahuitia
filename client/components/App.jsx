@@ -2,18 +2,18 @@ import React from "react";
 import { connect } from "react-redux";
 import { HashRouter as Router, Route } from "react-router-dom";
 
-import Landing from "./LandingG/Landing";
-import Toggle from "./ToggleG/Toggle";
+import Landing from "./Landing/Landing";
+import Toggle from "./Toggle/Toggle";
 
-import Explore from "./ExploreG/Explore";
+import Explore from "./Explore/Explore";
 
-import RahuiDetail from "./RahuiDetailG/RahuiDetail";
+import RahuiDetail from "./RahuiDetail/RahuiDetail";
 import About from "./About/About";
 
-import Login from "../components/LoginG/Login";
-import FormAndMap from "./FormAndMap";
-import Register from "./Register";
-import EditFromAndMap from "./EditFromAndMap";
+import Login from "./Login/Login";
+import Add from "./Add/FormAndMap";
+import Register from "./Register/Register";
+import Edit from "./Edit/EditFormAndMap";
 
 
 export function App({ auth }) {
@@ -21,22 +21,11 @@ export function App({ auth }) {
     <div>
       <Router>
         <Toggle />
-
         <Route exact path="/" component={Landing} />
-
         <Route path="/about" component={About} />
-        {/* <Route exact path="/about" component={Project} />
-        <Route path="/about/team" component={Team} />
-        <Route path="/about/resourses" component={Resourses} /> */}
-        {/* <Route path="/about/API" component={RahuiApi} /> */}
-
         <Route path="/login/" component={Login} />
-
-        <Route exact path="/AddRahui" component={FormAndMap} />
-
-        <Route exact path="/rahui/:id/edit" component={EditFromAndMap}/>
-       
-
+        <Route exact path="/AddRahui" component={Add} />
+        <Route exact path="/rahui/:id/edit" component={Edit}/>       
         <Route exact path="/explore" component={Explore} />
         <Route exact path="/rahui/:id" component={RahuiDetail} />
         <Route path="/register" component={Register} />

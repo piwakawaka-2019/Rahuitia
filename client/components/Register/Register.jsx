@@ -1,11 +1,9 @@
 import React from 'react'
 import { connect } from "react-redux";
-import { registerUserRequest } from '../../actions/register'
-import { fetchAllIwi } from "../../actions/iwi";
-import RegEng from "./RegEng"
-import RegReo from "./RegReo"
+import RegisterEng from "./RegisterEng"
+import RegisterReo from "./RegisterReo"
 import { loginError } from '../../actions/login';
-import { toggleLang } from "../../actions/toggle";
+
 
 class Register extends React.Component {
    
@@ -14,7 +12,7 @@ class Register extends React.Component {
 
         return (
           <div>
-            {this.props.lang == "eng" ? <RegEng /> : <RegReo />}
+            {this.props.lang == "eng" ? <RegisterEng /> : <RegisterReo />}
           </div>
             
         )

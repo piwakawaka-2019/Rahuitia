@@ -8,11 +8,11 @@ import { connect } from "react-redux";
 import { fetchAllIwi } from "../../actions/iwi";
 import { writeRahui } from "../../apis/rahui"
 import { fetchAllRahui } from '../../actions/rahui'
-import AddRahEng from './AddRahEng'
+import AddRahEng from './AddRahuiFormEng'
 
 import { toggleLang } from "../../actions/toggle";
 
-class AddRahReo extends React.Component {
+class AddRahuiFormReo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -256,4 +256,4 @@ const mapStateToProps = state => {
         lang: state.toggle
     }
 }
-export default connect(mapStateToProps)(AddRahReo);
+export default connect(mapStateToProps)(AddRahuiFormReo);

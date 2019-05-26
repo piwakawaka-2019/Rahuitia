@@ -1,8 +1,6 @@
 import React from "react";
-import { toggleLang } from "../../actions/toggle";
 import RahuiListEng from "./RahuiListEng"
 import RahuiListReo from "./RahuiListReo"
-import RahuiListItem from "./RahuiListItem"
 import { connect } from "react-redux"
 
 class RahuiList extends React.Component {
@@ -11,7 +9,6 @@ class RahuiList extends React.Component {
     this.state = {}
   }
   render() {
-    console.log("this props:", this.props.allrahui.map(x => x.description))
     return (
       <div>
         {this.props.lang == "eng" ? <RahuiListEng {...this.props} /> : <RahuiListReo {...this.props} />}
