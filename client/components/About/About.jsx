@@ -9,53 +9,58 @@ export class About extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        visibility: null
+      visibility: null
     };
     this.handleClick = this.handleClick.bind(this)
-    }
+  }
 
   componentDidMount() {
     this.setState({
-        visibility: "project"
-      });
-    }
+      visibility: "project"
+    });
+  }
 
-    handleClick(e) {
-        e.preventDefault()
-        const { value } = e.target
-        this.setState({
-            visibility: value
-          });
-    }
+  handleClick(e) {
+    e.preventDefault()
+    const { value } = e.target
+    this.setState({
+      visibility: value
+    });
+  }
 
   render() {
     return (
-      <div className="aboutwrapper">
-       {this.props.lang == "eng" ? 
-        <div className="aboutnav">
-            <button value="project" onClick={this.handleClick}>Project</button>
-            <button value="team" onClick={this.handleClick}>Team</button>
-            <button value="API" onClick={this.handleClick}>API</button>
-            <button value="resources" onClick={this.handleClick}>Resources</button>
-        </div>
-        : 
-        <div className="aboutnav">
-            <button value="project" onClick={this.handleClick}>Whakatakanga</button>
-            <button value="team" onClick={this.handleClick}>Tima</button>
-            <button value="API" onClick={this.handleClick}>API</button>
-            <button value="resources" onClick={this.handleClick}>Rauemi Ipurangi</button>
-        </div>
-       }
+      <div>
+        <div className="aboutwrapper">
+          {this.props.lang == "eng" ?
+            <div className="aboutnav">
+              <button value="project" onClick={this.handleClick}>Project</button>
+              <button value="team" onClick={this.handleClick}>Team</button>
+              <button value="API" onClick={this.handleClick}>API</button>
+              <button value="resources" onClick={this.handleClick}>Resources</button>
+            </div>
+            :
+            <div className="aboutnav">
+              <button value="project" onClick={this.handleClick}>Whakatakanga</button>
+              <button value="team" onClick={this.handleClick}>Tima</button>
+              <button value="API" onClick={this.handleClick}>API</button>
+              <button value="resources" onClick={this.handleClick}>Rauemi Ipurangi</button>
+            </div>
+          }
 
-        <div className="aboutbody">
-        {this.state.visibility == "project" && <Project />
-        }
-        {this.state.visibility == "team" && <Team />
-        }
-        {this.state.visibility == "API" && <API />
-        }
-        {this.state.visibility == "resources" && <Resources />
-        }
+          <div className="aboutbody">
+            {this.state.visibility == "project" && <Project />
+            }
+            {this.state.visibility == "team" && <Team />
+            }
+            {this.state.visibility == "API" && <API />
+            }
+            {this.state.visibility == "resources" && <Resources />
+            }
+          </div>
+        </div>
+        <div className="aboutImage">
+          <img src="Tahuaroa.png" width="100%" />
         </div>
       </div>
     )
@@ -63,9 +68,9 @@ export class About extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {
-      lang: state.toggle
-    }
+  return {
+    lang: state.toggle
   }
-  
+}
+
 export default connect(mapStateToProps)(About)
