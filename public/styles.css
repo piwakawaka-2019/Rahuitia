@@ -130,22 +130,56 @@ hr {
 }
 
 .fullscreen-video-wrap{
-  margin: 0;
+  /* margin: 0;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  z-index: -20;
+  z-index: -20; */
+  min-width: 100vw;
+  min-height:  100vh;
+  padding-left: overlay-width;
 }
 
 #background-video {
-  margin: 0;
+  /* margin: 0;
   width: 100vw;
   object-fit: cover;
   display: flex;
   align-items: center;
-  z-index: -20;
+  z-index: -20; */
+  width: 100vw;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+}
+
+.overlayNew {
+  position: fixed;
+  width: 50vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: auto;
+  background: #F1ECE8;
 
 }
+
+/* overlayTextNew {
+  background: #F1ECE8;
+} */
+
+.mapBackground {
+  width: 50vw;
+  /* object-fit: cover;
+  display: flex;
+  align-items: center; */
+}
+
+
+
+
+
 
 
 

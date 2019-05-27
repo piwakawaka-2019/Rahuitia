@@ -35,22 +35,57 @@ class Landing extends Component {
 
 
     return (
-      <div>
-        <SplitterLayout primaryIndex={0} allowResize={false}>
+      // <div>
+      //   <SplitterLayout primaryIndex={0} allowResize={false}>
 
-          <div className="detailwrapper">
-            {this.props.lang == "eng" ? <LandEng /> : <LandReo />}
-          </div>
+      //     <div className="detailwrapper">
+      //       {this.props.lang == "eng" ? <LandEng /> : <LandReo />}
+      //     </div>
 
-          <div className="fullscreen-video-wrap">
-            <video id="background-video" loop autoPlay muted>
-              <source src={this.state.videoURL} type="video/mp4" />
-              Your browser does not support the video tag.
+      //     <div className="fullscreen-video-wrap">
+      //       <video id="background-video" loop autoPlay muted>
+      //         <source src={this.state.videoURL} type="video/mp4" />
+      //         Your browser does not support the video tag.
+      //       </video>
+      //     </div>
+
+      //   </SplitterLayout>
+      // </div>
+
+      // <div>
+      //   <SplitterLayout primaryIndex={0} allowResize={false}>
+
+      //     <div className="detailwrapper">
+      //       {this.props.lang == "eng" ? <LandEng /> : <LandReo />}
+      //     </div>
+
+      //     <div className="fullscreen-video-wrap">
+      //       <video id="background-video" loop autoPlay muted>
+      //         <source src={this.state.videoURL} type="video/mp4" />
+      //         Your browser does not support the video tag.
+      //       </video>
+      //     </div>
+
+      //   </SplitterLayout>
+      // </div>
+
+
+
+      <React.Fragment>
+        <div className="fullscreen-video-wrap">
+          <video id="background-video" loop autoPlay muted>
+            <source src={this.state.videoURL} type="video/mp4" />
+            Your browser does not support the video tag.
             </video>
-          </div>
+        </div>
 
-        </SplitterLayout>
-      </div>
+
+        <div className="overlayNew">
+          {/* <div className="overlayTextNew"> */}
+            {this.props.lang == "eng" ? <LandEng /> : <LandReo />}
+          {/* </div> */}
+        </div>
+      </React.Fragment>
     )
 
 
