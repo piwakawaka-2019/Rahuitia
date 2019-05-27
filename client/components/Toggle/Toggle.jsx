@@ -9,18 +9,16 @@ import { receiveLogout } from "../../actions/login";
 
 export class Toggle extends Component {
   
-
-
   render() {
     console.log(this.props)
     return (
       <div>
 
-        <button className="languageToggleButton" onClick={() => this.props.toggleLang()}>
-
-          {this.props.lang == "eng" ? 'Te Reo' : 'English'}
-
-        </button>
+        <div className="languageToggleButton" onClick={() => this.props.toggleLang()}>
+          {this.props.lang == "eng" ? 
+        <img className="toggleButton" src="reo.png"/>:
+        <img className="toggleButton" src="eng.png"/>}
+        </div>
 
         {this.props.lang == "eng" ? <ToggleEng isAuthenticated={this.props.isAuthenticated} logout={this.props.logout}/> : <ToggleReo isAuthenticated={this.props.isAuthenticated} logout={this.props.logout}/>}
 
