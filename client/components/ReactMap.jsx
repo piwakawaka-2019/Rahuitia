@@ -6,15 +6,6 @@ import {  withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps'
 import { DrawingManager } from "react-google-maps/lib/components/drawing/DrawingManager"
 import { saveCoordinates } from "../actions/coords";
 
-// const { compose, withProps } = require("recompose");
-// const {
-//   withScriptjs,
-//   withGoogleMap,
-//   GoogleMap,
-// } = require("react-google-maps");
-// const { DrawingManager } = require("react-google-maps/lib/components/drawing/DrawingManager");
-
-
 const MapWithADrawingManager = compose(
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCDY6eWTVLvpOoTI2JrH8Q0ycDSV3F2J5o&v=3.exp&libraries=geometry,drawing,places",
