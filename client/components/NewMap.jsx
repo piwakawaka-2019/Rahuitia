@@ -13,8 +13,6 @@ class NewMap extends Component {
       rahuiBounds: [{lat: -36.543484, lng: 172.880926}, {lat: -43.622458, lng: 170.036187}]
      }
 }
-<<<<<<< HEAD
-=======
 
 handleBoundChange =() => {
   this.setState({
@@ -26,7 +24,6 @@ componentWillMount = () => {
   this.handleBoundChange()
 }
 
->>>>>>> 901af6cb967307b91572c1ce1a81f920afba0ea5
   render() {
    
     const rahuiCoods = this.props.allrahui.length > 0 ? this.state.rahuiBounds : []

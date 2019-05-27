@@ -157,6 +157,7 @@ width: 7%;
 position: fixed;
 bottom: 3em;
 right: -60px;
+border-radius: 70%;
 transform: rotate(90deg);
 background: #DC5757;
 border: none;
