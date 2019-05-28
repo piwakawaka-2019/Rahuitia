@@ -21,24 +21,17 @@ class ToggleReo extends Component {
 
   render() {
     return (
-      <div className="navbarContainer">
-        <div className="logoNav">
-          <Link to="/">Rāhuitia</Link>
-        </div>
-        <div className="exploreNav">
-          <Link to="/explore/">Torohē</Link>
-        </div>
-        <div className="aboutNav">
-          <Link to="/about/">Pēwhea</Link>
-        </div>
-        <div className="addNav">
-          <Link to="/addrahui/">Tāpirihia he Rāhui</Link>
-        </div>
-        <div className="loginNav">
-          {this.props.isAuthenticated ? <a href="#" onClick={this.handleSubmit}>Takiputa</a> : <Link to="/login/">Takiuru</Link>}
-        </div>
-      </div>
-
+      <header className="header">
+        <Link className="logo" to="/">Rāhuitia</Link>
+        <input className="menu-btn" type="checkbox" id="menu-btn" />
+        <label className="menu-icon" for="menu-btn"><span className="nav-icon"></span></label>
+        <ul className="menu">
+          <li><Link to="/explore/">Torohē</Link></li>
+          <li><Link to="/about/">Pēwhea</Link></li>
+          <li><Link to="/addrahui/">Tāpirihia he Rāhui</Link></li>
+          <li>{this.props.isAuthenticated ? <Link to="#" onClick={this.handleSubmit}>Takiputa</Link> : <Link to="/login/">Takiuru</Link> }</li>
+        </ul>
+      </header>
     )
   }
 }

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import Project from "./Project/Project";
 import Team from "./Team/Team";
 import Resources from "./Resourses/Resourses"
 import API from "./API/Api"
-import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 export class About extends Component {
   constructor(props) {
@@ -31,30 +31,29 @@ export class About extends Component {
 
   render() {
     return (
-      <div>
-        <div className="overlayNew">
+      <div className="about-wrapper">
+        <div className="overlayNewAbout">
           {this.props.lang == "eng" ?
             <div className="aboutnav">
-              {/* <button value="project" onClick={this.handleClick}>Project</button> */}
-              
-              <a className="project" onClick={this.handleClick}>Project</a>
-
-              {/* <div className="logoNav">
-                <Link to="/">Rāhuitia</Link>
-              </div> */}
-
-
-              
-              <button value="team" onClick={this.handleClick}>Team</button>
-              <button value="API" onClick={this.handleClick}>API</button>
-              <button value="resources" onClick={this.handleClick}>Resources</button>
+              {/* <Link value="project" className="project" onClick={this.handleClick}>Project</Link>
+              <Link value="team" className="project" onClick={this.handleClick}>Team</Link>
+              <Link value="API" className="project" onClick={this.handleClick}>API</Link>
+              <Link value="resources" className="project" onClick={this.handleClick}>Resources</Link> */}
+              <button className="about-button" value="project" onClick={this.handleClick}>Project</button> 
+              <button className="about-button" value="team" onClick={this.handleClick}>Team</button>
+              <button className="about-button" value="API" onClick={this.handleClick}>API</button>
+              <button className="about-button" value="resources" onClick={this.handleClick}>Resources</button>
             </div>
             :
             <div className="aboutnav">
-              <button value="project" onClick={this.handleClick}>Whakatakanga</button>
-              <button value="team" onClick={this.handleClick}>Tima</button>
-              <button value="API" onClick={this.handleClick}>API</button>
-              <button value="resources" onClick={this.handleClick}>Rauemi Ipurangi</button>
+              {/* <Link value="project" className="project" onClick={this.handleClick}>Whakatakanga</Link>
+              <Link value="team" className="project" onClick={this.handleClick}>Tima</Link>
+              <Link value="API" className="project" onClick={this.handleClick}>API</Link>
+              <Link value="resources" className="project" onClick={this.handleClick}>Rauemi Ipurangi</Link> */}
+              <button className="about-button" value="project" onClick={this.handleClick}>Whakatakanga</button>
+              <button className="about-button" value="team" onClick={this.handleClick}>Tima</button>
+              <button className="about-button" value="API" onClick={this.handleClick}>API</button>
+              <button className="about-button" value="resources" onClick={this.handleClick}>Rauemi Ipurangi</button>
             </div>
           }
 
@@ -72,7 +71,7 @@ export class About extends Component {
 
 
         <div className="fullscreen-video-wrap">
-          <img id="background-video" src="Tahuaroa.png" />
+          <img id="background-" src="Tahuaroa.png" />
         </div>
       </div>
     )
