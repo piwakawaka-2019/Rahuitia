@@ -11,7 +11,7 @@ body {
   margin: 0px;
 	padding: 0;
   border: 0;
-  overflow: auto;
+  overflow: hidden;
   background: #F1ECE8;
 }
 
@@ -35,7 +35,9 @@ body {
 
 .navbarContainer {
   display: flex;
-  height: 100%;
+  /* position: sticky; */
+  top: 0vh;
+  height: 10vh;
   align-items: center;
   background: #434734;
 }
@@ -47,28 +49,28 @@ body {
 }
 
 .logoNav {
-  padding: 20px 20px 20px 20px;
+  /* padding: 20px 20px 20px 20px; */
 }
 
 .logoNav a {
-  font-size: 30px;
+  /* font-size: 30px; */
 }
 
 .exploreNav{
-  padding: 20px 20px 20px 20px;
+  /* padding: 20px 20px 20px 20px; */
 }
 
 .aboutNav {
-  padding: 20px 20px 20px 20px;
+  /* padding: 20px 20px 20px 20px; */
 }
 
 .addNav {
-  padding: 20px 20px 20px 20px;
+  /* padding: 20px 20px 20px 20px; */
   margin-left: auto;
 }
 
 .loginNav {
-  padding: 20px 20px 20px 20px;
+  /* padding: 20px 20px 20px 20px; */
 }
 
 /* 546 */
@@ -130,23 +132,13 @@ hr {
 }
 
 .fullscreen-video-wrap{
-  /* margin: 0;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  z-index: -20; */
   min-width: 100vw;
   min-height:  100vh;
   padding-left: overlay-width;
+  overflow-y: hidden;
 }
 
 #background-video {
-  /* margin: 0;
-  width: 100vw;
-  object-fit: cover;
-  display: flex;
-  align-items: center;
-  z-index: -20; */
   width: 100vw;
   object-fit: cover;
   display: flex;
@@ -156,13 +148,12 @@ hr {
 .overlayNew {
   position: fixed;
   width: 50vw;
-  height: 100vh;
-  top: 0;
+  height: 90vh;
+  top: 10vh;
   right: 0;
   bottom: 0;
   overflow-x: auto;
   background: #F1ECE8;
-
 }
 
 /* overlayTextNew {
@@ -171,6 +162,7 @@ hr {
 
 .mapBackground {
   width: 50vw;
+  height: 100vw;
   /* object-fit: cover;
   display: flex;
   align-items: center; */
@@ -663,7 +655,12 @@ map {
 }
 
 .aboutwrapper {
+  position: fixed;
   width: 50vw;
+  height: 90vh;
+  top: 10vh;
+  right: 0;
+  bottom: 0;
 }
 
 .aboutBody {
@@ -673,5 +670,36 @@ map {
 }
 
 .aboutImage {
-  width: 50vw; 
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 10vh;
+  right: 0;
+  bottom: 0;
+  overflow-x: auto; 
 }
+
+/* .fullscreen-video-wrap{
+  min-width: 100vw;
+  min-height:  100vh;
+  padding-left: overlay-width;
+  overflow-y: hidden;
+}
+
+#background-video {
+  width: 100vw;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+}
+
+.overlayNew {
+  position: fixed;
+  width: 50vw;
+  height: 90vh;
+  top: 10vh;
+  right: 0;
+  bottom: 0;
+  overflow-x: auto;
+  background: #F1ECE8;
+} */

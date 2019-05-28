@@ -11,30 +11,45 @@ import { isAuthenticated } from "../../utils/auth"
 class Add extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = {}
     }
 
 
-    render() { 
-        return isAuthenticated() ? (  
-            <div >
-                <SplitterLayout >
-                    <div >
-                        <ReactMap/>
-                    </div>               
-                    <div className="detailwrapper">
-                        <AddRahuiForm/> 
-                    </div>              
-                </SplitterLayout>                
+    render() {
+        // return isAuthenticated() ? (  
+        //     <div >
+        //         <SplitterLayout >
+        //             <div >
+        //                 <ReactMap/>
+        //             </div>               
+        //             <div className="detailwrapper">
+        //                 <AddRahuiForm/> 
+        //             </div>              
+        //         </SplitterLayout>                
+        //     </div>
+        // ) : <Redirect to='/register'/>
+
+        return isAuthenticated() ? (
+            <div className="mapBackground">
+                <div >
+                    <ReactMap />
+                </div>
+                <div className="overlayNew">
+                    <AddRahuiForm />
+                </div>
             </div>
-        ) : <Redirect to='/register'/>
+        ) : <Redirect to='/register' />
+
+
+
+
     }
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = state => {
     return {
         allrahui: state.rahui
     }
 }
- 
+
 export default connect(mapStateToProps)(Add);

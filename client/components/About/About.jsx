@@ -4,6 +4,7 @@ import Project from "./Project/Project";
 import Team from "./Team/Team";
 import Resources from "./Resourses/Resourses"
 import API from "./API/Api"
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 export class About extends Component {
   constructor(props) {
@@ -31,10 +32,19 @@ export class About extends Component {
   render() {
     return (
       <div>
-        <div className="aboutwrapper">
+        <div className="overlayNew">
           {this.props.lang == "eng" ?
             <div className="aboutnav">
-              <button value="project" onClick={this.handleClick}>Project</button>
+              {/* <button value="project" onClick={this.handleClick}>Project</button> */}
+              
+              <a className="project" onClick={this.handleClick}>Project</a>
+
+              {/* <div className="logoNav">
+                <Link to="/">Rāhuitia</Link>
+              </div> */}
+
+
+              
               <button value="team" onClick={this.handleClick}>Team</button>
               <button value="API" onClick={this.handleClick}>API</button>
               <button value="resources" onClick={this.handleClick}>Resources</button>
@@ -59,8 +69,10 @@ export class About extends Component {
             }
           </div>
         </div>
-        <div className="aboutImage">
-          <img src="Tahuaroa.png" width="100%" />
+
+
+        <div className="fullscreen-video-wrap">
+          <img id="background-video" src="Tahuaroa.png" />
         </div>
       </div>
     )
