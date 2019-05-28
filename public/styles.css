@@ -174,18 +174,19 @@ hr {
 .overlayNew {
   position: fixed;
   width: 50vw;
-  height: 100vh;
+  height: calc(100vh - 2.4em);
   top: 2.4em;
   right: 0;
   bottom: 0;
   overflow: auto;
   background: #F1ECE8;
+  box-shadow: 0px 0px 7px 0px rgba(0,0,0,.1);
 }
 
 .overlayNewAbout {
   position: fixed;
   width: 50vw;
-  height: 100vh;
+  height: calc(100vh - 2.4em);
   top: 2.4em;
   left: 0;
   bottom: 0;
@@ -227,7 +228,7 @@ hr {
 
 img.toggleButton {
   width: 95%;
-  transition: width .2s;
+  transition: width .2s ease-in;
 }
 
 img.toggleButton:hover {
@@ -733,6 +734,12 @@ map {
   display: block;
   font-size: 1.2em;
   padding: .4em;
+  transition:font-size .3s ease-out;
+}
+
+.header .logo:hover{
+  color: rgb(242, 231, 222);
+  font-size: 1.25em;
 }
 
 .header .menu{
@@ -831,7 +838,7 @@ map {
   .overlayNew {
     position: fixed;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 2.4em);
     top: 2.4em;
     right: 0;
     bottom: 0;
@@ -849,7 +856,7 @@ map {
   .overlayNewAbout {
     position: fixed;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 2.4em);
     top: 2.4em;
     left: 0;
     bottom: 0;
@@ -858,3 +865,22 @@ map {
   }
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #F1ECE8; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(225, 220, 216);  
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(201, 197, 193);   
+}
