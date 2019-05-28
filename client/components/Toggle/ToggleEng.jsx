@@ -21,23 +21,17 @@ handleSubmit(e) {
 
   render() {
     return (
-      <div className="navbarContainer">
-        <div className="logoNav">
-          <Link to="/">Rāhuitia</Link>
-        </div>
-        <div className="exploreNav">
-          <Link to="/explore/">Explore</Link>
-        </div>
-        <div className="aboutNav">
-          <Link to="/about/">About</Link>
-        </div>
-        <div className="addNav">
-          <Link to="/addrahui/">Add a Rāhui</Link>
-        </div>
-        <div className="loginNav">
-        {this.props.isAuthenticated ? <a href="#" onClick={this.handleSubmit}>Logout</a> : <Link to="/login/">Login</Link> }
-        </div>
-      </div>
+    <header className="header">
+      <Link className="logo" to="/">Rāhuitia</Link>
+      <input className="menu-btn" type="checkbox" id="menu-btn" />
+      <label className="menu-icon" for="menu-btn"><span className="nav-icon"></span></label>
+      <ul className="menu">
+      <li><Link to="/explore/">Explore</Link></li>
+      <li><Link to="/about/">About</Link></li>
+      <li><Link to="/addrahui/">Add a Rāhui</Link></li>
+      <li>{this.props.isAuthenticated ? <Link to="#" onClick={this.handleSubmit}>Logout</Link> : <Link to="/login/">Login</Link> }</li>
+      </ul>
+    </header>
 
     )
   }
@@ -51,3 +45,27 @@ function mapStateToProps(state) {
 
 
 export default connect(mapStateToProps)(ToggleEng)
+
+
+      {/* <div className="navbarContainer">
+        <div className="logoNav">
+          <Link to="/">Rāhuitia</Link>
+        </div>
+        <div className="exploreNav">
+          <Link to="/explore/">Explore</Link>
+        </div>
+        <div className="aboutNav">
+          <Link to="/about/">About</Link>
+        </div>
+        <div className="addNav">
+          <Link to="/addrahui/">Add a Rāhui</Link>
+        </div>
+        <div className="loginNav">
+        {this.props.isAuthenticated ? <Link to="#" onClick={this.handleSubmit}>Logout</Link> : <Link to="/login/">Login</Link> }
+        </div>
+      </div> */}
+
+
+
+
+

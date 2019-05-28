@@ -35,9 +35,7 @@ body {
 
 .navbarContainer {
   display: flex;
-  /* position: sticky; */
-  top: 0vh;
-  height: 10vh;
+  height: auto;
   align-items: center;
   background: #434734;
 }
@@ -46,6 +44,20 @@ body {
   color: #F1ECE8;
   text-decoration: none;
   font-size: 20px;
+}
+
+@media all and (max-width: 600px) {
+  .navbarContainer {
+    flex-wrap: wrap;
+    
+  }
+  .navbarContainer > div {
+    flex: 1 1 50%;
+  }
+  
+  .search > input {
+    text-align: center;
+  }
 }
 
 .logoNav {
@@ -148,11 +160,11 @@ hr {
 .overlayNew {
   position: fixed;
   width: 50vw;
-  height: 90vh;
-  top: 10vh;
+  height: 100vh;
+  top: 33px;
   right: 0;
   bottom: 0;
-  overflow-x: auto;
+  overflow: auto;
   background: #F1ECE8;
 }
 
