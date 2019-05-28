@@ -308,7 +308,7 @@ button :active {
 
 
 .aboutBody {
-  margin: 10px 600px 0px 80px;
+  margin: 1.9em;
   font-size: 22px;
   line-height: 34px;
 }
@@ -706,11 +706,6 @@ map {
   width: 50vw;
 }
 
-.aboutBody {
-  margin: 10px 10px 0px 80px;
-  font-size: 22px;
-  line-height: 34px;
-}
 
 .aboutImage {
   width: 50vw; 
@@ -828,7 +823,7 @@ map {
   top:0;
 }
 
-@media (min-width:37em){
+@media (min-width:45em){
   
   .header li{
       float:left;
@@ -848,3 +843,40 @@ map {
   }
 
 }
+
+@media (max-width:45em){
+  
+  #background-video{
+    display: none;
+  }
+
+  .overlayNew {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 2.4em;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    background: #F1ECE8;
+  }
+
+  .landingtext {
+    margin: 1.7em;
+    font-size: 28px;
+    line-height: 38px;
+    color: #434734
+  }
+
+  .overlayNewAbout {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 2.4em;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
+    background: #F1ECE8;
+  }
+}
+
