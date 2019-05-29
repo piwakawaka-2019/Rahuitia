@@ -16,7 +16,6 @@ class TautokoReo extends Component {
             <React.Fragment>
                 <div className="tautoko">
                 <div className="tautoko-button-div"><Button className="tautoko-button" action={this.handleBtnActionIncrement.bind(this)} buttonTitle="Tautoko" /></div>             
-                <div className="respect">Whakaaetia te rahui?</div>
                 <div className="count">{count}</div>              
                 <div className="tangata">tanagata tautoko</div>                
                 </div>

@@ -15,8 +15,7 @@ class TautokoEng extends Component {
         return (
             <React.Fragment>
                 <div className="tautoko">
-                <div className="tautoko-button-div"><Button action={this.handleBtnActionIncrement.bind(this)} buttonTitle="Tautoko" /></div>                
-                <div className="respect">Respect the rahui?</div>                
+                <div className="tautoko-button-div"><Button action={this.handleBtnActionIncrement.bind(this)} buttonTitle="Tautoko" /></div>                              
                 <div className="count">{count}</div>                
                 <div className="tangata">supporters</div>       
                 </div>
