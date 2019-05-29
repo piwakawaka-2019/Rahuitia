@@ -33,7 +33,7 @@ class DetailEng extends React.Component {
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
         </div>
         <div className="overlayNew">
-          <button style={{ width: "15%", marginBottom: "10px", padding: "0px" }} className="secondarybutton" onClick={this.handleclick.bind(this)}> Back to List </button>
+          <button className="backToList" onClick={this.handleclick.bind(this)}> Back to List </button>
           <h1> {description}</h1>
           <TautokoEng />
           <br /><b>Issued by </b><p>iwi:{iwi} •  hapu:{hapu}</p>

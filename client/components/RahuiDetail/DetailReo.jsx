@@ -36,7 +36,8 @@ class DetailReo extends React.Component {
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
         </div>
         <div className="overlayNew">
-          <button style={{ width: "15%", marginBottom: "10px", padding: "0px" }} className="secondarybutton" onClick={this.handleclick.bind(this)}> hoki ki te Rārangi </button>
+          <br></br>
+          <button className="backToList" onClick={this.handleclick.bind(this)}> hoki ki te Rārangi </button>
           <h1> {description}</h1>
           <TautokoReo />
           <br /><b>I Whakaputaina e:</b><p>iwi:{iwi} •  hapu:{hapu}</p>
@@ -57,7 +58,7 @@ class DetailReo extends React.Component {
           <div className="spaceme" />
         </div>
       </React.Fragment>
- )
+    )
   }
 }
 
