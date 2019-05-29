@@ -33,6 +33,7 @@ export class About extends Component {
     return (
       <div className="about-wrapper">
         <div className="overlayNewAbout">
+          <div className="aboutContainer" >
           {this.props.lang == "eng" ?
             <div className="aboutnav">
               {/* <Link value="project" className="project" onClick={this.handleClick}>Project</Link>
@@ -67,6 +68,7 @@ export class About extends Component {
             {this.state.visibility == "resources" && <Resources />
             }
           </div>
+        </div>
         </div>
 
 
