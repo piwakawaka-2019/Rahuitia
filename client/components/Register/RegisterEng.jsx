@@ -119,9 +119,7 @@ class RegisterEng extends React.Component {
         return (
             <div className="registerContainer">
                 <h1>Register</h1>
-                <h3>Ekore e tika kia noho he Maori rawakore ki tenei whenua; ehara tenei i te mea e ora ai tatou e tika ai ranei ratou. </h3>
-                <h3>Who can add a rāhui?</h3>
-                <p>You must register to add a rahui. There is a verficiation process to identify you. This may take up to three days.</p>
+                <p>Please register to add a rahui. There is a verficiation process to identify you. This process may take up to three days.</p>
                 <br></br>
                 <form className="register-form" onSubmit={this.submit}>
                     <input name="first_name" type="text" placeholder="first name" noValidate onChange={this.handleChange} />
@@ -155,9 +153,9 @@ class RegisterEng extends React.Component {
                     <br></br>
                     <button className="addAnotherButton" type="button" onClick={this.submitAdd}>Add Another Region/Iwi/Hāpu</button>
                     <br></br>
-                    <div>Your whakapapa: <br></br>
-                        iwi:{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
-                        hapu:{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}<br></br>
+                    <div className="yourWhakapapa"><h3>Selected whakapapa:</h3> <br></br>
+                        <p>Iwi:</p>{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
+                        <p>Hapu:</p>{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}<br></br>
 
                     </div>
                     <br></br>

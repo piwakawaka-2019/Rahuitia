@@ -18,7 +18,7 @@ class LandEng extends Component {
 
           <br></br>
 
-          <button onClick={this.handleclick}>Explore Map</button>
+          <button className="exploreButton" onClick={this.handleclick}>Explore Map</button>
           <br></br>
 
         </div>

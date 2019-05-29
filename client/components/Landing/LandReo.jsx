@@ -24,7 +24,7 @@ class LandReo extends Component {
           </p>
 
             <br></br>
-            <button onClick={this.handleclick}>Te Tūhura Mahere</button>
+            <button className="exploreButton" onClick={this.handleclick}>Te Tūhura Mahere</button>
 
             {/* ----  Mo nga Iwi
 
