@@ -12,7 +12,7 @@ const RahuiListItemEng= props => {
 
     return ( 
         <div className="rahuilist" onClick={handleclick}>
-            {rahui.description}
+            <h3 className="rahuiDescription">{rahui.description}</h3>
             <p>Issued by {rahui.iwi} on {rahui.date_placed}</p>         
         </div>
     );

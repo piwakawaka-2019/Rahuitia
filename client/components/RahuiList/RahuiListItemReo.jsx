@@ -12,8 +12,7 @@ const RahuiListItemReo= props => {
 
     return ( 
         <div className="rahuilist" onClick={handleclick}>
-            {/* ------<br/> */}
-            {rahui.description}
+            <h3 className="rahuiDescription">{rahui.description}</h3>
             <p>I Whakaputaina e {rahui.iwi} i te {rahui.date_placed}</p>  
         </div>
     );

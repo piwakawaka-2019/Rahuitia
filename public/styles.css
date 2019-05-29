@@ -321,11 +321,13 @@ button :active {
 .addAnotherButton {
   width: 21.5rem;
   margin: 10px;
+  letter-spacing: .03em;
 }
 
 .registerSubmitButton {
   width: 8rem;
   margin: 10px;
+  letter-spacing: .03em;
 }
 
 /* about styling */
@@ -400,11 +402,8 @@ button :active {
 
 .rahuilist {
   cursor: pointer;
-  padding: 30px 0px 30px 0px;
   font-style: normal;
   font-weight: bold;
-  font-size: 1.4em;
-  line-height: 1.4em;
   color: #434734;
 }
 
@@ -413,12 +412,29 @@ button :active {
   border-radius: 5px
 }
 
+.rahuilist p {
+  font-family: "Rasa";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.1em;
+  line-height: 1.35em;
+  color: #434734;
+  padding-bottom: 1em;
+  margin: 0px;
+  border-bottom: .05em solid #434734;
+}
 
+.rahuiDescription{
+  padding-top: 1.2em;
+  font-size: 1.4em;
+  line-height: 1.4em;
+}
 
 /* font styles */
 h1 {
-  padding-bottom: 1.8em;
+  padding-bottom: 1.7em;
   font-size: 2em;
+  letter-spacing: .02em;
   line-height: 1.2em;
   color: #434734;
 }
@@ -516,8 +532,8 @@ select {
   padding: .75rem .75rem;
   border: none;
   border-radius: 5px;
-  /* background-color: #F1ECE8; */
-  font-size: 16px;
+  font-size: .9em;
+  color: grey;
   outline: none;
   height: 2.6rem;
   margin: 10px;
