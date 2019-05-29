@@ -117,16 +117,16 @@ class RegisterReo extends React.Component {
   render() {
     return (
       <div className="registerContainer">
-        <h1>Rēhita</h1>
+        <h2>Rēhita</h2>
         <p>Ekore e tika kia noho he Maori rawakore ki tenei whenua; ehara tenei i te mea e ora ai tatou e tika ai ranei ratou. </p>
 
         <br></br>
         <form className="register-form" onSubmit={this.submit}>
-          <input name="first_name" type="text" placeholder="first name" noValidate onChange={this.handleChange} />
+          <input name="first_name" type="text" placeholder="ingoa Tuatahi" noValidate onChange={this.handleChange} />
           <br></br>
-          <input name="middle_name" type="text" placeholder="middle name/s" noValidate onChange={this.handleChange} />
+          <input name="middle_name" type="text" placeholder="ingoa Waenganui" noValidate onChange={this.handleChange} />
           <br></br>
-          <input name="last_name" type="text" placeholder="last name" noValidate onChange={this.handleChange} />
+          <input name="last_name" type="text" placeholder="ingoa Whakamutunga" noValidate onChange={this.handleChange} />
           <br></br>
           {/* Add iwi */}
           <br></br>
@@ -154,8 +154,8 @@ class RegisterReo extends React.Component {
           <button className="addAnotherButton" type="button" onClick={this.submitAdd}>Tāpirihia tetahi atu Rohe / Iwi / Hāpu</button>
           <br></br>
           <div className="yourWhakapapa"><h3>Tou whakapapa:</h3> <br></br>
-            <p>iwi:</p>{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
-            <p>hapu:</p>{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}<br></br>
+            <p className="subHeading">iwi:</p>{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
+            <p className="subHeading">hapu:</p>{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}<br></br>
           </div>
 
           <input name="address" type="text" placeholder="wāhitau" noValidate onChange={this.handleChange} />

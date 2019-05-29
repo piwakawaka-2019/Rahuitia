@@ -118,7 +118,7 @@ class RegisterEng extends React.Component {
     render() {
         return (
             <div className="registerContainer">
-                <h1>Register</h1>
+                <h2>Register</h2>
                 <p>Please register to add a rahui. There is a verficiation process to identify you. This process may take up to three days.</p>
                 <br></br>
                 <form className="register-form" onSubmit={this.submit}>
@@ -153,9 +153,9 @@ class RegisterEng extends React.Component {
                     <br></br>
                     <button className="addAnotherButton" type="button" onClick={this.submitAdd}>Add Another Region/Iwi/Hāpu</button>
                     <br></br>
-                    <div className="yourWhakapapa"><h3>Selected whakapapa:</h3> <br></br>
-                        <p>Iwi:</p>{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
-                        <p>Hapu:</p>{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}<br></br>
+                    <div className="yourWhakapapa"><p>Selected whakapapa:</p> <br></br>
+                        <p className="subHeading">Iwi:</p>{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
+                        <p className="subHeading"> Hapu:</p>{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}<br></br>
 
                     </div>
                     <br></br>
