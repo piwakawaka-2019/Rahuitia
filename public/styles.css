@@ -194,6 +194,7 @@ button :active {
 
 .exploreButton {
   width: 10rem;
+  margin-bottom: 5rem;
 }
 
 
@@ -584,8 +585,12 @@ map {
   position: relative;
   margin-left: 20vw;
   margin-top: 10vh;
+  /* text-align: center; */
 }
 
+.registerInputWrapper {
+  align-items: center
+}
 
 .addAnotherRegionButton {
   font-size: 20px;
@@ -865,11 +870,11 @@ map {
 
   .registerCenter {
     align-items: center;
-    width: 100vw;
+    width: 96vw;
     position: relative;
     margin-left: 2vw;
     margin-top: 2vh;
-    margin-right: 2vw;
+    /* margin-right: 2vw; */
   }
 }
 
