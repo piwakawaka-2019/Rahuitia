@@ -569,14 +569,21 @@ map {
 /* register style */
 
 .registerContainer {
-  margin: auto;
+  /* margin: auto; */
   width: 100vw;
   height: calc(100vh - 2.4em);
   top: 2.4em;
   overflow: auto;
   background: #F1ECE8;
   position: fixed;
+}
 
+.registerCenter {
+  align-items: center;
+  width: 60vw;
+  position: relative;
+  margin-left: 20vw;
+  margin-top: 10vh;
 }
 
 
@@ -854,6 +861,15 @@ map {
     bottom: 0;
     overflow: auto;
     background: #F1ECE8;
+  }
+
+  .registerCenter {
+    align-items: center;
+    width: 100vw;
+    position: relative;
+    margin-left: 2vw;
+    margin-top: 2vh;
+    margin-right: 2vw;
   }
 }
 
