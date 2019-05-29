@@ -13,11 +13,6 @@ class Project extends Component {
     }
   }
   render() {
-    // return (
-    // <div>
-    //   {this.props.lang == "eng" ? <ProjEng/> : <ProjReo/>}
-    // </div>
-    // );
 
     return (
     <div>

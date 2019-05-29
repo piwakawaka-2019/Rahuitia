@@ -40,30 +40,9 @@ p {
   position: relative;
 }
 
-/* navbar styling */
-
-.navbarContainer {
-  display: flex;
-  height: auto;
-  align-items: center;
-  background: #434734;
-}
-
-.navbarContainer a {
-  color: #F1ECE8;
-  text-decoration: none;
-  font-size: 20px;
-}
 
 @media all and (max-width: 600px) {
-  .navbarContainer {
-    flex-wrap: wrap;
     
-  }
-  .navbarContainer > div {
-    flex: 1 1 50%;
-  }
-  
   .search > input {
     text-align: center;
   }
@@ -94,11 +73,6 @@ p {
   padding: 20px 20px 20px 20px;
 }
 
-/* 546 */
-/* @media all and (max-width: 546px) {
-  .navbarContainer {
-    
-  } */
 
 
 
@@ -130,12 +104,6 @@ p {
 
 
 
-/* hr {
-  padding: 0;
-  margin: 0;
-  opacity: .45;
-} */
-
 /* landing page styling */
 .overlay {
   position: absolute;
@@ -153,11 +121,6 @@ p {
 }
 
 .fullscreen-video-wrap{
-  /* margin: 0;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  z-index: -20; */
   min-width: 100vw;
   min-height:  100vh;
   padding-left: overlay-width;
@@ -167,7 +130,7 @@ p {
 .aboutImage {
   min-width: 100vw;
   min-height:  100vh;
-  /* padding-left: overlay-width; */
+
 }
 
 
@@ -210,15 +173,13 @@ p {
   background: #F1ECE8;
 }
 
-/* overlayTextNew {
-  background: #F1ECE8;
-} */
+.aboutContainer {
+  margin: 3em;
+}
 
 .mapBackground {
   width: 50vw;
-  /* object-fit: cover;
-  display: flex;
-  align-items: center; */
+
 }
 
 .languageToggleButton {
@@ -246,23 +207,7 @@ img.toggleButton:hover {
 }
 /* button styles */
 
-button {
-  /* width: 100%;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  background: #434734;
-  border-radius: 4px;
-  color: #F1ECE8;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 27px;
-  line-height: 33px;
-  text-align: center;
-  font-family: Rasa;
-  margin: 20px 0px 20px 0px; */
-}
+
 
 button {
   text-align: center;
@@ -334,27 +279,26 @@ button :active {
 /* about styling */
 
 .about-button{
-  padding: 0;
+  padding-right: 2.5em ;
   border: none;
   background: none;
-  color: #000;
+  color: #797c6a;
   cursor: pointer;
+  font-size: .9em;
+  text-transform: none;
   
 }
 
-.about-button:active{
-  color: rgb(46, 46, 46);
+.about-button:hover{
+  color: #DC5757;
   border: none;
+  background: none;
 }
 
-.about-button:focus {
-  outline: 0;
-}
 
 
 .aboutBody {
-  margin: 1.9em;
-  font-size: 22px;
+  font-size: 1.2em;
   line-height: 34px;
 }
 
@@ -363,25 +307,10 @@ button :active {
   color: #434734;
 }
 
-.aboutContainer {
-  margin: 60px 40px 60px 70px;
-}
 
-.aboutMargin {
-  margin: 40px 20px 20px 70px; 
-}
-
-.aboutHeading {
-  /* margin: 40px 20px 20px 70px; */
-  padding: 10px 10px 0px 10px;
-  font-size: 48px;
-  text-decoration: underline;
-}
 
 .aboutHeading2 {
-  margin: 50px 20px 0px 70px;
-  padding: 10px 10px 10px 10px;
-  font-size: 64px;
+  font-size: 3em;
 }
 
 
@@ -433,8 +362,8 @@ button :active {
 
 /* font styles */
 h1 {
-  padding-bottom: 1.7em;
-  font-size: 2em;
+  /* padding-bottom: 1.7em; */
+  font-size: 2.5em;
   letter-spacing: .02em;
   line-height: 1.2em;
   color: #434734;
@@ -657,10 +586,6 @@ map {
 
 }
 
-/* .loginHeader {
-  margin: 100px 10px 10px 10px;
-
-} */
 
 
 /* register style */
@@ -673,19 +598,9 @@ map {
   overflow: auto;
   background: #F1ECE8;
   position: fixed;
-  /* padding-left: 20vw;
-  padding-right: 20vw; */
+
 }
 
-/* .overlayNew {
-  position: fixed;
-  width: 50vw;
-  height: 100vh;
-  top: 2.4em;
-  right: 0;
-  bottom: 0;
-  overflow: auto;
-  background: #F1ECE8; */
 
 .addAnotherRegionButton {
   font-size: 20px;
