@@ -15,21 +15,12 @@ class TautokoReo extends Component {
         return (
             <React.Fragment>
                 <div className="tautoko">
-
-                <div><Button action={this.handleBtnActionIncrement.bind(this)} buttonTitle="Tautoko" /></div>
-                
-
-                <div className="respect">Whakaaetia te rahui? <br></br>Whakaatuhia to tautoko</div>
-                
-
-                <div className="count">{count}</div>
-                
+                <div className="tautoko-button-div"><Button className="tautoko-button" action={this.handleBtnActionIncrement.bind(this)} buttonTitle="Tautoko" /></div>             
+                <div className="respect">Whakaaetia te rahui?</div>
+                <div className="count">{count}</div>              
                 <div className="tangata">tanagata tautoko</div>                
                 </div>
-                <hr></hr>
-                <br/>
-
-                
+                <br/>              
             </React.Fragment>
         )
     }

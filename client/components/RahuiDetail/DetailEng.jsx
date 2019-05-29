@@ -33,6 +33,7 @@ class DetailEng extends React.Component {
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
         </div>
         <div className="overlayNew">
+          <div className="rahui-text">
           <button style={{ width: "15%", marginBottom: "10px", padding: "0px" }} className="secondarybutton" onClick={this.handleclick.bind(this)}> Back to List </button>
           <h1> {description}</h1>
           <TautokoEng />
@@ -52,6 +53,7 @@ class DetailEng extends React.Component {
           <br></br>
           <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : ""}</h3>
           <div className="spaceme" />
+          </div>
         </div>
       </React.Fragment>
     )

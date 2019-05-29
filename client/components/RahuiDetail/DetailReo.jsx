@@ -36,6 +36,7 @@ class DetailReo extends React.Component {
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
         </div>
         <div className="overlayNew">
+          <div className="rahui-text">
           <button style={{ width: "15%", marginBottom: "10px", padding: "0px" }} className="secondarybutton" onClick={this.handleclick.bind(this)}> hoki ki te Rārangi </button>
           <h1> {description}</h1>
           <TautokoReo />
@@ -55,6 +56,7 @@ class DetailReo extends React.Component {
           <br></br>
           <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>whakatika</Link> : ""}</h3>
           <div className="spaceme" />
+          </div>
         </div>
       </React.Fragment>
  )

@@ -14,24 +14,13 @@ class TautokoEng extends Component {
         const { count } = this.props
         return (
             <React.Fragment>
-                {/* <hr></hr> */}
                 <div className="tautoko">
-
-                <div><Button action={this.handleBtnActionIncrement.bind(this)} buttonTitle="Tautoko" /></div>
-                
-
-                <div className="respect">Respect the rahui? <br></br>Show your tautoko</div>
-                
-
-                <div className="count">{count}</div>
-                
-                <div className="tangata">tanagata tautoko</div>
-                
+                <div className="tautoko-button-div"><Button action={this.handleBtnActionIncrement.bind(this)} buttonTitle="Tautoko" /></div>                
+                <div className="respect">Respect the rahui?</div>                
+                <div className="count">{count}</div>                
+                <div className="tangata">supporters</div>       
                 </div>
-                <hr></hr>
-                <br/>
-
-                
+                <br/>              
             </React.Fragment>
         )
     }
