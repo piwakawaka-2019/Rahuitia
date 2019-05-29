@@ -189,7 +189,6 @@ p {
 
 .overlayNew {
   position: fixed;
-  padding: 2.53em;
   width: 50vw;
   height: calc(100vh - 2.4em);
   top: 2.4em;
@@ -246,24 +245,6 @@ img.toggleButton:hover {
   width: 98%;
 }
 /* button styles */
-
-button {
-  /* width: 100%;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  background: #434734;
-  border-radius: 4px;
-  color: #F1ECE8;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 27px;
-  line-height: 33px;
-  text-align: center;
-  font-family: Rasa;
-  margin: 20px 0px 20px 0px; */
-}
 
 button {
   text-align: center;
