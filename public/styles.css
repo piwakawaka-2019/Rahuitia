@@ -160,7 +160,7 @@ p {
   width: 2.9em;
   height: 1.9em;
   position: fixed;
-  bottom: 0px;
+  bottom: 10px;
   right: 0px;
   z-index: 55;
   outline: none;
@@ -170,7 +170,7 @@ p {
 }
 
 img.toggleButton {
-  width: 95%;
+  width: 100%;
   transition: width .2s ease-in;
   cursor: pointer;
 
@@ -179,6 +179,8 @@ img.toggleButton {
 img.toggleButton:hover {
   width: 98%;
 }
+
+
 /* button styles */
 
 
