@@ -222,6 +222,21 @@ button :active {
    width: 8rem;
  }
 
+ .tautokoButton {
+   width: 8rem;
+   background-color: #DC5757;
+   color: white;
+   border: none;
+   
+ }
+
+ .tautokoButton:hover {
+  background-color: #DC5757;
+  box-shadow: 0 7px 14px rgba(0,0,0,0.25), 0 2px 2px rgba(0,0,0,0.22);
+}
+
+
+
 
 .addAnotherButton {
   width: 21.5rem;
