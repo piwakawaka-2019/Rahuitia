@@ -120,7 +120,9 @@ class RegisterEng extends React.Component {
             <div className="registerContainer">
                 <div className="registerCenter">
                     <h2>Register</h2>
-                    <p>Please register to add a rahui. There is a verficiation process to identify you. This process may take up to three days.</p>
+                    <p>Please register to add a rahui.</p>
+                    <p>There is a verficiation process to identify you.</p>
+                    <p> This process may take up to three days.</p>
                     <br></br>
                     <form className="register-form" onSubmit={this.submit}>
                         <input name="first_name" type="text" placeholder="first name" noValidate onChange={this.handleChange} />

@@ -219,13 +219,13 @@ button :active {
 
 .addAnotherButton {
   width: 21.5rem;
-  margin: 10px;
+  margin: 10px 10px 10px 0px;
   letter-spacing: .03em;
 }
 
 .registerSubmitButton {
   width: 8rem;
-  margin: 10px;
+  margin: 10px 10px 10px 0px;
   letter-spacing: .03em;
 }
 
@@ -416,7 +416,7 @@ input {
   /* background-color: #eceee3; */
   border: none;
   font-size: .97em;
-  margin: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 0px;
   font-family: "Rasa";
 }
 
@@ -444,7 +444,7 @@ select {
   color: grey;
   outline: none;
   height: 2.6rem;
-  margin: 10px;
+  margin: 10px 10px 10px 0px;
   font-family: "Rasa";
 }
 
@@ -677,7 +677,7 @@ map {
   border-radius: 4px;
   width: 20rem;
   padding: .75rem .75rem;
-  margin: 10px;
+  margin: 10px 10px 10px 0px;
 }
 
 /* responsive navbar */

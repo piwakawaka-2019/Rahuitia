@@ -34,19 +34,19 @@ class DetailEng extends React.Component {
         </div>
         <div className="overlayNew">
           <div className="rahui-text">
-          <button style={{ width: "15%", marginBottom: "10px", padding: "0px" }} className="secondarybutton" onClick={this.handleclick.bind(this)}> Back to List </button>
-          <h1> {description}</h1>
-          <TautokoEng />
-          <br /><b>Issued by </b><p>iwi:{iwi} •  hapu:{hapu}</p>
-          <br /><b>Authorised by</b> <p> {authoriser}</p>
-          <br /><b>Date placed</b> <p> {date_placed}</p>
-          <br /><b>Date Lifted</b> <p> {date_lifted}</p>
-          <br /><b>Korero</b> <p> {korero}</p>
-          <br /><b>Submitted by</b> <p> {first_name} {last_name}</p>
-          <br /><b>Contact</b> <p> {contact}</p>
-          <br></br>
-          <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : ""}</h3>
-          <div className="spaceme" />
+            <button className="backToList" onClick={this.handleclick.bind(this)}> Back to List </button>
+            <h1> {description}</h1>
+            <TautokoEng />
+            <br /><b>Issued by </b><p>iwi:{iwi} •  hapu:{hapu}</p>
+            <br /><b>Authorised by</b> <p> {authoriser}</p>
+            <br /><b>Date placed</b> <p> {date_placed}</p>
+            <br /><b>Date Lifted</b> <p> {date_lifted}</p>
+            <br /><b>Korero</b> <p> {korero}</p>
+            <br /><b>Submitted by</b> <p> {first_name} {last_name}</p>
+            <br /><b>Contact</b> <p> {contact}</p>
+            <br></br>
+            <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : ""}</h3>
+            <div className="spaceme" />
           </div>
         </div>
       </React.Fragment>
