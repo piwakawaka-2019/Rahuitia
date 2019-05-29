@@ -153,7 +153,7 @@ class RegisterEng extends React.Component {
                         ) : <option>----------</option>}
                     </select>
                     <br></br>
-                    <button type="button" onClick={this.submitAdd}>Add Another Region/Iwi/Hāpu</button>
+                    <button className="addAnotherButton" type="button" onClick={this.submitAdd}>Add Another Region/Iwi/Hāpu</button>
                     <br></br>
                     <div>Your whakapapa: <br></br>
                         iwi:{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
@@ -171,7 +171,7 @@ class RegisterEng extends React.Component {
                     <input name="confirm_password" type="password" placeholder="confirm password" noValidate onChange={this.handleChange} />
                     <p>{this.props.auth.errorMessage}</p>
                     <br></br>
-                    <button name="submit">SUBMIT</button>
+                    <button className="registerSubmitButton" name="submit">SUBMIT</button>
                 </form>
             </div>)
     }

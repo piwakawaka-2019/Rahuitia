@@ -35,7 +35,7 @@ class LoginEng extends Component {
 
         <form onSubmit={this.submit} noValidate>
 
-          <h2>Log in</h2>
+          <h2 className="loginHeader">Log in</h2>
 
           <input className="loginInput" name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
 

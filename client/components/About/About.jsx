@@ -39,7 +39,7 @@ export class About extends Component {
               <Link value="team" className="project" onClick={this.handleClick}>Team</Link>
               <Link value="API" className="project" onClick={this.handleClick}>API</Link>
               <Link value="resources" className="project" onClick={this.handleClick}>Resources</Link> */}
-              <button className="about-button" value="project" onClick={this.handleClick}>Project</button> 
+              <button className="about-button" value="project" onClick={this.handleClick}>Project</button>
               <button className="about-button" value="team" onClick={this.handleClick}>Team</button>
               <button className="about-button" value="API" onClick={this.handleClick}>API</button>
               <button className="about-button" value="resources" onClick={this.handleClick}>Resources</button>
@@ -70,8 +70,10 @@ export class About extends Component {
         </div>
 
 
-        <div className="fullscreen-video-wrap">
-          <img id="background-" src="Tahuaroa.png" />
+        <div className="aboutImage">
+          {/* <img id="background-image" src="Tahuaroa.png" /> */}
+          <img src="Tahuaroa.png" />
+
         </div>
       </div>
     )

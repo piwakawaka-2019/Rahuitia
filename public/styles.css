@@ -155,6 +155,13 @@ hr {
 }
 
 
+.aboutImage {
+  min-width: 100vw;
+  min-height:  100vh;
+  /* padding-left: overlay-width; */
+}
+
+
 #background-video {
   height: 100vh;
   object-fit: cover;
@@ -228,15 +235,18 @@ hr {
 img.toggleButton {
   width: 95%;
   transition: width .2s;
+  cursor: pointer;
+
 }
 
 img.toggleButton:hover {
   width: 98%;
+  
 }
 /* button styles */
 
 button {
-  width: 100%;
+  /* width: 100%;
   cursor: pointer;
   padding: 10px;
   border-radius: 5px;
@@ -250,8 +260,28 @@ button {
   line-height: 33px;
   text-align: center;
   font-family: Rasa;
-  margin: 20px 0px 20px 0px;
+  margin: 20px 0px 20px 0px; */
 }
+
+button {
+  text-align: center;
+  /* min-width: 8rem; */
+  border: .7px solid #434734; 
+  border-radius: 5px;
+  padding: .75rem 0;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  background: #F5F5F5;
+}
+
 
 button :active {
   background: #9fa09a;
@@ -284,6 +314,15 @@ button :active {
   text-align: center;
   font-family: Rasa;
   margin-top: 20px;
+}
+
+
+.addAnotherButton {
+  width: 20rem;
+}
+
+.registerSubmitButton {
+  width: 8rem;
 }
 
 /* about styling */
@@ -448,18 +487,19 @@ a {
 /* form styles  */
 
 input {
-  width: 90%;
-  padding: 12px 20px;
+  width: 20rem;
+  padding: .75rem .75rem;
   outline: none;
-  border-radius: 4px;
-  background-color: #eceee3;
+  border-radius: 5px;
+  /* background-color: #eceee3; */
   border: none;
-  font-size: 17px;
-  margin-right: 10px
+  font-size: 14px;
+  margin: 10px 10px 10px 10px;
+
 }
 
 input:focus {
-  border: 1px solid #7d8366;
+  border: 0.8px solid #7d8366;
 }
 
 textarea {
@@ -474,12 +514,12 @@ textarea {
 }
 
 select {
-  width: 100%;
-  padding: 33px 20px;
+  width: 20rem;
+  padding: .75rem .75rem;
   border: none;
-  border-radius: 4px;
-  background-color: #F1ECE8;
-  font-size: 17px;
+  border-radius: 5px;
+  /* background-color: #F1ECE8; */
+  font-size: 14px;
   outline: none;
 }
 
@@ -578,8 +618,14 @@ map {
 
 
 .login-wrapper {
+  position: fixed;
   margin: auto;
-  width: 50%;
+  /* width: 50%; */
+  top: 2.4em;
+}
+
+.loginHeader {
+  margin: 10px 10px 10px 10px;
 }
 
 .loginInput {
@@ -587,9 +633,9 @@ map {
 }
 
 .loginButton {
-  width: 150px;
   margin: 10px 10px 10px 10px;
-  font-size: 20px;
+  min-width: 8rem;
+
 }
 
 /* .loginHeader {
@@ -609,7 +655,7 @@ map {
   bottom: 0;
   overflow: auto;
   background: #F1ECE8;
-
+  position: fixed;
 }
 
 /* .overlayNew {
@@ -644,10 +690,10 @@ map {
   background: white;
 }
 
-.addAnotherButton {
+/* .addAnotherButton {
   width: 40%;
   margin: 0px 0px 0px 0px;
-  font-size: 20px;
+  font-size: 20px; */
   /* padding: */
 }
 
@@ -707,8 +753,9 @@ map {
 }
 
 
-.aboutImage {
-  width: 50vw; 
+.aboutImage img {
+  width: 100vw;
+  height: 100vh; 
 }
 
 /* responsive navbar */
