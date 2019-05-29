@@ -39,17 +39,11 @@ class DetailEng extends React.Component {
           <TautokoEng />
           <br /><b>Issued by </b><p>iwi:{iwi} •  hapu:{hapu}</p>
           <br /><b>Authorised by</b> <p> {authoriser}</p>
-          <br />
-          <div className="twocol">
-            <div ><b>Date placed</b> <p> {date_placed}</p></div>
-            <div ><b>Date Lifted</b> <p> {date_lifted}</p> </div>
-          </div>
+          <br /><b>Date placed</b> <p> {date_placed}</p>
+          <br /><b>Date Lifted</b> <p> {date_lifted}</p>
           <br /><b>Korero</b> <p> {korero}</p>
-          <br /><br></br>
-          <div className="twocol detailbottom">
-            <div><b>Submitted by</b> <p> {first_name} {last_name}</p></div>
-            <div><b>Contact</b> <p> {contact}</p></div>
-          </div>
+          <br /><b>Submitted by</b> <p> {first_name} {last_name}</p>
+          <br /><b>Contact</b> <p> {contact}</p>
           <br></br>
           <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : ""}</h3>
           <div className="spaceme" />

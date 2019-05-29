@@ -34,10 +34,11 @@ p {
 .tautoko {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 4fr 4fr 1fr ;
+  grid-template-columns: 1fr 4fr 4fr;
   grid-template-rows: none;
-
   position: relative;
+  border-bottom: .05em solid #95a16e;
+      padding-bottom: 2.3em; 
 }
 
 
@@ -60,23 +61,21 @@ p {
 }
 
 .tautoko-button-div{
-
+  padding-top: .4em;
 }
 
 .count{
   text-align: center;
   font-size: 52px;
   color: #DC5757;
-  padding: .12em .7em 0 .7em;
+  padding: .12em 0 .1em;
 }
 
 
 .tangata{
-  padding: 30px 15px 25px 15px;
+  padding: 1.55em .7em 1.2em .7em;
   font-size: 17px;
   color: #DC5757;
-  vertical-align: center;
-
 }
 
 
@@ -850,9 +849,9 @@ map {
   }
 
   .about-button{
-    padding-right: 1.7m ;
- 
-    font-size: .8em;
+    padding-right: 1.7m;
+    padding-left: 0; 
+    font-size: 1em;
     text-transform: none;
     
   }
@@ -903,7 +902,7 @@ map {
 }
 
 .rahui-text p {
-  padding-top: 2em;
+  padding-top: 1.3em;
 }
 
 .gmnoprint a, .gmnoprint span {
