@@ -54,17 +54,20 @@ p {
 
 
 .respect {
-  padding: 30px 15px 25px 20px;
+  padding: 0 .7em 0 .7em;
   color: rgb(133, 133, 133);
   vertical-align: center
 }
 
+.tautoko-button-div{
+
+}
+
 .count{
-  text-align: right;
+  text-align: center;
   font-size: 52px;
   color: #DC5757;
-  padding: 20px 5px 20px 0px;
-  vertical-align: center
+  padding: .12em .7em 0 .7em;
 }
 
 
@@ -156,38 +159,14 @@ p {
 
 }
 
-.languageToggleButton {
-  width: 2.9em;
-  height: 1.9em;
-  position: fixed;
-  bottom: 0px;
-  right: 0px;
-  z-index: 55;
-  outline: none;
-  display: flex;
-  align-items: center;
-  align-content: center;
-}
-
-img.toggleButton {
-  width: 95%;
-  transition: width .2s ease-in;
-  cursor: pointer;
-
-}
-
-img.toggleButton:hover {
-  width: 98%;
-}
 /* button styles */
-
 
 
 button {
   text-align: center;
   border: .7px solid #434734;
   border-radius: 5px;
-  padding: .75rem 0;
+  padding: .75rem .75rem;
   cursor: pointer;
   font-size: 16px;
   text-transform: uppercase;
@@ -250,17 +229,41 @@ button :active {
   letter-spacing: .03em;
 }
 
+.languageToggleButton {
+  width: 2.9em;
+  height: 1.9em;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  z-index: 55;
+  outline: none;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+img.toggleButton {
+  width: 95%;
+  transition: width .2s ease-in;
+  cursor: pointer;
+
+}
+
+img.toggleButton:hover {
+  width: 98%;
+}
+
 /* about styling */
 
-.about-button{
-  padding-right: 2.5em ;
+.about-button {
+  padding-right: 11%;
+  display: block;
   border: none;
   background: none;
   color: #797c6a;
   cursor: pointer;
   font-size: 1.2em;
   text-transform: none;
-  
 }
 
 .about-button:hover{
@@ -269,6 +272,7 @@ button :active {
   background: none;
 }
 
+/* button styles */
 
 
 .aboutBody {
@@ -783,7 +787,7 @@ map {
   top:0;
 }
 
-@media (min-width:45em){
+@media (min-width:50em){
   
   .header li{
       float:left;
@@ -802,9 +806,12 @@ map {
       display:none;
   }
 
+
+
+
 }
 
-@media (max-width:45em){
+@media (max-width:50em){
   
   #background-video{
     display: none;
@@ -824,6 +831,18 @@ map {
   .landingtext {
     margin: 1.2em 2.27em 1.2em 1.8em;
     color: #434734;
+  }
+
+  .aboutContainer {
+    margin: 1.5em;
+  }
+
+  .about-button{
+    padding-right: 1.7m ;
+ 
+    font-size: .8em;
+    text-transform: none;
+    
   }
 
   .overlayNewAbout {
@@ -860,6 +879,10 @@ map {
 
 .rahui-text {
   margin: 3em;
+}
+
+.rahui-text p {
+  padding-top: 2em;
 }
 
 .gmnoprint a, .gmnoprint span {

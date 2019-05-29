@@ -36,26 +36,28 @@ class DetailReo extends React.Component {
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
         </div>
         <div className="overlayNew">
-          <br></br>
-          <button className="backToList" onClick={this.handleclick.bind(this)}> hoki ki te Rārangi </button>
-          <h1> {description}</h1>
-          <TautokoReo />
-          <br /><b>I Whakaputaina e:</b><p>iwi:{iwi} •  hapu:{hapu}</p>
-          <br /><b>Te Ingoa o nga Kaituhi</b> <p> {authoriser}</p>
-          <br />
-          <div className="twocol">
-            <div ><b>Rā Kua Tuhia</b> <p> {date_placed}</p></div>
-            <div ><b>Rā Kua Piki</b> <p> {date_lifted}</p> </div>
+          <div className="rahui-text">
+            <br></br>
+            <button className="backToList" onClick={this.handleclick.bind(this)}> hoki ki te Rārangi </button>
+            <h1> {description}</h1>
+            <TautokoReo />
+            <br /><b>I Whakaputaina e:</b><p>iwi:{iwi} •  hapu:{hapu}</p>
+            <br /><b>Te Ingoa o nga Kaituhi</b> <p> {authoriser}</p>
+            <br />
+            <div className="twocol">
+              <div ><b>Rā Kua Tuhia</b> <p> {date_placed}</p></div>
+              <div ><b>Rā Kua Piki</b> <p> {date_lifted}</p> </div>
+            </div>
+            <br /><b>Korero</b> <p> {korero}</p>
+            <br /><br></br>
+            <div className="twocol detailbottom">
+              <div><b>Tukuna e</b> <p> {first_name} {last_name}</p></div>
+              <div><b>Whakapa Mai</b> <p> {contact}</p></div>
+            </div>
+            <br></br>
+            <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>whakatika</Link> : ""}</h3>
+            <div className="spaceme" />
           </div>
-          <br /><b>Korero</b> <p> {korero}</p>
-          <br /><br></br>
-          <div className="twocol detailbottom">
-            <div><b>Tukuna e</b> <p> {first_name} {last_name}</p></div>
-            <div><b>Whakapa Mai</b> <p> {contact}</p></div>
-          </div>
-          <br></br>
-          <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>whakatika</Link> : ""}</h3>
-          <div className="spaceme" />
         </div>
       </React.Fragment>
     )
