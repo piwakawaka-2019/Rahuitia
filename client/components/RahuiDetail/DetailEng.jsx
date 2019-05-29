@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
 import { getUserTokenInfo } from '../../utils/auth'
 import NewMap from '../NewMap'
-import SplitterLayout from 'react-splitter-layout';
-import Tautoko from "../Tautoko"
+import TautokoEng from "../Tautoko/TautokoEng"
 
 
 
@@ -30,49 +29,14 @@ class DetailEng extends React.Component {
     return (
 
       <React.Fragment>
-        {/* <SplitterLayout primaryIndex={0}>
-          <div >
-            <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
-          </div>
-
-          <div className="detailwrapper">
-            <button style={{ width: "15%", marginBottom: "10px", padding: "0px" }} className="secondarybutton" onClick={this.handleclick.bind(this)}> Back to List </button>
-
-            <h1> {description}</h1>
-            <Tautoko />
-            <br /><b>Issued by </b><p> {hapu}   •  {iwi} •  {region}</p>
-            <br /><b>Authorised by</b> <p> {authoriser}</p>
-            <br />
-            <div className="twocol">
-              <div ><b>Date placed</b> <p> {date_placed}</p></div>
-              <div ><b>Date Lifted</b> <p> {date_lifted}</p> </div>
-            </div>
-            <br /><b>Korero</b> <p> {korero}</p>
-            <br /><br></br>
-            <div className="twocol">
-              <div><b>Submitted by</b> <p> {first_name} {last_name}</p></div>
-              <div><b>Contact</b> <p> {contact}</p></div>
-            </div>
-            <br></br>
-            <hr></hr>
-            <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : ""}</h3>
-            <div className="spaceme" />
-
-          </div>
-
-        </SplitterLayout> */}
-
-        {/* <SplitterLayout primaryIndex={0}> */}
         <div className="mapBackground">
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
         </div>
-
         <div className="overlayNew">
           <button style={{ width: "15%", marginBottom: "10px", padding: "0px" }} className="secondarybutton" onClick={this.handleclick.bind(this)}> Back to List </button>
-
           <h1> {description}</h1>
-          <Tautoko />
-          <br /><b>Issued by </b><p> {hapu}   •  {iwi} •  {region}</p>
+          <TautokoEng />
+          <br /><b>Issued by </b><p>iwi:{iwi} •  hapu:{hapu}</p>
           <br /><b>Authorised by</b> <p> {authoriser}</p>
           <br />
           <div className="twocol">
@@ -81,20 +45,14 @@ class DetailEng extends React.Component {
           </div>
           <br /><b>Korero</b> <p> {korero}</p>
           <br /><br></br>
-          <div className="twocol">
+          <div className="twocol detailbottom">
             <div><b>Submitted by</b> <p> {first_name} {last_name}</p></div>
             <div><b>Contact</b> <p> {contact}</p></div>
           </div>
           <br></br>
-          <hr></hr>
           <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : ""}</h3>
           <div className="spaceme" />
-
         </div>
-
-        {/* </SplitterLayout> */}
-
-
       </React.Fragment>
     )
   }

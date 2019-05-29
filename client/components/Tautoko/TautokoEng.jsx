@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import Button from './Button'
+import Button from '../Button'
 import { connect } from 'react-redux'
-import { incrementCount, decrementCount } from '../actions/tautoko'
+import { incrementCount, decrementCount } from '../../actions/tautoko'
 
-class Tautoko extends Component {
+class TautokoEng extends Component {
 
     handleBtnActionIncrement = () => {
         this.props.onIncrementClick(this.props.count)
@@ -56,4 +56,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Tautoko)
+export default connect(mapStateToProps, mapDispatchToProps)(TautokoEng)
