@@ -173,11 +173,12 @@ img.toggleButton {
   width: 100%;
   transition: width .2s ease-in;
   cursor: pointer;
+  margin-bottom: .05em;
 
 }
 
 img.toggleButton:hover {
-  width: 98%;
+  width: 110%;
 }
 
 
