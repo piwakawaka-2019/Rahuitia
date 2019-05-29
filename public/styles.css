@@ -48,32 +48,6 @@ p {
   }
 }
 
-.logoNav {
-  padding: 20px 20px 20px 20px;
-}
-
-.logoNav a {
-  font-size: 30px;
-}
-
-.exploreNav{
-  padding: 20px 20px 20px 20px;
-}
-
-.aboutNav {
-  padding: 20px 20px 20px 20px;
-}
-
-.addNav {
-  padding: 20px 20px 20px 20px;
-  margin-left: auto;
-}
-
-.loginNav {
-  padding: 20px 20px 20px 20px;
-}
-
-
 
 
 
@@ -284,7 +258,7 @@ button :active {
   background: none;
   color: #797c6a;
   cursor: pointer;
-  font-size: .9em;
+  font-size: 1em;
   text-transform: none;
   
 }
@@ -345,19 +319,21 @@ button :active {
 .rahuilist p {
   font-family: "Rasa";
   font-style: normal;
-  font-weight: normal;
-  font-size: 1.1em;
+  font-weight: lighter;
+  font-size: .9em;
   line-height: 1.35em;
-  color: #434734;
-  padding-bottom: 1em;
+  color: #656b50;
+  padding-bottom: 2em;
   margin: 0px;
-  border-bottom: .05em solid #434734;
+  border-bottom: .05em solid #95a16e;
 }
 
 .rahuiDescription{
-  padding-top: 1.2em;
+  padding-top: 1em;
   font-size: 1.4em;
   line-height: 1.4em;
+  margin-bottom: 0;
+  margin-top: .5em;
 }
 
 /* font styles */
@@ -392,10 +368,8 @@ h2 {
 h3 {
   font-style: bold;
   font-weight: bold;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 1.5em;
   color: #434734;
-  margin-top: 10px
 }
 
 
@@ -885,7 +859,7 @@ map {
 }
 
 .rahui-text {
-  margin: 2.1em;
+  margin: 3em;
 }
 
 .gmnoprint a, .gmnoprint span {
