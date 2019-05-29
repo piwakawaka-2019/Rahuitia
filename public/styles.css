@@ -126,7 +126,6 @@ p {
 
 .overlayNew {
   position: fixed;
-  padding: 2.53em;
   width: 50vw;
   height: calc(100vh - 2.4em);
   top: 2.4em;
