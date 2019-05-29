@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import RahuiList from "./RahuiList"
-import RahuiListItem from "./RahuiListItem"
+import RahuiListItemEng from "./RahuiListItemEng"
 import { connect } from 'react-redux'
 
 class RahuiListEng extends React.Component {
@@ -16,7 +16,7 @@ class RahuiListEng extends React.Component {
             <div>
               <br></br>
                 <h1>Select to learn about a Rāhui </h1>
-                 {this.props.allrahui.map(rahui => <RahuiListItem key={rahui.id} rahui={rahui} /> )}   
+                 {this.props.allrahui.map(rahui => <RahuiListItemEng key={rahui.id} rahui={rahui} /> )}   
             </div>
            );
     }

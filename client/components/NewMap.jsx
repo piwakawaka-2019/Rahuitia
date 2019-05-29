@@ -99,7 +99,7 @@ componentWillMount = () => {
   return(
      <div>
        <GoogleMapExample
-         containerElement={ <div style={{ height: window.innerHeight, width: `100%`, position: relative}} /> }
+         containerElement={ <div style={{ height: `100vh`, width: `100%`, position: relative}} /> }
          mapElement={ <div style={{ height: `100%`, width: `100%` }} /> }
          
        />

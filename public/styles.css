@@ -120,11 +120,11 @@ body {
 
 
 
-hr {
+/* hr {
   padding: 0;
   margin: 0;
   opacity: .45;
-}
+} */
 
 /* landing page styling */
 .overlay {
@@ -212,13 +212,12 @@ hr {
 }
 
 .languageToggleButton {
-  width: 60px;
+  width: 2.9em;
+  height: 1.9em;
   position: fixed;
   bottom: 0px;
   right: 0px;
   z-index: 55;
-  margin: 0px 0px 0px 0px;
-  padding: 2px;
   outline: none;
   display: flex;
   align-items: center;
@@ -234,7 +233,6 @@ img.toggleButton {
 
 img.toggleButton:hover {
   width: 98%;
-  
 }
 /* button styles */
 
@@ -258,15 +256,13 @@ button {
 
 button {
   text-align: center;
-  /* min-width: 8rem; */
-  border: .7px solid #434734; 
+  border: .7px solid #434734;
   border-radius: 5px;
   padding: .75rem 0;
   cursor: pointer;
   font-size: 16px;
   text-transform: uppercase;
   font-family: "Rasa";
-
 }
 
 button:focus {
@@ -398,8 +394,8 @@ button :active {
   padding: 30px 0px 30px 0px;
   font-style: normal;
   font-weight: bold;
-  font-size: 33px;
-  line-height: 40px;
+  font-size: 1.4em;
+  line-height: 1.4em;
   color: #434734;
 }
 
@@ -408,16 +404,14 @@ button :active {
   border-radius: 5px
 }
 
+
+
 /* font styles */
 h1 {
-  padding-bottom: 20px;
-  padding-top: 10px;  
-  font-style: normal;
-  font-weight: bold;
-  font-size: 52px;
-  line-height: 58px;
+  padding-bottom: 1.8em;
+  font-size: 2em;
+  line-height: 1.2em;
   color: #434734;
-  margin-top: 20px
 }
 
 .title {
@@ -489,10 +483,9 @@ input {
   border-radius: 5px;
   /* background-color: #eceee3; */
   border: none;
-  font-size: 16px;
+  font-size: .97em;
   margin: 10px 10px 10px 10px;
   font-family: "Rasa";
-
 }
 
 input:focus {
@@ -671,8 +664,6 @@ map {
   font-size: 20px;
 }
 
-
-
 .registerButton {
   display: block;
   width: 200px;
@@ -687,13 +678,6 @@ map {
   font-size: 20px;
   color: #434834;
   background: white;
-}
-
-/* .addAnotherButton {
-  width: 40%;
-  margin: 0px 0px 0px 0px;
-  font-size: 20px; */
-  /* padding: */
 }
 
 .inputRegister {
@@ -959,7 +943,7 @@ map {
 }
 
 .rahui-text {
-  margin: 30px 30px 30px 30px;
+  margin: 2.1em;
 }
 
 .gmnoprint a, .gmnoprint span {
@@ -968,3 +952,4 @@ map {
 .gmnoprint div {
   background:none !important;
 }
+
