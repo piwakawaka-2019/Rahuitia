@@ -4,7 +4,7 @@
 require('dotenv').config()
 
 var Knex = require('knex')
-var config = require('../knexfile')[process.env.NODE_ENV || 'development']
+var config = require('../../knexfile')[process.env.NODE_ENV || 'development']
 var knex = Knex(config)
 
 const server = require('./server')
