@@ -10,7 +10,7 @@ This App will attempt to provide an API resource that allows Iwi to geo-locate a
 
 This is an app to display Rāhui and other concerns in cartographic format.
 
-The idea of the App is to be able to display current Rāhui and to be able to Tautoko or support certain Rāhui. A user can sign up by listing their iwi affiliation and biographical information. A registered user can then create and locate a rāhui..
+The idea of the App is to be able to display current Rāhui and to be able to Tautoko or support certain Rāhui. A user can sign up by listing their iwi affiliation and biographical information. A registered user can then create and locate a rāhui.
 
 ## User Stories
 
