@@ -1,5 +1,7 @@
-const envConfig = require('dotenv').config()
-if(envConfig.error) throw envConfig.error
+// const envConfig = require('dotenv').config()
+// if(envConfig.error) throw envConfig.error
+
+require('dotenv').config()
 
 var Knex = require('knex')
 var config = require('../knexfile')[process.env.NODE_ENV || 'development']
