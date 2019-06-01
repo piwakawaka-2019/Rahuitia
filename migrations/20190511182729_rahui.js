@@ -7,8 +7,8 @@ exports.up = function(knex, Promise) {
     table.string("iwi");
     table.string("hapu");
     table.string("authoriser");
-    table.string("description");
-    table.string("korero");
+    table.string("description", 1000);
+    table.string("korero", 1000);
     table.string("geo_ref");
     table.integer("date_placed");
     table.integer("date_lifted");
