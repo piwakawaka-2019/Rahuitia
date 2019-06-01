@@ -2,7 +2,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable("rahui", table => {
     table.increments("id").primary();
-    table.text("user_id");
+    table.integer("user_id");
     table.text("region");
     table.text("iwi");
     table.text("hapu");
