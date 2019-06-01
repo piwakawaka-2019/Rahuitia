@@ -16,8 +16,8 @@ exports.seed = function (knex, Promise) {
             "Maunganui Bay, on the Cape Brett Peninsula in the Bay of Islands, was first closed to all fishing except kina on 1 December 2010 for a two­ year period. It has been rolled over every two years since then. Ngati Kuta and Patukeha ki Te Rawhiti, the two resident hapu, have requested a further closure as they consider that more time is required to allow depleted stocks in Maunganui Bay to continue rebuilding. The two hapu have maintained a traditional rahui (closure) over Maunganui Bay since March 2009, due to their concern about the depletion of fish stocks. The further closure provides ongoing statutory support for the traditional rahui",
           geo_ref: JSON.stringify([{ lat: -35.16643533792861, lng: 174.3177917555065 }, { lat: -35.188043311071716, lng: 174.1965988233776 }, { lat: -35.23264419283272, lng: 174.2728164747448 }, { lat: -35.16643533792861, lng: 174.3177917555065 }
           ]),
-          date_placed: '01-12-2010',
-          date_lifted: '25-04-2019',
+          date_placed: 01-12-2010,
+          date_lifted: 25-04-2019,
           authoriser: 'Robert Willoughby',
           contact: '09 403 7012',
           region: JSON.stringify(["Te Tai Tokerau"])
@@ -35,8 +35,8 @@ exports.seed = function (knex, Promise) {
             lat: -40.47671907977636, lng: 176.6390091227281
           }, { lat: -40.282138531455324, lng: 176.65274203288436 }, { lat: -40.194079300972945, lng: 176.83401644694686 }, { lat: -40.233929805292064, lng: 176.9685989664781 }, { lat: -40.551889657265036, lng: 176.77908480632186 }, { lat: -40.47671907977636, lng: 176.6390091227281 }
           ]),
-          date_placed: '04-04-2019',
-          date_lifted: '25-04-2019',
+          date_placed: 04-04-2019,
+          date_lifted: 25-04-2019,
           authoriser: 'Rangi Leaf',
           contact: 'Not stated',
           region: JSON.stringify(["Tākitimu"])
@@ -53,8 +53,8 @@ exports.seed = function (knex, Promise) {
           geo_ref: JSON.stringify([
             { lat: -35.55578112464781, lng: 174.5075801639855 }, { lat: -35.56157660076433, lng: 174.51556241801381 }, { lat: -35.55878365253887, lng: 174.5185664921105 }, { lat: -35.55396558810553, lng: 174.50989759257436 }, { lat: -35.55578112464781, lng: 174.5075801639855 }
           ]),
-          date_placed: '19-04-2019',
-          date_lifted: '25-04-2019',
+          date_placed: 19-04-2019,
+          date_lifted: 25-04-2019,
           authoriser: 'Aperahama (Abe) Edwards',
           contact: 'Kensington blvd',
           region: JSON.stringify(["Te Tai Tokerau"])
