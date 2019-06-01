@@ -1,11 +1,9 @@
 import request from "superagent";
 
-const baseURL = "https://rahui-tia.herokuapp.com"
-
 export function getRahui() {
   console.log(" API client is working");
   return request
-    .get(baseURL + "/api/rahui")
+    .get("/api/rahui")
     .then(res => {
       const rahui = res.body;
       return rahui;
