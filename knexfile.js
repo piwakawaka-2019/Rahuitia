@@ -27,11 +27,11 @@ module.exports = {
 
   production: {
     client: 'postgresql',
+    use_env_variable: "DATABASE_URL",
     connection: {
-      // database: 'my_db',
-      // user:     'username',
-      // password: 'password'
-      use_env_variable: "DATABASE_URL"
+      database: 'my_db',
+      user:     'username',
+      password: 'password'
     },
   
     pool: {
