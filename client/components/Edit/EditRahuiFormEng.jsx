@@ -248,13 +248,6 @@ class EditRahuiFormEng extends React.Component {
                     <input placeholder="authoriser" name="authoriser" type="text" placeholder={this.state.authoriser} noValidate onChange={this.handleChange} />
 
                     <br></br>
-                    {/* <br></br>
-
-                    <p>Please enter your name:</p>
-
-                    <input name="submittersName" type="text" placeholder="Submitted by" />
-
-                    <br></br> */}
                     <br></br>
 
 

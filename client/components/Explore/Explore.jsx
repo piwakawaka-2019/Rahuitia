@@ -1,5 +1,4 @@
 import React from "react";
-import SplitterLayout from 'react-splitter-layout';
 import { connect } from "react-redux";
 import { fetchAllRahui } from "../../actions/rahui";
 import NewMap from "../NewMap";
@@ -18,24 +17,6 @@ class Explore extends React.Component {
 
     render() {
         return (
-            // <div >
-
-            //     <SplitterLayout >
-            //         <div >
-            //             <NewMap color={"#FF4C4C"} rahuiBounds={[{ lat: -33.543484, lng: 172.880926 }, { lat: -47.622458, lng: 170.036187 }]} />
-            //         </div>
-
-            //         <div className="detailwrapper">
-            //             <RahuiList allrahui={this.props.allrahui.reverse()} />
-            //             <div className="spaceme" />
-            //         </div>
-
-            //     </SplitterLayout>
-
-            // </div>
-
-
-
             <React.Fragment>
 
                     <div className="mapBackground">

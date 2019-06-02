@@ -4,16 +4,21 @@ import { Link } from "react-router-dom";
 import { getUserTokenInfo } from '../../utils/auth'
 import NewMap from '../NewMap'
 import TautokoEng from "../Tautoko/TautokoEng"
+import { fetchAllRahui } from "../../actions/rahui";
 
 
 
-class DetailEng extends React.Component {
+class DetailEng extends Component {
   constructor(props) {
     super(props);
     this.state = {
     }
     this.userId = this.userId.bind(this)
   }
+
+  componentDidMount() {
+    this.props.dispatch(fetchAllRahui())
+    }
 
   handleclick = () => {
     window.location = `/#/explore`;
@@ -24,10 +29,10 @@ class DetailEng extends React.Component {
     return getUserTokenInfo() !== null ? getUserTokenInfo().user_id : 0
   }
 
-  render() {
-    let { id, user_id, geo_ref, iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, region, authoriser, contact, iwi, hapu } = this.props
-    return (
+  renderMap = (theOne) => {
+    let {id, geo_ref, iwi_name, user_id, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, region, authoriser, contact, iwi, hapu} = theOne
 
+    return(
       <React.Fragment>
         <div className="mapBackground">
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
@@ -52,12 +57,32 @@ class DetailEng extends React.Component {
       </React.Fragment>
     )
   }
+
+  renderError = () => {
+    return <div className="error-message"><p>this rāhui does not exist</p></div>
+  }
+
+  renderDetail = () => {
+    let theOne = this.props.rahui.find( rahui => rahui.id == this.props.rahuiId)
+
+    return theOne != undefined ? this.renderMap(theOne) : this.renderError()
+  }
+
+  render() {
+    console.log(this.props)
+    return this.props.rahui.length && this.renderDetail()
+
+    // return this.props.rahui.length ? this.renderDetail() : this.renderLoading()
+
+  }
 }
 
 function mapStateToProps(state) {
   return {
     lang: state.toggle,
+    rahui: state.rahui
   }
 }
 
 export default connect(mapStateToProps)(DetailEng);
+

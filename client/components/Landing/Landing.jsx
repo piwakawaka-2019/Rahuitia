@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import LandEng from './LandEng'
 import LandReo from './LandReo'
-import { toggleLang } from "../../actions/toggle";
 import { connect } from 'react-redux'
-import SplitterLayout from 'react-splitter-layout';
 
 
 class Landing extends Component {
@@ -17,60 +15,7 @@ class Landing extends Component {
 
   render() {
 
-    // return (
-    //   <div>
-    //     <SplitterLayout primaryIndex={0}>
-    //       <div className="fullscreen-video-wrap">
-    //         <video id="background-video" loop autoPlay muted>
-    //           <source src={this.state.videoURL} type="video/mp4" />
-    //           Your browser does not support the video tag.
-    //         </video>
-    //       </div>
-    //       <div className="detailwrapper">
-    //         {this.props.lang == "eng" ? <LandEng /> : <LandReo />}
-    //       </div>
-    //     </SplitterLayout>
-    //   </div>
-    // );
-
-
     return (
-      // <div>
-      //   <SplitterLayout primaryIndex={0} allowResize={false}>
-
-      //     <div className="detailwrapper">
-      //       {this.props.lang == "eng" ? <LandEng /> : <LandReo />}
-      //     </div>
-
-      //     <div className="fullscreen-video-wrap">
-      //       <video id="background-video" loop autoPlay muted>
-      //         <source src={this.state.videoURL} type="video/mp4" />
-      //         Your browser does not support the video tag.
-      //       </video>
-      //     </div>
-
-      //   </SplitterLayout>
-      // </div>
-
-      // <div>
-      //   <SplitterLayout primaryIndex={0} allowResize={false}>
-
-      //     <div className="detailwrapper">
-      //       {this.props.lang == "eng" ? <LandEng /> : <LandReo />}
-      //     </div>
-
-      //     <div className="fullscreen-video-wrap">
-      //       <video id="background-video" loop autoPlay muted>
-      //         <source src={this.state.videoURL} type="video/mp4" />
-      //         Your browser does not support the video tag.
-      //       </video>
-      //     </div>
-
-      //   </SplitterLayout>
-      // </div>
-
-
-
       <React.Fragment>
         <div>
           <div className="fullscreen-video-wrap">
@@ -80,13 +25,10 @@ class Landing extends Component {
               <source src={this.state.videoURL} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+            <img id="mobile-background-image" src="contour.jpg" />
           </div>
-
-
-          <div className="overlayNew">
-            {/* <div className="overlayTextNew"> */}
+          <div className="overlayLanding">
             {this.props.lang == "eng" ? <LandEng /> : <LandReo />}
-            {/* </div> */}
           </div>
         </div>
       </React.Fragment>

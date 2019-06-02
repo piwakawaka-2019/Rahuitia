@@ -49,11 +49,6 @@ p {
   }
 }
 
-
-
-
-
-
 .respect {
   padding: 0 .7em 0 .7em;
   color: rgb(133, 133, 133);
@@ -77,8 +72,6 @@ p {
   font-size: 17px;
   color: #DC5757;
 }
-
-
 
 /* landing page styling */
 .overlay {
@@ -112,9 +105,8 @@ p {
 
 #background-video {
   height: 100vh;
+  width: 100vw;
   object-fit: cover;
-  display: flex;
-  align-items: center;
 }
 
 #background-image {
@@ -124,6 +116,10 @@ p {
   overflow: hidden;
   display: flex;
   align-items: center;
+}
+
+#mobile-background-image{
+  display: none;
 }
 
 .overlayNew {
@@ -281,11 +277,33 @@ img.toggleButton:hover {
 }
 
 .landingtext {
-  margin: 1.2em 2.27em 1.2em 1.8em;
+  position: fixed;
+  width: 60vw;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 70%;
+  text-align: center;
   color: #434734;
 }
 
+.landingtext h3 {
+  font-size: 1.2em;
+}
 
+.landingtext h1 {
+  font-size: 1.9em;
+}
+
+.landing-buttons a {
+  padding: .9em;
+  font-size: 1.3em;
+  text-decoration: none;
+}
+
+.landing-buttons {
+  padding-top: 1.5em;
+}
 
 .aboutHeading2 {
   font-size: 3em;
@@ -350,12 +368,10 @@ h1 {
 }
 
 .title {
-  padding-bottom: 0.7em;
-  padding-top: 0.7em;
   font-style: normal;
   font-weight: bold;
-  font-size: 1.8em;
-  line-height: 1.4em;
+  font-size: 1.4em;
+  line-height: 2em;
   color: #434734;
   z-index: 55;
 }
@@ -818,9 +834,6 @@ map {
       display:none;
   }
 
-
-
-
 }
 
 @media (max-width:50em){
@@ -841,9 +854,23 @@ map {
   }
 
   .landingtext {
-    margin: 1.2em 2.27em 1.2em 1.8em;
+    position: fixed;
+    width: 60vw;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    text-align: center;
     color: #434734;
-  }
+}
+
+.landingtext h3 {
+  font-size: 1.2em;
+}
+
+.landingtext h1 {
+  font-size: 1.9em;
+}
 
   .aboutContainer {
     margin: 1.5em;
@@ -875,7 +902,16 @@ map {
     margin-left: 2vw;
     margin-top: 2vh;
     /* margin-right: 2vw; */
-  } */
+  }
+
+  #mobile-background-image{
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    overflow: hidden;
+    display: flex;
+    align-items: center; 
+  }
 }
 
 /* width */
@@ -913,3 +949,30 @@ map {
   background:none !important;
 }
 
+.error-message p {
+  color: #DC5757;
+  font-size: 1.5em;
+}
+
+.error-message {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 35;
+  position: fixed;
+}
+
+.ToggleLanguageButton a{
+  color: #DC5757;
+}
+
+.overlayLanding {
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: #F1ECE8;
+  opacity: 0.8;
+  padding: 3em;
+}

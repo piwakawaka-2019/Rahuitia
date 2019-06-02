@@ -36,10 +36,6 @@ export class About extends Component {
           <div className="aboutContainer" >
           {this.props.lang == "eng" ?
             <div className="aboutnav">
-              {/* <Link value="project" className="project" onClick={this.handleClick}>Project</Link>
-              <Link value="team" className="project" onClick={this.handleClick}>Team</Link>
-              <Link value="API" className="project" onClick={this.handleClick}>API</Link>
-              <Link value="resources" className="project" onClick={this.handleClick}>Resources</Link> */}
               <button className="about-button" value="project" onClick={this.handleClick}>Project</button>
               <button className="about-button" value="team" onClick={this.handleClick}>Team</button>
               <button className="about-button" value="API" onClick={this.handleClick}>API</button>
@@ -47,10 +43,6 @@ export class About extends Component {
             </div>
             :
             <div className="aboutnav">
-              {/* <Link value="project" className="project" onClick={this.handleClick}>Whakatakanga</Link>
-              <Link value="team" className="project" onClick={this.handleClick}>Tima</Link>
-              <Link value="API" className="project" onClick={this.handleClick}>API</Link>
-              <Link value="resources" className="project" onClick={this.handleClick}>Rauemi Ipurangi</Link> */}
               <button className="about-button" value="project" onClick={this.handleClick}>Whakatakanga</button>
               <button className="about-button" value="team" onClick={this.handleClick}>Tima</button>
               <button className="about-button" value="API" onClick={this.handleClick}>API</button>
@@ -73,7 +65,6 @@ export class About extends Component {
 
 
         <div className="aboutImage">
-          {/* <img id="background-image" src="Tahuaroa.png" /> */}
           <img src="Tahuaroa.png" />
 
         </div>
