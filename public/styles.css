@@ -172,9 +172,9 @@ button:focus {
   outline: 0;
 }
 
-button:hover {
+/* button:hover {
   background: #F5F5F5;
-}
+} */
 
 
 button :active {
@@ -194,8 +194,49 @@ button :active {
 
 
  .backToList {
-   width: 8rem;
+   width: 5rem;
+   position: fixed;
+   top: 4em;
+   left: 1.5em;
+   z-index: 1;
+   background: #DC5758;
+   border: none;
+   color: #F1ECE8;
  }
+
+.backToList:hover {
+  style: none;
+}
+
+.descriptionDetail {
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.detailsWrapper {
+  border-bottom: 1px solid #434734;
+  border-top: 1px solid #434734;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 50%;
+  padding: 2.7rem 0 2.7rem 0;
+}
+
+.detailsDiv {
+  width: 17rem;
+  padding: 1rem 0 1rem 0;
+}
+
+.detailsDiv p {
+  /* line-height: 1rem; */
+  padding-top: 1rem;
+}
+
+
+.detailsHeading {
+  font-weight: bold;
+}
 
  .tautokoButton {
    width: 8rem;
