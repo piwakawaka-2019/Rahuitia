@@ -13,7 +13,7 @@ class LandEng extends Component {
           </div>
           <br></br>
           <div className="explore-button">
-          <Link to="/explore">Explore Map</Link>
+          <Link to="/explore"><img src="explore-waka.png" alt="" className="explore-waka"/></Link>
           </div>
           <br></br>
           <div className="landing-buttons">
@@ -27,3 +27,6 @@ class LandEng extends Component {
 }
 
 export default LandEng
+
+{/* <object className="explore-waka" data="explore-waka.svg" type="image/svg+xml"></object> */}
+{/* <img src="explore-waka.png" alt="" className="explore-waka"/> */}
