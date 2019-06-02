@@ -21,6 +21,67 @@ p {
   line-height: 1.35em;
 }
 
+/* font styles */
+h1 {
+  /* padding-bottom: 1.7em; */
+  font-size: 2.5em;
+  letter-spacing: .02em;
+  line-height: 1.2em;
+  color: #434734;
+}
+
+.title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.4em;
+  line-height: 2em;
+  color: #434734;
+  z-index: 55;
+}
+
+h2 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 27px;
+  color: #434734;
+  margin-top: 0px
+}
+
+h3 {
+  font-style: bold;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #434734;
+}
+
+
+p {
+  font-family: "Rasa";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.17em;
+  line-height: 1.35em;
+  color: #434734;
+  padding: 0px;
+  margin: 0px;
+}
+
+b {
+  font-family: "Rasa";
+  font-style: bold;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 27px;
+  padding: 0px;
+  color:  #434734;
+  text-decoration: underline;
+}
+
+a {
+  color: #DC5757
+}
+
 .pMain {
   font-size: 1.17em;
   line-height: 1.35em;
@@ -89,7 +150,7 @@ p {
 
 }
 
-.fullscreen-video-wrap{
+.fullscreen-wrap{
   min-width: 100vw;
   min-height:  100vh;
   padding-left: overlay-width;
@@ -336,14 +397,32 @@ img.toggleButton:hover {
   font-size: 1.9em;
 }
 
-.landing-buttons a {
-  padding: .9em;
-  font-size: 1.3em;
-  text-decoration: none;
+.landing-buttons {
+  position: fixed;
+  width: 100vw;
+  top: 94%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  text-align: center
 }
 
-.landing-buttons {
-  padding-top: 1.5em;
+.landing-buttons a {
+  font-size: 1.1em;
+  text-decoration: none;
+  border-style: solid;
+  border-width: .04em;
+  border-radius: .18em;
+  margin: .2em;
+  padding: .4em 1.5em .4em 1.5em;
+  border-color: #434734;
+  color: #434734;
+}
+
+.landing-buttons a:hover {
+  background-color: #434734;
+  border-radius: .18em;
+  border-color: #F5F5F5;
+  color: #F5F5F5;
 }
 
 .aboutHeading2 {
@@ -397,67 +476,6 @@ img.toggleButton:hover {
   line-height: 1.4em;
   margin-bottom: 0;
   margin-top: .5em;
-}
-
-/* font styles */
-h1 {
-  /* padding-bottom: 1.7em; */
-  font-size: 2.5em;
-  letter-spacing: .02em;
-  line-height: 1.2em;
-  color: #434734;
-}
-
-.title {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.4em;
-  line-height: 2em;
-  color: #434734;
-  z-index: 55;
-}
-
-h2 {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 25px;
-  line-height: 27px;
-  color: #434734;
-  margin-top: 0px
-}
-
-h3 {
-  font-style: bold;
-  font-weight: bold;
-  font-size: 1.5em;
-  color: #434734;
-}
-
-
-p {
-  font-family: "Rasa";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.17em;
-  line-height: 1.35em;
-  color: #434734;
-  padding: 0px;
-  margin: 0px;
-}
-
-b {
-  font-family: "Rasa";
-  font-style: bold;
-  font-weight: bold;
-  font-size: 22px;
-  line-height: 27px;
-  padding: 0px;
-  color:  #434734;
-  text-decoration: underline;
-}
-
-a {
-  color: #DC5757
 }
 
 .date {
@@ -1009,11 +1027,28 @@ map {
 
 .overlayLanding {
   top: 0;
+  left: 0;
   position: fixed;
   width: 100vw;
   height: 100vh;
   overflow: auto;
   background: #F1ECE8;
   opacity: 0.8;
-  padding: 3em;
+}
+
+.explore-button {
+  position: fixed;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.explore-waka {
+  width: 26em;
+  transition: width .2s ease-in-out;
+}
+
+.explore-waka:hover {
+  width: 27em;
+  opacity: 1;
 }

@@ -18,7 +18,7 @@ class Landing extends Component {
     return (
       <React.Fragment>
         <div>
-          <div className="fullscreen-video-wrap">
+          <div className="fullscreen-wrap">
             <video
               id="background-video"
               loop autoPlay muted>
