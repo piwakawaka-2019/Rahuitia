@@ -3,7 +3,7 @@ html{
   margin: 0px;
 	padding: 0;
   border: 0;
-  font-size: 20px;
+  /* font-size: 20px; */
   font-family: "Rasa";
 }
 
@@ -579,11 +579,12 @@ map {
 }
 
 .registerCenter {
-  align-items: center;
-  width: 60vw;
-  position: relative;
-  margin-left: 20vw;
-  margin-top: 10vh;
+    position: absolute;
+    left: 50%;
+    top: 40rem;
+    transform: translate(-50%, -50%);
+    /* margin-right: 2vw; */
+  
   /* text-align: center; */
 }
 
@@ -867,14 +868,14 @@ map {
     background: #F1ECE8;
   }
 
-  .registerCenter {
+  /* .registerCenter {
     align-items: center;
     width: 96vw;
     position: relative;
     margin-left: 2vw;
     margin-top: 2vh;
     /* margin-right: 2vw; */
-  }
+  } */
 }
 
 /* width */
