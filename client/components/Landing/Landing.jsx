@@ -30,6 +30,7 @@ class Landing extends Component {
           <div className="overlayLanding">
             {this.props.lang == "eng" ? <LandEng /> : <LandReo />}
           </div>
+          <div className="background-overlay"></div>
         </div>
       </React.Fragment>
     )
