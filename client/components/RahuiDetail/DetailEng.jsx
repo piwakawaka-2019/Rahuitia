@@ -42,7 +42,6 @@ class DetailEng extends Component {
           {/* <div className="detailTopSpace"></div> */}
           <div className="rahui-text">
             <h1 className="descriptionDetail">{description}</h1>
-
             <div className="detailsWrapper">
               <div className="detailsDiv">
                 <p className="detailsHeading">Placed by:</p>
