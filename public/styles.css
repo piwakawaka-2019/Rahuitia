@@ -3,7 +3,7 @@ html{
   margin: 0px;
 	padding: 0;
   border: 0;
-  font-size: 20px;
+  /* font-size: 20px; */
   font-family: "Rasa";
 }
 
@@ -256,9 +256,9 @@ button:focus {
   outline: 0;
 }
 
-button:hover {
+/* button:hover {
   background: #F5F5F5;
-}
+} */
 
 
 button :active {
@@ -278,8 +278,49 @@ button :active {
 
 
  .backToList {
-   width: 8rem;
+   width: 5rem;
+   position: fixed;
+   top: 4em;
+   left: 1.5em;
+   z-index: 1;
+   background: #DC5758;
+   border: none;
+   color: #F1ECE8;
  }
+
+.backToList:hover {
+  style: none;
+}
+
+.descriptionDetail {
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.detailsWrapper {
+  border-bottom: 1px solid #434734;
+  border-top: 1px solid #434734;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 50%;
+  padding: 2.7rem 0 2.7rem 0;
+}
+
+.detailsDiv {
+  width: 17rem;
+  padding: 1rem 0 1rem 0;
+}
+
+.detailsDiv p {
+  /* line-height: 1rem; */
+  padding-top: 1rem;
+}
+
+
+.detailsHeading {
+  font-weight: bold;
+}
 
  .tautokoButton {
    width: 8rem;
@@ -299,13 +340,13 @@ button :active {
 
 .addAnotherButton {
   width: 21.5rem;
-  margin: 10px;
+  margin: 10px 10px 10px 0px;
   letter-spacing: .03em;
 }
 
 .registerSubmitButton {
   width: 8rem;
-  margin: 10px;
+  margin: 10px 10px 10px 0px;
   letter-spacing: .03em;
 }
 
@@ -472,7 +513,7 @@ input {
   /* background-color: #eceee3; */
   border: none;
   font-size: .97em;
-  margin: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 0px;
   font-family: "Rasa";
 }
 
@@ -500,7 +541,7 @@ select {
   color: grey;
   outline: none;
   height: 2.6rem;
-  margin: 10px;
+  margin: 10px 10px 10px 0px;
   font-family: "Rasa";
 }
 
@@ -635,11 +676,12 @@ map {
 }
 
 .registerCenter {
-  align-items: center;
-  width: 60vw;
-  position: relative;
-  margin-left: 20vw;
-  margin-top: 10vh;
+    position: absolute;
+    left: 50%;
+    top: 40rem;
+    transform: translate(-50%, -50%);
+    /* margin-right: 2vw; */
+  
   /* text-align: center; */
 }
 
@@ -733,7 +775,7 @@ map {
   border-radius: 4px;
   width: 20rem;
   padding: .75rem .75rem;
-  margin: 10px;
+  margin: 10px 10px 10px 0px;
 }
 
 /* responsive navbar */
@@ -995,14 +1037,14 @@ map {
     z-index: 55;
   }
 
-  .registerCenter {
+  /* .registerCenter {
     align-items: center;
     width: 96vw;
     position: relative;
     margin-left: 2vw;
     margin-top: 2vh;
     /* margin-right: 2vw; */
-  }
+  
 
   #mobile-background-image{
     height: 100vh;

@@ -18,7 +18,7 @@ class DetailEng extends Component {
 
   componentDidMount() {
     this.props.dispatch(fetchAllRahui())
-    }
+  }
 
   handleclick = () => {
     window.location = `/#/explore`;
@@ -30,28 +30,53 @@ class DetailEng extends Component {
   }
 
   renderMap = (theOne) => {
-    let {id, geo_ref, iwi_name, user_id, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, region, authoriser, contact, iwi, hapu} = theOne
+    let { id, geo_ref, iwi_name, user_id, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, region, authoriser, contact, iwi, hapu } = theOne
 
-    return(
+    return (
       <React.Fragment>
         <div className="mapBackground">
+          <button className="backToList" onClick={this.handleclick.bind(this)}>BACK</button>
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
         </div>
         <div className="overlayNew">
           <div className="rahui-text">
-          <button style={{ width: "15%", marginBottom: "10px", padding: "0px" }} className="secondarybutton" onClick={this.handleclick.bind(this)}> Back to List </button>
-          <h1> {description}</h1>
-          <TautokoEng />
-          <br /><b>Issued by </b><p>iwi:{iwi} •  hapu:{hapu}</p>
-          <br /><b>Authorised by</b> <p> {authoriser}</p>
-          <br /><b>Date placed</b> <p> {date_placed}</p>
-          <br /><b>Date Lifted</b> <p> {date_lifted}</p>
-          <br /><b>Korero</b> <p> {korero}</p>
-          <br /><b>Submitted by</b> <p> {first_name} {last_name}</p>
-          <br /><b>Contact</b> <p> {contact}</p>
-          <br></br>
-          <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : ""}</h3>
-          <div className="spaceme" />
+            <h1 className="descriptionDetail">{description}</h1>
+
+            <div className="detailsWrapper">
+              <div className="detailsDiv">
+                <p className="detailsHeading">Placed by:</p>
+                <p>Iwi: {iwi}</p>
+                <p>Hapu: {hapu}</p>
+              </div>
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">Authorised by:</p><p> {authoriser}</p>
+              </div>
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">Date placed:</p><p> {date_placed}</p>
+              </div>
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">Date Lifted:</p><p> {date_lifted}</p>
+              </div>
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">Submitted by:</p><p> {first_name} {last_name}</p>
+              </div>
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">Contact:</p><p> {contact}</p>
+              </div>
+
+            </div>
+
+            <p className="detailsHeading">Korero:</p><p> {korero}</p>
+
+
+
+            <br></br>
+            <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : ""}</h3>
           </div>
         </div>
       </React.Fragment>
@@ -63,7 +88,7 @@ class DetailEng extends Component {
   }
 
   renderDetail = () => {
-    let theOne = this.props.rahui.find( rahui => rahui.id == this.props.rahuiId)
+    let theOne = this.props.rahui.find(rahui => rahui.id == this.props.rahuiId)
 
     return theOne != undefined ? this.renderMap(theOne) : this.renderError()
   }
