@@ -289,7 +289,7 @@ button :active {
  }
 
 .backToList:hover {
-  style: none;
+  border-style: none;
 }
 
 .descriptionDetail {
@@ -906,7 +906,7 @@ map {
   position:absolute;
   transition:all .2s ease-out;
   top:-5px;  
-
+  
 }
 
 .header .menu-btn{
