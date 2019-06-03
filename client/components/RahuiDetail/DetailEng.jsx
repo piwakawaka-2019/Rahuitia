@@ -39,6 +39,7 @@ class DetailEng extends Component {
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
         </div>
         <div className="overlayNew">
+          {/* <div className="detailTopSpace"></div> */}
           <div className="rahui-text">
             <h1 className="descriptionDetail">{description}</h1>
 
@@ -50,28 +51,36 @@ class DetailEng extends Component {
               </div>
 
               <div className="detailsDiv">
-                <p className="detailsHeading">Authorised by:</p><p> {authoriser}</p>
+                <p className="detailsHeading">Authorised by:</p>
+                <p> {authoriser}</p>
               </div>
 
               <div className="detailsDiv">
-                <p className="detailsHeading">Date placed:</p><p> {date_placed}</p>
+                <p className="detailsHeading">Date placed:</p>
+                <p> {date_placed}</p>
               </div>
 
               <div className="detailsDiv">
-                <p className="detailsHeading">Date Lifted:</p><p> {date_lifted}</p>
+                <p className="detailsHeading">Date Lifted:</p>
+                <p> {date_lifted}</p>
               </div>
 
               <div className="detailsDiv">
-                <p className="detailsHeading">Submitted by:</p><p> {first_name} {last_name}</p>
+                <p className="detailsHeading">Submitted by:</p>
+                <p> {first_name} {last_name}</p>
               </div>
 
               <div className="detailsDiv">
-                <p className="detailsHeading">Contact:</p><p> {contact}</p>
+                <p className="detailsHeading">Contact:</p>
+                <p> {contact}</p>
               </div>
 
             </div>
 
-            <p className="detailsHeading">Korero:</p><p> {korero}</p>
+            <div className="koreroWrapper">
+              <p className="detailsHeading">Korero:</p>
+              <p> {korero}</p>
+            </div>
 
 
 
