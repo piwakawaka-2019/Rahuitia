@@ -510,12 +510,12 @@ input {
   width: 20rem;
   padding: .75rem .75rem;
   outline: none;
-  border-radius: 5px;
-  /* background-color: #eceee3; */
-  border: none;
+  border-radius: 0.4em;
+  background-color: #F1ECE8;
+  border: 1px solid #434734;;
   font-size: .97em;
-  margin: 10px 10px 10px 0px;
   font-family: "Rasa";
+  color: #434734;
 }
 
 input:focus {
@@ -536,19 +536,33 @@ textarea {
 select {
   width: 21.5rem;
   padding: .75rem .75rem;
-  border: none;
-  border-radius: 5px;
+  border: 1px solid #434734;
+  border-radius: .18em;
   font-size: .9em;
-  color: grey;
-  outline: none;
+  color: #434734;
   height: 2.6rem;
-  margin: 10px 10px 10px 0px;
   font-family: "Rasa";
+  background-color: #F1ECE8;
 }
 
-select:focus {
-  border: 1px solid #7d8366;
+.iwiHapuButton {
+  font-size: 1.1em;
+    text-decoration: none;
+    /* border-style: 1px solid #7d8366; */
+    border-width: .04em;
+    border-radius: .18em;
+    padding: .4em 1.5em .4em 1.5em;
+    border-color: #434734;
+    color: #434734;
+    background-color: #F0ECE8;
+    border-color: #434734;
 }
+
+.iwiHapuButton:hover {
+  color: white;
+  background-color: #434734;
+}
+
 
 map {
   overflow: hidden;
@@ -595,12 +609,12 @@ map {
 }
 
 .dropdownbox {
-  display: inline-block;
+  /* display: inline-block;
   width: 40%;
   margin-right: 20px;
   padding: 20px;
   border-radius: 4px;
-  background: #eceee3;
+  background: #eceee3; */
 
 }
 
@@ -614,7 +628,7 @@ map {
 
 }
 
-.selectediwi {
+/* .selectediwi {
   display: inline-block;
   width: 40%;
   margin-right: 20px;
@@ -624,7 +638,7 @@ map {
   vertical-align: top;
   font-size: 19px;
   font-weight: bold;
-}
+} */
 
 .selectediwiedit {
   display: inline-block;

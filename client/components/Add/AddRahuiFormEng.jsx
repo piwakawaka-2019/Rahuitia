@@ -78,22 +78,22 @@ class AddRahuiFormEng extends React.Component {
         window.location = `/#/explore`
     }
 
-    submitAdd(){
+    submitAdd() {
         let region = [...this.state.region, this.state.regionSelected]
-        let iwi= [...this.state.iwi, this.state.iwiSelected]
+        let iwi = [...this.state.iwi, this.state.iwiSelected]
         let hapu = [...this.state.hapu, this.state.hapuSelected]
 
         this.setState({
-            region:[...new Set(region)],
-            iwi:[...new Set(iwi)],
-            hapu:[...new Set(hapu)],
+            region: [...new Set(region)],
+            iwi: [...new Set(iwi)],
+            hapu: [...new Set(hapu)],
             regionSelected: null,
             iwiSelected: null,
             hapuSelected: null,
             iwihapuboxIsVisible: true,
             iwihapuButtonText: "Add Another Associated Region/Iwi/Hāpu"
         })
-        
+
     }
 
     handleChange(e) {
@@ -146,109 +146,97 @@ class AddRahuiFormEng extends React.Component {
     }
     render() {
         return (
-           <div>   
-                 <div>
-                <form
-                    onSubmit={this.handleSubmit}
-                    noValidate
-                >
-                    <div>
-                        <h1>Add a Rāhui</h1>
-                        <div className="step"> step one</div>
+            <div>
+                <form onSubmit={this.handleSubmit} noValidate>
+                    <div><h1>Add a Rāhui</h1></div>
+
+                    <div className="step">
+                        <h1>step one</h1>
+                        <h2>Zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
+                    </div>
+
+                    <div className="step">
+                        <h1>step two</h1>
+                        <h2>Tell us more about the rāhui.</h2>
+                    </div>
+
+                    <div className="dropdownbox">
+                        <h3>Iwi and/or Hapū placing the rāhui:</h3>
+
                         <div>
-                            <img src="mapthumbnail.png" className="thumbnail" />
-                           <h2 className="one">Zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
-                        <br></br><br></br>
-                        <hr></hr>
-                        </div>
-                        <br></br>
-                        <br></br>
-                        <div className="step"> step two</div>
-                        
-                        <h2>Tell us about the rāhui.</h2>
-                        
-                        <div className="dropdownbox">
-                           <h3>Iwi and/or Hapū placing the rāhui:</h3>
                             <p>Select region:</p>
                             <select onChange={this.handleSelect}>
-                            {this.state.regionSelected == null && <option>Choose region</option> }
+                                {this.state.regionSelected == null && <option>Choose region</option>}
                                 {this.props.area.map(area => {
                                     return <option htmlFor="region">{area}</option>;
                                 })}
                             </select>
-                            <br></br><br />
-                        
+                        </div>
+
+                        <div>
                             <p>Select iwi:</p>
                             <select onChange={this.handleSelect2}>
-                            {this.state.iwiSelected == null && <option>Choose iwi</option> }
+                                {this.state.iwiSelected == null && <option>Choose iwi</option>}
                                 {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
                             </select>
-                            <br></br> <br />
-                            
+                        </div>
+
+                        <div>
                             <p>Select hapū:</p>
                             <select onChange={this.handleSelect3}>
-                            {this.state.hapuSelected == null && <option>Choose hapū</option> }
+                                {this.state.hapuSelected == null && <option>Choose hapū</option>}
                                 {this.state.iwiSelected ? (
                                     this.renderHapu()
                                 ) : <option>----------</option>}
-                            </select><br />
-                            <br></br>
-                            <button type="button" className="secondarybutton" onClick={this.submitAdd}>{this.state.iwihapuButtonText}</button>
-                    <br></br>
-                    </div>
-                        {this.state.iwihapuboxIsVisible ? 
-                        <div className='selectediwi'>
-                        
-                        <h3> <img src="tick.png" style={{width:"20px"}}/> Selected iwi/hāpu: </h3> <br></br>
-                        <h3> Iwi:{this.state.iwi.map(iwi => {return <p>{iwi}</p> })} </h3>
-                        <h3> Hapū:{this.state.hapu.map(hapu => {return <p>{hapu}</p>  })} </h3>
-                        </div> : null }
-                    
-                    <br></br>
-                    </div>
-                    <br></br>
-                    <br></br>
-                    <p>Please enter the name of the person who has authorised the rahūi:</p>
-                    <input name="authoriser" type="text" placeholder="Authorised by" noValidate onChange={this.handleChange} />
-                    <br></br>
-                    {/* <br></br>
-                    <p>Please enter your name:</p>
-                    <input name="submittersName" type="text" placeholder="Submitted by" />
-                    <br></br> */}
-                    <br></br> <br />
+                            </select>
+                        </div>
 
-                    <div className="twocol">
+                        <div>
+                            <button type="button" className="iwiHapuButton" onClick={this.submitAdd}>{this.state.iwihapuButtonText}</button>
+                        </div>
+                    </div>
+
+                    <div className='selectediwi'>
+                        <h3> Iwi:{this.state.iwi.map(iwi => { return <p>{iwi}</p> })} </h3>
+                        <h3> Hapū:{this.state.hapu.map(hapu => { return <p>{hapu}</p> })} </h3>
+                    </div>
+
+
+                    <div>
+                        <p>Please enter the name of the person who has authorised the rahūi:</p>
+                        <input name="authoriser" type="text" placeholder="Authorised by" noValidate onChange={this.handleChange} />
+                    </div>
+
 
                     <div className="date"><p>Date rahūi placed:</p>
-                    <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
+                        <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
                     </div>
-                    
+
                     <div>
-                     <p>Date rahūi lifted:</p>
-                    <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
-                
+                        <p>Date rahūi lifted:</p>
+                        <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
                     </div>
+
+                    <div>
+                        <p>Brief description of the rahūi:</p>
+                        <textarea name="description" type="text" placeholder="description" rows="5" cols="60" noValidate onChange={this.handleChange} />
                     </div>
-                    
-                    <br></br>
-                    <br></br>
-                    <p>A brief description of the rahūi here:</p>
-                    <textarea name="description" type="text" placeholder="description" rows="5" cols="60" noValidate onChange={this.handleChange} />
-                    <br></br>
-                    <br></br>
-                    <p>Further details of the rahūi here:</p>
-                    <textarea name="korero" type="text" placeholder="korero" rows="10" cols="60" noValidate onChange={this.handleChange} />
-                    <br></br>
-                    <br></br>
-                    <p>Please enter contact details here:</p>
-                    <input name="contact" type="text" placeholder="Contact info" noValidate onChange={this.handleChange} />
-                    <br></br>
-                  
-                    <button name="submit">Add Rāhui</button>
+
+                    <div>
+                        <p>Further details of the rahūi:</p>
+                        <textarea name="korero" type="text" placeholder="korero" rows="10" cols="60" noValidate onChange={this.handleChange} />
+                    </div>
+
+                    <div>
+                        <p>Contact details:</p>
+                        <input name="contact" type="text" placeholder="Contact info" noValidate onChange={this.handleChange} />
+                    </div>
+
+                    <div>
+                        <button name="submit">Add Rāhui</button>
+                    </div>
                 </form>
-                <div className="spaceme" />
-            </div>            
-           </div>
+            </div>
         )
     }
 }

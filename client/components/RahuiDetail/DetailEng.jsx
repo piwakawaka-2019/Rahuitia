@@ -38,11 +38,12 @@ class DetailEng extends Component {
           <button className="backToList" onClick={this.handleclick.bind(this)}>BACK</button>
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
         </div>
+
         <div className="overlayNew">
-          {/* <div className="detailTopSpace"></div> */}
           <div className="rahui-text">
             <h1 className="descriptionDetail">{description}</h1>
             <div className="detailsWrapper">
+
               <div className="detailsDiv">
                 <p className="detailsHeading">Placed by:</p>
                 <p>Iwi: {iwi}</p>

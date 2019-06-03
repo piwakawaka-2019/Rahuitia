@@ -18,7 +18,7 @@ class DetailReo extends Component {
 
   componentDidMount() {
     this.props.dispatch(fetchAllRahui())
-    }
+  }
 
   handleclick = () => {
     window.location = `/#/explore`;
@@ -31,38 +31,64 @@ class DetailReo extends Component {
 
   renderMap = (theOne) => {
     console.log("the one: ", theOne)
-    let {id, geo_ref, iwi_name, user_id, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, region, authoriser, contact, iwi, hapu} = theOne
+    let { id, geo_ref, iwi_name, user_id, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, region, authoriser, contact, iwi, hapu } = theOne
 
-    return(
+    return (
       <React.Fragment>
-         <div className="mapBackground">
+        <div className="mapBackground">
+          <button className="backToList" onClick={this.handleclick.bind(this)}>HOKI</button>
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
-         </div>
-         <div className="overlayNew">
-           <div className="rahui-text">
-            <br></br>
-            <button className="backToList" onClick={this.handleclick.bind(this)}> hoki ki te Rārangi </button>
-             <h1> {description}</h1>
-             <TautokoReo />
-            <br /><b>I Whakaputaina e:</b><p>iwi:{iwi} •  hapu:{hapu}</p>
-             <br /><b>Te Ingoa o nga Kaituhi</b> <p> {authoriser}</p>
-            <br />
-            <div className="twocol">
-              <div ><b>Rā Kua Tuhia</b> <p> {date_placed}</p></div>
-               <div ><b>Rā Kua Piki</b> <p> {date_lifted}</p> </div>
-             </div>
-            <br /><b>Korero</b> <p> {korero}</p>
-            <br /><br></br>
-            <div className="twocol detailbottom">
-              <div><b>Tukuna e</b> <p> {first_name} {last_name}</p></div>
-               <div><b>Whakapa Mai</b> <p> {contact}</p></div>
-             </div>
+        </div>
+
+        <div className="overlayNew">
+          <div className="rahui-text">
+            <h1 className="descriptionDetail">{description}</h1>
+            <div className="detailsWrapper">
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">I Whakaputaina e:</p>
+                <p>iwi: {iwi}</p>
+                <p>hapu: {hapu}</p>
+              </div>
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">Te Ingoa o nga Kaituhi:</p>
+                <p>{authoriser}</p>
+              </div>
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">Rā Kua Tuhia:</p>
+                <p>{date_placed}</p>
+              </div>
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">Rā Kua Piki:</p>
+                <p>{date_lifted}</p>
+              </div>
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">Tukuna e:</p>
+                <p>{first_name} {last_name}</p>
+              </div>
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">Whakapa Mai:</p>
+                <p> {contact}</p>
+              </div>
+
+            </div>
+
+            <div className="koreroWrapper">
+              <p className="detailsHeading">Korero:</p>
+              <p> {korero}</p >
+            </div>
+
+
             <br></br>
             <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>whakatika</Link> : ""}</h3>
-             <div className="spaceme" />
-           </div>
-        </div>
-      </React.Fragment>
+          </div >
+        </div >
+      </React.Fragment >
     )
   }
 
@@ -71,7 +97,7 @@ class DetailReo extends Component {
   }
 
   renderDetail = () => {
-    let theOne = this.props.rahui.find( rahui => rahui.id == this.props.rahuiId)
+    let theOne = this.props.rahui.find(rahui => rahui.id == this.props.rahuiId)
 
     return theOne != undefined ? this.renderMap(theOne) : this.renderError()
   }
