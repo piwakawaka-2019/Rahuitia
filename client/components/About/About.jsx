@@ -63,7 +63,8 @@ export class About extends Component {
           </div>
         </div>
         </div>
-        
+        <div className="about-opacity-background">
+        </div>
         <div className="about-background">
           <img src="contour.jpg" />
           <video id="background-video" loop autoPlay muted>

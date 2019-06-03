@@ -30,6 +30,7 @@ h1 {
   color: #434734;
 }
 
+
 .title {
   font-style: normal;
   font-weight: bold;
@@ -37,6 +38,11 @@ h1 {
   line-height: 2em;
   color: #434734;
   z-index: 55;
+}
+
+.header{
+  position: fixed;
+  z-index: 400;
 }
 
 h2 {
@@ -209,8 +215,18 @@ a {
   left: 0;
   bottom: 0;
   overflow: auto;
-  background: #F1ECE8;
-  opacity: .75;
+  z-index: 45;
+}
+
+.about-opacity-background{
+  position: fixed;
+  width: 100vw;
+  height: calc(100vh - 2.4em);
+  top: 2.4em;
+  left: 0;
+  background-color: #F1ECE8;
+  opacity: .8;
+  z-index: 40;
 }
 
 .aboutContainer {
@@ -219,7 +235,7 @@ a {
 
 .mapBackground {
   width: 50vw;
-
+  height: 100vh;
 }
 
 /* button styles */
@@ -728,7 +744,7 @@ map {
   box-shadow:1px 1px 4px 0 rgba(0,0,0,.1);
   position:fixed;
   width:100%;
-  z-index:3;
+  z-index:110;
 }
 
 .header a {
@@ -859,7 +875,60 @@ map {
 
 }
 
+.explore-buttons{
+  display: none;
+}
+
 @media (max-width:50em){
+  .mapBackground {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .explore-buttons {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.explore-toggle-button button{
+  width: 50vw;
+  letter-spacing: .05em;
+  padding: 1.7em;
+  border: none;
+  border-radius: 0;
+}
+
+  .button-selected{
+    color: #F1ECE8;
+    background-color: #DC5757;
+  }
+
+  .button-selected{
+    color: #F1ECE8;
+    background-color: #DC5757;
+  }
+
+  .button-selected:hover{
+    color: #F1ECE8;
+    background-color: #DC5757;
+  }
+
+  .button-deselected{
+    color: #DC5757;
+    background-color: #F1ECE8;
+  }
+
+  .button-deselected:hover{
+    color: #DC5757;
+    background-color: rgb(242, 231, 222)
+  }
+
+
   .about-background img{
     height: 100vh;
     width: 100vw;
@@ -874,7 +943,7 @@ map {
   }
 
   .overlayNew {
-    position: fixed;
+    position: absolute;
     width: 100vw;
     height: calc(100vh - 2.4em);
     top: 2.4em;
@@ -923,7 +992,6 @@ map {
     left: 0;
     bottom: 0;
     overflow: auto;
-    background: #F1ECE8;
     z-index: 55;
   }
 
