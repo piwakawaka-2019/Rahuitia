@@ -1,29 +1,25 @@
 import React, { Component } from 'react';
-
-import SplitterLayout from 'react-splitter-layout';
-
 import { connect } from "react-redux";
-import { fetchAllRahui} from "../../actions/rahui";
-import NewMap from "../NewMap"
 import DetailEng from "./DetailEng"
 import DetailReo from "./DetailReo"
+import { fetchAllRahui } from "../../actions/rahui";
 
 class RahuiDetail extends Component {
 
     handleclick=()=>{
         window.location = `/#/explore`; 
     }
+
+    componentDidMount() {
+        this.props.dispatch(fetchAllRahui())
+      }
     
     render() { 
         let rahuiId = this.props.match.params.id;
-    
-        let {id, geo_ref, iwi_name, description, last_name, first_name, hapu_name, date_placed, date_lifted, korero, region, authoriser, contact, iwi, hapu} = this.props.allrahui.find( rahui => rahui.id == rahuiId)
-        
-        let eachRahui = this.props.allrahui.find( rahui => rahui.id == rahuiId)
         
         return ( 
             <div>
-            {this.props.lang== "eng" ? <DetailEng {...eachRahui}/> : <DetailReo {...eachRahui}/>}
+            {this.props.lang== "eng" ? <DetailEng rahuiId={rahuiId}/> : <DetailReo rahuiId={rahuiId}/>}
             </div>
          );
     }
@@ -38,4 +34,5 @@ const mapStateToProps = state =>{
 }
  
 export default connect(mapStateToProps)(RahuiDetail);
+
 
