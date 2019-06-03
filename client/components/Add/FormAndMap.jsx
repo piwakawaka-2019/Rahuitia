@@ -1,5 +1,4 @@
 import React from "react";
-import SplitterLayout from 'react-splitter-layout';
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom"
 import ReactMap from "../ReactMap";
@@ -16,19 +15,6 @@ class Add extends React.Component {
 
 
     render() {
-        // return isAuthenticated() ? (  
-        //     <div >
-        //         <SplitterLayout >
-        //             <div >
-        //                 <ReactMap/>
-        //             </div>               
-        //             <div className="detailwrapper">
-        //                 <AddRahuiForm/> 
-        //             </div>              
-        //         </SplitterLayout>                
-        //     </div>
-        // ) : <Redirect to='/register'/>
-
         return isAuthenticated() ? (
             <div className="mapBackground">
                 <div >
@@ -39,10 +25,6 @@ class Add extends React.Component {
                 </div>
             </div>
         ) : <Redirect to='/register' />
-
-
-
-
     }
 }
 

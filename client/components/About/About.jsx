@@ -17,7 +17,8 @@ export class About extends Component {
 
   componentDidMount() {
     this.setState({
-      visibility: "project"
+      visibility: "project",
+      videoURL: 'Farm aerials at sunrise_HD-web.mp4'
     });
   }
 
@@ -36,25 +37,17 @@ export class About extends Component {
           <div className="aboutContainer" >
           {this.props.lang == "eng" ?
             <div className="aboutnav">
-              {/* <Link value="project" className="project" onClick={this.handleClick}>Project</Link>
-              <Link value="team" className="project" onClick={this.handleClick}>Team</Link>
-              <Link value="API" className="project" onClick={this.handleClick}>API</Link>
-              <Link value="resources" className="project" onClick={this.handleClick}>Resources</Link> */}
-              <button className="about-button" value="project" onClick={this.handleClick}>Project</button>
-              <button className="about-button" value="team" onClick={this.handleClick}>Team</button>
-              <button className="about-button" value="API" onClick={this.handleClick}>API</button>
-              <button className="about-button" value="resources" onClick={this.handleClick}>Resources</button>
+              <button className={this.state.visibility == "project" ? "explore-button-selected" : "explore-button-deselected"} value="project" onClick={this.handleClick}>Project</button>
+              <button className={this.state.visibility == "team" ? "explore-button-selected" : "explore-button-deselected"} value="team" onClick={this.handleClick}>Team</button>
+              <button className={this.state.visibility == "API" ? "explore-button-selected" : "explore-button-deselected"} value="API" onClick={this.handleClick}>API</button>
+              <button className={this.state.visibility == "resources" ? "explore-button-selected" : "explore-button-deselected"} value="resources" onClick={this.handleClick}>Resources</button>
             </div>
             :
             <div className="aboutnav">
-              {/* <Link value="project" className="project" onClick={this.handleClick}>Whakatakanga</Link>
-              <Link value="team" className="project" onClick={this.handleClick}>Tima</Link>
-              <Link value="API" className="project" onClick={this.handleClick}>API</Link>
-              <Link value="resources" className="project" onClick={this.handleClick}>Rauemi Ipurangi</Link> */}
-              <button className="about-button" value="project" onClick={this.handleClick}>Whakatakanga</button>
-              <button className="about-button" value="team" onClick={this.handleClick}>Tima</button>
-              <button className="about-button" value="API" onClick={this.handleClick}>API</button>
-              <button className="about-button" value="resources" onClick={this.handleClick}>Rauemi Ipurangi</button>
+              <button className={this.state.visibility == "project" ? "explore-button-selected" : "explore-button-deselected"} value="project" onClick={this.handleClick}>Whakatakanga</button>
+              <button className={this.state.visibility == "team" ? "explore-button-selected" : "explore-button-deselected"} value="team" onClick={this.handleClick}>Tima</button>
+              <button className={this.state.visibility == "API" ? "explore-button-selected" : "explore-button-deselected"} value="API" onClick={this.handleClick}>API</button>
+              <button className={this.state.visibility == "resources" ? "explore-button-selected" : "explore-button-deselected"} value="resources" onClick={this.handleClick}>Rauemi Ipurangi</button>
             </div>
           }
 
@@ -70,12 +63,14 @@ export class About extends Component {
           </div>
         </div>
         </div>
-
-
-        <div className="aboutImage">
-          {/* <img id="background-image" src="Tahuaroa.png" /> */}
-          <img src="Tahuaroa.png" />
-
+        <div className="about-opacity-background">
+        </div>
+        <div className="about-background">
+          <img src="contour.jpg" />
+          <video id="background-video" loop autoPlay muted>
+            <source src={this.state.videoURL} type="video/mp4" />
+              Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     )

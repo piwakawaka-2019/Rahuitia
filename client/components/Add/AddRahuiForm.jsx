@@ -6,7 +6,7 @@ import AddRahuiFormReo from './AddRahuiFormReo'
 class AddRahuiForm extends React.Component{
     render() {
         return (
-           <div>               
+           <div className="rahui-text">               
                 {this.props.lang == "eng" ? <AddRahuiFormEng /> : <AddRahuiFormReo />}
            </div>
         )
