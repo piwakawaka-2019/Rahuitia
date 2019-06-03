@@ -37,17 +37,17 @@ export class About extends Component {
           <div className="aboutContainer" >
           {this.props.lang == "eng" ?
             <div className="aboutnav">
-              <button className="about-button" value="project" onClick={this.handleClick}>Project</button>
-              <button className="about-button" value="team" onClick={this.handleClick}>Team</button>
-              <button className="about-button" value="API" onClick={this.handleClick}>API</button>
-              <button className="about-button" value="resources" onClick={this.handleClick}>Resources</button>
+              <button className={this.state.visibility == "project" ? "explore-button-selected" : "explore-button-deselected"} value="project" onClick={this.handleClick}>Project</button>
+              <button className={this.state.visibility == "team" ? "explore-button-selected" : "explore-button-deselected"} value="team" onClick={this.handleClick}>Team</button>
+              <button className={this.state.visibility == "API" ? "explore-button-selected" : "explore-button-deselected"} value="API" onClick={this.handleClick}>API</button>
+              <button className={this.state.visibility == "resources" ? "explore-button-selected" : "explore-button-deselected"} value="resources" onClick={this.handleClick}>Resources</button>
             </div>
             :
             <div className="aboutnav">
-              <button className="about-button" value="project" onClick={this.handleClick}>Whakatakanga</button>
-              <button className="about-button" value="team" onClick={this.handleClick}>Tima</button>
-              <button className="about-button" value="API" onClick={this.handleClick}>API</button>
-              <button className="about-button" value="resources" onClick={this.handleClick}>Rauemi Ipurangi</button>
+              <button className={this.state.visibility == "project" ? "explore-button-selected" : "explore-button-deselected"} value="project" onClick={this.handleClick}>Whakatakanga</button>
+              <button className={this.state.visibility == "team" ? "explore-button-selected" : "explore-button-deselected"} value="team" onClick={this.handleClick}>Tima</button>
+              <button className={this.state.visibility == "API" ? "explore-button-selected" : "explore-button-deselected"} value="API" onClick={this.handleClick}>API</button>
+              <button className={this.state.visibility == "resources" ? "explore-button-selected" : "explore-button-deselected"} value="resources" onClick={this.handleClick}>Rauemi Ipurangi</button>
             </div>
           }
 

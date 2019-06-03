@@ -3,7 +3,7 @@ html{
   margin: 0px;
 	padding: 0;
   border: 0;
-  /* font-size: 20px; */
+  font-size: 20px;
   font-family: "Rasa";
 }
 
@@ -758,7 +758,40 @@ map {
 
 .aboutnav {
   display: flex;
+  width: 100%;
+  background-color: none;
 }
+
+.explore-button-selected {
+  width: 25%;
+  letter-spacing: .05em;
+  padding: 1.7em;
+  border: none;
+  background: none;
+  color: #DC5757;
+ }
+ 
+ .explore-button-selected:hover {
+   color: #DC5757;
+   background: none;
+ }
+ 
+ .explore-button-deselected {
+   width: 25%;
+   letter-spacing: .05em;
+   padding: 1.7em;
+   background: none;
+   border: none;
+   border-radius: 0;
+   color: #434834;
+  }
+ 
+  .explore-button-deselected:hover {
+   background: none;
+   border: none;
+   color: #DC5757;
+  }
+
 
 .aboutwrapper {
   width: 50vw;
@@ -937,6 +970,45 @@ map {
     z-index: 100;
 }
 
+.aboutnav {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.explore-button-selected {
+ width: 25vw;
+ letter-spacing: .05em;
+ padding: 1.7em;
+ border: none;
+ border-radius: 0;
+ background-color:#F1ECE8;
+ color: #434734;
+}
+
+.explore-button-selected:hover {
+  background-color:#F1ECE8;
+  color: #434734;
+}
+
+.explore-button-deselected {
+  width: 25vw;
+  letter-spacing: .05em;
+  padding: 1.7em;
+  border: none;
+  border-radius: 0;
+  background-color:#434734;
+  color: #F1ECE8;
+ }
+
+ .explore-button-deselected:hover {
+  background-color:#525741;
+  color: #F1ECE8;
+ }
+
 .explore-toggle-button button{
   width: 50vw;
   letter-spacing: .05em;
@@ -963,6 +1035,7 @@ map {
   .button-deselected{
     color: #DC5757;
     background-color: #F1ECE8;
+    opacity: .95;
   }
 
   .button-deselected:hover{

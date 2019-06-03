@@ -12,15 +12,28 @@ class DetailReo extends Component {
   constructor(props) {
     super(props);
     this.state = {
+        visibility: null,
     }
+    this.handleClick = this.handleClick.bind(this)
     this.userId = this.userId.bind(this)
-  }
+}
 
   componentDidMount() {
     this.props.dispatch(fetchAllRahui())
+    this.setState({
+      visibility: "list"
+    })
     }
 
-  handleclick = () => {
+    handleClick(e) {
+      e.preventDefault()
+      const { value } = e.target
+      this.setState({
+        visibility: value
+      });
+    }
+
+  handleClickExplore = () => {
     window.location = `/#/explore`;
   }
 
@@ -35,13 +48,13 @@ class DetailReo extends Component {
 
     return(
       <React.Fragment>
-         <div className="mapBackground">
+         <div className="mapBackground" style={this.state.visibility == "map" ? {zIndex: 81} : {zIndex: 71}}>
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
          </div>
-         <div className="overlayNew">
+         <div className="overlayNew" style={this.state.visibility == "list" ? {zIndex: 81} : {zIndex: 71}}>
            <div className="rahui-text">
             <br></br>
-            <button className="backToList" onClick={this.handleclick.bind(this)}> hoki ki te Rārangi </button>
+            <button className="backToList" onClick={this.handleClickExplore.bind(this)}> hoki ki te Rārangi </button>
              <h1> {description}</h1>
              <TautokoReo />
             <br /><b>I Whakaputaina e:</b><p>iwi:{iwi} •  hapu:{hapu}</p>
@@ -61,6 +74,14 @@ class DetailReo extends Component {
             <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>whakatika</Link> : ""}</h3>
              <div className="spaceme" />
            </div>
+        </div>
+        <div className="explore-buttons">
+                        <div className="explore-toggle-button">
+                        <button className={this.state.visibility == "list" ? "button-selected" : "button-deselected"} value="list" onClick={this.handleClick}>Detail</button>
+                        </div>
+                        <div className="explore-toggle-button">
+                        <button className={this.state.visibility == "map" ? "button-selected" : "button-deselected"} value="map" onClick={this.handleClick}>Map</button>
+                        </div>
         </div>
       </React.Fragment>
     )
