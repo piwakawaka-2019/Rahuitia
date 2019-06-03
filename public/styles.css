@@ -157,12 +157,18 @@ a {
 }
 
 
-.aboutImage {
+.about-background{
   min-width: 100vw;
   min-height:  100vh;
-
 }
 
+.about-background img{
+  display: none;
+}
+
+.about-background video{
+  width: 100vw;
+}
 
 #background-video {
   height: 100vh;
@@ -197,13 +203,14 @@ a {
 
 .overlayNewAbout {
   position: fixed;
-  width: 50vw;
+  width: 100vw;
   height: calc(100vh - 2.4em);
   top: 2.4em;
   left: 0;
   bottom: 0;
   overflow: auto;
   background: #F1ECE8;
+  opacity: .75;
 }
 
 .aboutContainer {
@@ -380,7 +387,6 @@ img.toggleButton:hover {
 .landing-buttons a:hover {
   background-color: #434734;
   border-radius: .18em;
-  border-color: #F5F5F5;
   color: #F5F5F5;
 }
 
@@ -854,6 +860,14 @@ map {
 }
 
 @media (max-width:50em){
+  .about-background img{
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    overflow: hidden;
+    display: flex;
+    align-items: center; 
+  }
   
   #background-video{
     display: none;
@@ -910,6 +924,7 @@ map {
     bottom: 0;
     overflow: auto;
     background: #F1ECE8;
+    z-index: 55;
   }
 
   .registerCenter {
@@ -987,11 +1002,12 @@ map {
   top: 0;
   left: 0;
   position: fixed;
+  z-index: 71;
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  background: #F1ECE8;
-  opacity: 0.8;
+  /* background: #F1ECE8;
+  opacity: 0.8; */
 }
 
 .explore-button {
@@ -1009,4 +1025,16 @@ map {
 .explore-waka:hover {
   width: 27em;
   opacity: 1;
+}
+
+.background-overlay {
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+    position: fixed;
+    width: calc(100vw - 2vw);
+    height: calc(100vh - 2vw);
+    overflow: auto;
+    background: #F1ECE8;
+    opacity: 0.8;
 }

@@ -17,7 +17,8 @@ export class About extends Component {
 
   componentDidMount() {
     this.setState({
-      visibility: "project"
+      visibility: "project",
+      videoURL: 'Farm aerials at sunrise_HD-web.mp4'
     });
   }
 
@@ -62,11 +63,13 @@ export class About extends Component {
           </div>
         </div>
         </div>
-
-
-        <div className="aboutImage">
-          <img src="Tahuaroa.png" />
-
+        
+        <div className="about-background">
+          <img src="contour.jpg" />
+          <video id="background-video" loop autoPlay muted>
+            <source src={this.state.videoURL} type="video/mp4" />
+              Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     )
