@@ -196,9 +196,10 @@ class AddRahuiFormEng extends React.Component {
                         </div>
                     </div>
 
-                    <div className='selectediwi'>
-                        <h3> Iwi:{this.state.iwi.map(iwi => { return <p>{iwi}</p> })} </h3>
-                        <h3> Hapū:{this.state.hapu.map(hapu => { return <p>{hapu}</p> })} </h3>
+                    <div className='yourWhakapapa'>
+                        <p className="subHeading">Iwi:</p>{this.state.iwi.map(iwi => { return <p>{iwi}</p> })}
+
+                        <p className="subHeading">Hapū:</p> {this.state.hapu.map(hapu => { return <p>{hapu}</p> })}
                     </div>
 
 
@@ -236,7 +237,7 @@ class AddRahuiFormEng extends React.Component {
                         <button name="submit">Add Rāhui</button>
                     </div>
                 </form>
-            </div>
+            </div >
         )
     }
 }

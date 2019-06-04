@@ -3,7 +3,7 @@ html{
   margin: 0px;
 	padding: 0;
   border: 0;
-  /* font-size: 20px; */
+  font-size: 20px;
   font-family: "Rasa";
 }
 
@@ -29,7 +29,6 @@ h1 {
   line-height: 1.2em;
   color: #434734;
 }
-
 
 .title {
   font-style: normal;
@@ -254,6 +253,7 @@ button {
   font-size: 16px;
   text-transform: uppercase;
   font-family: "Rasa";
+  background-color: #F1ECE8;
 }
 
 button:focus {
@@ -365,6 +365,11 @@ button :active {
   width: 8rem;
   margin: 10px 10px 10px 0px;
   letter-spacing: .03em;
+}
+
+.registerSubmitButton:hover {
+  background-color: #434734;
+  color: #F5F5F5;
 }
 
 .languageToggleButton {
@@ -532,21 +537,22 @@ input {
   font-size: .97em;
   font-family: "Rasa";
   color: #434734;
+  opacity: 1;
 }
 
-input:focus {
+/* input:focus {
   border: 0.8px solid #7d8366;
-}
+} */
 
 textarea {
   width: 90%;
   padding: 12px 20px;
   outline: none;
   border-radius: 4px;
-  background-color: white;
-  border: none;
-  font-size: 16px;
-  font-family: "Rasa"
+  background-color: #F1ECE8;
+  border: 1px solid #434734;
+  font-family: "Rasa";
+  font-size: .97em;
 }
 
 select {
@@ -802,11 +808,12 @@ map {
 }
 
 .yourWhakapapa {
-  background: #F5F5F5;
+  background: #F1ECE8;
   border-radius: 4px;
   width: 20rem;
   padding: .75rem .75rem;
   margin: 10px 10px 10px 0px;
+  border: 1px solid #434734;
 }
 
 /* responsive navbar */
@@ -1178,4 +1185,14 @@ map {
     overflow: auto;
     background: #F1ECE8;
     opacity: 0.8;
+}
+
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
 }
