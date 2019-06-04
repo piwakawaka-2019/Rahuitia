@@ -47,7 +47,6 @@ class Explore extends React.Component {
                         <RahuiList allrahui={this.props.allrahui.reverse()} />
                         <div className="spaceme" />
                     </div>
-
                     <div className="explore-buttons">
                         <div className="explore-toggle-button">
                         <button className={this.state.visibility == "list" ? "button-selected" : "button-deselected"} value="list" onClick={this.handleClick}>List</button>
