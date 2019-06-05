@@ -452,9 +452,6 @@ img.toggleButton:hover {
 }
 
 
-
-
-
 /* split screen */
 .mapwrapper {
   display: inline-block;
@@ -977,6 +974,16 @@ map {
   bottom: 0;
   left: 0;
   z-index: 100;
+}
+
+.aboutHeading2 {
+  font-size: 2em;
+  padding-bottom: 0.5em;
+}
+
+.aboutBody {
+  font-size: 1.em;
+  line-height: 1.2em;
 }
 
 .explore-button-selected {
