@@ -13,29 +13,30 @@ class NavReo extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this)
 
-}
+  }
 
-handleSubmit(e) {
-  removeUser()
-  this.props.logout()
-  window.location = `/#/`
-}
+  handleSubmit(e) {
+    removeUser()
+    this.props.logout()
+    window.location = `/#/`
+  }
 
   render() {
     return (
-    <header className="header">
-      <Link className="logo" to="/">Rāhuitia</Link>
-      <input className="menu-btn" type="checkbox" id="menu-btn" />
-      <label className="menu-icon" for="menu-btn"><span className="nav-icon"></span></label>
-      <ul className="menu">
-      <li><Link className="ToggleLanguageButton" to="#" onClick={() => this.props.toggleLang()}>
-      English</Link></li>
-      <li><Link to="/explore/">Torohē</Link></li>
-      <li><Link to="/about/">Pēwhea</Link></li>
-      <li><Link to="/addrahui/">Tāpirihia he Rāhui</Link></li>
-      <li>{this.props.isAuthenticated ? <Link to="#" onClick={this.handleSubmit}>Takiputa</Link> : <Link to="/login/">Takiuru</Link> }</li>
-      </ul>
-    </header>
+      <header className="header">
+        <Link className="logo" to="/">Rāhuitia</Link>
+        <button className="ToggleLanguageButton"><Link to="#" onClick={() => this.props.toggleLang()}>
+          English</Link></button>
+        <input className="menu-btn" type="checkbox" id="menu-btn" />
+        <label className="menu-icon" for="menu-btn"><span className="nav-icon"></span></label>
+        <ul className="menu">
+
+          <li><Link to="/explore/">Torohē</Link></li>
+          <li><Link to="/about/">Pēwhea</Link></li>
+          <li><Link to="/addrahui/">Tāpirihia he Rāhui</Link></li>
+          <li>{this.props.isAuthenticated ? <Link to="#" onClick={this.handleSubmit}>Takiputa</Link> : <Link to="/login/">Takiuru</Link>}</li>
+        </ul>
+      </header>
     )
   }
 }
@@ -52,8 +53,8 @@ function mapStateToProps(state) {
   return {
     isAuthenticated: state.auth.isAuthenticated,
     lang: state.toggle
-    }
   }
+}
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavReo)

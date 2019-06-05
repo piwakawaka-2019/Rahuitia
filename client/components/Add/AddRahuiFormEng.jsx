@@ -146,25 +146,27 @@ class AddRahuiFormEng extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="addFormContainer">
                 <form onSubmit={this.handleSubmit} noValidate>
-                    <div><h1>Add a Rāhui</h1></div>
-
-                    <div className="step">
-                        <h1>step one</h1>
-                        <h2>Zoom into an area on the map and draw an outline for where you want to place the rāhui.</h2>
+                    <div>
+                        <h2>Add a Rāhui</h2>
                     </div>
 
-                    <div className="step">
-                        <h1>step two</h1>
-                        <h2>Tell us more about the rāhui.</h2>
+                    <div className="addDiv">
+                        <h2 className="step">step one</h2>
+                        <p className="stepInfo">Zoom into an area on the map and draw an outline for where you want to place the rāhui.</p>
                     </div>
 
-                    <div className="dropdownbox">
-                        <h3>Iwi and/or Hapū placing the rāhui:</h3>
+                    <div className="addDiv">
+                        <h2 className="step">step two</h2>
+                        <p className="stepInfo">Tell us more about the rāhui.</p>
+                    </div>
 
-                        <div>
-                            <p>Select region:</p>
+                    <div className="addDiv">
+                        <p className="iwiHapu">Iwi and/or Hapū placing the rāhui:</p>
+
+                        <div className="addDiv">
+                            <p className="detailsHeading">Select region:</p>
                             <select onChange={this.handleSelect}>
                                 {this.state.regionSelected == null && <option>Choose region</option>}
                                 {this.props.area.map(area => {
@@ -173,16 +175,16 @@ class AddRahuiFormEng extends React.Component {
                             </select>
                         </div>
 
-                        <div>
-                            <p>Select iwi:</p>
+                        <div className="addDiv">
+                            <p className="detailsHeading">Select iwi:</p>
                             <select onChange={this.handleSelect2}>
                                 {this.state.iwiSelected == null && <option>Choose iwi</option>}
                                 {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
                             </select>
                         </div>
 
-                        <div>
-                            <p>Select hapū:</p>
+                        <div className="addDiv">
+                            <p className="detailsHeading">Select hapū:</p>
                             <select onChange={this.handleSelect3}>
                                 {this.state.hapuSelected == null && <option>Choose hapū</option>}
                                 {this.state.iwiSelected ? (
@@ -191,8 +193,8 @@ class AddRahuiFormEng extends React.Component {
                             </select>
                         </div>
 
-                        <div>
-                            <button type="button" className="iwiHapuButton" onClick={this.submitAdd}>{this.state.iwihapuButtonText}</button>
+                        <div className="addDiv">
+                            <button type="button" className="addButton" onClick={this.submitAdd}>{this.state.iwihapuButtonText}</button>
                         </div>
                     </div>
 
@@ -203,38 +205,39 @@ class AddRahuiFormEng extends React.Component {
                     </div>
 
 
-                    <div>
-                        <p>Please enter the name of the person who has authorised the rahūi:</p>
+                    <div className="addDiv">
+                        <p className="detailsHeading">Please enter the name of the person who has authorised the rahūi:</p>
                         <input name="authoriser" type="text" placeholder="Authorised by" noValidate onChange={this.handleChange} />
                     </div>
 
 
-                    <div className="date"><p>Date rahūi placed:</p>
+                    <div className="addDiv">
+                        <p className="detailsHeading">Date rahūi placed:</p>
                         <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
                     </div>
 
-                    <div>
-                        <p>Date rahūi lifted:</p>
+                    <div className="addDiv">
+                        <p className="detailsHeading">Date rahūi lifted:</p>
                         <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
                     </div>
 
-                    <div>
-                        <p>Brief description of the rahūi:</p>
+                    <div className="addDiv">
+                        <p className="detailsHeading">Brief description of the rahūi:</p>
                         <textarea name="description" type="text" placeholder="description" rows="5" cols="60" noValidate onChange={this.handleChange} />
                     </div>
 
-                    <div>
-                        <p>Further details of the rahūi:</p>
+                    <div className="addDiv">
+                        <p className="detailsHeading">Further details of the rahūi:</p>
                         <textarea name="korero" type="text" placeholder="korero" rows="10" cols="60" noValidate onChange={this.handleChange} />
                     </div>
 
-                    <div>
-                        <p>Contact details:</p>
+                    <div className="addDiv">
+                        <p className="detailsHeading">Contact details:</p>
                         <input name="contact" type="text" placeholder="Contact info" noValidate onChange={this.handleChange} />
                     </div>
 
-                    <div>
-                        <button name="submit">Add Rāhui</button>
+                    <div className="addDiv">
+                        <button className="addButton" name="submit">Add Rāhui</button>
                     </div>
                 </form>
             </div >

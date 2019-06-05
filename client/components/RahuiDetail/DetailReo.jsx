@@ -12,32 +12,26 @@ class DetailReo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        visibility: null,
+      visibility: null,
     }
     this.handleClick = this.handleClick.bind(this)
     this.userId = this.userId.bind(this)
-}
+  }
 
   componentDidMount() {
     this.props.dispatch(fetchAllRahui())
-<<<<<<< HEAD
-  }
-||||||| merged common ancestors
-    }
-=======
     this.setState({
       visibility: "list"
     })
-    }
->>>>>>> 18d2d8e97a3dd39095bfd1fc3dd22e9fc7e9af0e
+  }
 
-    handleClick(e) {
-      e.preventDefault()
-      const { value } = e.target
-      this.setState({
-        visibility: value
-      });
-    }
+  handleClick(e) {
+    e.preventDefault()
+    const { value } = e.target
+    this.setState({
+      visibility: value
+    });
+  }
 
   handleClickExplore = () => {
     window.location = `/#/explore`;
@@ -54,42 +48,66 @@ class DetailReo extends Component {
 
     return (
       <React.Fragment>
-         <div className="mapBackground" style={this.state.visibility == "map" ? {zIndex: 81} : {zIndex: 71}}>
+        <div className="mapBackground" style={this.state.visibility == "map" ? { zIndex: 81 } : { zIndex: 71 }}>
+          <button className="backToList" onClick={this.handleClickExplore.bind(this)}> hoki ki te Rārangi </button>
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
-         </div>
-         <div className="overlayNew" style={this.state.visibility == "list" ? {zIndex: 81} : {zIndex: 71}}>
-           <div className="rahui-text">
-            <br></br>
-            <button className="backToList" onClick={this.handleClickExplore.bind(this)}> hoki ki te Rārangi </button>
-             <h1> {description}</h1>
-             <TautokoReo />
-            <br /><b>I Whakaputaina e:</b><p>iwi:{iwi} •  hapu:{hapu}</p>
-             <br /><b>Te Ingoa o nga Kaituhi</b> <p> {authoriser}</p>
-            <br />
-            <div className="twocol">
-              <div ><b>Rā Kua Tuhia</b> <p> {date_placed}</p></div>
-               <div ><b>Rā Kua Piki</b> <p> {date_lifted}</p> </div>
-             </div>
-            <br /><b>Korero</b> <p> {korero}</p>
-            <br /><br></br>
-            <div className="twocol detailbottom">
-              <div><b>Tukuna e</b> <p> {first_name} {last_name}</p></div>
-               <div><b>Whakapa Mai</b> <p> {contact}</p></div>
-             </div>
-            <br></br>
-            <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>whakatika</Link> : ""}</h3>
-             <div className="spaceme" />
-           </div>
+        </div>
+        <div className="overlayNew" style={this.state.visibility == "list" ? { zIndex: 81 } : { zIndex: 71 }}>
+          <div className="rahui-text">
+            <h1 className="descriptionDetail">{description}</h1>
+            <div className="detailsWrapper">
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">I Whakaputaina e:</p>
+                <p>iwi: {iwi}</p>
+                <p>hapu: {hapu}</p>
+              </div>
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">Te Ingoa o nga Kaituhi:</p>
+                <p> {authoriser}</p>
+              </div>
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">Rā Kua Tuhia:</p>
+                <p> {date_placed}</p>
+              </div>
+
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">Rā Kua Piki:</p>
+                <p> {date_lifted}</p>
+              </div>
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">Tukuna e:</p>
+                <p> {first_name} {last_name}</p>
+              </div>
+
+              <div className="detailsDiv">
+                <p className="detailsHeading">Whakapa Mai:</p>
+                <p> {contact}</p>
+              </div>
+            </div>
+
+            <div className="koreroWrapper">
+              <p className="detailsHeading">Korero:</p>
+              <p> {korero}</p>
+            </div>
+
+
+          </div>
+          <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>whakatika</Link> : ""}</h3>
         </div>
         <div className="explore-buttons">
-                        <div className="explore-toggle-button">
-                        <button className={this.state.visibility == "list" ? "button-selected" : "button-deselected"} value="list" onClick={this.handleClick}>Detail</button>
-                        </div>
-                        <div className="explore-toggle-button">
-                        <button className={this.state.visibility == "map" ? "button-selected" : "button-deselected"} value="map" onClick={this.handleClick}>Map</button>
-                        </div>
+          <div className="explore-toggle-button">
+            <button className={this.state.visibility == "list" ? "button-selected" : "button-deselected"} value="list" onClick={this.handleClick}>Detail</button>
+          </div>
+          <div className="explore-toggle-button">
+            <button className={this.state.visibility == "map" ? "button-selected" : "button-deselected"} value="map" onClick={this.handleClick}>Map</button>
+          </div>
         </div>
-      </React.Fragment>
+      </React.Fragment >
     )
   }
 

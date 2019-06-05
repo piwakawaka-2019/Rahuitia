@@ -1,9 +1,9 @@
-html{
+html {
   height:100% ;
   margin: 0px;
 	padding: 0;
   border: 0;
-  font-size: 20px;
+  /* font-size: 20px; */
   font-family: "Rasa";
 }
 
@@ -47,8 +47,8 @@ h1 {
 h2 {
   font-style: normal;
   font-weight: bold;
-  font-size: 25px;
-  line-height: 27px;
+  font-size: 1.8em;
+  line-height:1em;
   color: #434734;
   margin-top: 0px
 }
@@ -324,6 +324,8 @@ button :active {
   padding: 1rem 0 1rem 0;
 }
 
+
+
 .detailsDiv p {
   /* line-height: 1rem; */
   padding-top: 1rem;
@@ -337,6 +339,12 @@ button :active {
 
 .detailsInfo {
   padding-top: 0.5rem;
+}
+
+
+.addDiv {
+  width: 20rem;
+  padding: 1rem 0 1rem 0;
 }
 
  .tautokoButton {
@@ -353,12 +361,20 @@ button :active {
 }
 
 
+.iwiHapu {
+  font-weight: bold;
+}
 
 
 .addAnotherButton {
   width: 21.5rem;
   margin: 10px 10px 10px 0px;
   letter-spacing: .03em;
+}
+
+.addAnotherButton:hover {
+  background-color: #434734;
+  color: #F5F5F5;
 }
 
 .registerSubmitButton {
@@ -540,12 +556,16 @@ input {
   opacity: 1;
 }
 
+::placeholder {
+  color: #434734;
+}
+
 /* input:focus {
   border: 0.8px solid #7d8366;
 } */
 
 textarea {
-  width: 90%;
+  /* width: 90vw; */
   padding: 12px 20px;
   outline: none;
   border-radius: 4px;
@@ -580,11 +600,18 @@ select {
     border-color: #434734;
 }
 
+
+
+
 .iwiHapuButton:hover {
   color: white;
   background-color: #434734;
 }
 
+.addButton:hover {
+  color: white;
+  background-color: #434734;
+}
 
 map {
   overflow: hidden;
@@ -596,13 +623,15 @@ map {
 
 .step {
   font-family: Rasa;
-  font-style: bold;
   font-weight: bold;
-  font-size: 22px;
-  line-height: 25px;
+  font-size: 1.6em;
+  line-height: 1em;
   color: #DC5757;
-  margin-bottom: 20px;
-  margin-top: 20px
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.stepInfo {
 }
 
 .one {
@@ -630,15 +659,7 @@ map {
   padding: 10px;
 }
 
-.dropdownbox {
-  /* display: inline-block;
-  width: 40%;
-  margin-right: 20px;
-  padding: 20px;
-  border-radius: 4px;
-  background: #eceee3; */
 
-}
 
 .dropdownboxedit {
   display: inline-block;
@@ -695,15 +716,16 @@ map {
 .loginButton {
   margin: 10px 10px 10px 10px;
   min-width: 8rem;
-
 }
 
+.loginButton:hover {
+
+}
 
 
 /* register style */
 
 .registerContainer {
-  /* margin: auto; */
   width: 100vw;
   height: calc(100vh - 2.4em);
   top: 2.4em;
@@ -714,12 +736,10 @@ map {
 
 .registerCenter {
     position: absolute;
-    left: 50%;
-    top: 40rem;
+    left: 50vw;
+    top: 25rem;
     transform: translate(-50%, -50%);
-    /* margin-right: 2vw; */
-  
-  /* text-align: center; */
+
 }
 
 .registerInputWrapper {
@@ -845,7 +865,7 @@ map {
   border-radius: 4px;
   width: 20rem;
   padding: .75rem .75rem;
-  margin: 10px 10px 10px 0px;
+  /* margin: 10px 10px 10px 0px; */
   border: 1px solid #434734;
 }
 
@@ -1215,9 +1235,22 @@ map {
   position: fixed;
 }
 
-.ToggleLanguageButton a{
-  color: #DC5757;
+/* .ToggleLanguageButton li {
+  background-color: #DC5757;
+} */
+
+.ToggleLanguageButton {
+  background-color: #DC5757; 
+  font-weight: bold;
+  padding: .75rem;
+  margin: .5rem .5rem .5rem 2rem;
+  /* text-transform: unset; */
 }
+
+.ToggleLanguageButton:hover {
+  opacity: .5;
+}
+
 
 .overlayLanding {
   top: 0;
