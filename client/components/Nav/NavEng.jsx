@@ -9,11 +9,12 @@ class NavEng extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      hamburgerNav: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this)
-
-  }
+    this.handleClick = this.handleClick.bind(this)
+}
 
   handleSubmit(e) {
     removeUser()
@@ -21,22 +22,32 @@ class NavEng extends Component {
     window.location = `/#/`
   }
 
+handleClick() {
+  let expand = this.state.hamburgerNav == "active" ? "" : "active"; 
+  this.setState({
+    hamburgerNav: expand
+  })
+}
+
   render() {
     return (
-      <header className="header">
-        <Link className="logo" to="/">Rāhuitia</Link>
-        <button className="ToggleLanguageButton"><Link to="#" onClick={() => this.props.toggleLang()}>
-          Te Reo</Link></button>
-        <input className="menu-btn" type="checkbox" id="menu-btn" />
-        <label className="menu-icon" for="menu-btn"><span className="nav-icon"></span></label>
-        <ul className="menu">
-
-          <li><Link to="/explore/">Explore</Link></li>
-          <li><Link to="/about/">About</Link></li>
-          <li><Link to="/addrahui/">Add a Rāhui</Link></li>
-          <li>{this.props.isAuthenticated ? <Link to="#" onClick={this.handleSubmit}>Logout</Link> : <Link to="/login/">Login</Link>}</li>
-        </ul>
-      </header>
+      <div id="nav" className={this.state.hamburgerNav} onClick={this.handleClick}>
+        <div className="rahuitia-logo"><Link to="/">Rāhuitia</Link></div>
+      <div id="close">
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
+      <div id="nav-items">
+      <ul>
+        <li className="ToggleLanguageButton"><Link to="#" onClick={() => this.props.toggleLang()}>
+      Te Reo</Link></li>
+        <li><Link to="/about/">About</Link></li>
+        <li><Link to="/explore/">Explore</Link></li>
+        <li><Link to="/addrahui/">Add a Rāhui</Link></li>
+        <li>{this.props.isAuthenticated ? <Link to="#" onClick={this.handleSubmit}>Logout</Link> : <Link to="/login/">Login</Link> }</li>
+      </ul>
+      </div>
+      </div>
     )
   }
 }
@@ -59,6 +70,27 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavEng)
 
+// function main() {
+//   var nav = document.getElementById('nav');
+//   nav.addEventListener('click',function() {
+//     nav.className = (!nav.classList.contains('active')) ? 'active' : '';
+//   });
+// }
+// addEventListener('load',main);
+
+    {/* <header className="header">
+      <Link className="logo" to="/">Rāhuitia</Link>
+      <input className="menu-btn" type="checkbox" id="menu-btn" />
+      <label className="menu-icon" for="menu-btn"><span className="nav-icon"></span></label>
+      <ul className="menu">
+      <li className="ToggleLanguageButton"><Link to="#" onClick={() => this.props.toggleLang()}>
+      Te Reo</Link></li>
+      <li><Link to="/explore/">Explore</Link></li>
+      <li><Link to="/about/">About</Link></li>
+      <li><Link to="/addrahui/">Add a Rāhui</Link></li>
+      <li>{this.props.isAuthenticated ? <Link to="#" onClick={this.handleSubmit}>Logout</Link> : <Link to="/login/">Login</Link> }</li>
+      </ul>
+    </header> */}
 
 // import React, { Component } from "react";
 // import { HashRouter as Router, Route, Link } from "react-router-dom";
