@@ -980,9 +980,8 @@ map {
 }
 
 .explore-button-selected {
- width: 25vw;
  letter-spacing: .05em;
- padding: 1.7em;
+ padding: 0;
  border: none;
  border-radius: 0;
  background-color:#F1ECE8;
@@ -995,9 +994,11 @@ map {
 }
 
 .explore-button-deselected {
-  width: 25vw;
   letter-spacing: .05em;
-  padding: 1.7em;
+  padding-top: 1.7em;
+  padding-bottom: 1.7em;
+  padding-left: 0;
+  padding-right: 0;
   border: none;
   border-radius: 0;
   background-color:#434734;
@@ -1016,6 +1017,23 @@ map {
   border: none;
   border-radius: 0;
 }
+
+#project {
+  width: 26vw;
+}
+
+#team{
+  width: 22vw;
+}
+
+#API{
+  width: 19vw;  
+}
+
+#resources{
+  width: 33vw;
+}
+
 
   .button-selected{
     color: #F1ECE8;
@@ -1092,7 +1110,7 @@ map {
   }
 
   .about-button{
-    padding-right: 1.7m;
+    padding-right: 1.7em;
     padding-left: 0; 
     font-size: 1em;
     text-transform: none;
@@ -1102,7 +1120,7 @@ map {
   .overlayNewAbout {
     position: fixed;
     width: 100vw;
-    height: calc(100vh - 2.4em);
+    height: calc(100vh - 6.05em);
     top: 2.4em;
     left: 0;
     bottom: 0;
