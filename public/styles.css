@@ -230,7 +230,7 @@ a {
 }
 
 .aboutContainer {
-  margin: 3em;
+  margin: .5em 18% 3em 18%;
 }
 
 .mapBackground {
@@ -759,6 +759,10 @@ map {
   background-color: none;
 }
 
+.aboutnav button {
+  font-size: .95em;
+}
+
 .explore-button-selected {
   width: 25%;
   letter-spacing: .05em;
@@ -903,7 +907,7 @@ map {
   position:absolute;
   transition:all .2s ease-out;
   top:-5px;  
-  
+
 }
 
 .header .menu-btn{
@@ -1019,8 +1023,9 @@ map {
 
 .explore-toggle-button button{
   width: 50vw;
-  letter-spacing: .05em;
-  padding: 1.7em;
+  letter-spacing: .08em;
+  font-size: .85em;
+  padding: 1.6em;
   border: none;
   border-radius: 0;
 }
@@ -1041,11 +1046,6 @@ map {
   width: 33vw;
 }
 
-
-  .button-selected{
-    color: #F1ECE8;
-    background-color: #DC5757;
-  }
 
   .button-selected{
     color: #F1ECE8;
