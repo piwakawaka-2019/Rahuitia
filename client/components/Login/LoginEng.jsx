@@ -43,7 +43,7 @@ class LoginEng extends Component {
 
           <input className="loginInput" name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
           <br></br>
-          <button className="loginButton" name="submit">Sign In</button>
+          <button className="loginButton" name="submit">Log In</button>
         </form>
       </div>
     )

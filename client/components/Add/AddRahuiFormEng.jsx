@@ -30,7 +30,7 @@ class AddRahuiFormEng extends React.Component {
             hapuSelected: null,
             regionSelected: null,
             iwihapuboxIsVisible: false,
-            iwihapuButtonText: "Click to select the Region/Iwi/Hāpu"
+            iwihapuButtonText: "Add selected Region/Iwi/Hāpu"
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -146,7 +146,9 @@ class AddRahuiFormEng extends React.Component {
     }
     render() {
         return (
-            <div className="addFormContainer">
+            <div
+            // className="addFormContainer"
+            >
                 <form onSubmit={this.handleSubmit} noValidate>
                     <div>
                         <h2>Add a Rāhui</h2>
@@ -157,9 +159,9 @@ class AddRahuiFormEng extends React.Component {
                         <p className="stepInfo">Zoom into an area on the map and draw an outline for where you want to place the rāhui.</p>
                     </div>
 
-                    <div className="addDiv">
+                    <div className="addDiv2">
                         <h2 className="step">step two</h2>
-                        <p className="stepInfo">Tell us more about the rāhui.</p>
+                        <p className="stepInfo">Tell us more about the rāhui below.</p>
                     </div>
 
                     <div className="addDiv">
@@ -205,9 +207,9 @@ class AddRahuiFormEng extends React.Component {
                     </div>
 
 
-                    <div className="addDiv">
-                        <p className="detailsHeading">Please enter the name of the person who has authorised the rahūi:</p>
-                        <input name="authoriser" type="text" placeholder="Authorised by" noValidate onChange={this.handleChange} />
+                    <div className="addAuthDiv">
+                        <p className="detailsHeading">Authorised by:</p>
+                        <input name="authoriser" type="text" placeholder="authoriser's name" noValidate onChange={this.handleChange} />
                     </div>
 
 
@@ -223,17 +225,21 @@ class AddRahuiFormEng extends React.Component {
 
                     <div className="addDiv">
                         <p className="detailsHeading">Brief description of the rahūi:</p>
-                        <textarea name="description" type="text" placeholder="description" rows="5" cols="60" noValidate onChange={this.handleChange} />
+                        <textarea className="descriptionArea" name="description" type="text" placeholder="description"
+                            // rows="5" cols="60"
+                            noValidate onChange={this.handleChange} />
                     </div>
 
                     <div className="addDiv">
                         <p className="detailsHeading">Further details of the rahūi:</p>
-                        <textarea name="korero" type="text" placeholder="korero" rows="10" cols="60" noValidate onChange={this.handleChange} />
+                        <textarea className="koreroArea" name="korero" type="text" placeholder="korero"
+                            // rows="10" cols="60"
+                            noValidate onChange={this.handleChange} />
                     </div>
 
                     <div className="addDiv">
                         <p className="detailsHeading">Contact details:</p>
-                        <input name="contact" type="text" placeholder="Contact info" noValidate onChange={this.handleChange} />
+                        <input name="contact" type="text" placeholder="Contact email or number" noValidate onChange={this.handleChange} />
                     </div>
 
                     <div className="addDiv">
