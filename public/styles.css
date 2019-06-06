@@ -237,8 +237,11 @@ a {
 }
 
 .mapBackground {
+  height: calc(100vh - 2.4em);
+  position: absolute;
+  top: 2.4em;
   width: 50vw;
-  height: 100vh;
+  ;
 }
 
 /* button styles */
