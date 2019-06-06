@@ -3,7 +3,7 @@ html {
   margin: 0px;
 	padding: 0;
   border: 0;
-  /* font-size: 20px; */
+  font-size: 20px;
   font-family: "Rasa";
 }
 
@@ -595,8 +595,10 @@ input {
   padding: .75em .75em;
   outline: none;
   border-radius: 0.18em;
-  background-color: #F1ECE8;
-  border: 1px solid #434734;;
+  /* background-color: #F1ECE8; */
+  background-color: #f1eeed;
+
+  border: 1px solid #434734;
   font-size: .97em;
   font-family: "Rasa";
   color: #434734;
@@ -623,7 +625,8 @@ textarea {
   padding: 12px 20px;
   outline: none;
   border-radius: .18em;
-  background-color: #F1ECE8;
+  /* background-color: #F1ECE8; */
+  background-color: #f1eeed;
   border: 1px solid #434734;
   font-family: "Rasa";
   font-size: .97em;
@@ -646,7 +649,9 @@ select {
   color: #434734;
   height: 2.6rem;
   font-family: "Rasa";
-  background-color: #F1ECE8;
+  /* background-color: #F1ECE8; */
+  background-color: #f1eeed;
+  
 }
 
 .registerSelect {
@@ -964,8 +969,9 @@ map {
 }
 
 .yourWhakapapa {
-  background: #F1ECE8;
+  /* background: #F1ECE8; */
   /* background: #95a16e */
+  background-color: #f1eeed;
   border-radius: .18em;
   /* width: 20rem; */
   padding: .75rem .75rem;
@@ -1297,7 +1303,38 @@ map {
     display: flex;
     align-items: center; 
   }
+
+  .koreroArea {
+    /* height: 12rem; */
+    width: calc(100vw - 6.5em);
+  }
+
+  .descriptionArea {
+    width: calc(100vw - 6.5em);
+  }
+
+  input {
+    width: calc(100vw - 6em);
+  }
+
+  select {
+    width: calc(100vw - 4.65em);   
+  }
+
+
+
+
 }
+
+
+
+/* end */
+
+
+
+
+
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -1416,3 +1453,6 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .gmnoprint div {
     background:none !important;
 }
+
+input:focus, select:focus, textarea:focus, form:focus, button:focus {outline:0;}
+
