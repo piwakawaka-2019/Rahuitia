@@ -305,7 +305,7 @@ button :active {
 
 .descriptionDetail {
   text-align: center;
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
   margin-bottom: 3rem;
 }
 
@@ -333,6 +333,7 @@ button :active {
 
 .detailsEditDiv {
   text-align: right;
+  margin: 1em;
 }
 
 
@@ -543,10 +544,10 @@ img.toggleButton:hover {
   border-radius: .18em;
   /* margin: .2em; */
   padding: .4em 1.5em .4em 1.5em;
-  border-color: #434734;
+  border-color: #DC5758;
   color: #F1ECE8;
   text-transform: uppercase;
-  background-color: #434734;
+  background-color: #DC5758;
 }
 
 .edit-button a:hover {

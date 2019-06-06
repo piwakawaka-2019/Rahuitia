@@ -52,12 +52,13 @@ class DetailEng extends Component {
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
         </div>
         <div className="overlayNew" style={this.state.visibility == "list" ? { zIndex: 81 } : { zIndex: 71 }}>
+
+          <div className="detailsEditDiv">
+            {this.userId() == user_id && <div className="edit-button"><Link to={`/rahui/${id}/edit`}>Edit</Link></div>}
+          </div>
+
+
           <div className="rahui-text">
-
-            <div className="detailsEditDiv">
-              {this.userId() == user_id && <div className="edit-button"><Link to={`/rahui/${id}/edit`}>Edit</Link></div>}
-            </div>
-
             <h1 className="descriptionDetail">{description}</h1>
             <div className="detailsWrapper">
 
