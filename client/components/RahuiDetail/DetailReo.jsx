@@ -103,9 +103,11 @@ class DetailReo extends Component {
           <div className="explore-toggle-button">
             <button className={this.state.visibility == "list" ? "button-selected" : "button-deselected"} value="list" onClick={this.handleClick}>Detail</button>
           </div>
+
           <div className="explore-toggle-button">
             <button className={this.state.visibility == "map" ? "button-selected" : "button-deselected"} value="map" onClick={this.handleClick}>Map</button>
           </div>
+          
         </div>
       </React.Fragment >
     )

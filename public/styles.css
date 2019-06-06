@@ -524,6 +524,35 @@ img.toggleButton:hover {
   color: #F5F5F5;
 }
 
+
+.edit-button a{
+  font-size: 1em;
+  text-decoration: none;
+  border-style: solid;
+  border-width: .04em;
+  border-radius: .18em;
+  /* margin: .2em; */
+  padding: .4em 1.5em .4em 1.5em;
+  border-color: #434734;
+  color: #F1ECE8;
+  text-transform: uppercase;
+  background-color: #434734;
+}
+
+/* button {
+  text-align: center;
+  border: .7px solid #434734;
+  border-radius: 5px;
+  padding: .75rem .75rem;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family: "Rasa";
+
+  color: white;
+  background-color: #434734;
+} */
+
 .aboutHeading2 {
   /* font-size: 3em; */
   

@@ -94,10 +94,11 @@ class DetailEng extends Component {
               <p> {korero}</p>
             </div>
 
-            <div className="detailsDiv">
-              {/* <button className="addButton" name="submit">Add Rāhui</button> */}
 
-              <button className="addButton" type="button">{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : ""}</button>
+            {/* edit button here */}
+            <div className="detailsDiv">
+              {/* <button className="addButton" type="button">{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : ""}</button> */}
+              {this.userId() == user_id && <div className="edit-button"><Link to={`/rahui/${id}/edit`}>Edit</Link></div>}
             </div>
 
           </div>
