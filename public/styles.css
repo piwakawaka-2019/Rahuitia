@@ -303,6 +303,7 @@ button :active {
    background: #A3A87E;
    border: none;
    color: #F1ECE8;
+
  }
 
 .backToList:hover {
@@ -1166,7 +1167,7 @@ map {
    .backToList {
      width: 3rem;
      height: 3rem;
-     border-radius: 2em;
+     border-radius: 50%;
      position: fixed;
      top: 4.1em;
      left: 2.8em;
@@ -1175,6 +1176,7 @@ map {
      background: #A3A87E;
      border: none;
      color: #F1ECE8;
+     transition: opacity .2s ease-in;
    }
   
   .backToList:hover {
