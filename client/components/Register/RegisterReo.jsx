@@ -152,16 +152,18 @@ class RegisterReo extends React.Component {
               <div className="addDiv">
                 <p className="detailsHeading">Tīpako iwi:</p>
                 <select className="registerSelect" onChange={this.handleSelect2}>
-                  {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
+                  {this.state.iwiSelected == null && <option>tīpako iwi</option>}
+                  {this.state.regionSelected ? (this.renderIwi()) : <option></option>}
                 </select>
               </div>
 
               <div className="addDiv">
                 <p className="detailsHeading">Tīpako hapū:</p>
                 <select className="registerSelect" onChange={this.handleSelect3}>
+                  {this.state.hapuSelected == null && <option>tīpako hapū</option>}
                   {this.state.iwiSelected ? (
                     this.renderHapu()
-                  ) : <option>----------</option>}
+                  ) : <option></option>}
                 </select>
               </div>
 
@@ -177,21 +179,21 @@ class RegisterReo extends React.Component {
 
             <div className="addAuthDiv">
               <p className="detailsHeading">Wāhitau:</p>
-              <input name="address" type="text" placeholder="wāhitau" noValidate onChange={this.handleChange} />
+              <input className="inputRegister" name="address" type="text" placeholder="wāhitau" noValidate onChange={this.handleChange} />
             </div>
 
             <div className="addDiv">
               <p className="detailsHeading">Email address:</p>
-              <input name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
+              <input className="inputRegister" name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
             </div>
 
             <div className="addAuthDiv">
               <p className="detailsHeading">Kupuhipa:</p>
-              <input name="password" type="password" placeholder="kupuhipa" noValidate onChange={this.handleChange} />
+              <input className="inputRegister" name="password" type="password" placeholder="kupuhipa" noValidate onChange={this.handleChange} />
             </div>
 
             <div className="addDiv">
-              <input name="confirm_password" type="password" placeholder="whakapūmau i te kupuhipa" noValidate onChange={this.handleChange} />
+              <input className="inputRegister" name="confirm_password" type="password" placeholder="whakapūmau i te kupuhipa" noValidate onChange={this.handleChange} />
               <p>{this.props.auth.errorMessage}</p>
             </div>
 

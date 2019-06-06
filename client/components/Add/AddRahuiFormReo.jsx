@@ -154,97 +154,92 @@ class AddRahuiFormReo extends React.Component {
                     </div>
 
                     <div className="addDiv">
-                        Takahia Tetahi
+                        <h2 className="step">Takahia Tetahi</h2>
+                        <p className="stepInfo">Tomo mai ki tetahi rohe i runga i te mahere me te tuhi i tetahi waahanga mo te wahi e hiahia ana koe ki te whakatakoto i te rahui.</p>
                     </div>
 
-                    
-                    <div>
-                        <img src="mapthumbnail.png" className="thumbnail" />
-                        <h2 className="one">Tomo mai ki tetahi rohe i runga i te mahere me te tuhi i tetahi waahanga mo te wahi e hiahia ana koe ki te whakatakoto i te rahui.</h2>
-                        <br></br><br></br>
-                        <hr></hr>
+                    <div className="addDiv2">
+                        <h2 className="step">Takahia e Rua</h2>
+                        <p className="stepInfo">Korero mai ki a matou te rahui. Ka tuhia enei korero ki te waa tirotiro.</p>
                     </div>
-                    <br></br>
-                    <br></br>
-                    <div className="step">Takahia e Rua</div>
 
-                    <h2>Korero mai ki a matou te rahui. Ka tuhia enei korero ki te waa tirotiro.</h2>
+                    <div className="addDiv">
+                        <p className="iwiHapu">Tēnā koa tīpakohia te iwi me te hapū kua whakaturia te rahui:</p>
 
-                    <div className="dropdownbox">
-                        <h3>Tēnā koa tīpakohia te iwi me te hapū kua whakaturia te rahui:</h3>
-
-                        <p>Tīpako Rohe:</p>
-                        <select onChange={this.handleSelect}>
-                            {this.state.regionSelected == null && <option>Choose region</option>}
-                            {this.props.area.map(area => {
-                                return <option htmlFor="region">{area}</option>;
-                            })}
-                        </select>
-                        <br></br>
-
-                        {<p>Tīpako Iwi:</p>}
-                        <select onChange={this.handleSelect2}>
-                            {this.state.iwiSelected == null && <option>Choose iwi</option>}
-                            {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
-                        </select>
-                        <br></br>
-
-                        {<p>Tīpako Hapū:</p>}
-                        <select onChange={this.handleSelect3}>
-                            {this.state.hapuSelected == null && <option>Choose hapū</option>}
-                            {this.state.iwiSelected ? (
-                                this.renderHapu()
-                            ) : <option>----------</option>}
-                        </select>
-                        <br></br>
-                        <button className="secondarybutton" type="button" onClick={this.submitAdd}>{this.state.iwihapuButtonText}</button>
-                        <br></br> </div>
-                    {this.state.iwihapuboxIsVisible ?
-                        <div className='selectediwi'>
-                            <h3> <img src="tick.png" style={{ width: "20px" }} /> Iwi / hapu kua tīpakohia: </h3> <br></br>
-                            <h3> iwi:{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })} </h3>
-                            <h3> hapu:{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })} </h3>
-                        </div> : null}
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <p>Tēnā koa whakauruhia te ingoa o te tangata kua whakamanahia te Rahūi:</p>
-                    <input name="authoriser" type="text" placeholder="Authorised by" noValidate onChange={this.handleChange} />
-                    <br></br>
-                    {/* <br></br>
-                    <p>Please enter your name:</p>
-                    <input name="submittersName" type="text" placeholder="Submitted by" />
-                    <br></br> */}
-                    <br></br><br />
-
-
-                    <div className="twocol">
-                        <div className="date"><p>Kua whakanohoia te Rahūi ra:</p>
-                            <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
+                        <div className="addDiv">
+                            <p className="detailsHeading">Tīpako Rohe:</p>
+                            <select onChange={this.handleSelect}>
+                                {this.state.regionSelected == null && <option>Choose region</option>}
+                                {this.props.area.map(area => {
+                                    return <option htmlFor="region">{area}</option>;
+                                })}
+                            </select>
                         </div>
-                        <div>
-                            <p>I whakanuia te Rahūi:</p>
-                            <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
+
+                        <div className="addDiv">
+                            <p className="detailsHeading">Tīpako Iwi:</p>
+                            <select onChange={this.handleSelect2}>
+                                {this.state.iwiSelected == null && <option>Choose iwi</option>}
+                                {this.state.regionSelected ? (this.renderIwi()) : <option></option>}
+                            </select>
+                        </div>
+
+                        <div className="addDiv">
+                            <p className="detailsHeading">Tīpako Hapū:</p>
+                            <select onChange={this.handleSelect3}>
+                                {this.state.hapuSelected == null && <option>Choose hapū</option>}
+                                {this.state.iwiSelected ? (
+                                    this.renderHapu()
+                                ) : <option></option>}
+                            </select>
+                        </div>
+
+                        <div className="addDiv">
+                            <button className="addButton" type="button" onClick={this.submitAdd}>{this.state.iwihapuButtonText}</button>
                         </div>
                     </div>
 
-                    <br></br>
-                    <p>Tēnā koa tāpirihia he whakaahua poto o te rahūi i konei:</p>
-                    <textarea name="description" type="text" placeholder="whakaahua" rows="5" cols="60" noValidate onChange={this.handleChange} />
-                    <br></br>
-                    <br></br>
-                    <p>Tēnā koa tāpirihia ētahi atu taipitopito o te rahūi i konei:</p>
-                    <textarea name="korero" type="text" placeholder="korero" rows="10" cols="60" noValidate onChange={this.handleChange} />
-                    <br></br>
-                    <br></br>
-                    <p>Tēnā koa tuhia ngā taipitopito whakapā ki konei</p>
-                    <input name="contact" type="text" placeholder="Īmera" noValidate onChange={this.handleChange} />
-                    <br></br>
+                    <div className='yourWhakapapa'>
+                        <p className="subHeading">Iwi:</p>{this.state.iwi.map(iwi => { return <p>{iwi}</p> })}
+                        <p className="subHeading">Hapū:</p> {this.state.hapu.map(hapu => { return <p>{hapu}</p> })}
+                    </div>
 
-                    <button name="submit">Tāpirihia te Rāhui</button>
+                    <div className="addAuthDiv">
+                        <p>Tēnā koa whakauruhia te ingoa o te tangata kua whakamanahia te Rahūi:</p>
+                        <input name="authoriser" type="text" placeholder="Authorised by" noValidate onChange={this.handleChange} />
+                    </div>
+
+                    <div className="addDiv">
+                        <p className="detailsHeading">Kua whakanohoia te Rahūi ra:</p>
+                        <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
+                    </div>
+
+                    <div className="addDiv">
+                        <p className="detailsHeading">I whakanuia te Rahūi:</p>
+                        <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
+                    </div>
+
+                    <div className="addDiv">
+                        <p className="detailsHeading">Tēnā koa tāpirihia he whakaahua poto o te rahūi i konei:</p>
+                        <textarea className="descriptionArea" name="description" type="text" placeholder="whakaahua" noValidate onChange={this.handleChange} />
+                    </div>
+
+                    <div className="addDiv">
+                        <p className="detailsHeading">Tēnā koa tāpirihia ētahi atu taipitopito o te rahūi i konei:</p>
+                        <textarea className="koreroArea" name="korero" type="text" placeholder="korero" noValidate onChange={this.handleChange} />
+                    </div>
+
+                    <div className="addDiv">
+                        <p className="detailsHeading">Tēnā koa tuhia ngā taipitopito whakapā ki konei</p>
+                        <input name="contact" type="text" placeholder="Īmera" noValidate onChange={this.handleChange} />
+                    </div>
+
+                    <div className="addDiv">
+                        <button name="submit">Tāpirihia te Rāhui</button>
+                    </div>
                 </form>
                 <div className="spaceme" />
-            </div>
+            </div >
         )
     }
 }

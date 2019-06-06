@@ -338,7 +338,7 @@ button :active {
 }
 .detailsDiv {
   width: 15rem;
-  padding: 1rem 0 1rem 0;
+  padding: .6rem 0 .6rem 0;
 }
 
 .detailsEditDiv {
@@ -380,7 +380,7 @@ button :active {
 
 .addDiv {
   /* width: 20rem; */
-  margin: 1rem 0 1rem 0;
+  margin: 2rem 0 2rem 0;
 }
 
 .addDiv2 {
@@ -389,7 +389,7 @@ button :active {
 }
 
 .addAuthDiv {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 .addIntroDiv {
@@ -495,7 +495,7 @@ img.toggleButton:hover {
   font-size: 1.2em;
   line-height: 34px;
   margin-top: 1em;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
 
 }
 
@@ -748,9 +748,12 @@ map {
 }
 
 .spaceme {
-  padding: 90px;
+  padding: 2em;
 }
 
+.spaceme2 {
+  padding: 2em;
+}
 
 
 .explore-waka {
@@ -911,7 +914,7 @@ map {
 .registerCenter {
     position: absolute;
     left: 50vw;
-    top: 42em;
+    top: 50em;
     transform: translate(-50%, -50%);
     width: 50vw;
 }
@@ -1482,7 +1485,7 @@ map {
 }
 
 .rahui-text p {
-  padding-top: 0.5rem;
+  padding-top: 0.2rem;
 }
 
 .gmnoprint a, .gmnoprint span {
