@@ -253,7 +253,10 @@ button {
   font-size: 16px;
   text-transform: uppercase;
   font-family: "Rasa";
-  background-color: #F1ECE8;
+  /* background-color: #F1ECE8; */
+
+  color: white;
+  background-color: #434734;
 }
 
 button:focus {
@@ -263,6 +266,10 @@ button:focus {
 /* button:hover {
   background: #F5F5F5;
 } */
+
+button:hover {
+  opacity: .8;
+}
 
 
 button :active {
@@ -370,6 +377,10 @@ button :active {
   margin-top: 2rem;
 }
 
+.addIntroDiv {
+  margin-bottom: 4rem;
+}
+
 
 
 
@@ -464,6 +475,7 @@ img.toggleButton:hover {
 .aboutBody {
   font-size: 1.2em;
   line-height: 34px;
+  margin-top: 1em;
 }
 
 .landingtext {
@@ -513,7 +525,15 @@ img.toggleButton:hover {
 }
 
 .aboutHeading2 {
-  font-size: 3em;
+  /* font-size: 3em; */
+  
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.8em;
+    line-height:1em;
+    color: #434734;
+    margin-top: 0px
+  
 }
 
 
@@ -571,16 +591,20 @@ img.toggleButton:hover {
 /* form styles  */
 
 input {
-  width: calc(50% - 1.5rem);
-  padding: .75rem .75rem;
+  width: calc(50% - 1.5em);
+  padding: .75em .75em;
   outline: none;
-  border-radius: 0.4em;
+  border-radius: 0.18em;
   background-color: #F1ECE8;
   border: 1px solid #434734;;
   font-size: .97em;
   font-family: "Rasa";
   color: #434734;
   opacity: 1;
+}
+
+.inputRegister {
+  width: calc(100% - 1.5em);
 }
 
 ::placeholder {
@@ -598,7 +622,7 @@ textarea {
 
   padding: 12px 20px;
   outline: none;
-  border-radius: 4px;
+  border-radius: .18em;
   background-color: #F1ECE8;
   border: 1px solid #434734;
   font-family: "Rasa";
@@ -618,11 +642,15 @@ select {
   padding: .75rem .75rem;
   border: 1px solid #434734;
   border-radius: .18em;
-  font-size: .9em;
+  font-size: .97em;
   color: #434734;
   height: 2.6rem;
   font-family: "Rasa";
   background-color: #F1ECE8;
+}
+
+.registerSelect {
+  width: 100%;
 }
 
 .iwiHapuButton {
@@ -735,20 +763,50 @@ map {
 }
 
 
-.login-wrapper {
+.registerContainer {
+  width: 100vw;
+  height: calc(100vh - 2.4em);
+  top: 2.4em;
+  overflow: auto;
+  background: #F1ECE8;
   position: fixed;
+}
+
+.logInContainer {
+  width: 100vw;
+    height: calc(100vh - 2.4em);
+    top: 2.4em;
+    overflow: auto;
+    background: #F1ECE8;
+    position: fixed;
+}
+
+.login-wrapper {
+  /* position: fixed;
   margin: auto;
   width: 100%;
   top: 10rem;;
+  text-align: center; */
+
+  position: absolute;
+  margin: auto;
+  width: 30%;
+  top: 15em;
   text-align: center;
+  left: 50vw;
+  transform: translate(-50%, -50%);
 }
+
+
+
 
 .loginHeader {
   margin: 10px 10px 10px 10px;
 }
 
 .loginInput {
-  margin: 10px 10px 10px 10px;
+  /* margin: 10px 10px 10px 10px; */
+  width: calc(100% - 1.5em);
 }
 
 .loginButton {
@@ -776,8 +834,9 @@ map {
 .registerCenter {
     position: absolute;
     left: 50vw;
-    top: 25rem;
+    top: 42em;
     transform: translate(-50%, -50%);
+    width: 50vw;
 }
 
 .registerInputWrapper {
@@ -804,9 +863,9 @@ map {
   background: white;
 }
 
-.inputRegister {
+/* .inputRegister {
   width: 40%
-}
+} */
 
 .dropdownboxRegion{
   display: inline-block;
@@ -855,6 +914,8 @@ map {
   display: flex;
   width: 100%;
   background-color: none;
+  margin-bottom: 2em;
+  /* justify-content: space-between; */
 }
 
 .explore-button-selected {
@@ -901,7 +962,7 @@ map {
 .yourWhakapapa {
   background: #F1ECE8;
   /* background: #95a16e */
-  border-radius: 4px;
+  border-radius: .18em;
   /* width: 20rem; */
   padding: .75rem .75rem;
   /* margin: 10px 10px 10px 0px; */
@@ -1045,6 +1106,9 @@ map {
       display:none;
   }
 
+  /* .registerCenter {
+    width: 70vw;
+  } */
 }
 
 .explore-buttons{
@@ -1215,6 +1279,13 @@ map {
     margin-top: 2vh;
     /* margin-right: 2vw; */
   
+    .registerCenter {
+      width: 80vw;  
+    }
+
+    .login-wrapper {
+      width: 80vw;
+    }
 
   #mobile-background-image{
     height: 100vh;

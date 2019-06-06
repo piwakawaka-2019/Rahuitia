@@ -119,49 +119,111 @@ class RegisterEng extends React.Component {
         return (
             <div className="registerContainer">
                 <div className="registerCenter">
-                    <h2>Register</h2>
-                    <p>Please register to add a rahūi to the website.</p>
-                    <p>There is a verficiation process to identify you.</p>
-                    <p>This process may take up to three days.</p>
+                    <div className="addIntroDiv">
+                        <h2>Register</h2>
+                        <div className="addDiv">
+                            <p>Please register to add a rahūi to the website.</p>
+                            <p>There is a verficiation process to identify you.</p>
+                            <p>This process may take up to three days.</p>
+                        </div>
+                    </div>
+
                     <form className="register-form" onSubmit={this.submit}>
-                        <input name="first_name" type="text" placeholder="first name" noValidate onChange={this.handleChange} />
-                        <input name="middle_name" type="text" placeholder="middle name/s" noValidate onChange={this.handleChange} />
-                        <input name="last_name" type="text" placeholder="last name" noValidate onChange={this.handleChange} />
-                        <p>Select region:</p>
-                        <select onChange={this.handleSelect}>
-                            {this.props.area.map(area => {
-                                return <option htmlFor="region">{area}</option>;
-                            })}
-                        </select>
+                        <div className="addDiv">
+                            <p className="detailsHeading">Full name:</p>
+                            <input className="inputRegister" name="first_name" type="text" placeholder="first name" noValidate onChange={this.handleChange} />
+                        </div>
 
-                        <p>Select iwi:</p>
-                        <select onChange={this.handleSelect2}>
-                            {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
-                        </select>
+                        <div className="addDiv">
+                            <input className="inputRegister" name="middle_name" type="text" placeholder="middle name/s" noValidate onChange={this.handleChange} />
+                        </div>
+                        <div className="addDiv">
+                            <input className="inputRegister" name="last_name" type="text" placeholder="last name" noValidate onChange={this.handleChange} />
+                        </div>
 
-                        <p>Select hapū:</p>
-                        <select onChange={this.handleSelect3}>
-                            {this.state.iwiSelected ? (
-                                this.renderHapu()
-                            ) : <option>----------</option>}
-                        </select>
-                        <button className="addAnotherButton" type="button" onClick={this.submitAdd}>Add Another Region/Iwi/Hāpu</button>
-                        <div className="yourWhakapapa"><p>Selected whakapapa:</p>
+                        <div className="addDiv">
+                            <div className="addAuthDiv">
+                                <p className="detailsHeading">Select region:</p>
+                                {/* <select onChange={this.handleSelect}>
+                                    {this.props.area.map(area => {
+                                        return <option htmlFor="region">{area}</option>;
+                                    })}
+                                </select> */}
+                                <select className="registerSelect" onChange={this.handleSelect}>
+                                    {this.state.regionSelected == null && <option>Choose region</option>}
+                                    {this.props.area.map(area => {
+                                        return <option htmlFor="region">{area}</option>;
+                                    })}
+                                </select>
+                            </div>
+
+                            <div className="addDiv">
+                                <p className="detailsHeading">Select iwi:</p>
+                                {/* <select onChange={this.handleSelect2}>
+                                    {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
+                                </select> */}
+                                <select className="registerSelect" onChange={this.handleSelect2}>
+                                    {this.state.iwiSelected == null && <option>Choose iwi</option>}
+                                    {this.state.regionSelected ? (this.renderIwi()) : <option></option>}
+                                </select>
+                            </div>
+
+                            <div className="addDiv">
+                                <p className="detailsHeading">Select hapū:</p>
+                                {/* <select onChange={this.handleSelect3}>
+                                    {this.state.iwiSelected ? (
+                                        this.renderHapu()
+                                    ) : <option></option>}
+                                </select> */}
+                                <select className="registerSelect" onChange={this.handleSelect3}>
+                                    {this.state.hapuSelected == null && <option>Choose hapū</option>}
+                                    {this.state.iwiSelected ? (
+                                        this.renderHapu()
+                                    ) : <option></option>}
+                                </select>
+                            </div>
+
+                            <div className="addDiv">
+                                <button
+                                    className="addButton"
+                                    type="button" onClick={this.submitAdd}>Add Another Region/Iwi/Hāpu</button>
+                            </div>
+                        </div>
+
+                        <div className="yourWhakapapa">
                             <p className="subHeading">Iwi:</p>{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}
                             <p className="subHeading"> Hapu:</p>{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}
-
                         </div>
-                        <input name="address" type="text" placeholder="address" noValidate onChange={this.handleChange} />
 
-                        <input name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
+                        <div className="addAuthDiv">
+                            <p className="detailsHeading">Address:</p>
+                            <input className="inputRegister" name="address" type="text" placeholder="address" noValidate onChange={this.handleChange} />
+                        </div>
 
-                        <input name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
+                        <div className="addDiv">
+                            <p className="detailsHeading">Email address:</p>
 
-                        <input name="confirm_password" type="password" placeholder="confirm password" noValidate onChange={this.handleChange} />
+                            <input className="inputRegister" name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
+                        </div>
 
-                        <p>{this.props.auth.errorMessage}</p>
+                        <div className="addAuthDiv">
+                            <p className="detailsHeading">Password:</p>
 
-                        <button className="registerSubmitButton" name="submit">SUBMIT</button>
+                            <input className="inputRegister" name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
+                        </div>
+
+                        <div className="addDiv">
+                            <input className="inputRegister" name="confirm_password" type="password" placeholder="confirm password" noValidate onChange={this.handleChange} />
+                        </div>
+
+                        <div className="addDiv">
+                            <p>{this.props.auth.errorMessage}</p>
+                        </div>
+
+                        <div className="addDiv">
+                            <button className="addButton" name="submit">SUBMIT</button>
+                        </div>
+
                     </form>
                 </div>
             </div>)

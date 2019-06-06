@@ -181,7 +181,7 @@ class AddRahuiFormEng extends React.Component {
                             <p className="detailsHeading">Select iwi:</p>
                             <select onChange={this.handleSelect2}>
                                 {this.state.iwiSelected == null && <option>Choose iwi</option>}
-                                {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
+                                {this.state.regionSelected ? (this.renderIwi()) : <option></option>}
                             </select>
                         </div>
 
@@ -191,7 +191,7 @@ class AddRahuiFormEng extends React.Component {
                                 {this.state.hapuSelected == null && <option>Choose hapū</option>}
                                 {this.state.iwiSelected ? (
                                     this.renderHapu()
-                                ) : <option>----------</option>}
+                                ) : <option></option>}
                             </select>
                         </div>
 
