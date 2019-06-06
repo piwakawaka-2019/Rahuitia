@@ -237,8 +237,11 @@ a {
 }
 
 .mapBackground {
+  height: calc(100vh - 2.4em);
+  position: absolute;
+  top: 2.4em;
   width: 50vw;
-  height: 100vh;
+  ;
 }
 
 /* button styles */
@@ -287,16 +290,23 @@ button :active {
   margin-bottom: 5rem;
 }
 
+.backToList img {
+  width: 2em;
+} 
 
  .backToList {
-   width: 5rem;
+   width: 3rem;
+   height: 3rem;
+   border-radius: 2em;
    position: fixed;
-   top: 4em;
-   left: 1.5em;
-   z-index: 1;
-   background: #DC5758;
+   top: 8.9em;
+   left: 50%;
+   transform: translate(-50%);
+   z-index: 201;
+   background: #A3A87E;
    border: none;
    color: #F1ECE8;
+
  }
 
 .backToList:hover {
@@ -491,7 +501,7 @@ img.toggleButton:hover {
 
 .landingtext {
   position: fixed;
-  width: 60vw;
+  width: 65vw;
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -500,12 +510,16 @@ img.toggleButton:hover {
   color: #434734;
 }
 
+
 .landingtext h3 {
   font-size: 1.2em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .landingtext h1 {
-  font-size: 1.9em;
+  font-size: 2.5em;
+
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.4);
 }
 
 .landing-buttons {
@@ -731,6 +745,19 @@ map {
 
 .spaceme {
   padding: 90px;
+}
+
+
+
+.explore-waka {
+  width: 26em;
+  transition: width .2s ease-in-out;
+  position: relative; bottom: 3em;
+}
+
+.explore-waka:hover {
+  width: 27em;
+  opacity: 1;
 }
 
 .step {
@@ -1170,6 +1197,16 @@ map {
 }
 
 @media (max-width:50em){
+  
+   .backToList {
+    display: none;
+   }
+  
+  .backToList:hover {
+    border-style: none;
+  }
+
+
   .mapBackground {
     position: fixed;
     width: 100vw;
@@ -1264,6 +1301,7 @@ map {
   .button-selected{
     color: #F1ECE8;
     background-color: #DC5757;
+    opacity: .97;
   }
 
   .button-selected:hover{
@@ -1274,7 +1312,7 @@ map {
   .button-deselected{
     color: #DC5757;
     background-color: #F1ECE8;
-    opacity: .95;
+    opacity: .97;
   }
 
   .button-deselected:hover{
@@ -1309,24 +1347,33 @@ map {
 
   .landingtext {
     position: fixed;
-    width: 60vw;
+    width: 85vw;
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 70%;
+    height: 75%;
     text-align: center;
     color: #434734;
 }
 
 .landingtext h3 {
-  font-size: 1.2em;
+  /* mobile */
+  padding-top: .7em;
+  font-size: .9em;
+  line-height: 1.2em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .landingtext h1 {
-  font-size: 1.9em;
+  font-size: 1.7em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-  .aboutContainer {
+.explore-waka {
+  width: 16em;
+}
+
+.aboutContainer {
     margin: 1.5em;
   }
 
@@ -1473,15 +1520,6 @@ map {
   transform: translate(-50%, 0%);
 }
 
-.explore-waka {
-  width: 26em;
-  transition: width .2s ease-in-out;
-}
-
-.explore-waka:hover {
-  width: 27em;
-  opacity: 1;
-}
 
 .background-overlay {
     top: 50%;
@@ -1492,7 +1530,8 @@ map {
     height: calc(100vh - 2vw);
     overflow: auto;
     background: #F1ECE8;
-    opacity: 0.8;
+    opacity: 0.9;
+    mix-blend-mode: screen;
 }
 
 a[href^="http://maps.google.com/maps"]{display:none !important}

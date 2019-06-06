@@ -26,7 +26,7 @@ const MapWithADrawingManager = compose(
       // mapTypeId: '',//google.maps.MapTypeId.SATELLITE,
       streetViewControl: false,
       scaleControl: false,
-      mapTypeControl: false,
+      mapTypeControl: true,
       panControl: true,
       zoomControl: true,
       rotateControl: false,
