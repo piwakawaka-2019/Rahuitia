@@ -79,22 +79,22 @@ class AddRahuiFormReo extends React.Component {
         window.location = `/#/explore`
     }
 
-    submitAdd(){
+    submitAdd() {
         let region = [...this.state.region, this.state.regionSelected]
-        let iwi= [...this.state.iwi, this.state.iwiSelected]
+        let iwi = [...this.state.iwi, this.state.iwiSelected]
         let hapu = [...this.state.hapu, this.state.hapuSelected]
 
         this.setState({
-            region:[...new Set(region)],
-            iwi:[...new Set(iwi)],
-            hapu:[...new Set(hapu)],
+            region: [...new Set(region)],
+            iwi: [...new Set(iwi)],
+            hapu: [...new Set(hapu)],
             regionSelected: null,
             iwiSelected: null,
             hapuSelected: null,
             iwihapuboxIsVisible: true,
             iwihapuButtonText: "Add Another Associated Region/Iwi/Hāpu"
         })
-        
+
     }
 
     handleChange(e) {
@@ -147,64 +147,65 @@ class AddRahuiFormReo extends React.Component {
     }
     render() {
         return (
-           <div>   
-                 <div>
-                <form
-                    onSubmit={this.handleSubmit}
-                    noValidate
-                >
+            <div>
+                <form onSubmit={this.handleSubmit} noValidate>
                     <div>
-                        <h1>Tāpirihia he Rāhui</h1>
-                        <div className="step"> Takahia Tetahi</div>
-                        <div>
-                            <img src="mapthumbnail.png" className="thumbnail" />
+                        <h2>Tāpirihia he Rāhui</h2>
+                    </div>
+
+                    <div className="addDiv">
+                        Takahia Tetahi
+                    </div>
+
+                    
+                    <div>
+                        <img src="mapthumbnail.png" className="thumbnail" />
                         <h2 className="one">Tomo mai ki tetahi rohe i runga i te mahere me te tuhi i tetahi waahanga mo te wahi e hiahia ana koe ki te whakatakoto i te rahui.</h2>
                         <br></br><br></br>
                         <hr></hr>
-                        </div>
-                        <br></br>
-                        <br></br>
-                        <div className="step">Takahia e Rua</div>
-                        
-                        <h2>Korero mai ki a matou te rahui. Ka tuhia enei korero ki te waa tirotiro.</h2>
-                        
-                        <div className="dropdownbox">
-                        <h3>Tēnā koa tīpakohia te iwi me te hapū kua whakaturia te rahui:</h3>
-                        
-                            <p>Tīpako Rohe:</p>
-                            <select onChange={this.handleSelect}>
-                            {this.state.regionSelected == null && <option>Choose region</option> }
-                                {this.props.area.map(area => {
-                                    return <option htmlFor="region">{area}</option>;
-                                })}
-                            </select>
-                            <br></br>
-                        
-                            {<p>Tīpako Iwi:</p>}
-                            <select onChange={this.handleSelect2}>
-                            {this.state.iwiSelected == null && <option>Choose iwi</option> }
-                                {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
-                            </select>
-                            <br></br>
-                            
-                            {<p>Tīpako Hapū:</p>}
-                            <select onChange={this.handleSelect3}>
-                            {this.state.hapuSelected == null && <option>Choose hapū</option> }
-                                {this.state.iwiSelected ? (
-                                    this.renderHapu()
-                                ) : <option>----------</option>}
-                            </select>
-                            <br></br>
-                            <button className="secondarybutton" type="button" onClick={this.submitAdd}>{this.state.iwihapuButtonText}</button>
-                    <br></br> </div>
-                        {this.state.iwihapuboxIsVisible ? 
-                       <div className='selectediwi'>
-                        <h3> <img src="tick.png" style={{width:"20px"}}/> Iwi / hapu kua tīpakohia: </h3> <br></br>
-                        <h3> iwi:{this.state.iwi.map(iwi => {return <p>{iwi}, </p>})} </h3>
-                        <h3> hapu:{this.state.hapu.map(hapu => {return <p>{hapu}, </p>})} </h3>
-                        </div> : null }
-                    <br></br>
                     </div>
+                    <br></br>
+                    <br></br>
+                    <div className="step">Takahia e Rua</div>
+
+                    <h2>Korero mai ki a matou te rahui. Ka tuhia enei korero ki te waa tirotiro.</h2>
+
+                    <div className="dropdownbox">
+                        <h3>Tēnā koa tīpakohia te iwi me te hapū kua whakaturia te rahui:</h3>
+
+                        <p>Tīpako Rohe:</p>
+                        <select onChange={this.handleSelect}>
+                            {this.state.regionSelected == null && <option>Choose region</option>}
+                            {this.props.area.map(area => {
+                                return <option htmlFor="region">{area}</option>;
+                            })}
+                        </select>
+                        <br></br>
+
+                        {<p>Tīpako Iwi:</p>}
+                        <select onChange={this.handleSelect2}>
+                            {this.state.iwiSelected == null && <option>Choose iwi</option>}
+                            {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
+                        </select>
+                        <br></br>
+
+                        {<p>Tīpako Hapū:</p>}
+                        <select onChange={this.handleSelect3}>
+                            {this.state.hapuSelected == null && <option>Choose hapū</option>}
+                            {this.state.iwiSelected ? (
+                                this.renderHapu()
+                            ) : <option>----------</option>}
+                        </select>
+                        <br></br>
+                        <button className="secondarybutton" type="button" onClick={this.submitAdd}>{this.state.iwihapuButtonText}</button>
+                        <br></br> </div>
+                    {this.state.iwihapuboxIsVisible ?
+                        <div className='selectediwi'>
+                            <h3> <img src="tick.png" style={{ width: "20px" }} /> Iwi / hapu kua tīpakohia: </h3> <br></br>
+                            <h3> iwi:{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })} </h3>
+                            <h3> hapu:{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })} </h3>
+                        </div> : null}
+                    <br></br>
                     <br></br>
                     <br></br>
                     <p>Tēnā koa whakauruhia te ingoa o te tangata kua whakamanahia te Rahūi:</p>
@@ -219,11 +220,11 @@ class AddRahuiFormReo extends React.Component {
 
                     <div className="twocol">
                         <div className="date"><p>Kua whakanohoia te Rahūi ra:</p>
-                        <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
+                            <input name="datePlaced" type="date" noValidate onChange={this.handleChange} />
                         </div>
                         <div>
-                        <p>I whakanuia te Rahūi:</p>
-                        <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
+                            <p>I whakanuia te Rahūi:</p>
+                            <input name="dateLifted" type="date" noValidate onChange={this.handleChange} />
                         </div>
                     </div>
 
@@ -239,12 +240,11 @@ class AddRahuiFormReo extends React.Component {
                     <p>Tēnā koa tuhia ngā taipitopito whakapā ki konei</p>
                     <input name="contact" type="text" placeholder="Īmera" noValidate onChange={this.handleChange} />
                     <br></br>
-                  
+
                     <button name="submit">Tāpirihia te Rāhui</button>
                 </form>
                 <div className="spaceme" />
-            </div>            
-           </div>
+            </div>
         )
     }
 }
