@@ -12,11 +12,11 @@ class DetailEng extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        visibility: null,
+      visibility: null,
     }
     this.handleClick = this.handleClick.bind(this)
     this.userId = this.userId.bind(this)
-}
+  }
 
   componentDidMount() {
     this.props.dispatch(fetchAllRahui())
@@ -47,15 +47,15 @@ class DetailEng extends Component {
 
     return (
       <React.Fragment>
-        <div className="mapBackground" style={this.state.visibility == "map" ? {zIndex: 81} : {zIndex: 71}}>
+        <div className="mapBackground" style={this.state.visibility == "map" ? { zIndex: 81 } : { zIndex: 71 }}>
           <button className="backToList" onClick={this.handleClickExplore.bind(this)}>BACK</button>
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
         </div>
-        <div className="overlayNew" style={this.state.visibility == "list" ? {zIndex: 81} : {zIndex: 71}}>
+        <div className="overlayNew" style={this.state.visibility == "list" ? { zIndex: 81 } : { zIndex: 71 }}>
           <div className="rahui-text">
             <h1 className="descriptionDetail">{description}</h1>
-
             <div className="detailsWrapper">
+
               <div className="detailsDiv">
                 <p className="detailsHeading">Placed by:</p>
                 <p>Iwi: {iwi}</p>
@@ -63,39 +63,54 @@ class DetailEng extends Component {
               </div>
 
               <div className="detailsDiv">
-                <p className="detailsHeading">Authorised by:</p><p> {authoriser}</p>
+                <p className="detailsHeading">Authorised by:</p>
+                <p> {authoriser}</p>
               </div>
 
               <div className="detailsDiv">
-                <p className="detailsHeading">Date placed:</p><p> {date_placed}</p>
+                <p className="detailsHeading">Date placed:</p>
+                <p> {date_placed}</p>
               </div>
 
               <div className="detailsDiv">
-                <p className="detailsHeading">Date Lifted:</p><p> {date_lifted}</p>
+                <p className="detailsHeading">Date Lifted:</p>
+                <p> {date_lifted}</p>
               </div>
 
               <div className="detailsDiv">
-                <p className="detailsHeading">Submitted by:</p><p> {first_name} {last_name}</p>
+                <p className="detailsHeading">Submitted by:</p>
+                <p> {first_name} {last_name}</p>
               </div>
 
               <div className="detailsDiv">
-                <p className="detailsHeading">Contact:</p><p> {contact}</p>
+                <p className="detailsHeading">Contact:</p>
+                <p> {contact}</p>
               </div>
 
             </div>
-            <p className="detailsHeading">Korero:</p><p> {korero}</p>
-            <br></br>
-            <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : ""}</h3>
+
+            <div className="koreroWrapper">
+              <p className="detailsHeading">Korero:</p>
+              <p> {korero}</p>
+            </div>
+
+
+            {/* edit button here */}
+            <div className="detailsDiv">
+              {/* <button className="addButton" type="button">{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : ""}</button> */}
+              {this.userId() == user_id && <div className="edit-button"><Link to={`/rahui/${id}/edit`}>Edit</Link></div>}
+            </div>
+
           </div>
         </div>
         <div className="explore-buttons">
-                        <div className="explore-toggle-button">
-                        <button className={this.state.visibility == "list" ? "button-selected" : "button-deselected"} value="list" onClick={this.handleClick}>Detail</button>
-                        </div>
-                        <div className="explore-toggle-button">
-                        <button className={this.state.visibility == "map" ? "button-selected" : "button-deselected"} value="map" onClick={this.handleClick}>Map</button>
-                        </div>
+          <div className="explore-toggle-button">
+            <button className={this.state.visibility == "list" ? "button-selected" : "button-deselected"} value="list" onClick={this.handleClick}>Detail</button>
           </div>
+          <div className="explore-toggle-button">
+            <button className={this.state.visibility == "map" ? "button-selected" : "button-deselected"} value="map" onClick={this.handleClick}>Map</button>
+          </div>
+        </div>
       </React.Fragment>
     )
   }

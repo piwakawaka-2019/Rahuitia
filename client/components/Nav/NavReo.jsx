@@ -16,11 +16,11 @@ class NavReo extends Component {
     this.handleClick = this.handleClick.bind(this)
 }
 
-handleSubmit(e) {
-  removeUser()
-  this.props.logout()
-  window.location = `/#/`
-}
+  handleSubmit(e) {
+    removeUser()
+    this.props.logout()
+    window.location = `/#/`
+  }
 
 handleClick() {
   let expand = this.state.hamburgerNav == "active" ? "" : "active"; 
@@ -64,8 +64,8 @@ function mapStateToProps(state) {
   return {
     isAuthenticated: state.auth.isAuthenticated,
     lang: state.toggle
-    }
   }
+}
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavReo)

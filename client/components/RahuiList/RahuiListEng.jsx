@@ -5,20 +5,20 @@ import { connect } from 'react-redux'
 
 class RahuiListEng extends React.Component {
   constructor(props) {
-      super(props);
-      this.state = {  }
+    super(props);
+    this.state = {}
   }
-  
-  render() { 
 
-      console.log(this.props.allrahui)
-      return (
-        <React.Fragment>
-                <h1>Select to learn about a Rāhui </h1>
-                 {this.props.allrahui.map(rahui => <RahuiListItemEng key={rahui.id} rahui={rahui} /> )}   
-        </React.Fragment>   
-           );
-    }
+  render() {
+
+    console.log(this.props.allrahui)
+    return (
+      <React.Fragment>
+        <h1>Explore Rāhui</h1>
+        {this.props.allrahui.map(rahui => <RahuiListItemEng key={rahui.id} rahui={rahui} />)}
+      </React.Fragment>
+    );
+  }
 }
 
 function mapStateToProps(state) {
@@ -27,4 +27,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect (mapStateToProps)(RahuiListEng);
+export default connect(mapStateToProps)(RahuiListEng);

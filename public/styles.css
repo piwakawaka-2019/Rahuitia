@@ -1,4 +1,4 @@
-html{
+html {
   height:100% ;
   margin: 0px;
 	padding: 0;
@@ -30,7 +30,6 @@ h1 {
   color: #434734;
 }
 
-
 .title {
   font-style: normal;
   font-weight: bold;
@@ -48,8 +47,8 @@ h1 {
 h2 {
   font-style: normal;
   font-weight: bold;
-  font-size: 25px;
-  line-height: 27px;
+  font-size: 1.8em;
+  line-height:1em;
   color: #434734;
   margin-top: 0px
 }
@@ -207,6 +206,10 @@ a {
   box-shadow: 0px 0px 7px 0px rgba(0,0,0,.1);
 }
 
+/* .detailTopSpace {
+  padding: 2.5rem;
+} */
+
 .overlayNewAbout {
   position: fixed;
   width: 100vw;
@@ -250,6 +253,10 @@ button {
   font-size: 16px;
   text-transform: uppercase;
   font-family: "Rasa";
+  /* background-color: #F1ECE8; */
+
+  color: white;
+  background-color: #434734;
 }
 
 button:focus {
@@ -259,6 +266,10 @@ button:focus {
 /* button:hover {
   background: #F5F5F5;
 } */
+
+button:hover {
+  opacity: .8;
+}
 
 
 button :active {
@@ -304,13 +315,23 @@ button :active {
   display: flex;
   flex-wrap: wrap;
   flex-basis: 50%;
-  padding: 2.7rem 0 2.7rem 0;
+  padding: 2rem 0 3.3rem 0;
+  justify-content: space-between;
 }
 
+.koreroWrapper {
+  border-bottom: 1px solid #434734;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 50%;
+  padding: 2rem 0 3.3rem 0;
+}
 .detailsDiv {
   width: 17rem;
   padding: 1rem 0 1rem 0;
 }
+
+
 
 .detailsDiv p {
   /* line-height: 1rem; */
@@ -320,7 +341,49 @@ button :active {
 
 .detailsHeading {
   font-weight: bold;
+  margin: 1rem 0rem 0.3rem 0rem;
 }
+
+.detailsHeading {
+  font-weight: bold;
+  margin: 1rem 0rem 0.3rem 0rem;
+}
+
+
+
+.detailsInfo {
+  padding-top: 0.5rem;
+}
+
+
+/* .addFormContainer {
+  position: absolute;
+  left: 50vw;
+  top: 25rem;
+  transform: translate(-50%, -50%);
+} */
+
+.addDiv {
+  /* width: 20rem; */
+  margin: 1rem 0 1rem 0;
+}
+
+.addDiv2 {
+  /* width: 20rem; */
+  margin: 1rem 0 3rem 0;
+}
+
+.addAuthDiv {
+  margin-top: 2rem;
+}
+
+.addIntroDiv {
+  margin-bottom: 4rem;
+}
+
+
+
+
 
  .tautokoButton {
    width: 8rem;
@@ -336,6 +399,9 @@ button :active {
 }
 
 
+.iwiHapu {
+  font-weight: bold;
+}
 
 
 .addAnotherButton {
@@ -344,10 +410,20 @@ button :active {
   letter-spacing: .03em;
 }
 
+.addAnotherButton:hover {
+  background-color: #434734;
+  color: #F5F5F5;
+}
+
 .registerSubmitButton {
   width: 8rem;
   margin: 10px 10px 10px 0px;
   letter-spacing: .03em;
+}
+
+.registerSubmitButton:hover {
+  background-color: #434734;
+  color: #F5F5F5;
 }
 
 .languageToggleButton {
@@ -399,6 +475,7 @@ img.toggleButton:hover {
 .aboutBody {
   font-size: 1.2em;
   line-height: 34px;
+  margin-top: 1em;
 }
 
 .landingtext {
@@ -447,8 +524,45 @@ img.toggleButton:hover {
   color: #F5F5F5;
 }
 
+
+.edit-button a{
+  font-size: 1em;
+  text-decoration: none;
+  border-style: solid;
+  border-width: .04em;
+  border-radius: .18em;
+  /* margin: .2em; */
+  padding: .4em 1.5em .4em 1.5em;
+  border-color: #434734;
+  color: #F1ECE8;
+  text-transform: uppercase;
+  background-color: #434734;
+}
+
+/* button {
+  text-align: center;
+  border: .7px solid #434734;
+  border-radius: 5px;
+  padding: .75rem .75rem;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family: "Rasa";
+
+  color: white;
+  background-color: #434734;
+} */
+
 .aboutHeading2 {
-  font-size: 3em;
+  /* font-size: 3em; */
+  
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.8em;
+    line-height:1em;
+    color: #434734;
+    margin-top: 0px
+  
 }
 
 
@@ -503,47 +617,97 @@ img.toggleButton:hover {
 /* form styles  */
 
 input {
-  width: 20rem;
-  padding: .75rem .75rem;
+  width: calc(50% - 1.5em);
+  padding: .75em .75em;
   outline: none;
-  border-radius: 5px;
-  /* background-color: #eceee3; */
-  border: none;
+  border-radius: 0.18em;
+  /* background-color: #F1ECE8; */
+  background-color: #f1eeed;
+
+  border: 1px solid #434734;
   font-size: .97em;
-  margin: 10px 10px 10px 0px;
   font-family: "Rasa";
+  color: #434734;
+  opacity: 1;
 }
 
-input:focus {
-  border: 0.8px solid #7d8366;
+.inputRegister {
+  width: calc(100% - 1.5em);
 }
+
+::placeholder {
+  color: #434734;
+}
+
+/* input:focus {
+  border: 0.8px solid #7d8366;
+} */
 
 textarea {
-  width: 90%;
+  width: calc(50vw - 8rem);
+  
+  /* height: calc(100vh - 2.4em); */
+
   padding: 12px 20px;
   outline: none;
-  border-radius: 4px;
-  background-color: white;
-  border: none;
-  font-size: 16px;
-  font-family: "Rasa"
+  border-radius: .18em;
+  /* background-color: #F1ECE8; */
+  background-color: #f1eeed;
+  border: 1px solid #434734;
+  font-family: "Rasa";
+  font-size: .97em;
+}
+
+.descriptionArea {
+  height: 6rem;
+}
+
+.koreroArea {
+  height: 12rem;
 }
 
 select {
-  width: 21.5rem;
+  width: 50%;
   padding: .75rem .75rem;
-  border: none;
-  border-radius: 5px;
-  font-size: .9em;
-  color: grey;
-  outline: none;
+  border: 1px solid #434734;
+  border-radius: .18em;
+  font-size: .97em;
+  color: #434734;
   height: 2.6rem;
-  margin: 10px 10px 10px 0px;
   font-family: "Rasa";
+  /* background-color: #F1ECE8; */
+  background-color: #f1eeed;
+  
 }
 
-select:focus {
-  border: 1px solid #7d8366;
+.registerSelect {
+  width: 100%;
+}
+
+.iwiHapuButton {
+  font-size: 1.1em;
+    text-decoration: none;
+    /* border-style: 1px solid #7d8366; */
+    border-width: .04em;
+    border-radius: .18em;
+    padding: .4em 1.5em .4em 1.5em;
+    border-color: #434734;
+    color: #434734;
+    background-color: #F0ECE8;
+    border-color: #434734;
+}
+
+
+
+
+.iwiHapuButton:hover {
+  color: white;
+  background-color: #434734;
+}
+
+.addButton:hover {
+  color: white;
+  background-color: #434734;
 }
 
 map {
@@ -556,13 +720,15 @@ map {
 
 .step {
   font-family: Rasa;
-  font-style: bold;
   font-weight: bold;
-  font-size: 22px;
-  line-height: 25px;
+  font-size: 1.6em;
+  line-height: 1em;
   color: #DC5757;
-  margin-bottom: 20px;
-  margin-top: 20px
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.stepInfo {
 }
 
 .one {
@@ -590,15 +756,7 @@ map {
   padding: 10px;
 }
 
-.dropdownbox {
-  display: inline-block;
-  width: 40%;
-  margin-right: 20px;
-  padding: 20px;
-  border-radius: 4px;
-  background: #eceee3;
 
-}
 
 .dropdownboxedit {
   display: inline-block;
@@ -610,7 +768,7 @@ map {
 
 }
 
-.selectediwi {
+/* .selectediwi {
   display: inline-block;
   width: 40%;
   margin-right: 20px;
@@ -620,7 +778,7 @@ map {
   vertical-align: top;
   font-size: 19px;
   font-weight: bold;
-}
+} */
 
 .selectediwiedit {
   display: inline-block;
@@ -636,34 +794,66 @@ map {
 }
 
 
-.login-wrapper {
+.registerContainer {
+  width: 100vw;
+  height: calc(100vh - 2.4em);
+  top: 2.4em;
+  overflow: auto;
+  background: #F1ECE8;
   position: fixed;
+}
+
+.logInContainer {
+  width: 100vw;
+    height: calc(100vh - 2.4em);
+    top: 2.4em;
+    overflow: auto;
+    background: #F1ECE8;
+    position: fixed;
+}
+
+.login-wrapper {
+  /* position: fixed;
   margin: auto;
   width: 100%;
   top: 10rem;;
+  text-align: center; */
+
+  position: absolute;
+  margin: auto;
+  width: 30%;
+  top: 15em;
   text-align: center;
+  left: 50vw;
+  transform: translate(-50%, -50%);
 }
+
+
+
 
 .loginHeader {
   margin: 10px 10px 10px 10px;
 }
 
 .loginInput {
-  margin: 10px 10px 10px 10px;
+  /* margin: 10px 10px 10px 10px; */
+  width: calc(100% - 1.5em);
 }
 
 .loginButton {
   margin: 10px 10px 10px 10px;
   min-width: 8rem;
-
 }
 
+.loginButton:hover {
+    color: white;
+    background-color: #434734;
+}
 
 
 /* register style */
 
 .registerContainer {
-  /* margin: auto; */
   width: 100vw;
   height: calc(100vh - 2.4em);
   top: 2.4em;
@@ -674,12 +864,10 @@ map {
 
 .registerCenter {
     position: absolute;
-    left: 50%;
-    top: 40rem;
+    left: 50vw;
+    top: 42em;
     transform: translate(-50%, -50%);
-    /* margin-right: 2vw; */
-  
-  /* text-align: center; */
+    width: 50vw;
 }
 
 .registerInputWrapper {
@@ -706,9 +894,9 @@ map {
   background: white;
 }
 
-.inputRegister {
+/* .inputRegister {
   width: 40%
-}
+} */
 
 .dropdownboxRegion{
   display: inline-block;
@@ -757,6 +945,8 @@ map {
   display: flex;
   width: 100%;
   background-color: none;
+  margin-bottom: 2em;
+  /* justify-content: space-between; */
 }
 
 .aboutnav button {
@@ -805,11 +995,14 @@ map {
 }
 
 .yourWhakapapa {
-  background: #F5F5F5;
-  border-radius: 4px;
-  width: 20rem;
+  /* background: #F1ECE8; */
+  /* background: #95a16e */
+  background-color: #f1eeed;
+  border-radius: .18em;
+  /* width: 20rem; */
   padding: .75rem .75rem;
-  margin: 10px 10px 10px 0px;
+  /* margin: 10px 10px 10px 0px; */
+  border: 1px solid #434734;
 }
 
 /* responsive navbar */
@@ -949,6 +1142,9 @@ map {
       display:none;
   }
 
+  /* .registerCenter {
+    width: 70vw;
+  } */
 }
 
 .explore-buttons{
@@ -968,7 +1164,7 @@ map {
     width: 100vw;
     bottom: 0;
     left: 0;
-    z-index: 100;
+    z-index: 130;
 }
 
 .aboutnav {
@@ -1143,6 +1339,13 @@ map {
     margin-top: 2vh;
     /* margin-right: 2vw; */
   
+    .registerCenter {
+      width: 80vw;  
+    }
+
+    .login-wrapper {
+      width: 80vw;
+    }
 
   #mobile-background-image{
     height: 100vh;
@@ -1152,7 +1355,38 @@ map {
     display: flex;
     align-items: center; 
   }
+
+  .koreroArea {
+    /* height: 12rem; */
+    width: calc(100vw - 6.5em);
+  }
+
+  .descriptionArea {
+    width: calc(100vw - 6.5em);
+  }
+
+  input {
+    width: calc(100vw - 6em);
+  }
+
+  select {
+    width: calc(100vw - 4.65em);   
+  }
+
+
+
+
 }
+
+
+
+/* end */
+
+
+
+
+
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -1175,11 +1409,11 @@ map {
 }
 
 .rahui-text {
-  margin: 3em;
+  margin: 2em;
 }
 
 .rahui-text p {
-  padding-top: 1.3em;
+  padding-top: 0.5rem;
 }
 
 .gmnoprint a, .gmnoprint span {
@@ -1242,3 +1476,16 @@ map {
     background: #F1ECE8;
     opacity: 0.8;
 }
+
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
+}
+
+input:focus, select:focus, textarea:focus, form:focus, button:focus {outline:0;}
+
