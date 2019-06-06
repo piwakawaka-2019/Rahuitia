@@ -1,39 +1,48 @@
 import React, { Component } from "react";
 import LandEng from './LandEng'
 import LandReo from './LandReo'
-import { toggleLang } from "../../actions/toggle";
 import { connect } from 'react-redux'
-import SplitterLayout from 'react-splitter-layout';
 
 
 class Landing extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     this.state = {
-        videoURL: 'Farm aerials at sunrise_HD-web.mp4'
+      videoURL: 'Farm aerials at sunrise_HD-web.mp4'
     }
   }
 
   render() {
-    return (
-    <div> 
-      <SplitterLayout primaryIndex={0}>
-        <div className="fullscreen-video-wrap">
-       
-        <video id="background-video" loop autoPlay muted>
-                <source src={this.state.videoURL} type="video/mp4" />
-                Your browser does not support the video tag.
-        </video>
 
+    return (
+      <React.Fragment>
+        <div>
+          <div className="fullscreen-wrap">
+            <video
+              id="background-video"
+              loop autoPlay muted>
+              <source src={this.state.videoURL} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <img id="mobile-background-image" src="contour.jpg" />
+          </div>
+          <div className="overlayLanding">
+            {this.props.lang == "eng" ? <LandEng /> : <LandReo />}
+          </div>
+          <div className="background-overlay"></div>
         </div>
-    
-      <div className="detailwrapper">
-      {this.props.lang == "eng" ? <LandEng/> : <LandReo/>}
-      </div>
-      </SplitterLayout>
-      </div>
-    );
+      </React.Fragment>
+    )
+
+
+
+
+
+
+
+
+
   }
 }
 

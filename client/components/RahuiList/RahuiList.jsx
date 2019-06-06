@@ -10,7 +10,7 @@ class RahuiList extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="rahui-text">
         {this.props.lang == "eng" ? <RahuiListEng {...this.props} /> : <RahuiListReo {...this.props} />}
       </div>
     );

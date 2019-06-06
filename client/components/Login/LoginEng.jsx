@@ -31,21 +31,24 @@ class LoginEng extends Component {
   render() {
     return (
 
-      <div className="login-wrapper">
+      <div className="logInContainer">
 
-        <form
-          onSubmit={this.submit}
-          noValidate
-          className="login-wrapper" >
-          <h2 className="loginHeader" >Log in</h2>
+        <form className="login-wrapper" onSubmit={this.submit} noValidate>
+          <div className="addDiv">
+            <h2 className="loginHeader">Log in</h2>
+          </div>
 
-          <input className="loginInput" name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
+          <div className="addDiv">
+            <input className="loginInput" name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
+          </div>
 
-          <br></br>
+          <div className="addDiv">
+            <input className="loginInput" name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
+          </div>
 
-          <input className="loginInput" name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
-          <br></br>
-          <button className="loginButton" name="submit">Sign In</button>
+          <div className="addDiv">
+            <button className="loginButton" name="submit">Log In</button>
+          </div>
         </form>
       </div>
     )

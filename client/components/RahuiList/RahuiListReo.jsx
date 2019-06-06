@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import RahuiList from "./RahuiList"
-import RahuiListItem from "./RahuiListItem"
+import RahuiListItemReo from "./RahuiListItemReo"
 import { connect } from 'react-redux'
 
 class RahuiListReo extends React.Component {
@@ -10,11 +10,10 @@ class RahuiListReo extends React.Component {
     }
     render() { 
         return (
-            <div>
-              <br></br>
+          <React.Fragment>
                 <h1>Tīpakohia ki te ako atu e pā ana ki te Rāhui </h1>
-                 {this.props.allrahui.map(rahui => <RahuiListItem key={rahui.id} rahui={rahui} /> )}   
-            </div>
+                 {this.props.allrahui.map(rahui => <RahuiListItemReo key={rahui.id} rahui={rahui} /> )}  
+          </React.Fragment>
            );
     }
 }

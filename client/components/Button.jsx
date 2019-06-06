@@ -19,6 +19,7 @@ class Button extends React.Component {
         return (
             <div>
                 <button
+                    className="tautokoButton"
                     onClick={this.handleClick.bind(this)}
                     disabled={this.state.disabled}> {this.props.buttonTitle}</button>
             </div>
