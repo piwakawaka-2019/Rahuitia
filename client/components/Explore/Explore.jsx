@@ -4,12 +4,6 @@ import { fetchAllRahui } from "../../actions/rahui";
 import NewMap from "../NewMap";
 import RahuiList from "../RahuiList/RahuiList";
 
-// const front = {
-// 	zIndex: '100',
-// 	backgroundColor:'black',
-// 	fontWeight:'bold'
-// };
-
 class Explore extends React.Component {
     constructor(props) {
         super(props);
@@ -34,17 +28,19 @@ class Explore extends React.Component {
         });
       }
 
-    render() {
-        
+    renderError = () => {
+    return <div className="error-message"><p>rāhui loading error</p></div>
+    }
+
+    renderExplore = (allRahui) => {
         return (
             <React.Fragment>
-
                     <div className="mapBackground" style={this.state.visibility == "map" ? {zIndex: 81} : {zIndex: 71}}>
                         <NewMap color={"#FF4C4C"} rahuiBounds={[{ lat: -33.543484, lng: 172.880926 }, { lat: -47.622458, lng: 170.036187 }]} />
                     </div>
 
                     <div className="overlayNew" style={this.state.visibility == "list" ? {zIndex: 81} : {zIndex: 71}}>
-                        <RahuiList allrahui={this.props.allrahui.reverse()} />
+                        <RahuiList allrahui={allRahui.reverse()} />
                         <div className="spaceme" />
                     </div>
                     <div className="explore-buttons">
@@ -58,7 +54,17 @@ class Explore extends React.Component {
             </React.Fragment>
         );
     }
+
+        renderDetail = () => {
+        let allOfTheRahui = this.props.allrahui
+        return allOfTheRahui != undefined ? this.renderExplore(allOfTheRahui) : this.renderError()
+    }
+
+    render() {
+      return this.props.allrahui.length && this.renderDetail()        
+    }
 }
+
 
 const mapStateToProps = state => {
     return {

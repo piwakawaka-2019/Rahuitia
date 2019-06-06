@@ -25,6 +25,7 @@
     text-decoration: none;
     color: rgb(225, 152, 152);
     font-size: 1.34em;
+    letter-spacing: .03em;
     padding: .3em;
 }
 
@@ -49,24 +50,44 @@
     overflow:hidden;
 }
 
-#nav ul li a{
+.nav-links {
     color: #F1ECE8;
     display: block;
     padding: .57em;
     text-decoration: none;
     background-color: #434734;
+    transition: all 0.3s ease-out;
 }
 
-#nav ul li a:hover{
+.nav-links:hover{
     color: #434734;
     text-decoration: none;
     background-color: #F1ECE8;
 }
 
+.ToggleLanguageButton{
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(230, 216, 216);
+  display: block;
+  font-size: 1em;
+  letter-spacing: .01em;
+  text-decoration: none;
+  transition: all 1s ease;
+}
+
+.ToggleLanguageButton:hover{
+  color: rgb(225, 152, 152);
+  font-size: 1.30em;
+  letter-spacing: .04em;
+}
 
 #close {
     display: none;
 }
+
 }
 
 @media (max-width:50em){

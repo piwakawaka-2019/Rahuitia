@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import { connect } from "react-redux";
-import { fetchAllRahui } from "../actions/rahui";
 import { withScriptjs, withGoogleMap, GoogleMap, Polygon, Marker } from 'react-google-maps'
 import { relative } from 'path';
 
@@ -16,25 +15,21 @@ class NewMap extends Component {
     }
   }
 
-  handleBoundChange = () => {
+  componentDidMount = () => {
     this.setState({
       rahuiBounds: this.props.rahuiBounds
     })
   }
 
-  componentWillMount = () => {
-    this.handleBoundChange()
-  }
-
   render() {
 
-    const rahuiCoods = this.props.allrahui.length > 0 ? this.state.rahuiBounds : []
+    const rahuiCoords = this.props.allrahui.length > 0 ? this.state.rahuiBounds : []
     let requiredMapBounds
     // let requiredCenter
-    if (rahuiCoods.length > 0) {
+    if (rahuiCoords.length > 0) {
       requiredMapBounds = new window.google.maps.LatLngBounds();
 
-      rahuiCoods.forEach(rahuiPoint => {
+      rahuiCoords.forEach(rahuiPoint => {
         requiredMapBounds.extend(new window.google.maps.LatLng(rahuiPoint.lat, rahuiPoint.lng))
       })
 
@@ -63,7 +58,7 @@ class NewMap extends Component {
 
         ref={map => {
 
-          if (map && rahuiCoods && rahuiCoods.length > 0) {
+          if (map && rahuiCoords && rahuiCoords.length > 0) {
             map.fitBounds(requiredMapBounds)
           }
           return map
