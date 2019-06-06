@@ -93,8 +93,13 @@ class DetailEng extends Component {
               <p className="detailsHeading">Korero:</p>
               <p> {korero}</p>
             </div>
-            <br></br>
-            <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : ""}</h3>
+
+            <div className="detailsDiv">
+              {/* <button className="addButton" name="submit">Add Rāhui</button> */}
+
+              <button className="addButton" type="button">{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>Edit</Link> : ""}</button>
+            </div>
+
           </div>
         </div>
         <div className="explore-buttons">
