@@ -53,6 +53,11 @@ class DetailReo extends Component {
           <NewMap color={"#2E86C1"} rahuiBounds={geo_ref} />
         </div>
         <div className="overlayNew" style={this.state.visibility == "list" ? { zIndex: 81 } : { zIndex: 71 }}>
+
+          <div className="detailsEditDiv">
+            {this.userId() == user_id && <div className="edit-button"><Link to={`/rahui/${id}/edit`}>whakatika</Link></div>}
+          </div>
+
           <div className="rahui-text">
             <h1 className="descriptionDetail">{description}</h1>
             <div className="detailsWrapper">
@@ -91,13 +96,15 @@ class DetailReo extends Component {
             </div>
 
             <div className="koreroWrapper">
-              <p className="detailsHeading">Korero:</p>
-              <p> {korero}</p>
+              <div>
+                <p className="detailsHeading">Korero:</p>
+                <p> {korero}</p>
+              </div>
             </div>
 
 
           </div>
-          <h3>{this.userId() == user_id ? <Link to={`/rahui/${id}/edit`}>whakatika</Link> : ""}</h3>
+
         </div>
         <div className="explore-buttons">
           <div className="explore-toggle-button">
@@ -107,7 +114,7 @@ class DetailReo extends Component {
           <div className="explore-toggle-button">
             <button className={this.state.visibility == "map" ? "button-selected" : "button-deselected"} value="map" onClick={this.handleClick}>Map</button>
           </div>
-          
+
         </div>
       </React.Fragment >
     )
