@@ -237,8 +237,11 @@ a {
 }
 
 .mapBackground {
+  height: calc(100vh - 2.4em);
+  position: absolute;
+  top: 2.4em;
   width: 50vw;
-  height: 100vh;
+  ;
 }
 
 /* button styles */
@@ -312,13 +315,13 @@ button :active {
 
 .descriptionDetail {
   text-align: center;
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
   margin-bottom: 3rem;
 }
 
 .detailsWrapper {
-  border-bottom: 1px solid #434734;
-  border-top: 1px solid #434734;
+  border-bottom: 1px solid #656b50;
+  border-top: 1px solid #656b50;
   display: flex;
   flex-wrap: wrap;
   flex-basis: 50%;
@@ -334,8 +337,13 @@ button :active {
   padding: 2rem 0 3.3rem 0;
 }
 .detailsDiv {
-  width: 17rem;
+  width: 15rem;
   padding: 1rem 0 1rem 0;
+}
+
+.detailsEditDiv {
+  text-align: right;
+  margin: 1em;
 }
 
 
@@ -477,17 +485,23 @@ img.toggleButton:hover {
 }
 
 /* button styles */
+.aboutbody {
+  margin-top: 4em;
+  border-bottom: .09em solid #95a16e;
 
+}
 
 .aboutBody {
   font-size: 1.2em;
   line-height: 34px;
   margin-top: 1em;
+  margin-bottom: 3em;
+
 }
 
 .landingtext {
   position: fixed;
-  width: 60vw;
+  width: 65vw;
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -496,12 +510,16 @@ img.toggleButton:hover {
   color: #434734;
 }
 
+
 .landingtext h3 {
   font-size: 1.2em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .landingtext h1 {
-  font-size: 1.9em;
+  font-size: 2.5em;
+
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.4);
 }
 
 .landing-buttons {
@@ -540,10 +558,14 @@ img.toggleButton:hover {
   border-radius: .18em;
   /* margin: .2em; */
   padding: .4em 1.5em .4em 1.5em;
-  border-color: #434734;
+  border-color: #DC5758;
   color: #F1ECE8;
   text-transform: uppercase;
-  background-color: #434734;
+  background-color: #DC5758;
+}
+
+.edit-button a:hover {
+  opacity: .8;
 }
 
 /* button {
@@ -723,6 +745,19 @@ map {
 
 .spaceme {
   padding: 90px;
+}
+
+
+
+.explore-waka {
+  width: 26em;
+  transition: width .2s ease-in-out;
+  position: relative; bottom: 3em;
+}
+
+.explore-waka:hover {
+  width: 27em;
+  opacity: 1;
 }
 
 .step {
@@ -953,6 +988,7 @@ map {
   width: 100%;
   background-color: none;
   margin-bottom: 2em;
+  border-bottom: .09em solid #95a16e;
   /* justify-content: space-between; */
 }
 
@@ -966,11 +1002,13 @@ map {
   padding: 1.7em;
   border: none;
   background: none;
-  color: #DC5757;
+  /* color: #DC5757; */
+  color: #434834;
+  font-weight: bold;
  }
  
  .explore-button-selected:hover {
-   color: #DC5757;
+   /* color: #DC5757; */
    background: none;
  }
  
@@ -987,7 +1025,7 @@ map {
   .explore-button-deselected:hover {
    background: none;
    border: none;
-   color: #DC5757;
+   /* color: #DC5757; */
   }
 
 
@@ -1309,24 +1347,33 @@ map {
 
   .landingtext {
     position: fixed;
-    width: 60vw;
+    width: 85vw;
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 70%;
+    height: 75%;
     text-align: center;
     color: #434734;
 }
 
 .landingtext h3 {
-  font-size: 1.2em;
+  /* mobile */
+  padding-top: .7em;
+  font-size: .9em;
+  line-height: 1.2em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .landingtext h1 {
-  font-size: 1.9em;
+  font-size: 1.7em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-  .aboutContainer {
+.explore-waka {
+  width: 16em;
+}
+
+.aboutContainer {
     margin: 1.5em;
   }
 
@@ -1473,15 +1520,6 @@ map {
   transform: translate(-50%, 0%);
 }
 
-.explore-waka {
-  width: 26em;
-  transition: width .2s ease-in-out;
-}
-
-.explore-waka:hover {
-  width: 27em;
-  opacity: 1;
-}
 
 .background-overlay {
     top: 50%;
@@ -1492,7 +1530,8 @@ map {
     height: calc(100vh - 2vw);
     overflow: auto;
     background: #F1ECE8;
-    opacity: 0.8;
+    opacity: 0.9;
+    mix-blend-mode: screen;
 }
 
 a[href^="http://maps.google.com/maps"]{display:none !important}

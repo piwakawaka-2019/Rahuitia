@@ -202,13 +202,11 @@ class RegisterEng extends React.Component {
 
                         <div className="addDiv">
                             <p className="detailsHeading">Email address:</p>
-
                             <input className="inputRegister" name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
                         </div>
 
                         <div className="addAuthDiv">
                             <p className="detailsHeading">Password:</p>
-
                             <input className="inputRegister" name="password" type="password" placeholder="password" noValidate onChange={this.handleChange} />
                         </div>
 

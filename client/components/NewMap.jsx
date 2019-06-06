@@ -46,12 +46,12 @@ class NewMap extends Component {
           // mapTypeId: 'roadmap', //google.maps.MapTypeId.SATELLITE,
           streetViewControl: false,
           scaleControl: false,
-          mapTypeControl: false,
+          mapTypeControl: true,
           panControl: true,
           zoomControl: true,
           rotateControl: false,
           fullscreenControl: false,
-          labels: true,
+          labels: false,
           styles: styles,
         }}
 
@@ -103,9 +103,9 @@ class NewMap extends Component {
     return (
       <div>
         <GoogleMapExample
-          containerElement={<div style={{ height: `100vh`, width: `100%`, position: relative }} />}
+          containerElement={<div style={{ height: `calc(100vh - 2.4em)`, width: `100%`, position: relative }} />}
           mapElement={<div style={{ height: `100%`, width: `100%` }} />}
-
+         
         />
       </div>
     );
