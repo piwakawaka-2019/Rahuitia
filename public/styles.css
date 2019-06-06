@@ -1202,10 +1202,6 @@ map {
   position: fixed;
 }
 
-.ToggleLanguageButton a{
-  color: #DC5757;
-}
-
 .overlayLanding {
   top: 0;
   left: 0;

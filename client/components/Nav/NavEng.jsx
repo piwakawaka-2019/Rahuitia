@@ -39,12 +39,12 @@ handleClick() {
       </div>
       <div id="nav-items">
       <ul>
-        <li className="ToggleLanguageButton"><Link to="#" onClick={() => this.props.toggleLang()}>
+        <li>{this.props.isAuthenticated ? <Link className="nav-links" to="#" onClick={this.handleSubmit}>Logout</Link> : <Link className="nav-links" to="/login/">Login</Link> }</li>
+        <li><Link className="nav-links" to="/about/">About</Link></li>
+        <li><Link className="nav-links" to="/explore/">Explore</Link></li>
+        <li><Link className="nav-links" to="/addrahui/">Add a Rāhui</Link></li>
+        <li><Link className="ToggleLanguageButton" to="#" onClick={() => this.props.toggleLang()}>
       Te Reo</Link></li>
-        <li><Link to="/about/">About</Link></li>
-        <li><Link to="/explore/">Explore</Link></li>
-        <li><Link to="/addrahui/">Add a Rāhui</Link></li>
-        <li>{this.props.isAuthenticated ? <Link to="#" onClick={this.handleSubmit}>Logout</Link> : <Link to="/login/">Login</Link> }</li>
       </ul>
       </div>
       </div>
