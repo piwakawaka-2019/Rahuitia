@@ -246,6 +246,7 @@ class AddRahuiFormEng extends React.Component {
                         <button className="addButton" name="submit">Add Rāhui</button>
                     </div>
                 </form>
+                <div className="spaceme" />
             </div >
         )
     }
