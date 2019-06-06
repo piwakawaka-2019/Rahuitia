@@ -5,25 +5,51 @@ import ReactMap from "../ReactMap";
 import EditRahuiForm from "./EditRahuiForm";
 
 import { isAuthenticated } from "../../utils/auth"
+import { fetchAllRahui } from "../../actions/rahui";
 
 
 class Edit extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            visibility: null,
+        }
+        this.handleClick = this.handleClick.bind(this)
     }
 
+    componentDidMount() {
+        this.props.dispatch(fetchAllRahui())
+        this.setState({
+            visibility: "list"
+        })
+    }
+
+    handleClick(e) {
+        e.preventDefault()
+        const { value } = e.target
+        this.setState({
+          visibility: value
+        });
+      }
 
     render() {
         return isAuthenticated() ? (
-            <div className="mapBackground">
-                <div >
+            <React.Fragment>
+            <div className="mapBackground" style={this.state.visibility == "map" ? {zIndex: 110} : {zIndex: 71}}>
                     <ReactMap />
                 </div>
-                <div className="overlayNew">
+                <div className="overlayNew" style={this.state.visibility == "list" ? {zIndex: 110} : {zIndex: 71}}>
                     <EditRahuiForm rahuiId={this.props.match.params.id}/>
                 </div>
-            </div>
+                <div className="explore-buttons">
+                        <div className="explore-toggle-button">
+                        <button className={this.state.visibility == "list" ? "button-selected" : "button-deselected"} value="list" onClick={this.handleClick}>Details</button>
+                        </div>
+                        <div className="explore-toggle-button">
+                        <button className={this.state.visibility == "map" ? "button-selected" : "button-deselected"} value="map" onClick={this.handleClick}>Map</button>
+                        </div>
+                </div> 
+            </React.Fragment>
         ) : <Redirect to='/register' />
     }
 }
