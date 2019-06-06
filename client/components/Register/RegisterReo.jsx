@@ -118,58 +118,86 @@ class RegisterReo extends React.Component {
     return (
       <div className="registerContainer">
         <div className="registerCenter">
+          <div className="addIntroDiv">
+            <h2>Rēhita</h2>
+            <div className="addDiv">
+              <p>Ekore e tika kia noho he Maori rawakore ki tenei whenua; ehara tenei i te mea e ora ai tatou e tika ai ranei ratou. </p>
+            </div>
+          </div>
 
-          <h2>Rēhita</h2>
-          <p>Ekore e tika kia noho he Maori rawakore ki tenei whenua; ehara tenei i te mea e ora ai tatou e tika ai ranei ratou. </p>
-
-          <br></br>
           <form className="register-form" onSubmit={this.submit}>
-            <input name="first_name" type="text" placeholder="ingoa Tuatahi" noValidate onChange={this.handleChange} />
-            <br></br>
-            <input name="middle_name" type="text" placeholder="ingoa Waenganui" noValidate onChange={this.handleChange} />
-            <br></br>
-            <input name="last_name" type="text" placeholder="ingoa Whakamutunga" noValidate onChange={this.handleChange} />
-            <br></br>
-            {/* Add iwi */}
-            <br></br>
-            <p>Tīpako rohe:</p>
-            <select onChange={this.handleSelect}>
-              {this.props.area.map(area => {
-                return <option htmlFor="region">{area}</option>;
-              })}
-            </select>
-            <br></br>
-            <br></br>
-            <p>Tīpako iwi:</p>
-            <select onChange={this.handleSelect2}>
-              {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
-            </select>
-            <br></br>
-            <br></br>
-            <p>Tīpako hapū:</p>
-            <select onChange={this.handleSelect3}>
-              {this.state.iwiSelected ? (
-                this.renderHapu()
-              ) : <option>----------</option>}
-            </select>
-            <br></br>
-            <button className="addAnotherButton" type="button" onClick={this.submitAdd}>Tāpirihia tetahi atu Rohe / Iwi / Hāpu</button>
-            <br></br>
-            <div className="yourWhakapapa"><h3>Tou whakapapa:</h3> <br></br>
-              <p className="subHeading">iwi:</p>{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}<br></br>
-              <p className="subHeading">hapu:</p>{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}<br></br>
+            <div className="addDiv">
+              <p className="detailsHeading">Full name:</p>
+              <input className="inputRegister" name="first_name" type="text" placeholder="ingoa tuatahi" noValidate onChange={this.handleChange} />
             </div>
 
-            <input name="address" type="text" placeholder="wāhitau" noValidate onChange={this.handleChange} />
-            <br></br>
-            <input name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
-            <br></br>
-            <input name="password" type="password" placeholder="kupuhipa" noValidate onChange={this.handleChange} />
-            <br></br>
-            <input name="confirm_password" type="password" placeholder="whakapūmau i te kupuhipa" noValidate onChange={this.handleChange} />
-            <p>{this.props.auth.errorMessage}</p>
-            <br></br>
-            <button className="registerSubmitButton" name="submit">tāuru</button>
+            <div className="addDiv">
+              <input className="inputRegister" name="middle_name" type="text" placeholder="ingoa waenganui" noValidate onChange={this.handleChange} />
+            </div>
+
+            <div className="addDiv">
+              <input className="inputRegister" name="last_name" type="text" placeholder="ingoa whakamutunga" noValidate onChange={this.handleChange} />
+            </div>
+
+            <div className="addDiv">
+              <div className="addAuthDiv">
+                <p className="detailsHeading"> Tīpako rohe:</p>
+                <select className="registerSelect" onChange={this.handleSelect}>
+                  {this.props.area.map(area => {
+                    return <option htmlFor="region">{area}</option>;
+                  })}
+                </select>
+              </div>
+
+              <div className="addDiv">
+                <p className="detailsHeading">Tīpako iwi:</p>
+                <select className="registerSelect" onChange={this.handleSelect2}>
+                  {this.state.regionSelected ? (this.renderIwi()) : <option>----------</option>}
+                </select>
+              </div>
+
+              <div className="addDiv">
+                <p className="detailsHeading">Tīpako hapū:</p>
+                <select className="registerSelect" onChange={this.handleSelect3}>
+                  {this.state.iwiSelected ? (
+                    this.renderHapu()
+                  ) : <option>----------</option>}
+                </select>
+              </div>
+
+              <div className="addDiv">
+                <button className="addrButton" type="button" onClick={this.submitAdd}>Tāpirihia tetahi atu Rohe/Iwi/Hāpu</button>
+              </div>
+            </div>
+
+            <div className="yourWhakapapa">
+              <p className="subHeading">iwi:</p>{this.state.iwi.map(iwi => { return <p>{iwi}, </p> })}
+              <p className="subHeading">hapu:</p>{this.state.hapu.map(hapu => { return <p>{hapu}, </p> })}
+            </div>
+
+            <div className="addAuthDiv">
+              <p className="detailsHeading">Wāhitau:</p>
+              <input name="address" type="text" placeholder="wāhitau" noValidate onChange={this.handleChange} />
+            </div>
+
+            <div className="addDiv">
+              <p className="detailsHeading">Email address:</p>
+              <input name="email" type="text" placeholder="email" noValidate onChange={this.handleChange} />
+            </div>
+
+            <div className="addAuthDiv">
+              <p className="detailsHeading">Kupuhipa:</p>
+              <input name="password" type="password" placeholder="kupuhipa" noValidate onChange={this.handleChange} />
+            </div>
+
+            <div className="addDiv">
+              <input name="confirm_password" type="password" placeholder="whakapūmau i te kupuhipa" noValidate onChange={this.handleChange} />
+              <p>{this.props.auth.errorMessage}</p>
+            </div>
+
+            <div className="addDiv">
+              <button className="registerSubmitButton" name="submit">tāuru</button>
+            </div>
           </form>
         </div>
       </div>)
