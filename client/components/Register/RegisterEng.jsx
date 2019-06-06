@@ -55,7 +55,7 @@ class RegisterEng extends React.Component {
             this.props.dispatch(registerUserRequest({ first_name, middle_name, last_name, address, email, password, iwi, hapu }))
         }
         console.log("registered")
-        window.location = `/#/addrahui`
+        window.location = `/#/explore/`
     }
 
     submitAdd() {
