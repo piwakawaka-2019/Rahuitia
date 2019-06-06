@@ -46,7 +46,7 @@ class NewMap extends Component {
           // mapTypeId: 'roadmap', //google.maps.MapTypeId.SATELLITE,
           streetViewControl: false,
           scaleControl: false,
-          mapTypeControl: false,
+          mapTypeControl: true,
           panControl: true,
           zoomControl: true,
           rotateControl: false,
