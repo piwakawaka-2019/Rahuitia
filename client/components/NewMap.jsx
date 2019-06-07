@@ -107,10 +107,8 @@ class NewMap extends Component {
     return (
       <div>
         <GoogleMapExample
-          containerElement={<div style={{ height: `calc(100vh - 2.4em)`, width: `100%`, position: relative }} />}
-          mapElement={<div style={{ height: `100%`, width: `100%` }} />}
-  
-         
+          containerElement={<div className="map-container" />}
+          mapElement={<div style={{ height: `100%`, width: `100%` }} />}           
         />
       </div>
     );
