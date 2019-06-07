@@ -43,10 +43,14 @@ class NewMap extends Component {
         defaultZoom={this.props.zoom}
         defaultOptions={{
           disableDefaultUI: true,
-          // mapTypeId: 'roadmap', //google.maps.MapTypeId.SATELLITE,
           streetViewControl: false,
           scaleControl: false,
           mapTypeControl: true,
+          mapTypeControlOptions: {      
+            mapTypeIds: [
+              google.maps.MapTypeId.ROADMAP,
+              google.maps.MapTypeId.SATELLITE
+            ]},
           panControl: true,
           zoomControl: true,
           rotateControl: false,
@@ -105,6 +109,7 @@ class NewMap extends Component {
         <GoogleMapExample
           containerElement={<div style={{ height: `calc(100vh - 2.4em)`, width: `100%`, position: relative }} />}
           mapElement={<div style={{ height: `100%`, width: `100%` }} />}
+  
          
         />
       </div>

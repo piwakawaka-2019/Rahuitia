@@ -23,10 +23,14 @@ const MapWithADrawingManager = compose(
     defaultCenter={new google.maps.LatLng({ lat: -47.892014, lng: 170.897149 })}
     defaultOptions={{
       disableDefaultUI: true,
-      // mapTypeId: '',//google.maps.MapTypeId.SATELLITE,
       streetViewControl: false,
       scaleControl: false,
       mapTypeControl: true,
+      mapTypeControlOptions: {      
+        mapTypeIds: [
+          google.maps.MapTypeId.ROADMAP,
+          google.maps.MapTypeId.SATELLITE
+        ]},
       panControl: true,
       zoomControl: true,
       rotateControl: false,
