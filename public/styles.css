@@ -336,7 +336,7 @@ button :active {
 }
 
 .descriptionDetail {
-  text-align: center;
+  /* text-align: center; */
   /* margin-top: 5rem; */
   margin-bottom: 3rem;
 }
@@ -352,7 +352,7 @@ button :active {
 }
 
 .koreroWrapper {
-  border-bottom: 1px solid #434734;
+  border-bottom: 1px solid #656b50;
   display: flex;
   flex-wrap: wrap;
   flex-basis: 50%;
@@ -360,7 +360,7 @@ button :active {
 }
 .detailsDiv {
   width: 15rem;
-  padding: 1rem 0 1rem 0;
+  padding: .6rem 0 .6rem 0;
 }
 
 .detailsEditDiv {
@@ -402,7 +402,7 @@ button :active {
 
 .addDiv {
   /* width: 20rem; */
-  margin: 1rem 0 1rem 0;
+  margin: 2rem 0 2rem 0;
 }
 
 .addDiv2 {
@@ -411,7 +411,7 @@ button :active {
 }
 
 .addAuthDiv {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 .addIntroDiv {
@@ -517,7 +517,7 @@ img.toggleButton:hover {
   font-size: 1.2em;
   line-height: 34px;
   margin-top: 1em;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
 
 }
 
@@ -768,9 +768,12 @@ map {
 }
 
 .spaceme {
-  padding: 90px;
+  padding: 2em;
 }
 
+.spaceme2 {
+  padding: 2em;
+}
 
 
 .explore-waka {
@@ -931,7 +934,7 @@ map {
 .registerCenter {
     position: absolute;
     left: 50vw;
-    top: 42em;
+    top: 50em;
     transform: translate(-50%, -50%);
     width: 50vw;
 }
@@ -1250,7 +1253,8 @@ map {
   display: flex;
   position: fixed;
   width: 100vw;
-  bottom: 0;
+  bottom: calc(0vh - 2.1em);
+  /* bottom: 0; */
   left: 0;
   z-index: 100;
 }
@@ -1429,7 +1433,7 @@ map {
   .overlayNewAbout {
     position: fixed;
     width: 100vw;
-    height: calc(100vh - 6.05em);
+    height: calc(100vh - 6.77em);
     top: 2.4em;
     left: 0;
     bottom: 0;
@@ -1515,11 +1519,11 @@ map {
 }
 
 .rahui-text {
-  margin: 2em;
+  margin: 2.5em;
 }
 
 .rahui-text p {
-  padding-top: 0.5rem;
+  padding-top: 0.2rem;
 }
 
 .gmnoprint a, .gmnoprint span {
