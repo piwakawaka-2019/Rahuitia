@@ -1,8 +1,30 @@
       @import url("https://fonts.googleapis.com/css?family=Rasa&display=swap");
+      @import url('https://fonts.googleapis.com/css?family=Rasa:300,400,500,600&display=swap');
+
       * {
         margin: 0;
         padding: 0;
       }
+
+.translate-icon{
+  position: absolute;
+  top: 50%;
+  left: 7.4em;
+  width: 9em;
+  transform: translate(-50%, -50%); 
+}
+
+.translate-icon a{
+  font-family: 'Rasa';
+  font-weight: 300;
+  font-size: 1em;
+  letter-spacing: .07em;
+  text-decoration: none;
+}
+
+.translate-icon a:hover{
+  color: #DC5757;
+}
 
 .rahuitia-logo {
     position: absolute;
