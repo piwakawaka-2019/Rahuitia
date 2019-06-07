@@ -52,6 +52,7 @@
 
 @media (min-width:50em){
 
+
 #nav {
     background-color:#434734;
     color: #F1ECE8;
@@ -112,6 +113,16 @@
 }
 
 @media (max-width:50em){
+
+  .translate-icon {
+    left: 10em;
+  }
+
+  .translate-icon a{
+    color: rgb(230, 216, 216);
+  }
+
+
 
       #nav {
         font-family: 'Rasa';
