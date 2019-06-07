@@ -28,7 +28,7 @@ class Landing extends Component {
             <img id="mobile-background-image" src="fern1.png" />
           </div>
           <div className="overlayLanding">
-            {this.props.lang == "eng" ? <LandEng /> : <LandReo />}
+            {this.props.lang == "eng" ? <LandEng /> : <LandEng />}
           </div>
           <div className="background-overlay"></div>
         </div>

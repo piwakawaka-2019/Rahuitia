@@ -508,7 +508,7 @@ img.toggleButton:hover {
 
 /* button styles */
 .aboutbody {
-  margin-top: 4em;
+  margin-top: 3em;
   border-bottom: .09em solid #95a16e;
 
 }
@@ -1019,7 +1019,7 @@ map {
   width: 100%;
   background-color: none;
   margin-bottom: 2em;
-  border-bottom: .09em solid #95a16e;
+  border-top: .09em solid #70746334;
   /* justify-content: space-between; */
 }
 
@@ -1225,6 +1225,7 @@ map {
 
 .explore-buttons{
   display: none;
+  border-top: .09em solid #70746334;
 }
 
 @media (max-width:50em){
