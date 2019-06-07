@@ -314,7 +314,7 @@ button :active {
 }
 
 .descriptionDetail {
-  text-align: center;
+  /* text-align: center; */
   /* margin-top: 5rem; */
   margin-bottom: 3rem;
 }
@@ -330,7 +330,7 @@ button :active {
 }
 
 .koreroWrapper {
-  border-bottom: 1px solid #434734;
+  border-bottom: 1px solid #656b50;
   display: flex;
   flex-wrap: wrap;
   flex-basis: 50%;
@@ -1477,7 +1477,7 @@ map {
 }
 
 .rahui-text {
-  margin: 2em;
+  margin: 2.5em;
 }
 
 .rahui-text p {
