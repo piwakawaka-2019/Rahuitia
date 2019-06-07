@@ -115,6 +115,8 @@ a {
   }
 }
 
+
+
 .respect {
   padding: 0 .7em 0 .7em;
   color: rgb(133, 133, 133);
@@ -1208,6 +1210,10 @@ map {
     width: 100%;
     position: relative;
   }
+
+  .rahui-text {
+    margin: 1.5em;
+  }
   
    .backToList {
     display: none;
@@ -1291,6 +1297,10 @@ map {
   padding: 1.6em;
   border: none;
   border-radius: 0;
+}
+
+.descriptionDetail {
+  font-size: 1.6em;
 }
 
 #project {
