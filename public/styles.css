@@ -994,6 +994,12 @@ map {
   font-weight: bold;
 }
 
+.map-container{
+  height: calc(100vh - 2.4em);
+  width: 100%;
+  position: relative;
+}
+
 
 .selectediwiedit {
   display: inline-block;
@@ -1199,35 +1205,17 @@ map {
   top:0;
 }
 
-@media (min-width:50em){
-  
-  .header li{
-      float:left;
-  }
-  .header li a{
-      background-color:#434734;
-      color: #F1ECE8;
-      padding: 0.58em 1.2em 0.58em 1.2em;
-  }
-  .header .menu{
-      clear:none;
-      float:right;
-      max-height:none;
-  }
-  .header .menu-icon{
-      display:none;
-  }
-
-  /* .registerCenter {
-    width: 70vw;
-  } */
-}
 
 .explore-buttons{
   display: none;
 }
 
 @media (max-width:50em){
+  .map-container{
+    height: calc(100vh - 6em);
+    width: 100%;
+    position: relative;
+  }
   
    .backToList {
     display: none;
@@ -1241,7 +1229,7 @@ map {
   .mapBackground {
     position: fixed;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 6.11em);
   }
 
   .explore-buttons {
