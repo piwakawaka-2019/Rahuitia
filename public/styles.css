@@ -1229,7 +1229,8 @@ map {
   display: flex;
   position: fixed;
   width: 100vw;
-  bottom: 0;
+  bottom: calc(0vh - 2.1em);
+  /* bottom: 0; */
   left: 0;
   z-index: 100;
 }
@@ -1391,7 +1392,7 @@ map {
   .overlayNewAbout {
     position: fixed;
     width: 100vw;
-    height: calc(100vh - 6.05em);
+    height: calc(100vh - 6.77em);
     top: 2.4em;
     left: 0;
     bottom: 0;
