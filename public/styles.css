@@ -535,7 +535,7 @@ img.toggleButton:hover {
 
 .landingtext h3 {
   color: #F1ECE8;
-  font-size: 1.2em;
+  font-size: 1.3em;
   text-shadow: 0 1px 0 #434734a6;
 }
 
@@ -1391,8 +1391,23 @@ map {
 
 .landingtext h1 {
   color: #F1ECE8;
-  font-size: 1.7em;
+  font-size: 1.9em;
   text-shadow: 0 1px 0 #434734a6;
+}
+
+.landing-arrow img {
+  width: 4em;
+  transform: scaleX(-1);
+  margin: 0 auto;
+} 
+
+.landing-arrow{
+   width: 5rem;
+   height: 5rem;
+   border-radius: 5em;
+   z-index: 201;
+   border: 2px solid #F1ECE8;
+   background: none;
 }
 
 .explore-waka {

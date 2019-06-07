@@ -25,7 +25,7 @@ class Landing extends Component {
               <source src={this.state.videoURL} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            <img id="mobile-background-image" src="contour.jpg" />
+            <img id="mobile-background-image" src="fern1.png" />
           </div>
           <div className="overlayLanding">
             {this.props.lang == "eng" ? <LandEng /> : <LandReo />}
