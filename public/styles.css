@@ -314,7 +314,7 @@ button :active {
 }
 
 .descriptionDetail {
-  text-align: center;
+  /* text-align: center; */
   /* margin-top: 5rem; */
   margin-bottom: 3rem;
 }
@@ -330,7 +330,7 @@ button :active {
 }
 
 .koreroWrapper {
-  border-bottom: 1px solid #434734;
+  border-bottom: 1px solid #656b50;
   display: flex;
   flex-wrap: wrap;
   flex-basis: 50%;
@@ -1233,7 +1233,8 @@ map {
   display: flex;
   position: fixed;
   width: 100vw;
-  bottom: 0;
+  bottom: calc(0vh - 2.1em);
+  /* bottom: 0; */
   left: 0;
   z-index: 100;
 }
@@ -1395,7 +1396,7 @@ map {
   .overlayNewAbout {
     position: fixed;
     width: 100vw;
-    height: calc(100vh - 6.05em);
+    height: calc(100vh - 6.77em);
     top: 2.4em;
     left: 0;
     bottom: 0;
@@ -1483,7 +1484,7 @@ map {
 }
 
 .rahui-text {
-  margin: 2em;
+  margin: 2.5em;
 }
 
 .rahui-text p {
