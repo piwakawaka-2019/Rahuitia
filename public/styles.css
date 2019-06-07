@@ -1463,11 +1463,13 @@ map {
 /* width */
 ::-webkit-scrollbar {
   width: 9px;
+  z-index: 1;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: #F1ECE8; 
+  
 }
  
 /* Handle */
