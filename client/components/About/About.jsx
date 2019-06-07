@@ -10,7 +10,8 @@ export class About extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visibility: null
+      visibility: null,
+      videoURL: null
     };
     this.handleClick = this.handleClick.bind(this)
   }
@@ -18,7 +19,7 @@ export class About extends Component {
   componentDidMount() {
     this.setState({
       visibility: "project",
-      videoURL: 'Farm aerials at sunrise_HD-web.mp4'
+      videoURL: 'water.mp4'
     });
   }
 
@@ -67,10 +68,6 @@ export class About extends Component {
         </div>
         <div className="about-background">
           <img src="contour.jpg" />
-          <video id="background-video" loop autoPlay muted>
-            <source src={this.state.videoURL} type="video/mp4" />
-              Your browser does not support the video tag.
-          </video>
         </div>
       </div>
     )

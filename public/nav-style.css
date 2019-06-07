@@ -1,8 +1,30 @@
       @import url("https://fonts.googleapis.com/css?family=Rasa&display=swap");
+      @import url('https://fonts.googleapis.com/css?family=Rasa:300,400,500,600&display=swap');
+
       * {
         margin: 0;
         padding: 0;
       }
+
+.translate-icon{
+  position: absolute;
+  top: 50%;
+  left: 7.4em;
+  width: 9em;
+  transform: translate(-50%, -50%); 
+}
+
+.translate-icon a{
+  font-family: 'Rasa';
+  font-weight: 300;
+  font-size: 1em;
+  letter-spacing: .07em;
+  text-decoration: none;
+}
+
+.translate-icon a:hover{
+  color: #DC5757;
+}
 
 .rahuitia-logo {
     position: absolute;
@@ -33,7 +55,7 @@
 #nav {
     background-color:#434734;
     color: #F1ECE8;
-    box-shadow:1px 1px 4px 0 rgba(0,0,0,.1);
+    box-shadow: 1px 3px 4px 0 rgba(0,0,0,.15);
     height: 2.4em;
     z-index: 220;
     position:fixed;
@@ -78,9 +100,9 @@
 }
 
 .ToggleLanguageButton:hover{
-  color: rgb(225, 152, 152);
+  color: rgb(220, 190, 190);
   font-size: 1.27em;
-  letter-spacing: .04em;
+  letter-spacing: .02em;
 }
 
 #close {
@@ -94,6 +116,7 @@
       #nav {
         font-family: 'Rasa';
         position: absolute;
+        box-shadow: 1px 3px 4px 0 rgba(0,0,0,.15);
         z-index: 220;
         top: 0;
         left: 0;
