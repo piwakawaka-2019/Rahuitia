@@ -66,9 +66,9 @@ export class About extends Component {
         </div>
         <div className="about-opacity-background">
         </div>
-        <div className="about-background">
+        {/* <div className="about-background">
           <img src="contour.jpg" />
-        </div>
+        </div> */}
       </div>
     )
   }
