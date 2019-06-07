@@ -266,15 +266,6 @@ button:focus {
   outline: 0;
 }
 
-/* button:hover {
-  background: #F5F5F5;
-} */
-
-button:hover {
-  opacity: .8;
-}
-
-
 button :active {
   background: #9fa09a;
 
@@ -1321,7 +1312,7 @@ map {
   .button-selected{
     color: #F1ECE8;
     background-color: #DC5757;
-    opacity: .97;
+    opacity: 1;
   }
 
   .button-selected:hover{
@@ -1332,7 +1323,7 @@ map {
   .button-deselected{
     color: #DC5757;
     background-color: #F1ECE8;
-    opacity: .97;
+    opacity: 1;
   }
 
   .button-deselected:hover{
