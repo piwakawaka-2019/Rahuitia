@@ -24,7 +24,7 @@ p {
 /* font styles */
 h1 {
   /* padding-bottom: 1.7em; */
-  font-size: 2.5em;
+  font-size: 2.2em;
   letter-spacing: .02em;
   line-height: 1.2em;
   color: #434734;
@@ -776,7 +776,7 @@ map {
 }
 
 .spaceme2 {
-  padding: 2em;
+  padding: 1.3em;
 }
 
 
@@ -1019,7 +1019,7 @@ map {
   width: 100%;
   background-color: none;
   margin-bottom: 2em;
-  border-top: .09em solid #70746334;
+  border-bottom: .09em solid #95a16e;
   /* justify-content: space-between; */
 }
 
