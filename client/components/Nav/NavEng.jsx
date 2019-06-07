@@ -33,7 +33,7 @@ handleClick() {
     return (
       <div id="nav" className={this.state.hamburgerNav} onClick={this.handleClick}>
         <div className="rahuitia-logo"><Link to="/">Rāhuitia</Link></div>
-        <div className="translate-icon"><Link className="ToggleLanguageButton" to="#" onClick={() => this.props.toggleLang()}>|    Te Reo</Link></div>
+        <div className="translate-icon"><Link to="#" onClick={() => this.props.toggleLang()}>|    Te Reo</Link></div>
       <div id="close">
         <div className="bar"></div>
         <div className="bar"></div>

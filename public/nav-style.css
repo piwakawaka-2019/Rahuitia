@@ -8,8 +8,8 @@
 
 .translate-icon{
   position: absolute;
-  top: 50%;
-  left: 7.4em;
+  top: 1.2em;
+  left: 10em;
   width: 9em;
   transform: translate(-50%, -50%); 
 }
@@ -20,10 +20,13 @@
   font-size: 1em;
   letter-spacing: .07em;
   text-decoration: none;
+  color: #F1ECE8;
+  transition: all 0.5s ease;
 }
 
 .translate-icon a:hover{
   color: #DC5757;
+  letter-spacing: .09em;
 }
 
 .rahuitia-logo {
